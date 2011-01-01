@@ -8,13 +8,13 @@ For example :
     <form action='submit.php' method='post' id='uploadForm'>
       <input type=file name='fileUpload' id='fileUpload' />
     </form>
-    ```
+   ```
 
 Would be used with the following code : 
 
 ```js
-   $('#uploadForm').fileUpload(options);
-   ```
+    $('#uploadForm').fileUpload(options);
+  ```
 
 # Options
 
@@ -55,10 +55,10 @@ Defaults to a basic function which serializes all of the form. Will be used befo
 For example, here is the default function used by the plugin : 
 
 ```js
-   function () {
-     return uploadForm.serializeArray();
-   }
-   ```
+    function () {
+      return uploadForm.serializeArray();
+    }
+  ```
 
 ### withCredentials (boolean)
 
