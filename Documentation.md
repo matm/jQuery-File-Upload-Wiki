@@ -1,3 +1,4 @@
+# jQuery File-Upload without jQueryUI
 # Calling the plugin
 
 Plugin needs to be called on the form itself. You can also call it on a wrapping element, as the plugin will find the inner form(s) of that element. The plugin will then read the form to find file fields using the jQuery *find* method and the *input:file* selector.
