@@ -20,7 +20,7 @@ The same objects as the basic [[fileUpload plugin|Documentation]] are used, but 
 
 # Options
 
-All the options from the [[fileUpload plugin|Documentation] are usable here as well. In addition, the following options are used : 
+All the options from the [[fileUpload plugin|Documentation]] are usable here as well. In addition, the following options are used : 
 
 ### uploadTable (object) **required**
 
