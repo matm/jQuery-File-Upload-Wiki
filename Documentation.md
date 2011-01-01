@@ -5,10 +5,10 @@ Plugin needs to be called on the form itself. You can also call it on a wrapping
 For example : 
 
 ```html
-   <form action='submit.php' method='post' id='uploadForm'>
-     <input type=file name='fileUpload' id='fileUpload' />
-   </form>
-   ```
+    <form action='submit.php' method='post' id='uploadForm'>
+      <input type=file name='fileUpload' id='fileUpload' />
+    </form>
+    ```
 
 Would be used with the following code : 
 
@@ -56,7 +56,7 @@ For example, here is the default function used by the plugin :
 
 ```js
    function () {
-       return uploadForm.serializeArray();
+     return uploadForm.serializeArray();
    }
    ```
 
