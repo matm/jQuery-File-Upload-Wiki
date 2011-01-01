@@ -13,7 +13,9 @@ The fileUpload plugin can be used with jQueryUI to create a cooler look.
 
 The same objects as the basic [[fileUpload plugin|Documentation]] are used, but the **method name changes** to fileUploadUI. For example : 
 
-$('uploadForm').fileUploadUI(options);
+```js
+    $('uploadForm').fileUploadUI(options);
+```
 
 
 # Options
@@ -46,26 +48,28 @@ A function to be called to display an uploaded element in the downloadTable. Mus
 
 # Example : 
 
-$('.uploadForm').fileUploadUI({
-                uploadTable: $('.upload_files'),
-                downloadTable: $('.download_files'),
-                buildUploadRow: function (files, index) {
-                    var file = files[index];
-                    return $(
-                        '<tr style="display:none">' +
-                        '<td>' + file.name + '<\/td>' +
-                        '<td class="file_upload_progress"><div><\/div><\/td>' +
-                        '<td class="file_upload_cancel">' +
-                        '<div class="ui-state-default ui-corner-all ui-state-hover" title="Cancel">' +
-                        '<span class="ui-icon ui-icon-cancel"><\/span>' +
-                        '<\/div>' +
-                        '<\/td>' +
-                        '<\/tr>'
-                    );
-                },
-                buildDownloadRow: function (file) {
-                    return $(
-                        '<tr style="display:none"><td>' + file.name + '<\/td><\/tr>'
-                    );
-                }
-            });
+```js
+    $('.uploadForm').fileUploadUI({
+          uploadTable: $('.upload_files'),
+          downloadTable: $('.download_files'),
+          buildUploadRow: function (files, index) {
+              var file = files[index];
+              return $(
+                    '<tr style="display:none">' +
+                    '<td>' + file.name + '<\/td>' +
+                    '<td class="file_upload_progress"><div><\/div><\/td>' +
+                    '<td class="file_upload_cancel">' +
+                    '<div class="ui-state-default ui-corner-all ui-state-hover" title="Cancel">' +
+                    '<span class="ui-icon ui-icon-cancel"><\/span>' +
+                    '<\/div>' +
+                    '<\/td>' +
+                    '<\/tr>'
+              );
+          },
+          buildDownloadRow: function (file) {
+              return $(
+                    '<tr style="display:none"><td>' + file.name + '<\/td><\/tr>'
+              );
+          }
+    });
+```
