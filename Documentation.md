@@ -4,17 +4,17 @@ Plugin needs to be called on the form itself. You can also call it on a wrapping
 
 For example : 
 
-
+```html
     <form action='submit.php' method='post' id='uploadForm'>
       <input type=file name='fileUpload' id='fileUpload' />
     </form>
-
+```
 
 Would be used with the following code : 
 
-
+```js
     $('#uploadForm').fileUpload(options);
-
+```
 
 # Options
 
@@ -54,11 +54,11 @@ Defaults to a basic function which serializes all of the form. Will be used befo
 
 For example, here is the default function used by the plugin : 
 
-
+```js
     function () {
       return uploadForm.serializeArray();
     }
-
+```
 
 ### withCredentials (boolean)
 
