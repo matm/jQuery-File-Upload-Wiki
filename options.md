@@ -1,4 +1,32 @@
-## Options for the jQuery File Upload Plugin
+# Options
+
+The jQuery File Upload Plugin consists of a basic version ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js)) and an additional plugin providing an advanced user interface ([jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js)).
+ 
+This page lists the various options that can be set for the plugin. They can be used like this with the basic version:
+```js
+$('.upload').fileUpload({
+    namespace: 'file_upload_1',
+    url: '/path/to/upload/handler.json'
+});
+```
+
+And like this with the advanced user interface version:
+```js
+$('.upload').fileUploadUI({
+    namespace: 'file_upload_1',
+    url: '/path/to/upload/handler.json'
+    /* ... */
+});
+```
+
+**Note:** The advanced user interface version requires four settings, which must be set:
+
+* uploadTable
+* downloadTable
+* buildUploadRow
+* buildDownloadRow
+
+## Options for the basic jQuery File Upload Plugin
 
 ### namespace
 Allows to use multiple instances of the File Upload Plugin on the same page by avoiding event handler collisions.
@@ -171,7 +199,7 @@ If set, the upload starts when the callBack parameter is called.
 * Example:
 ```js
 function (files, index, xhr, callBack, settings) {
-    callBack({url: '/path/to/upload/handler'});
+    callBack({url: '/path/to/upload/handler.json'});
 }
 ```
 
@@ -297,7 +325,7 @@ function (node, value) {
 
 ### uploadTable
 The jQuery object for the upload table.  
-Upload rows are appended to this table.
+Upload rows are appended to this table.  
 **Note:** Required for the jQuery File Upload User Interface Plugin.
 
 * Type: *Object*
@@ -308,7 +336,7 @@ $('.upload_files')
 
 ### downloadTable
 The jQuery object for the download table (can be the same node as the upload table).  
-Download rows are appended to this table.
+Download rows are appended to this table.  
 **Note:** Required for the jQuery File Upload User Interface Plugin.
 
 * Type: *Object*
@@ -318,7 +346,7 @@ $('.download_files')
 ```
 
 ### buildUploadRow
-This function is supposed to return the HTML content for the upload row.
+This function is supposed to return the HTML content for the upload row.  
 **Note:** Required for the jQuery File Upload User Interface Plugin.
 
 * Type: *function*
@@ -344,7 +372,7 @@ function (files, index) {
 ```
 
 ### buildDownloadRow
-This function is supposed to return the HTML content for the download row.
+This function is supposed to return the HTML content for the download row.  
 **Note:** Required for the jQuery File Upload User Interface Plugin.
 
 * Type: *function*
