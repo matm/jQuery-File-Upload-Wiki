@@ -386,3 +386,23 @@ function (file) {
     );
 }
 ```
+
+### initCallBack
+This callback function is called as soon as files have been selected or dropped.  
+If not set, the upload starts automatically.  
+If set, the upload starts when the callBack parameter is called.  
+**Note:** This is the equivalent to the basic file upload's *init* callBack option.
+
+* Type: *function*
+* Arguments:
+    1. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects. For legacy browsers, only the file name is populated.
+    2. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
+    3. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. Set to null for legacy browsers.
+    4. callBack: The function to be called to start the file upload. Accepts an object as argument which allows to override current settings.
+    5. settings: The current settings for the file upload.
+* Example:
+```js
+function (files, index, xhr, callBack, settings) {
+    callBack({url: '/path/to/upload/handler.json'});
+}
+```
