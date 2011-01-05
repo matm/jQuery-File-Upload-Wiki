@@ -1,4 +1,6 @@
-# Mozilla Firefox + GNU/Linux file managers
+# Known Issues
+
+## Mozilla Firefox + GNU/Linux file managers
 
 If you are using linux and firefox, file drag&drop upload won't work with some file managers. I have tested with thunar, pcmanfm and ROX. Nautilus seems to work though.
 
