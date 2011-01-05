@@ -7,7 +7,7 @@ However, it is recommended to make use of [Google's Closure Compiler](http://cod
 ## CSS minification
 Another recommended tool for production use is [CSSTidy](http://csstidy.sourceforge.net/), to tidy and minify the CSS source.
 
-## Making use of a content delivery network for the JQuery libraries
+## Making use of a content delivery network for the jQuery libraries
 Google provides a reliable [CDN for common Web libraries](http://code.google.com/apis/libraries/devguide.html).  
 The more websites use this CDN instead of hosting their jQuery libraries on their own server, the more likely it is that client browsers will already have those libraries in their browser cache.  
 The easiest way to use it is to include the libraries the following way (replace http: with https: for SSL-Websites):
