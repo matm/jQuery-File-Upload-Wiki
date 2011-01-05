@@ -1,3 +1,5 @@
+This page lists several Performance Optimizations to speed up page load times when using the plugin.
+
 ## JavaScript minification
 The source code of this plugin is not distributed in a minified format.  
 However, it is recommended to make use of [Google's Closure Compiler](http://code.google.com/closure/compiler/) or a similar tool to combine and minify all your application JavaScript files for production use.
