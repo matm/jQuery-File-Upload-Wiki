@@ -1,4 +1,4 @@
-# How to use the plugin with Google App Engine's Blobstore
+# Using the plugin with Google App Engine's Blobstore
 
 To upload files to the [Blobstore](http://code.google.com/appengine/docs/python/blobstore/) of [Google App Engine](http://code.google.com/appengine/), a new file upload url has to be created for every upload request.
 
