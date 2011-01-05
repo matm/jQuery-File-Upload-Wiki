@@ -1,5 +1,3 @@
-# Options
-
 The jQuery File Upload Plugin consists of a basic version ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js)) and an additional plugin providing an advanced user interface ([jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js)).
  
 This page lists the various options that can be set for the plugin. They can be used like this with the basic version:
