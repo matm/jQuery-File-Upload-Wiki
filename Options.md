@@ -297,19 +297,20 @@ The CSS class that is used for the highlighted version of the dropZone.
 * Default: `'file_upload_highlight'`
 
 ### dropEffect
-The [jQuery UI effect](http://jqueryui.com/demos/effect/) used to visualize the file drop.
+The [jQuery UI effect](http://jqueryui.com/demos/effect/) used to visualize the file drop.  
 **Note**: This is only used, if the [jQuery UI](http://jqueryui.com/) library is available.
 
 * Type: *String*
 * Default: `'highlight'`
 
 ### initProgressBar
-Allows to override the progressbar visualization.
+Allows to override the progressbar visualization.  
 Must return an object providing a [progressbar value method](http://jqueryui.com/demos/progressbar/#method-value).
 
 * Type: *function*
 * Arguments:
     1. node: dragover event object.
+    2. value: initial progress value (0-100).
 * Example:
 ```js
 function (node, value) {
