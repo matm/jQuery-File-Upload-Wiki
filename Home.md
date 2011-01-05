@@ -1,6 +1,6 @@
 # Documentation Overview
 
-* [Demo page](http://aquantum-demo.appspot.com/file-upload)
-* [Example implementation](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/index.html) (client-side).
+* [Demo page](http://aquantum-demo.appspot.com/file-upload).
+* How to [[Setup]] the plugin on your website.
 * List of all available [[Options]].
 * List of [[Known Issues]].
