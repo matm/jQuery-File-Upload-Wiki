@@ -97,7 +97,8 @@ Sets the [withCredentials property](https://developer.mozilla.org/en/xmlhttprequ
 
 ### onProgress
 A callback function that is called on upload progress.  
-**Note:** This is only called for browsers which support the [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object. Also, the browser must support either the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces or the multipart option has to be set to *false*.
+**Note:** This is only called for browsers which support the [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object. Also, the browser must support either the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces or the multipart option has to be set to *false*.  
+The jQuery File Upload UI Plugin makes use of this callback to update the progress bar.
 
 * Type: *function*
 * Arguments:
@@ -105,7 +106,8 @@ A callback function that is called on upload progress.
     2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects.
     3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload.
-    5. settings: The current settings for the file upload.
+    5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.  
+       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
 function (event, files, index, xhr, settings) {
@@ -115,7 +117,8 @@ function (event, files, index, xhr, settings) {
 ```
 
 ### onLoad
-A callback function that is called when the file upload is complete.
+A callback function that is called when the file upload is complete.  
+The jQuery File Upload UI Plugin makes use of this callback to remove the uploadRow, parse the JSON response and add the downloadRow.
 
 * Type: *function*
 * Arguments:
@@ -123,7 +126,8 @@ A callback function that is called when the file upload is complete.
     2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects. For legacy browsers, only the file name is populated.
     3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. Set to null for legacy browsers.
-    5. settings: The current settings for the file upload.
+    5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.  
+       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
 function (event, files, index, xhr, settings) {
@@ -139,7 +143,7 @@ function (event, files, index, xhr, settings) {
 
 ### onAbort
 A callback function that is called when the file upload has been cancelled.  
-**Note:** The functionality to cancel uploads is only implemented by the jQuery File Upload User Interface Plugin. 
+**Note:** The functionality to cancel uploads is only implemented by the jQuery File Upload UI Plugin. 
 
 * Type: *function*
 * Arguments:
@@ -147,7 +151,8 @@ A callback function that is called when the file upload has been cancelled.
     2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects. For legacy browsers, only the file name is populated.
     3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. Set to null for legacy browsers.
-    5. settings: The current settings for the file upload.
+    5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.  
+       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
 function (event, files, index, xhr, settings) {
@@ -161,7 +166,7 @@ function (event, files, index, xhr, settings) {
 
 ### onError
 A callback function that is called on XHR upload or JSON parsing errors.  
-**Note:** JSON parsing is only implemented by the jQuery File Upload User Interface Plugin.
+**Note:** JSON parsing is only implemented by the jQuery File Upload UI Plugin.
 
 * Type: *function*
 * Arguments:
@@ -169,7 +174,8 @@ A callback function that is called on XHR upload or JSON parsing errors.
     2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects.
     3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. Set to null for legacy browsers.
-    5. settings: The current settings for the file upload.
+    5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.  
+       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
 function (event, files, index, xhr, settings) {
@@ -185,7 +191,8 @@ function (event, files, index, xhr, settings) {
 ### init
 This callback function is called as soon as files have been selected or dropped.  
 If not set, the upload starts automatically.  
-If set, the upload starts when the callBack parameter is called.
+If set, the upload starts when the callBack parameter is called.  
+The jQuery File Upload UI plugin makes use of this callback and provides an equivalent with the initCallBack option.
 
 * Type: *function*
 * Arguments:
@@ -193,7 +200,7 @@ If set, the upload starts when the callBack parameter is called.
     2. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     3. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. Set to null for legacy browsers.
     4. callBack: The function to be called to start the file upload. Accepts an object as argument which allows to override current settings.
-    5. settings: The current settings for the file upload.
+    5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.
 * Example:
 ```js
 function (files, index, xhr, callBack, settings) {
@@ -264,7 +271,7 @@ This callback function is called when files are selected with the file upload fi
 * Arguments:
     1. event: change event object.
 
-## Additional options available for the jQuery File Upload User Interface Plugin
+## Additional options available for the jQuery File Upload UI Plugin
 
 ### progressSelector
 The [jQuery selector](http://api.jquery.com/category/selectors/) used to select the progress element inside the current upload row.
@@ -324,8 +331,9 @@ function (node, value) {
 
 ### uploadTable
 The jQuery object for the upload table.  
+This does not strictly have to be a HTML table element, but can also be a list or any other element that allows to append nodes to it.  
 Upload rows are appended to this table.  
-**Note:** Required for the jQuery File Upload User Interface Plugin.
+**Note:** Required for the jQuery File Upload UI Plugin.
 
 * Type: *Object*
 * Example:
@@ -335,8 +343,9 @@ $('.upload_files')
 
 ### downloadTable
 The jQuery object for the download table (can be the same node as the upload table).  
+This does not strictly have to be a HTML table element, but can also be a list or any other element that allows to append nodes to it.  
 Download rows are appended to this table.  
-**Note:** Required for the jQuery File Upload User Interface Plugin.
+**Note:** Required for the jQuery File Upload UI Plugin.
 
 * Type: *Object*
 * Example:
@@ -346,7 +355,8 @@ $('.download_files')
 
 ### buildUploadRow
 This function is supposed to return the HTML content for the upload row.  
-**Note:** Required for the jQuery File Upload User Interface Plugin.
+The content does not strictly have to be a HTML table row, but can be any element that can be appended to the uploadTable.  
+**Note:** Required for the jQuery File Upload UI Plugin.
 
 * Type: *function*
 * Arguments:
@@ -372,7 +382,8 @@ function (files, index) {
 
 ### buildDownloadRow
 This function is supposed to return the HTML content for the download row.  
-**Note:** Required for the jQuery File Upload User Interface Plugin.
+The content does not strictly have to be a HTML table row, but can be any element that can be appended to the downloadTable.  
+**Note:** Required for the jQuery File Upload UI Plugin.
 
 * Type: *function*
 * Arguments:
@@ -387,7 +398,7 @@ function (file) {
 ```
 
 ### initCallBack
-This callback function is called as soon as files have been selected or dropped.  
+This callback function is called as soon as files have been selected or dropped and the uploadRow has been added to the uploadTable.  
 If not set, the upload starts automatically.  
 If set, the upload starts when the callBack parameter is called.  
 **Note:** This is the equivalent to the basic file upload's *init* callBack option.
@@ -398,10 +409,30 @@ If set, the upload starts when the callBack parameter is called.
     2. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     3. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. Set to null for legacy browsers.
     4. callBack: The function to be called to start the file upload. Accepts an object as argument which allows to override current settings.
-    5. settings: The current settings for the file upload.
+    5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.  
+       Provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
 function (files, index, xhr, callBack, settings) {
     callBack({url: '/path/to/upload/handler.json'});
+}
+```
+
+### onComplete
+This callback function is called when the upload is complete and after the downloadRow has been added to the downloadTable.  
+It allows adding custom functionality on upload completion without having to override and implement the onLoad callback.
+
+* Type: *function*
+* Arguments:
+    1. event: XHR onload event object / IFrame onload event object (legacy browsers).
+    2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects. For legacy browsers, only the file name is populated.
+    3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
+    4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. Set to null for legacy browsers.
+    5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.  
+       Provides the attributes `handler.response`, `handler.downloadRow` and `handler.progressbar` with references to the JSON response and the downloadRow and progressbar.
+* Example:
+```js
+function (event, files, index, xhr, settings) {
+    /* ... */
 }
 ```
