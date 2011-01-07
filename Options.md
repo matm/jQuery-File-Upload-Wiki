@@ -110,7 +110,7 @@ The jQuery File Upload UI Plugin makes use of this callback to update the progre
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
-function (event, files, index, xhr, settings) {
+function (event, files, index, xhr, handler) {
     var progress = parseInt(event.loaded / event.total * 100, 10);
     /* ... */
 }
@@ -130,7 +130,7 @@ The jQuery File Upload UI Plugin makes use of this callback to remove the upload
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
-function (event, files, index, xhr, settings) {
+function (event, files, index, xhr, handler) {
     var json;
     if (xhr) {
         json = $.parseJSON(xhr.responseText);
@@ -155,9 +155,9 @@ A callback function that is called when the file upload has been cancelled.
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
-function (event, files, index, xhr, settings) {
-    if (settings.uploadRow) {
-        settings.uploadRow.fadeOut(function () {
+function (event, files, index, xhr, handler) {
+    if (handler.uploadRow) {
+        handler.uploadRow.fadeOut(function () {
             $(this).remove();
         });
     }
@@ -175,12 +175,12 @@ A callback function that is called on XHR upload or JSON parsing errors.
     3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. Set to null for legacy browsers.
     5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.  
-       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
+       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow`, `handler.progressbar` and `handler.originalEvent` with references to the uploadRow and progressbar as well as the original onLoad event on a JSON parsing error.
 * Example:
 ```js
-function (event, files, index, xhr, settings) {
-    // For JSON parsing errors, the load event is saved as settings.originalEvent:
-    if (settings.originalEvent) {
+function (event, files, index, xhr, handler) {
+    // For JSON parsing errors, the load event is saved as handler.originalEvent:
+    if (handler.originalEvent) {
         /* handle JSON parsing errors ... */
     } else {
         /* handle XHR upload errors ... */
@@ -432,7 +432,8 @@ It allows adding custom functionality on upload completion without having to ove
        Provides the attributes `handler.response`, `handler.downloadRow` and `handler.progressbar` with references to the JSON response and the downloadRow and progressbar.
 * Example:
 ```js
-function (event, files, index, xhr, settings) {
+function (event, files, index, xhr, handler) {
+    var json = handler.response;
     /* ... */
 }
 ```
