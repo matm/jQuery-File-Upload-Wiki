@@ -203,7 +203,7 @@ The jQuery File Upload UI plugin makes use of this callback and provides an equi
     5. handler: A reference to the uploadHandler, giving access to all handler methods and upload settings.
 * Example:
 ```js
-function (files, index, xhr, callBack, settings) {
+function (files, index, xhr, callBack, handler) {
     callBack({url: '/path/to/upload/handler.json'});
 }
 ```
@@ -413,7 +413,7 @@ If set, the upload starts when the callBack parameter is called.
        Provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
 ```js
-function (files, index, xhr, callBack, settings) {
+function (files, index, xhr, callBack, handler) {
     callBack({url: '/path/to/upload/handler.json'});
 }
 ```
