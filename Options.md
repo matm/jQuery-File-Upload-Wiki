@@ -1,4 +1,4 @@
-The jQuery File Upload Plugin consists of a basic version ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js)) and an additional plugin providing an advanced user interface ([jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js)).
+The jQuery File Upload Plugin consists of a basic version ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js)) providing the basic File Upload API and an additional plugin providing a user interface API ([jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js)).
  
 This page lists the various options that can be set for the plugin. They can be used like this with the basic version:
 ```js
@@ -211,7 +211,8 @@ function (event, files, index, xhr, handler, callBack) {
 ```
 
 ### onDocumentDragEnter
-This callback function is called when files are dragged into the document window.
+This callback function is called when files are dragged into the document window.  
+Used by the advanced user interface version to enlarge the dropZone.
 
 * Type: *function*
 * Arguments:
@@ -225,14 +226,16 @@ This callback function is called when files are dragged inside the document wind
     1. event: dragover event object.
 
 ### onDocumentDragLeave
-This callback function is called when files are dragged outside the document window.
+This callback function is called when files are dragged outside the document window.  
+Used by the advanced user interface version to reduce the dropZone.
 
 * Type: *function*
 * Arguments:
     1. event: dragleave event object.
 
 ### onDragEnter
-This callback function is called when files are dragged into the dropZone area.
+This callback function is called when files are dragged into the dropZone area.  
+Used by the advanced user interface version to highlight the dropZone.
 
 * Type: *function*
 * Arguments:
@@ -246,14 +249,16 @@ This callback function is called when files are dragged inside the dropZone area
     1. event: dragover event object.
 
 ### onDragLeave
-This callback function is called when files are dragged outside the dropZone area.
+This callback function is called when files are dragged outside the dropZone area.  
+Used by the advanced user interface version to remove the dropZone highlight style.
 
 * Type: *function*
 * Arguments:
     1. event: dragleave event object.
 
 ### onDrop
-This callback function is called when files are dropped on the dropZone area.
+This callback function is called when files are dropped on the dropZone area.  
+Used by the advanced user interface version to apply a drop effect and reduce the dropZone.
 
 * Type: *function*
 * Arguments:
@@ -311,25 +316,6 @@ The [jQuery UI effect](http://jqueryui.com/demos/effect/) used to visualize the 
 
 * Type: *String*
 * Default: `'highlight'`
-
-### initProgressBar
-Allows to override the progressbar visualization.  
-Must return an object providing a [progressbar value method](http://jqueryui.com/demos/progressbar/#method-value).
-
-* Type: *function*
-* Arguments:
-    1. node: dragover event object.
-    2. value: initial progress value (0-100).
-* Example:
-```js
-function (node, value) {
-    var progressbar = $('<progress value="' + value + '" max="100"/>').appendTo(node);
-    progressbar.progressbar = function (key, value) {
-        progressbar.attr('value', value);
-    };
-    return progressbar;
-}
-```
 
 ### uploadTable
 The jQuery object for the upload table.  
@@ -399,6 +385,62 @@ function (file) {
 }
 ```
 
+### addNode
+Allows to override the way the upload/download rows are added to the upload/download tables.
+
+* Type: *function*
+* Arguments:
+    1. parentNode: The parent jQuery DOM element where the new node should be added.
+    2. node: The jQuery DOM element to add.
+    3. callBack: An optional method to execute after the node has been added.
+* Example:
+```js
+function (parentNode, node, callBack) {
+    parentNode.append(node);
+    if (typeof callBack === 'function') {
+        callBack();
+    }
+}
+```
+
+### removeNode
+Allows to override the way the upload row is removed after the upload has completed or has been canceled.
+
+* Type: *function*
+* Arguments:
+    1. node: The jQuery DOM element to add.
+    2. callBack: An optional method to execute after the node has been removed.
+* Example:
+```js
+function (node, callBack) {
+    if (node) {
+        node.remove();
+    }
+    if (typeof callBack === 'function') {
+        callBack();
+    }
+}
+```
+
+### initProgressBar
+Allows to override the progressbar visualization.  
+Must return an object providing a [progressbar value method](http://jqueryui.com/demos/progressbar/#method-value).
+
+* Type: *function*
+* Arguments:
+    1. node: The jQuery DOM element where the progress bar should be displayed.
+    2. value: initial progress value (0-100).
+* Example:
+```js
+function (node, value) {
+    var progressbar = $('<progress value="' + value + '" max="100"/>').appendTo(node);
+    progressbar.progressbar = function (key, value) {
+        progressbar.attr('value', value);
+    };
+    return progressbar;
+}
+```
+
 ### beforeSend
 This callback function is called as soon as files have been selected or dropped and the uploadRow has been added to the uploadTable.  
 If not set, the upload starts automatically.  
@@ -419,6 +461,25 @@ If set, the upload starts when the callBack parameter is called.
 function (event, files, index, xhr, handler, callBack) {
     handler.url = '/path/to/upload/handler.json';
     callBack();
+}
+```
+
+### parseResponse
+Allows to override the way the File Upload response is parsed.  
+The return value is used as parameter for the buildDownloadRow method call.
+
+* Type: *function*
+* Arguments:
+    1. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. A jQuery iframe node for legacy browsers.
+* Default:
+```js
+function (xhr) {
+    if (typeof xhr.responseText !== 'undefined') {
+        return $.parseJSON(xhr.responseText);
+    } else {
+        // Instead of an XHR object, an iframe is used for legacy browsers:
+        return $.parseJSON(xhr.contents().text());
+    }
 }
 ```
 
