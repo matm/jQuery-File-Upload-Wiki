@@ -369,7 +369,7 @@ The content does not strictly have to be a HTML table row, but can be any elemen
 function (files, index) {
     var file = files[index];
     return $(
-        '<tr style="display:none">' +
+        '<tr>' +
         '<td>' + file.name + '<\/td>' +
         '<td class="file_upload_progress"><div><\/div><\/td>' +
         '<td class="file_upload_cancel">' +
@@ -394,7 +394,7 @@ The content does not strictly have to be a HTML table row, but can be any elemen
 ```js
 function (file) {
     return $(
-        '<tr style="display:none"><td>' + file.name + '<\/td><\/tr>'
+        '<tr><td>' + file.name + '<\/td><\/tr>'
     );
 }
 ```
