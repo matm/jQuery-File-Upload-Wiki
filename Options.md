@@ -131,19 +131,14 @@ The jQuery File Upload UI Plugin makes use of this callback to remove the upload
 * Example:
 ```js
 function (event, files, index, xhr, handler) {
-    var json;
-    if (xhr) {
-        json = $.parseJSON(xhr.responseText);
-    } else {
-        json = $.parseJSON($(event.target).contents().text());
-    }
+    var json = handler.parseResponse(xhr);
     /* ... */
 }
 ```
 
 ### onAbort
 A callback function that is called when the file upload has been cancelled.  
-**Note:** The functionality to cancel uploads is only implemented by the jQuery File Upload UI Plugin. 
+**Note:** The file upload can be canceled by calling the method *abort()* on the xhr parameter.
 
 * Type: *function*
 * Arguments:
@@ -156,11 +151,7 @@ A callback function that is called when the file upload has been cancelled.
 * Example:
 ```js
 function (event, files, index, xhr, handler) {
-    if (handler.uploadRow) {
-        handler.uploadRow.fadeOut(function () {
-            $(this).remove();
-        });
-    }
+    handler.removeNode(handler.uploadRow);
 }
 ```
 
@@ -175,7 +166,7 @@ A callback function that is called on XHR upload or JSON parsing errors.
     3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. A jQuery iframe node for legacy browsers.
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
-       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow`, `handler.progressbar` and `handler.originalEvent` with references to the uploadRow and progressbar as well as the original onLoad event on a JSON parsing error.
+       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow`, `handler.progressbar` and `handler.originalEvent` with references to the uploadRow and progressbar as well as the original onLoad event for the JSON parsing error.
 * Example:
 ```js
 function (event, files, index, xhr, handler) {
@@ -422,6 +413,29 @@ function (node, callBack) {
 }
 ```
 
+### cancelUpload
+Allows to override the method to cancel uploads.
+
+* Type: *function*
+* Arguments:
+    1. event: A click event object.
+    2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects. For legacy browsers, only the file name is populated.
+    3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
+    4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. A jQuery iframe node for legacy browsers.
+    5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
+       Provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
+* Default:
+```js
+function (event, files, index, xhr, handler) {
+    var readyState = xhr.readyState;
+    xhr.abort();
+    // If readyState is below 2, abort() has no effect:
+    if (isNaN(readyState) || readyState < 2) {
+        this.onAbort(event, files, index, xhr, handler);
+    }
+}
+```
+
 ### initProgressBar
 Allows to override the progressbar visualization.  
 Must return an object providing a [progressbar value method](http://jqueryui.com/demos/progressbar/#method-value).
@@ -430,14 +444,20 @@ Must return an object providing a [progressbar value method](http://jqueryui.com
 * Arguments:
     1. node: The jQuery DOM element where the progress bar should be displayed.
     2. value: initial progress value (0-100).
-* Example:
+* Default:
 ```js
 function (node, value) {
-    var progressbar = $('<progress value="' + value + '" max="100"/>').appendTo(node);
-    progressbar.progressbar = function (key, value) {
-        progressbar.attr('value', value);
-    };
-    return progressbar;
+    if (typeof node.progressbar === 'function') {
+        return node.progressbar({
+            value: value
+        });
+    } else {
+        var progressbar = $('<progress value="' + value + '" max="100"/>').appendTo(node);
+        progressbar.progressbar = function (key, value) {
+            progressbar.attr('value', value);
+        };
+        return progressbar;
+    }
 }
 ```
 
