@@ -12,16 +12,17 @@ class UploadUrlHandler(webapp.RequestHandler):
         self.response.out.write(upload_url)
 ```
 
-On client-side, you can make use of the *initCallBack* option to retrieve the upload url and override the *url* setting:
+On client-side, you can make use of the *beforeSend* option to retrieve the upload url and override the *url* setting:
 ```js
 $('.upload').fileUploadUI({
     uploadTable: $('.upload_files'),
     downloadTable: $('.download_files'),
     buildUploadRow: function (files, index) {/* ... */},
     buildDownloadRow: function (file) {/* ... */},
-    initCallBack: function (files, index, xhr, callBack, settings) {
+    beforeSend: function (event, files, index, xhr, handler, callBack) {
         $.get('/upload-url-handler', function (data) {
-            callBack({url: data});
+            handler.url = data;
+            callBack();
         });
     }
 });
