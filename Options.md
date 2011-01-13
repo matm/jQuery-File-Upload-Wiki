@@ -35,7 +35,7 @@ Mutliple instances of the plugin can be used on the same page without having to 
 
 ### cssClass
 The CSS class that is added on plugin initialization to the dropZone.  
-The dropZone being the HTML form or HTML element containing the form where files can be dropped.
+The dropZone is the HTML form or HTML DOM node containing the form and defines the area on which files can be dropped.
 
 * Type: *String*
 * Default: `'file_upload'`
