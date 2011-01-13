@@ -202,53 +202,60 @@ function (event, files, index, xhr, handler, callBack) {
 ```
 
 ### onDocumentDragEnter
-This callback function is called when files are dragged into the document window.  
+This callback function is called when files are dragged onto a document node.  
 Used by the advanced user interface version to enlarge the dropZone.
 
 * Type: *function*
 * Arguments:
     1. event: dragenter event object.
 
-### onDocumentDragOver
-This callback function is called when files are dragged inside the document window.
-
-* Type: *function*
-* Arguments:
-    1. event: dragover event object.
-
 ### onDocumentDragLeave
-This callback function is called when files are dragged outside the document window.  
-Used by the advanced user interface version to reduce the dropZone.
+This callback function is called when files are dragged outside of a document node.
 
 * Type: *function*
 * Arguments:
     1. event: dragleave event object.
 
+### onDocumentDragOver
+This callback function is repeatedly called during a drag operation inside of the document window.  
+Used by the advanced user interface version to reduce the dropZone by using a [setTimeout](https://developer.mozilla.org/en/DOM/window.setTimeout) call to check if the drag operation has completed.
+
+* Type: *function*
+* Arguments:
+    1. event: dragover event object.
+
+### onDocumentDrop
+This callback function is called when files are dropped anywhere on the document window.
+
+* Type: *function*
+* Arguments:
+    1. event: drop event object.
+
 ### onDragEnter
 This callback function is called when files are dragged into the dropZone area.  
-Used by the advanced user interface version to highlight the dropZone.
+Used by the advanced user interface version to toggle the highlight class of the dropZone.
 
 * Type: *function*
 * Arguments:
     1. event: dragenter event object.
 
-### onDragOver
-This callback function is called when files are dragged inside the dropZone area.
-
-* Type: *function*
-* Arguments:
-    1. event: dragover event object.
-
 ### onDragLeave
 This callback function is called when files are dragged outside the dropZone area.  
-Used by the advanced user interface version to remove the dropZone highlight style.
+Used by the advanced user interface version to toggle the highlight class of the dropZone.
 
 * Type: *function*
 * Arguments:
     1. event: dragleave event object.
 
+### onDragOver
+This callback function is repeatedly called during a drag operation inside of the dropZone area.  
+
+* Type: *function*
+* Arguments:
+    1. event: dragover event object.
+
 ### onDrop
-This callback function is called when files are dropped on the dropZone area.  
+This callback function is called when files are dropped onto the dropZone area.  
 Used by the advanced user interface version to apply a drop effect and reduce the dropZone.
 
 * Type: *function*
