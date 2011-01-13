@@ -530,3 +530,15 @@ function (event, files, index, xhr, handler) {
     /* ... */
 }
 ```
+
+### dropZoneEnlarge
+Allows to define a custom method to enlarge the dropZone.
+
+* Type: *function*
+* Arguments: none
+
+### dropZoneReduce
+Allows to define a custom method to reduce the dropZone.
+
+* Type: *function*
+* Arguments: none
