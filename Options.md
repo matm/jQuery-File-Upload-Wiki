@@ -27,7 +27,8 @@ $('.upload').fileUploadUI({
 ## Options for the basic jQuery File Upload Plugin
 
 ### namespace
-Allows to use multiple instances of the File Upload Plugin on the same page by avoiding event handler collisions.
+Allows to use multiple instances of the File Upload Plugin on the same upload form.  
+Mutliple instances of the plugin can be used on the same page without having to set different namespaces.
 
 * Type: *String*
 * Default: `'file_upload'`
