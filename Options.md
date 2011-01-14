@@ -44,7 +44,7 @@ The dropZone is the HTML form or HTML DOM node containing the form and defines t
 The jQuery DOM node where files can be dropped.  
 By default this is the element node on which the plugin is called - the upload form or the container holding the form.
 
-* Type: *String*
+* Type: *Object*
 * Example: `$('#drop_zone')`
 
 ### url
