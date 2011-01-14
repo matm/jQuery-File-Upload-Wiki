@@ -40,6 +40,13 @@ The dropZone is the HTML form or HTML DOM node containing the form and defines t
 * Type: *String*
 * Default: `'file_upload'`
 
+### dropZone
+The jQuery DOM node where files can be dropped.  
+By default this is the element node on which the plugin is called - the upload form or the container holding the form.
+
+* Type: *String*
+* Example: `$('#drop_zone')`
+
 ### url
 The url to which the file upload form is submitted.
 
@@ -263,14 +270,7 @@ Used by the advanced user interface version to apply a drop effect and reduce th
 * Arguments:
     1. event: drop event object.
 
-### onInputClick
-This callback function is called when the file upload field is clicked.
-
-* Type: *function*
-* Arguments:
-    1. event: click event object.
-
-### onInputChange
+### onChange
 This callback function is called when files are selected with the file upload field.
 
 * Type: *function*
