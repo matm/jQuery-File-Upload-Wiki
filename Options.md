@@ -40,6 +40,14 @@ The dropZone is the HTML form or HTML DOM node containing the form and defines t
 * Type: *String*
 * Default: `'file_upload'`
 
+### dragDropSupport
+If set to *false*, disables the drag and drop support of the plugin.  
+This prevents the plugin from adding listeners for drag and drop events but does not prevent default browser drag and drop handling.  
+For example, some browsers will allow to change the file input field value via drag and drop.
+
+* Type: *boolean*
+* Default: *true*
+
 ### dropZone
 The jQuery DOM node where files can be dropped.  
 By default this is the element node on which the plugin is called - the upload form or the container holding the form.
@@ -99,6 +107,13 @@ Accepts an Array of Objects with name and value attributes, a Function returning
 ### withCredentials
 Indicates whether or not cross-site XMLHttpRequest file uploads should be made using credentials such as cookies or authorization headers.  
 Sets the [withCredentials property](https://developer.mozilla.org/en/xmlhttprequest#Properties) on the XMLHttpRequest object.
+
+* Type: *boolean*
+* Default: *false*
+
+### forceIframeUpload
+If set to *true*, forces the use of iframes for the upload process, even if the browser is capable of [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.  
+This can be useful for cross-site file uploads, if the [Access-Control-Allow-Origin](https://developer.mozilla.org/En/HTTP_Access_Control#Access-Control-Allow-Origin) header cannot be set for the server-side upload handler which is required for cross-site [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.
 
 * Type: *boolean*
 * Default: *false*
