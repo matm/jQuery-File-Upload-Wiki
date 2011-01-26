@@ -4,7 +4,8 @@
 * How to [[Setup]] the plugin on your website.
 * List of all available [[Options]] for this plugin.
 * [[How to implement File Limits]] (e.g. filesize or filetype).
-* [[How to submit additional Form Data]] (POST variables)
+* [[How to submit additional Form Data]] (POST variables).
+* How to force [[Sequential Uploads]].
 * How to use the plugin with [[Google App Engine]].
 * [[Performance Optimizations]] to speed up page load times.
 * List of [[Known Issues]].
