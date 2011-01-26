@@ -334,8 +334,7 @@ The [jQuery UI effect](http://jqueryui.com/demos/effect/) used to visualize the 
 ### uploadTable
 The jQuery object for the upload table.  
 This does not strictly have to be a HTML table element, but can also be a list or any other element that allows to append nodes to it.  
-Upload rows are appended to this table.  
-**Note:** Required for the jQuery File Upload UI Plugin.
+Upload rows are appended to this table.
 
 * Type: *Object*
 * Example:
@@ -346,8 +345,7 @@ $('.upload_files')
 ### downloadTable
 The jQuery object for the download table (can be the same node as the upload table).  
 This does not strictly have to be a HTML table element, but can also be a list or any other element that allows to append nodes to it.  
-Download rows are appended to this table.  
-**Note:** Required for the jQuery File Upload UI Plugin.
+Download rows are appended to this table.
 
 * Type: *Object*
 * Example:
@@ -356,9 +354,9 @@ $('.download_files')
 ```
 
 ### buildUploadRow
-This function is supposed to return the HTML content for the upload row.  
+This function is supposed to return the HTML content for the upload row as a jQuery object.  
 The content does not strictly have to be a HTML table row, but can be any element that can be appended to the uploadTable.  
-**Note:** Required for the jQuery File Upload UI Plugin.
+**Note:** The returned jQuery object must have a length of 1, containing only one top level element.
 
 * Type: *function*
 * Arguments:
@@ -383,9 +381,9 @@ function (files, index) {
 ```
 
 ### buildDownloadRow
-This function is supposed to return the HTML content for the download row.  
+This function is supposed to return the HTML content for the download row as a jQuery object.  
 The content does not strictly have to be a HTML table row, but can be any element that can be appended to the downloadTable.  
-**Note:** Required for the jQuery File Upload UI Plugin.
+**Note:** The returned jQuery object must have a length of 1, containing only one top level element.
 
 * Type: *function*
 * Arguments:
