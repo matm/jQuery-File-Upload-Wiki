@@ -23,7 +23,8 @@ $(function () {
             uploadSequence.push(callBack);
             if (index === 0) {
                 uploadSequence.splice(0, uploadSequence.length - 1);
-            } else if (index + 1 === files.length) {
+            }
+            if (index + 1 === files.length) {
                 uploadSequence.start(0);
             }
         },
