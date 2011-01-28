@@ -83,6 +83,13 @@ Non-multipart uploads are also referred to as [HTTP PUT file upload](http://de.p
 * Type: *boolean*
 * Default: *true*
 
+### multiFileRequest
+If set to *true*, uploads multiple selected files with one request instead of using one request per file.  
+**Note:** Uploading multiple files with one request requires the multipart option to be set to *true*.
+
+* Type: *boolean*
+* Default: *false*
+
 ### formData
 Allows to define additional parameters, that are send with the file(s) to the server url.  
 Accepts an Array of Objects with name and value attributes, a Function returning such an Array or a simple Object.  
