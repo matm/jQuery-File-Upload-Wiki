@@ -57,3 +57,5 @@ $(function () {
 ```js
 {"name":"picture.jpg","type":"image/jpeg","size":"123456789"}
 ```
+**Note:** The file upload plugin makes use of iframes for browsers like *Microsoft Internet Explorer* and *Opera*, which do not yet support [XMLHTTPRequest](https://developer.mozilla.org/en/xmlhttprequest) uploads.  
+They will only register a load event if the [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of the response is set to *text/plain* or *text/html*, **not** if it is set to *application/json*.
