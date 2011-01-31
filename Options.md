@@ -102,11 +102,11 @@ Accepts an Array of Objects with name and value attributes, a Function returning
 ```js
 [
   {
-    name: a
+    name: a,
     value: 1
   },
   {
-    name: b
+    name: b,
     value: 2
   }
 ]
