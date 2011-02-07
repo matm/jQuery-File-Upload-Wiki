@@ -214,7 +214,8 @@ function (event, files, index, xhr, handler) {
 This callback function is called as soon as files have been selected or dropped.  
 If not set, the upload starts automatically.  
 If set, the upload starts when the callBack parameter is called.  
-The jQuery File Upload UI plugin makes use of this callback and provides an equivalent with the beforeSend option.
+The jQuery File Upload UI plugin makes use of this callback and provides an equivalent with the beforeSend option.  
+**Note:** This function is called for each selected/dropped file.
 
 * Type: *function*
 * Arguments:
@@ -494,7 +495,7 @@ function (node, value) {
 This callback function is called as soon as files have been selected or dropped and the uploadRow has been added to the uploadTable.  
 If not set, the upload starts automatically.  
 If set, the upload starts when the callBack parameter is called.  
-**Note:** This is the equivalent to the basic file upload's *initUpload* callBack option.
+**Note:** This is the equivalent to the basic file upload's *initUpload* callBack option and the function is therefore called for each selected/dropped file.
 
 * Type: *function*
 * Arguments:
