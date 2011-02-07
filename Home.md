@@ -3,6 +3,7 @@
 * [Demo page](http://aquantum-demo.appspot.com/file-upload).
 * How to [[Setup]] the plugin on your website.
 * List of all available [[Options]] for this plugin.
+* [[How to queue files and start uploads with a button click]].
 * [[How to implement File Limits]] (e.g. filesize or filetype).
 * [[How to submit additional Form Data]] (POST variables).
 * How to force [[Sequential Uploads]].
