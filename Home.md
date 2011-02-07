@@ -10,5 +10,6 @@
 * [[How to upload multiple files with one request]].
 * [[How to invoke a method after all uploads have completed]].
 * How to use the plugin with [[Google App Engine]].
+* [[How to populate the file list on page load or between page refresh]]
 * [[Performance Optimizations]] to speed up page load times.
 * List of [[Known Issues]].
