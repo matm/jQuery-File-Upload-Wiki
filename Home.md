@@ -12,4 +12,5 @@
 * How to use the plugin with [[Google App Engine]].
 * [[How to populate the file list on page load or between page refresh]]
 * [[Performance Optimizations]] to speed up page load times.
+* [[jQuery-File-Upload-for-Rails-3]]: basic Rails 3 tutorial
 * List of [[Known Issues]].
