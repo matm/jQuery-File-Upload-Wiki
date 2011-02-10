@@ -330,7 +330,7 @@ This callback function is called when files are selected with the file upload fi
 ## Additional options available for the jQuery File Upload UI Plugin
 
 ## imageTypes
-A [regular expression](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/regexp) limiting the file types to browser displayable image types.
+A [regular expression](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/regexp) limiting the file types for previews of local files to be uploaded to browser displayable image types.
 
 * Type: *RegExp*
 * Default: /^image\/(gif|jpeg|png)$/;
