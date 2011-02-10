@@ -14,10 +14,9 @@
     <div>Upload files</div>
 </form> 
 ```
-4. Add the following two lines to the body of your page, where you want the upload/download tables to appear:
+4. Add the following line to the body of your page, where you want the upload/download table to appear:
 ```html
-<table class="upload_files"></table>
-<table class="download_files"></table>
+<table id="files"></table>
 ```
 5. Add the following lines to the bottom of your page, before the closing body tag (adjust the paths to the *jquery.fileupload.js* and *jquery.fileupload-ui.js* files):
 ```html
@@ -26,28 +25,21 @@
 <script src="../jquery.fileupload.js"></script>
 <script src="../jquery.fileupload-ui.js"></script>
 <script>
+/*global $ */
 $(function () {
-    $('.upload').fileUploadUI({
-        uploadTable: $('.upload_files'),
-        downloadTable: $('.download_files'),
+    $('#file_upload').fileUploadUI({
+        uploadTable: $('#files'),
+        downloadTable: $('#files'),
         buildUploadRow: function (files, index) {
-            var file = files[index];
-            return $(
-                '<tr>' +
-                '<td>' + file.name + '<\/td>' +
-                '<td class="file_upload_progress"><div><\/div><\/td>' +
-                '<td class="file_upload_cancel">' +
-                '<div class="ui-state-default ui-corner-all ui-state-hover" title="Cancel">' +
-                '<span class="ui-icon ui-icon-cancel">Cancel<\/span>' +
-                '<\/div>' +
-                '<\/td>' +
-                '<\/tr>'
-            );
+            return $('<tr><td>' + files[index].name + '<\/td>' +
+                    '<td class="file_upload_progress"><div><\/div><\/td>' +
+                    '<td class="file_upload_cancel">' +
+                    '<button class="ui-state-default ui-corner-all" title="Cancel">' +
+                    '<span class="ui-icon ui-icon-cancel">Cancel<\/span>' +
+                    '<\/button><\/td><\/tr>');
         },
         buildDownloadRow: function (file) {
-            return $(
-                '<tr><td>' + file.name + '<\/td><\/tr>'
-            );
+            return $('<tr><td>' + file.name + '<\/td><\/tr>');
         }
     });
 });
