@@ -329,6 +329,12 @@ This callback function is called when files are selected with the file upload fi
 
 ## Additional options available for the jQuery File Upload UI Plugin
 
+## imageTypes
+A [regular expression](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/regexp) limiting the file types to browser displayable image types.
+
+* Type: *RegExp*
+* Default: /^image\/(gif|jpeg|png)$/;
+
 ### previewSelector
 The [jQuery selector](http://api.jquery.com/category/selectors/) used to select the container for a preview image of the file to be uploaded.  
 Preview images can be loaded and displayed for local image files on browsers supporting the [URL](https://developer.mozilla.org/en/DOM/window.URL) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces.  
