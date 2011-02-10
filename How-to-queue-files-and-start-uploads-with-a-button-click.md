@@ -1,5 +1,6 @@
 By the default, the plugin uploads files automatically, after they have been selected or dropped on the dropZone.  
 It is also possible to queue the selected files and only start the uploads after a button click, using the *beforeSend* option (see [[Options]]):
+
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
