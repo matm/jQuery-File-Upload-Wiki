@@ -6,7 +6,7 @@ $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
     downloadTable: $('#files'),
     buildUploadRow: function (files, index) {
-        return $('<tr><td class="file_upload_preview"></td>' +
+        return $('<tr><td class="file_upload_preview"><\/td>' +
                 '<td>' + files[index].name + '<\/td>' +
                 '<td class="file_upload_progress"><div><\/div><\/td>' +
                 '<td class="file_upload_start">' +
