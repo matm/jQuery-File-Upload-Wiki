@@ -303,6 +303,14 @@ This callback function is called when files are selected with the file upload fi
 
 ## Additional options available for the jQuery File Upload UI Plugin
 
+## previewSelector
+The [jQuery selector](http://api.jquery.com/category/selectors/) used to select the container for a preview image of the file to be uploaded.  
+Preview images can be loaded and displayed for local image files on browsers supporting the [URL](https://developer.mozilla.org/en/DOM/window.URL) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces.  
+If the previewSelector does not match any container elements or the file is no image, no preview image is loaded.
+
+* Type: *String*
+* Default: `'.file_upload_preview'`
+
 ### progressSelector
 The [jQuery selector](http://api.jquery.com/category/selectors/) used to select the progress element inside the current upload row.
 
@@ -313,7 +321,7 @@ The [jQuery selector](http://api.jquery.com/category/selectors/) used to select 
 The [jQuery selector](http://api.jquery.com/category/selectors/) used to select the cancel element inside the current upload row.
 
 * Type: *String*
-* Default: `'.file_upload_cancel div'`
+* Default: `'.file_upload_cancel button'`
 
 ### cssClassSmall
 The CSS class that is used for the reduzed version of the dropZone.
