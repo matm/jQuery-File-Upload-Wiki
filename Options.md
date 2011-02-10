@@ -382,7 +382,7 @@ Upload rows are appended to this table.
 * Type: *Object*
 * Example:
 ```js
-$('.upload_files')
+$('#upload_files')
 ```
 
 ### downloadTable
@@ -393,7 +393,7 @@ Download rows are appended to this table.
 * Type: *Object*
 * Example:
 ```js
-$('.download_files')
+$('#download_files')
 ```
 
 ### buildUploadRow
@@ -408,18 +408,12 @@ The content does not strictly have to be a HTML table row, but can be any elemen
 * Example:
 ```js
 function (files, index) {
-    var file = files[index];
-    return $(
-        '<tr>' +
-        '<td>' + file.name + '<\/td>' +
-        '<td class="file_upload_progress"><div><\/div><\/td>' +
-        '<td class="file_upload_cancel">' +
-        '<div class="ui-state-default ui-corner-all ui-state-hover" title="Cancel">' +
-        '<span class="ui-icon ui-icon-cancel">Cancel<\/span>' +
-        '<\/div>' +
-        '<\/td>' +
-        '<\/tr>'
-    );
+    return $('<tr><td>' + files[index].name + '<\/td>' +
+            '<td class="file_upload_progress"><div><\/div><\/td>' +
+            '<td class="file_upload_cancel">' +
+            '<button class="ui-state-default ui-corner-all" title="Cancel">' +
+            '<span class="ui-icon ui-icon-cancel">Cancel<\/span>' +
+            '<\/button><\/td><\/tr>');
 }
 ```
 
@@ -434,9 +428,7 @@ The content does not strictly have to be a HTML table row, but can be any elemen
 * Example:
 ```js
 function (file) {
-    return $(
-        '<tr><td>' + file.name + '<\/td><\/tr>'
-    );
+    return $('<tr><td>' + file.name + '<\/td><\/tr>');
 }
 ```
 
