@@ -1,16 +1,20 @@
 The jQuery File Upload Plugin consists of a basic version ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js)) providing the basic File Upload API and an additional plugin providing a user interface API ([jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js)).
  
-This page lists the various options that can be set for the plugin. They can be used like this with the basic version:
+This page lists the various options that can be set for the plugin and axamples on how to use them.
+
+## Setting options on plugin initialization
+
+The default way to set options is on plugin initialization - an example for the basic version:
 ```js
-$('.upload').fileUpload({
+$('#file_upload').fileUpload({
     namespace: 'file_upload_1',
     url: '/path/to/upload/handler.json'
 });
 ```
 
-And like this with the advanced user interface version:
+And an example for the advanced user interface version:
 ```js
-$('.upload').fileUploadUI({
+$('#file_upload').fileUploadUI({
     namespace: 'file_upload_1',
     url: '/path/to/upload/handler.json'
     /* ... */
@@ -23,6 +27,28 @@ $('.upload').fileUploadUI({
 * downloadTable
 * buildUploadRow
 * buildDownloadRow
+
+## Setting options after plugin initialization
+
+It is also possible to set options after plugin initialization, similar to jQuery UI widgets:
+```js
+$('#file_upload').fileUploadUI(
+    'option',
+    'url',
+    '/path/to/upload/handler.json'
+);
+```
+
+Or multiple options at once:
+```js
+$('#file_upload').fileUploadUI(
+    'option',
+    {
+        url: '/path/to/upload/handler.json',
+        fieldName: 'file_parameter_name'
+    }
+);
+```
 
 ## Options for the basic jQuery File Upload Plugin
 
