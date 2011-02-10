@@ -333,7 +333,7 @@ This callback function is called when files are selected with the file upload fi
 A [regular expression](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/regexp) limiting the file types for previews of local files to be uploaded to browser displayable image types.
 
 * Type: *RegExp*
-* Default: /^image\/(gif|jpeg|png)$/;
+* Default: ```/^image\/(gif|jpeg|png)$/```
 
 ### previewSelector
 The [jQuery selector](http://api.jquery.com/category/selectors/) used to select the container for a preview image of the file to be uploaded.  
