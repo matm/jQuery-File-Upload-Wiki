@@ -82,25 +82,70 @@ By default this is the element node on which the plugin is called - the upload f
 * Example: `$('#drop_zone')`
 
 ### url
-The url to which the file upload form is submitted.
+The url to which the file upload form is submitted.  
+Accepts a String or a function returning a String.
 
-* Type: *String*
-* Default: The action attribute of the file upload form.
+* Type: *String* or *function*
+* Default: A function returning the action attribute of the file upload form:
+```js
+function (form) {
+    return form.attr('action');
+}
+```
 * Example: `'/path/to/upload/handler.json'`
 
 ### method
 The method of the HTTP request used to send the file(s) to the server.  
-Can be *POST* (multipart/formdata file upload) or *PUT* (streaming file upload).
+Can be *POST* (multipart/formdata file upload) or *PUT* (streaming file upload).  
+Accepts a String or a function returning a String.
 
-* Type: *String*
-* Default: The method attribute of the file upload form (*POST*).
+* Type: *String* or *function*
+* Default: A function returning the method attribute of the file upload form (*POST*):
+```js
+function (form) {
+    return form.attr('method');
+}
+```
+* Example: `'PUT'`
 
 ### fieldName
-The parameter name used to submit the file(s) to the server.
+The parameter name used to submit the file(s) to the server.  
+Accepts a String or a function returning a String.
 
-* Type: *String*
-* Default: The name attribute of the file input field of the form.
+* Type: *String* or *function*
+* Default: A function returning the name attribute of the file input field:
+```js
+function (input) {
+    return input.attr('name');
+}
+```
 * Example: `'file'`
+
+### formData
+Allows to define additional parameters, that are send with the file(s) to the server url.  
+Accepts an Array of Objects with name and value attributes, a Function returning such an Array or a simple Object.  
+**Note:** Additional form data is ignored when the multipart option is set to *false*.
+
+* Type: *Array*, *Object* or *function*
+* Default: A function returning the form fields as [serialized Array](http://api.jquery.com/serializeArray):
+```js
+function (form) {
+    return form.serializeArray();
+}
+```
+* Example:
+```js
+[
+  {
+    name: a,
+    value: 1
+  },
+  {
+    name: b,
+    value: 2
+  }
+]
+```
 
 ### multipart
 If set to *false*, streams the file content to the server url instead of sending a [RFC 2388](http://www.ietf.org/rfc/rfc2388.txt) multipart message.  
@@ -116,27 +161,6 @@ If this option is *true*, the *index* parameter used for the callBacks is *undef
 
 * Type: *boolean*
 * Default: *false*
-
-### formData
-Allows to define additional parameters, that are send with the file(s) to the server url.  
-Accepts an Array of Objects with name and value attributes, a Function returning such an Array or a simple Object.  
-**Note:** Additional form data is ignored when the multipart option is set to *false*.
-
-* Type: *Array*, *Object* or *function*
-* Default: A function returning the form fields as [serialized Array](http://api.jquery.com/serializeArray).
-* Example:
-```js
-[
-  {
-    name: a,
-    value: 1
-  },
-  {
-    name: b,
-    value: 2
-  }
-]
-```
 
 ### withCredentials
 Indicates whether or not cross-site XMLHttpRequest file uploads should be made using credentials such as cookies or authorization headers.  
@@ -155,7 +179,7 @@ This can be useful for cross-site file uploads, if the [Access-Control-Allow-Ori
 ### onProgress
 A callback function that is called on upload progress.  
 **Note:** This is only called for browsers which support the [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object. Also, the browser must support either the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces or the multipart option has to be set to *false*.  
-The jQuery File Upload UI Plugin makes use of this callback to update the progress bar.
+The jQuery File Upload UI Plugin makes use of this callback to update the progress bar. If you override this setting, you need to update the progress bar yourself.
 
 * Type: *function*
 * Arguments:
@@ -165,11 +189,15 @@ The jQuery File Upload UI Plugin makes use of this callback to update the progre
     4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload.
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
-* Example:
+* Default:
 ```js
 function (event, files, index, xhr, handler) {
-    var progress = parseInt(event.loaded / event.total * 100, 10);
-    /* ... */
+    if (handler.progressbar) {
+        handler.progressbar.progressbar(
+            'value',
+            parseInt(event.loaded / event.total * 100, 10)
+        );
+    }
 }
 ```
 
