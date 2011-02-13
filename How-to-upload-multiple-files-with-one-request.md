@@ -1,8 +1,8 @@
 By default, the plugin uploads each selected file with an individual request. The [multiFileRequest option](https://github.com/blueimp/jQuery-File-Upload/wiki/Options) allows to upload multiple files with one request:
 ```js
-$('.upload').fileUploadUI({
-    uploadTable: $('.upload_files'),
-    downloadTable: $('.download_files'),
+$('#file_upload').fileUploadUI({
+    uploadTable: $('#files'),
+    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {
         var fileNames;
         if (typeof index == 'number') {
