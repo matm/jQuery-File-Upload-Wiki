@@ -4,9 +4,9 @@ To enforce these constraints, you will still have to implement the same limitati
 ## Example on how to limit the file size to 5 MB:
 To restrict the file size you can make use of the *beforeSend* option like this:
 ```js
-$('.upload').fileUploadUI({
-    uploadTable: $('.upload_files'),
-    downloadTable: $('.download_files'),
+$('#file_upload').fileUploadUI({
+    uploadTable: $('#files'),
+    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {/* ... */},
     buildDownloadRow: function (file) {/* ... */},
     beforeSend: function (event, files, index, xhr, handler, callBack) {
@@ -40,9 +40,9 @@ $('.upload').fileUpload({
 ## Example on how to limit the file types to web suitable images:
 To restrict the file types you can make use of the *beforeSend* option like this:
 ```js
-$('.upload').fileUploadUI({
-    uploadTable: $('.upload_files'),
-    downloadTable: $('.download_files'),
+$('#file_upload').fileUploadUI({
+    uploadTable: $('#files'),
+    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {/* ... */},
     buildDownloadRow: function (file) {/* ... */},
     beforeSend: function (event, files, index, xhr, handler, callBack) {
@@ -63,7 +63,7 @@ $('.upload').fileUploadUI({
 
 The equivalent for the basic file upload makes use of the *init* option:
 ```js
-$('.upload').fileUpload({
+$('#file_upload').fileUploadUI({
     initUpload: function (event, files, index, xhr, handler, callBack) {
         var regexp = /\.(png)|(jpg)|(gif)$/i;
         // Using the filename extension for our test,
