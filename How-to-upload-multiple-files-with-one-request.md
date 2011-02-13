@@ -19,9 +19,9 @@ $('.upload').fileUploadUI({
             '<td>' + fileNames + '<\/td>' +
             '<td class="file_upload_progress"><div><\/div><\/td>' +
             '<td class="file_upload_cancel">' +
-            '<div class="ui-state-default ui-corner-all ui-state-hover" title="Cancel">' +
+            '<button class="ui-state-default ui-corner-all" title="Cancel">' +
             '<span class="ui-icon ui-icon-cancel">Cancel<\/span>' +
-            '<\/div>' +
+            '<\/button>' +
             '<\/td>' +
             '<\/tr>'
         );
