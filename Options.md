@@ -59,6 +59,32 @@ Mutliple instances of the plugin can be used on the same page without having to 
 * Type: *String*
 * Default: `'file_upload'`
 
+### uploadFormFilter
+This option allows to filter the selected forms if the plugin is called on a container with multiple forms.  
+Accepts any parameter that is suitable for the [jQuery filter](http://api.jquery.com/filter) method.
+
+* Type: *String* or *function* or *object*
+* Default: A function returning true so no forms are filtered out:
+```js
+function (index) {
+    return true;
+}
+```
+* Example: `'.upload_form_1'`
+
+### fileInputFilter
+This option allows to filter the selected file input fields if the upload form contains multiple.  
+Accepts any parameter that is suitable for the [jQuery filter](http://api.jquery.com/filter) method.
+
+* Type: *String* or *function* or *object*
+* Default: A function returning true so no file input fields are filtered out:
+```js
+function (index) {
+    return true;
+}
+```
+* Example: `'.file_2'`
+
 ### cssClass
 The CSS class that is added on plugin initialization to the dropZone.  
 The dropZone is the HTML form or HTML DOM node containing the form and defines the area on which files can be dropped.
@@ -409,7 +435,7 @@ The [jQuery UI effect](http://jqueryui.com/demos/effect/) used to visualize the 
 * Default: `'highlight'`
 
 ### uploadTable
-The jQuery object for the upload table.  
+The jQuery object for the upload table or a function returning such an object.  
 This does not strictly have to be a HTML table element, but can also be a list or any other element that allows to append nodes to it.  
 Upload rows are appended to this table.
 
@@ -420,7 +446,7 @@ $('#upload_files')
 ```
 
 ### downloadTable
-The jQuery object for the download table (can be the same node as the upload table).  
+The jQuery object for the download table (can be the same node as the upload table) or a function returning such an object.  
 This does not strictly have to be a HTML table element, but can also be a list or any other element that allows to append nodes to it.  
 Download rows are appended to this table.
 
@@ -439,6 +465,7 @@ The content does not strictly have to be a HTML table row, but can be any elemen
 * Arguments:
     1. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects. For legacy browsers, only the file name is populated.
     2. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
+    3. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.
 * Example:
 ```js
 function (files, index) {
@@ -459,6 +486,7 @@ The content does not strictly have to be a HTML table row, but can be any elemen
 * Type: *function*
 * Arguments:
     1. file: JSON response with information for the uploaded file.
+    2. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.
 * Example:
 ```js
 function (file) {
