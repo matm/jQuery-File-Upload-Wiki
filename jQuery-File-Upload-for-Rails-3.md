@@ -52,9 +52,9 @@ Create your `index` action:
 	            return $('<tr><td>' + file.name + '<\/td>' +
 	                    '<td class="file_upload_progress"><div><\/div><\/td>' +
 	                    '<td class="file_upload_cancel">' +
-	                    '<div class="ui-state-default ui-corner-all ui-state-hover" title="Cancel">' +
+	                    '<button class="ui-state-default ui-corner-all" title="Cancel">' +
 	                    '<span class="ui-icon ui-icon-cancel">Cancel<\/span>' +
-	                    '<\/div><\/td><\/tr>');
+	                    '<\/button><\/td><\/tr>');
 	        },
 	        buildDownloadRow: function (file) {
 	            return $('<tr><td><img alt="Photo" width="40" height="40" src="' + file.pic_path + '">' + file.name + '<\/td><\/tr>');
