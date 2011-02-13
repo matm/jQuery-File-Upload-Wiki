@@ -3,32 +3,39 @@ If you don't want to use [[Sequential Uploads]] or send multiple files with one 
 ```js
 /*global $ */
 $(function () {
-    var uploadCounter = 0,
-        onCompleteAll = function () {
-            /* your code after all uplaods have completed */
-        };
-    $('.upload').fileUploadUI({
-        uploadTable: $('.upload_files'),
-        downloadTable: $('.download_files'),
-        buildUploadRow: function (files, index) {/**/},
-        buildDownloadRow: function (file) {/**/},
+    $('#file_upload').fileUploadUI({
+        uploadTable: $('#files'),
+        downloadTable: $('#files'),
+        buildUploadRow: function (files, index) {
+            return $('<tr><td>' + files[index].name + '<\/td>' +
+                    '<td class="file_upload_progress"><div><\/div><\/td>' +
+                    '<td class="file_upload_cancel">' +
+                    '<button class="ui-state-default ui-corner-all" title="Cancel">' +
+                    '<span class="ui-icon ui-icon-cancel">Cancel<\/span>' +
+                    '<\/button><\/td><\/tr>');
+        },
+        buildDownloadRow: function (file) {
+            return $('<tr><td>' + file.name + '<\/td><\/tr>');
+        },
         onComplete: function (event, files, index, xhr, handler) {
-            uploadCounter = uploadCounter + 1;
-            if (uploadCounter === files.length) {
-                uploadCounter = 0;
-                onCompleteAll();
-            }
+            handler.onCompleteAll(files);
         },
         onAbort: function (event, files, index, xhr, handler) {
             handler.removeNode(handler.uploadRow);
-            uploadCounter = uploadCounter + 1;
-            if (uploadCounter === files.length) {
-                uploadCounter = 0;
-                onCompleteAll();
+            handler.onCompleteAll(files);
+        },
+        onCompleteAll: function (files) {
+            // The files array is a shared object between the instances of an upload selection.
+            // We extend it with a uploadCounter to calculate when all uploads have completed:
+            if (!files.uploadCounter) {
+                files.uploadCounter = 1;  
+            } else {
+                files.uploadCounter = files.uploadCounter + 1;
+            }
+            if (files.uploadCounter === files.length) {
+                /* your code after all uplaods have completed */
             }
         }
     });
 });
 ```
-
-**Note:** A user might start another upload which the code above doesn't take into account.
