@@ -6,36 +6,64 @@ The following is an example implementation, making use of the *beforeSend*, *onC
 ```js
 /*global $ */
 $(function () {
-    var uploadSequence = [];
-    uploadSequence.start = function (index) {
-        var next = this[index];
-        if (next) {
-            next();
-            this[index] = null;
-        }
-    };
-    $('.upload').fileUploadUI({
-        uploadTable: $('.upload_files'),
-        downloadTable: $('.download_files'),
-        buildUploadRow: function (files, index) {/**/},
-        buildDownloadRow: function (file) {/**/},
+    $('#file_upload').fileUploadUI({
+        uploadTable: $('#files'),
+        downloadTable: $('#files'),
+        buildUploadRow: function (files, index) {
+            return $('<tr><td>' + files[index].name + '<\/td>' +
+                    '<td class="file_upload_progress"><div><\/div><\/td>' +
+                    '<td class="file_upload_cancel">' +
+                    '<button class="ui-state-default ui-corner-all" title="Cancel">' +
+                    '<span class="ui-icon ui-icon-cancel">Cancel<\/span>' +
+                    '<\/button><\/td><\/tr>');
+        },
+        buildDownloadRow: function (file) {
+            return $('<tr><td>' + file.name + '<\/td><\/tr>');
+        },
         beforeSend: function (event, files, index, xhr, handler, callBack) {
-            uploadSequence.push(callBack);
             if (index === 0) {
-                uploadSequence.splice(0, uploadSequence.length - 1);
+                // The files array is a shared object between the instances of an upload selection.
+                // We extend it with a custom array to coordinate the upload sequence:
+                files.uploadSequence = [];
+                files.uploadSequence.start = function (index) {
+                    var next = this[index];
+                    if (next) {
+                        // Call the callback with any given additional arguments:
+                        next.apply(null, Array.prototype.slice.call(arguments, 1));
+                        this[index] = null;
+                    }
+                };
             }
+            files.uploadSequence.push(callBack);
             if (index + 1 === files.length) {
-                uploadSequence.start(0);
+                files.uploadSequence.start(0);
             }
         },
         onComplete: function (event, files, index, xhr, handler) {
-            uploadSequence.start(index + 1);
+            files.uploadSequence.start(index + 1);
         },
         onAbort: function (event, files, index, xhr, handler) {
             handler.removeNode(handler.uploadRow);
-            uploadSequence[index] = null;
-            uploadSequence.start(index + 1);
+            files.uploadSequence[index] = null;
+            files.uploadSequence.start(index + 1);
         }
     });
 });
+```
+
+## How to pass parameters to the next upload handler in the sequence:
+If you want to adjust the settings of the next upload depending on the response from the previous one, you can make the following adjustments:  
+Change the line ```files.uploadSequence.push(callBack);``` to
+```js
+files.uploadSequence.push(function (setting1, setting2, ...) {
+    handler.setting1 = setting1;
+    handler.setting2 = setting2;
+    ...
+    callBack();
+});
+```
+
+Next change the lines starting the next sequence with ```files.uploadSequence.start(index + 1);``` and add the desired parameters:
+```js
+files.uploadSequence.start(index + 1, setting1, setting2, ...);
 ```
