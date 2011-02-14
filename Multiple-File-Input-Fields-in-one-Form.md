@@ -25,13 +25,13 @@ And the associated plugin initializations:
 ```js
 /*global $ */
 $(function () {
-    var initFileUpload = function (index) {
+    var initFileUpload = function (suffix) {
         $('#file_upload').fileUploadUI({
-            namespace: 'file_upload_' + index,
-            fileInputFilter: '#file_' + index,
-            dropZone: $('#drop_zone_' + index),
-            uploadTable: $('#files_' + index),
-            downloadTable: $('#files_' + index),
+            namespace: 'file_upload_' + suffix,
+            fileInputFilter: '#file_' + suffix,
+            dropZone: $('#drop_zone_' + suffix),
+            uploadTable: $('#files_' + suffix),
+            downloadTable: $('#files_' + suffix),
             buildUploadRow: function (files, index) {
                 return $('<tr><td>' + files[index].name + '<\/td>' +
                         '<td class="file_upload_progress"><div><\/div><\/td>' +
