@@ -78,6 +78,7 @@ $('#file_upload').fileUploadUI({
     dropZone: $('#file_upload_container')
 });
 ```
+
 Lastly, some CSS adjustments have to be made, adding "div" in front of some of the selectors:
 ```css
 div.file_upload {
@@ -97,10 +98,6 @@ div.file_upload_highlight {
 }
 
 div.file_upload input {
-  /* unchanged attributes */
-}
-
-div.file_upload iframe, div.file_upload button {
   /* unchanged attributes */
 }
 ```
