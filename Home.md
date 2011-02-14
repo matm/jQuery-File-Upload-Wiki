@@ -7,6 +7,7 @@
 * [[How to implement File Limits]] (e.g. filesize or filetype).
 * [[How to submit additional Form Data]] (POST variables).
 * How to handle [[Multiple File Input Fields in one Form]].
+* How to handle [[Multiple plugin instances on the same page]].
 * How to force [[Sequential Uploads]].
 * [[How to upload multiple files with one request]].
 * [[How to invoke a method after all uploads have completed]].
