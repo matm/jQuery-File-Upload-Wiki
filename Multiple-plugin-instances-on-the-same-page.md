@@ -37,5 +37,5 @@ $(function () {
 });
 ```
 
-Note that the plugin initialization does not differ from the basic [[Setup]].
+Note that the plugin initialization does not differ from the basic [[Setup]].  
 The only difference is the jQuery selector, applying the plugin call to both forms.
