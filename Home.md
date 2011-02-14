@@ -15,4 +15,5 @@
 * [[How to populate the file list on page load or between page refresh]]
 * [[Performance Optimizations]] to speed up page load times.
 * [[jQuery-File-Upload-for-Rails-3]]: basic Rails 3 tutorial
+* [[jQuery File Upload for Java]]: basic Java application
 * List of [[Known Issues]].
