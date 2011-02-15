@@ -1,6 +1,6 @@
 # Documentation Overview
 
-* [Demo page](http://aquantum-demo.appspot.com/file-upload) (Explanation of the [[Demo implementation]]).
+* [Demo page](http://aquantum-demo.appspot.com/file-upload) (and [[Demo implementation]] information).
 * How to [[Setup]] the plugin on your website.
 * List of all available [[Options]] for this plugin.
 * [[How to queue files and start uploads with a button click]].
