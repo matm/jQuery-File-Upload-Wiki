@@ -1,4 +1,4 @@
-This page explains how to implement client-side limits for the files being uploaded, e.g. to restrict **file sizes** and **file types**.  
+This page explains how to implement client-side limits for the files being uploaded, e.g. to restrict **file sizes** and **file types** or the number of selected files.  
 To enforce these constraints, you will still have to implement the same limitations within your server-side handler, as any client-side restrictions can be bypassed.
 
 ## Example on how to limit the file size to 5 MB:
