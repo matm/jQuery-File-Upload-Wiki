@@ -9,7 +9,7 @@
 
 ## Customization how-tos
 * [[How to queue files and start uploads with a button click]].
-* [[How to implement File Limits]] (e.g. filesize or filetype).
+* [[How to implement File Limits]] (e.g. file size, file types or the number of selected files).
 * [[How to submit additional Form Data]] (POST variables).
 * How to handle [[Multiple File Input Fields in one Form]].
 * How to handle [[Multiple plugin instances on the same page]].
