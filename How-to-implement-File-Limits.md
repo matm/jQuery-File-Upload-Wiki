@@ -76,3 +76,25 @@ $('#file_upload').fileUploadUI({
     }
 });
 ```
+
+## Example on how to limit the number of selected files:
+```js
+$('#file_upload').fileUploadUI({
+    uploadTable: $('#files'),
+    downloadTable: $('#files'),
+    buildUploadRow: function (files, index) {
+        if (index > 9) {
+            return null;
+        }
+        /* ... */
+    },
+    buildDownloadRow: function (file) {/* ... */},
+    beforeSend: function (event, files, index, xhr, handler, callBack) {
+        if (index > 9) {
+            /* Show 'PLEASE ONLY SELECT UP TO 10 FILES!' message to user ... */
+            return;
+        }
+        callBack();
+    }
+});
+```
