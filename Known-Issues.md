@@ -6,6 +6,30 @@ This page lists known issues that cannot be fixed by the plugin code but rather 
 The file upload plugin makes use of iframes for browsers like *Microsoft Internet Explorer* and *Opera*, which do not yet support [XMLHTTPRequest](https://developer.mozilla.org/en/xmlhttprequest) uploads.  
 They will only register a load event if the [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of the response is set to *text/plain* or *text/html*, **not** if it is set to *application/json*.
 
+## Opera file input with multiple option
+The plugin submits multiple files if more than one has been selected in Opera, using the iframe method (which is basically the same as a non-JavaScript form submit).
+Due to the Opera not supporting the File API, only the filename of one of the files is accessible via JavaScript (via the file input value), not the complete file list and it's only possible to submit all the selected files with one request.
+
+There also seems to be a bug in PHP related to the way the multiple file upload is implemented in Opera: [PHP Bug 47789](http://bugs.php.net/bug.php?id=47789).
+
+Since it's still possible to select and submit multiple files with Opera I'm reluctant to disable it in the plugin code itself, although the support is kind of limited and requires additional work on server-side to accept multi-file requests.
+
+However, you can remove (or add) the *multiple* option via JavaScript depending on the implementation of the File API without having to adjust the plugin code itself:
+
+```js
+$('#file_upload').each(function () {
+    // Fix for browsers which support multiple file selection but not the File API:
+    // https://github.com/blueimp/jQuery-File-Upload/issues#issue/36
+    if (typeof File === 'undefined') {
+        $(this).find('input:file').each(function () {
+            $(this).removeAttr('multiple')
+                // Fix for Opera, which ignores just removing the multiple attribute:
+                .replaceWith($(this).clone(true));
+        });
+    }
+}).fileUploadUI(fileUploadOptions);
+```
+
 ## Mozilla Firefox + GNU/Linux file managers
 **Reported by [jni-](https://github.com/jni-):**  
 If you are using linux and firefox, file drag&drop upload won't work with some file managers.  
