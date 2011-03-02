@@ -30,9 +30,9 @@ $('#file_upload').each(function () {
 }).fileUploadUI(fileUploadOptions);
 ```
 
-## Bad performance (browser slowdown / crash) with Firefox 3.6 and very large (e.g. 2GB) files
+## Bad performance with Firefox 3.6 and very large (e.g. 2GB) files
 On Firefox 3.6 File Uploads are handled differently than on FF 4 and Chrome.  
-On FF 3.6 the files have to be loaded in memory via readAsBinaryString and concatenated into a multipart message string for the upload, which is the reason for the bad performance.
+On FF 3.6 the files have to be loaded in memory via readAsBinaryString and concatenated into a multipart message string for the upload, which is the reason for the bad performance and may lead to a slowdown or crash o Firefox 3.6.
 
 ## Mozilla Firefox + GNU/Linux file managers
 **Reported by [jni-](https://github.com/jni-):**  
