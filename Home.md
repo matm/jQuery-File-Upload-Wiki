@@ -23,4 +23,5 @@
 * How to use the plugin with [[Google App Engine]].
 * [[jQuery-File-Upload-for-Rails-3]]: basic Rails 3 tutorial
 * [[jQuery File Upload for Java]]: basic Java application
+* [[How to use the plugin with CodeIgniter]] (PHP)
 * [[How to populate the file list on page load or between page refresh]] (C# example)
