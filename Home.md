@@ -4,6 +4,7 @@
 * [Demo page](http://aquantum-demo.appspot.com/file-upload) (and [[Demo implementation]] information).
 * How to [[Setup]] the plugin on your website.
 * **List of all available [[Options]] for this plugin (API listing).**
+* [[Style Guide]] with explanations for the provided [CSS code](the https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
 * [[Performance Optimizations]] to speed up page load times.
 * List of [[Known Issues]].
 * [[Frequently Asked Questions]] (FAQ)
