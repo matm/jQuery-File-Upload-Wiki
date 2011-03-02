@@ -6,6 +6,7 @@
 * List of all available [[Options]] for this plugin (API listing).
 * [[Performance Optimizations]] to speed up page load times.
 * List of [[Known Issues]].
+* [[Frequently Asked Questions]]
 
 ## Customization how-tos
 * [[How to queue files and start uploads with a button click]].
