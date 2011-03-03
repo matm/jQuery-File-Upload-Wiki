@@ -63,7 +63,7 @@ $('#file_upload').fileUploadUI({
 
 The equivalent for the basic file upload makes use of the *init* option:
 ```js
-$('#file_upload').fileUploadUI({
+$('#file_upload').fileUpload({
     initUpload: function (event, files, index, xhr, handler, callBack) {
         var regexp = /\.(png)|(jpg)|(gif)$/i;
         // Using the filename extension for our test,
