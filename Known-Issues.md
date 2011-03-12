@@ -30,6 +30,8 @@ $('#file_upload').each(function () {
 }).fileUploadUI(fileUploadOptions);
 ```
 
+See also [issue #36](https://github.com/blueimp/jQuery-File-Upload/issues/36).
+
 ## Bad performance with Firefox 3.6 and very large (e.g. 2GB) files
 On Firefox 3.6 File Uploads are handled differently than on FF 4 and Chrome.  
 On FF 3.6 the files have to be loaded in memory via readAsBinaryString and concatenated into a multipart message string for the upload, which is the reason for the bad performance and may lead to a slowdown or even a crash of Firefox 3.6.  
