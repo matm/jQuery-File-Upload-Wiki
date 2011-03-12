@@ -26,3 +26,14 @@ An example limiting files to PNG images:
 ```
 
 Note that this will not limit files added by drag&drop and is not supported across all browsers.
+
+## What is the maximum file size limitation?
+It is possible to upload large files (> 1 GB) with the jQuery File Upload plugin, but with some reservations.
+
+HTTP might not be the ideal protocol for uploading large files.
+Until the Blob API get's better support across browsers and allows chunked file uploads, there is also no support to resume aborted uploads.
+
+Apart from the implementation used for Firefox 3.6 (and other browsers which support the File API and XHR file uploads, but not the FormData API), the jQuery File Upload plugin doesn't put anything on top of the HTTP upload implementation of the browser.
+So any files that can be uploaded with a simple HTML form upload can be uploaded with the jQuery File Upload plugin as well.
+
+See also [issue #103](https://github.com/blueimp/jQuery-File-Upload/issues/103).
