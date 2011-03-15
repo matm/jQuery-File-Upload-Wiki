@@ -77,6 +77,26 @@ $('#file_upload').fileUpload({
 });
 ```
 
+## Example on how to avoid uploading empty files and folders:
+```js
+$('#file_upload').fileUploadUI({
+    uploadTable: $('#files'),
+    downloadTable: $('#files'),
+    buildUploadRow: function (files, index) {/* ... */},
+    buildDownloadRow: function (file) {/* ... */},
+    beforeSend: function (event, files, index, xhr, handler, callBack) {
+        if (files[index].size === 0) {
+            handler.uploadRow.find('.file_upload_progress').html('FILE IS EMPTY!');
+            setTimeout(function () {
+                handler.removeNode(handler.uploadRow);
+            }, 10000);
+            return;
+        }
+        callBack();
+    }
+});
+```
+
 ## Example on how to limit the number of selected files:
 ```js
 $('#file_upload').fileUploadUI({
