@@ -67,3 +67,23 @@ Next change the lines starting the next sequence with ```files.uploadSequence.st
 ```js
 files.uploadSequence.start(index + 1, setting1, setting2, ...);
 ```
+
+## How to start the sequential uploads with a button click
+Inside of the *beforeSend* method, replace
+```js
+files.uploadSequence.start(0);
+```
+
+with
+```js
+$('#start_uploads').click(function () {
+    files.uploadSequence.start(0);
+});
+```
+
+Then add a button to your upload form:
+```html
+<button id="start_uploads">Start uploads</button>
+```
+
+See also [[How to queue files and start uploads with a button click]].
