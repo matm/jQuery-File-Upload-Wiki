@@ -37,3 +37,13 @@ Apart from the implementation used for Firefox 3.6 (and other browsers which sup
 So any files that can be uploaded with a simple HTML form upload can be uploaded with the jQuery File Upload plugin as well.
 
 See also [issue #103](https://github.com/blueimp/jQuery-File-Upload/issues/103).
+
+## Is it possible to trigger the file selection dialog programmatically?
+Invoking the click event on a file input field is **not** supported on the following browsers:
+
+* Firefox 3.6 (tested on OSX and Windows XP)
+* Opera 11.01 (tested on OSX)
+
+It works on the other major browsers including Firefox 4, so it might be a feasible solution in the future.
+
+See also [issue #92](https://github.com/blueimp/jQuery-File-Upload/issues/92).
