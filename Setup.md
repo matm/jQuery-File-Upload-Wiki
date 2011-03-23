@@ -1,5 +1,5 @@
 # How to setup the plugin on your website
-   1. [[Download]] the plugin archive, extract it and upload the contents (without the "example" directory) to your server.
+   1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the contents (without the "example" directory) to your server.
    2. Add the following two lines to the head of your page (adjust the path to the _jquery.fileupload-ui.css_ file):
 ```html
       <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" id="theme">
