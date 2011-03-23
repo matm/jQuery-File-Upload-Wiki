@@ -1,4 +1,3 @@
-
    1. [[Download]] the plugin archive, extract it and upload the contents (without the "example" directory) to your server.
    2. Add the following two lines to the head of your page (adjust the path to the _jquery.fileupload-ui.css_ file):
 ```html
@@ -48,5 +47,5 @@
 ```html
       {"name":"picture.jpg","type":"image/jpeg","size":"123456789"}
 ```
-      Note: The file upload plugin makes use of iframes for browsers like Microsoft Internet Explorer and Opera, which do not yet support XMLHTTPRequest uploads.
-      They will only register a load event if the Content-type of the response is set to text/plain or text/html, not if it is set to application/json.
+      Note: The file upload plugin makes use of iframes for browsers like Microsoft Internet Explorer and Opera, which do not yet support [https://developer.mozilla.org/en/xmlhttprequest](XMLHTTPRequest) uploads.
+      They will only register a load event if the [http://en.wikipedia.org/wiki/MIME#Content-Type](Content-type) of the response is set to text/plain or text/html, not if it is set to application/json.
