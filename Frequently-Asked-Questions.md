@@ -47,3 +47,8 @@ Invoking the click event on a file input field is **not** supported on the follo
 It works on the other major browsers including Firefox 4, so it might be a feasible solution in the future.
 
 See also [issue #92](https://github.com/blueimp/jQuery-File-Upload/issues/92).
+
+## How to implement the server-side file handling or file deletion functionality?
+This plugin requires you to build the server-side file handling (including the deletion of files) yourself as it focuses solely on enhancing a standard form-based file upload.  
+It is meant to be used by developers who can easily customize it and adapt it to work with their server-side web application framework.  
+However, if you need inspiration you can have a look at the [[Demo implementation]].  
