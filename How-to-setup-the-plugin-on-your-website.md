@@ -1,7 +1,6 @@
 
-
    1. [[Download]] the plugin archive, extract it and upload the contents (without the "example" directory) to your server.
-   2. Add the following two lines to the head of your page (adjust the path to the jquery.fileupload-ui.css file):
+   2. Add the following two lines to the head of your page (adjust the path to the _jquery.fileupload-ui.css_ file):
 ```html
       <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" id="theme">
       <link rel="stylesheet" href="../jquery.fileupload-ui.css">
@@ -18,7 +17,7 @@
 ```html
       <table id="files"></table>
 ```
-   5. Add the following lines to the bottom of your page, before the closing body tag (adjust the paths to the jquery.fileupload.js and jquery.fileupload-ui.js files):
+   5. Add the following lines to the bottom of your page, before the closing body tag (adjust the paths to the _jquery.fileupload.js_ and _jquery.fileupload-ui.js_ files):
 ```html
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
       <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
