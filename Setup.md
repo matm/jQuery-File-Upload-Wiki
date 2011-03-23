@@ -44,8 +44,8 @@
       </script> 
 ```
    6. Implement your server-side file upload handler to store the uploaded files and return a JSON response with the file information, e.g.:
-```html
+
       {"name":"picture.jpg","type":"image/jpeg","size":"123456789"}
-```
+
       Note: The file upload plugin makes use of iframes for browsers like Microsoft Internet Explorer and Opera, which do not yet support [XMLHTTPRequest](https://developer.mozilla.org/en/xmlhttprequest) uploads.
       They will only register a load event if the [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of the response is set to text/plain or text/html, not if it is set to application/json.
