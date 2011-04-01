@@ -229,7 +229,7 @@ function (event, files, index, xhr, handler) {
 
 ### onLoad
 A callback function that is called when the server has processed the file upload. 
-The jQuery File Upload UI Plugin makes use of this callback to remove the uploadRow, parse the JSON response and add the downloadRow. Customise this method if the server gives a response which might not indicate a successful upload. Note that file upload limits can be handled by the plugin - see the faq wiki.  
+The jQuery File Upload UI Plugin makes use of this callback to remove the uploadRow, parse the JSON response and add the downloadRow. Customise this method if the server gives a response which might not indicate a successful upload. Note that file upload limits can be handled by the plugin - see the how-to wiki.  
 
 * Type: *function*
 * Arguments:
