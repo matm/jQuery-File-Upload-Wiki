@@ -3,7 +3,7 @@ If you define the *url*, *method* and *fieldName* [[Options]], you can call the 
 The file input button functionality will also work without a surrounding form.  
 But without support for iframe uploads, you will leave users of IE and Opera out in the dark.
 
-However, what you can do is using the *dropZone* option to define a container inside of the form as dropZone target.
+What you can also do is using the *dropZone* option to define a container inside of the form as dropZone target.
 You can also adjust the CSS code so the file input field does not cover the whole form.
 
 Please have a look at [[How to submit additional Form Data]], specifically the second section about "Sending additional Form Data by adding input fields to the upload form".
