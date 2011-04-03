@@ -5,6 +5,7 @@ This page lists known issues that cannot be fixed by the plugin code but rather 
 ## Content-type of the JSON response for iframe uploads
 The file upload plugin makes use of iframes for browsers like *Microsoft Internet Explorer* and *Opera*, which do not yet support [XMLHTTPRequest](https://developer.mozilla.org/en/xmlhttprequest) uploads.  
 They will only register a load event if the [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of the response is set to *text/plain* or *text/html*, **not** if it is set to *application/json*.
+If you're seeing a problem where browsers like IE or Camino are downloading files after the upload finishes, try making your file-upload handler return a `text/plain` content type.
 
 ## Opera file input with multiple option
 The plugin submits multiple files if more than one has been selected in Opera, using the iframe method (which is basically the same as a non-JavaScript form submit).
