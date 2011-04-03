@@ -242,7 +242,13 @@ The jQuery File Upload UI Plugin makes use of this callback to remove the upload
 * Example:
 ```js
 function (event, files, index, xhr, handler) {
-    var json = handler.parseResponse(xhr);
+    var json;
+    if (typeof xhr.responseText !== undef) {
+        json = $.parseJSON(xhr.responseText);
+    } else {
+        // Instead of an XHR object, an iframe is used for legacy browsers:
+        json = $.parseJSON(xhr.contents().text());
+    }
     /* ... */
 }
 ```
