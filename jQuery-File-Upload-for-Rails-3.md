@@ -81,7 +81,7 @@ It should contain:
     root :to => "home#index"
 
 ## Update your `uploads_controller.rb` file
-
+```ruby
     def create
       @upload = Upload.new(params[:upload])
       if @upload.save
@@ -90,4 +90,4 @@ It should contain:
         render :json => { :result => 'error'}, :content_type => 'text/html'
       end
     end
-
+```
