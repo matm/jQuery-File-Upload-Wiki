@@ -177,7 +177,6 @@ function (form) {
 Allows to define additional request headers, that are send with each file upload request to the server url.  
 Accepts an Array of Objects with name and value attributes, or a simple Object.  
 **Note:** Additional requestHeaders can only be added to [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) uploads, not to iframe based uploads.  
-Each header is added to the request, it's not p
 If you are making up your own HTTP header, you MUST put a X- in front of the name.
 
 * Type: *Array* or *Object*
