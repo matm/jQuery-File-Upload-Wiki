@@ -180,16 +180,20 @@ Accepts an Array of Objects with name and value attributes, or a simple Object.
 If you are making up your own HTTP header, you MUST put a X- in front of the name.
 
 * Type: *Array* or *Object*
+* Default: The basic file upload doesn't set this option (*undefined*), but the advanced user interface version uses the following default to make sure the server sends JSON as response type: 
+```js
+{'Accept': 'application/json, text/javascript, */*; q=0.01'}
+```
 * Example:
 ```js
 [
   {
-    name: 'X-Banana-Rate',
-    value: 42
+    name: 'Accept',
+    value: 'application/json, text/javascript, */*; q=0.01'
   },
   {
-    name: 'X-Orange-Rate',
-    value: 0
+    name: 'X-CSRF-Token',
+    value: 'token'
   }
 ]
 ```
