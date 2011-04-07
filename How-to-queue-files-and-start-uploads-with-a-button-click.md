@@ -34,5 +34,6 @@ A button to start the upload of all queued files could be added with the followi
 ```js
 $('#start_uploads').click(function () {
     $('.file_upload_start button').click();
+    return false;
 });
 ```
