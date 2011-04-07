@@ -24,6 +24,7 @@ $('#file_upload').fileUploadUI({
     beforeSend: function (event, files, index, xhr, handler, callBack) {
         handler.uploadRow.find('.file_upload_start button').click(function () {
             callBack();
+            return false;
         });
     }
 });
