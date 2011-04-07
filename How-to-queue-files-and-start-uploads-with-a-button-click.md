@@ -22,7 +22,9 @@ $('#file_upload').fileUploadUI({
         return $('<tr><td>' + file.name + '<\/td><\/tr>');
     },
     beforeSend: function (event, files, index, xhr, handler, callBack) {
-        handler.uploadRow.find('.file_upload_start button').click(callBack);
+        handler.uploadRow.find('.file_upload_start button').click(function () {
+            callBack();
+        });
     }
 });
 ```
