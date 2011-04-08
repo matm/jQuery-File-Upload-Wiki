@@ -227,6 +227,31 @@ This can be useful for cross-site file uploads, if the [Access-Control-Allow-Ori
 * Type: *boolean*
 * Default: *false*
 
+### onSend
+A callback function that is called on upload start.  
+The jQuery File Upload UI Plugin makes use of this callback to set the progress bar to a full animated view for browsers which don't support progress events.  
+**Note:** If this callback returns *false* the upload will not start.
+
+* Type: *function*
+* Arguments:
+    1. event: XHR onprogress event object.
+    2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects.
+    3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
+    4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. A jQuery iframe node for legacy browsers.
+    5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
+       The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
+* Example:
+```js
+function (event, files, index, xhr, handler) {
+    if (!xhr.upload && handler.progressbar) {
+        handler.progressbar.progressbar(
+            'value',
+            100 // indeterminate progress displayed by a full animated progress bar
+        );
+    }
+}
+```
+
 ### onProgress
 A callback function that is called on upload progress.  
 **Note:** This is only called for browsers which support the [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object. Also, the browser must support either the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces or the multipart option has to be set to *false*.  
