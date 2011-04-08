@@ -234,7 +234,7 @@ The jQuery File Upload UI Plugin makes use of this callback to set the progress 
 
 * Type: *function*
 * Arguments:
-    1. event: XHR onprogress event object.
+    1. event: drop or input change event object.
     2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects.
     3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. A jQuery iframe node for legacy browsers.
