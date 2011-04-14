@@ -7,24 +7,23 @@ This page lists the various options that can be set for the plugin and examples 
 The default way to set options is on plugin initialization - an example for the basic version:
 ```js
 $('#file_upload').fileUpload({
-    namespace: 'file_upload_1',
-    url: '/path/to/upload/handler.json'
+    url: '/path/to/upload/handler.json',
+    sequentialUploads: true
 });
 ```
 
 And an example for the advanced user interface version:
 ```js
 $('#file_upload').fileUploadUI({
-    namespace: 'file_upload_1',
     url: '/path/to/upload/handler.json'
-    /* ... */
+    uploadTable: $('#upload_files'),
+    downloadTable: $('#download_files')
 });
 ```
 
-**Note:** The advanced user interface version requires four options, as described in the [[Setup]] Guide:
+**Note:** The advanced user interface version requires three options, as described in the [[Setup]] Guide:
 
 * uploadTable
-* downloadTable
 * buildUploadRow
 * buildDownloadRow
 
@@ -200,7 +199,8 @@ If you are making up your own HTTP header, you MUST put a X- in front of the nam
 
 ### multipart
 If set to *false*, streams the file content to the server url instead of sending a [RFC 2388](http://www.ietf.org/rfc/rfc2388.txt) multipart message.  
-Non-multipart uploads are also referred to as [HTTP PUT file upload](http://de.php.net/manual/en/features.file-upload.put-method.php).
+Non-multipart uploads are also referred to as [HTTP PUT file upload](http://de.php.net/manual/en/features.file-upload.put-method.php).  
+**Note:** Form data is ignored when the multipart option is set to *false*.
 
 * Type: *boolean*
 * Default: *true*
@@ -226,6 +226,42 @@ This can be useful for cross-site file uploads, if the [Access-Control-Allow-Ori
 
 * Type: *boolean*
 * Default: *false*
+
+### sequentialUploads
+By default, the plugin uploads multiple files simultaneously and asynchronously.  
+However it is possible to force a sequential upload, that is starting the upload of the second selected file after the upload of the first one has completed, starting the upload of the third file after the second file has been uploaded and so on, by setting this option to *true*.
+
+* Type: *boolean*
+* Default: *false*
+
+### maxChunkSize
+To upload large files in smaller chunks, set this option to a preferred maximum chunk size.  
+If set to *0* or *null* files will be uploaded as a whole.  
+Only browsers supporting the [Blob API](https://developer.mozilla.org/en/DOM/Blob) will respect this setting, other browsers will always upload complete files.  
+**Note**: This setting is ignored if the option *multiFileRequest* is set to *true*.
+
+* Type: *integer*
+* Default: *null*
+
+### resumeUpload
+This callback function is called before uploading the next chunk when *maxChunkSize* has been set.  
+If defined, the upload resumes when the callBack parameter is called.
+
+* Type: *function*
+* Arguments:
+    1. event: XHR onload event object.
+    2. files: Array of all [File](https://developer.mozilla.org/en/DOM/File) objects.
+    3. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
+    4. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload.
+    5. handler: A reference to the uploadHandler, gives access to all handler methods and allows to override the current upload settings.
+    6. callBack: The function to be called to start the next chunk upload.
+* Example:
+```js
+function (event, files, index, xhr, handler, callBack) {
+    handler.url = '/path/to/upload/handler.json';
+    callBack();
+}
+```
 
 ### onSend
 A callback function that is called on upload start.  
@@ -254,7 +290,7 @@ function (event, files, index, xhr, handler) {
 
 ### onProgress
 A callback function that is called on upload progress.  
-**Note:** This is only called for browsers which support the [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object. Also, the browser must support either the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces or the multipart option has to be set to *false*.  
+**Note:** This is only called for browsers which support the [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object as well as XMLHttpRequestUpload. Also, the browser must support either the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces or the multipart option has to be set to *false*.  
 The jQuery File Upload UI Plugin makes use of this callback to update the progress bar. If you override this setting, you need to update the progress bar yourself.
 
 * Type: *function*
@@ -275,6 +311,26 @@ function (event, files, index, xhr, handler) {
         );
     }
 }
+```
+
+### onProgressAll
+A callback function that is called on overall upload progress.  
+The jQuery File Upload UI Plugin makes use of this callback to update the overall progress bar. If you override this setting, you need to update the progress bar yourself.
+
+* Type: *function*
+* Arguments:
+    1. event: progress event object, or a similar object providing the attributes lengthComputable/loaded/total).
+    2. list: Array of argument lists of all current uploads.
+* Default:
+```js
+function (event, list) {
+    if (uploadHandler.progressbarAll && event.lengthComputable) {
+        uploadHandler.progressbarAll.progressbar(
+            'value',
+            parseInt(event.loaded / event.total * 100, 10)
+        );
+    }
+};
 ```
 
 ### onLoad
@@ -299,6 +355,20 @@ function (event, files, index, xhr, handler) {
         // Instead of an XHR object, an iframe is used for legacy browsers:
         json = $.parseJSON(xhr.contents().text());
     }
+    /* ... */
+}
+```
+
+### onLoadAll
+A callback function that is called when the client received the server responses for all current file uploads. 
+The jQuery File Upload UI Plugin makes use of this callback to hide and reset the overall progressbar.
+
+* Type: *function*
+* Arguments:
+    1. list: Array of argument lists of all current uploads.
+* Example:
+```js
+function (list) {
     /* ... */
 }
 ```
