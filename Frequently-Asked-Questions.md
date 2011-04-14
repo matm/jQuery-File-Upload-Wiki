@@ -48,6 +48,5 @@ It works on the other major browsers including Firefox 4, so it might be a feasi
 See also [issue #92](https://github.com/blueimp/jQuery-File-Upload/issues/92).
 
 ## How to implement the server-side file handling and file deletion functionality?
-This plugin requires you to build the server-side file handling (including the deletion of files) yourself as it focuses solely on enhancing a standard form-based file upload.  
-It is meant to be used by developers who can easily customize it and adapt it to work with their server-side web application framework.  
-However, if you need inspiration you can have a look at the [[Demo implementation]] or the various user-contributed tutorials on different server-side implementations linked on the [Wiki homepage](https://github.com/blueimp/jQuery-File-Upload/wiki).
+The plugin is meant to be used by developers who can easily customize it and adapt it to work with their server-side web application framework.  
+However, since version 4.0 an advanced PHP based [example](https://github.com/blueimp/jQuery-File-Upload/tree/master/example) has been added. If you need more inspiration you can have a look at the [[Demo implementation]] or the various user-contributed tutorials on different server-side implementations linked on the [Wiki homepage](https://github.com/blueimp/jQuery-File-Upload/wiki).
