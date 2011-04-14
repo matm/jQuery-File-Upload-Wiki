@@ -366,12 +366,6 @@ The jQuery File Upload UI Plugin makes use of this callback to hide and reset th
 * Type: *function*
 * Arguments:
     1. list: Array of argument lists of all current uploads.
-* Example:
-```js
-function (list) {
-    /* ... */
-}
-```
 
 ### onAbort
 A callback function that is called when the file upload has been cancelled.  
@@ -515,9 +509,34 @@ A [regular expression](https://developer.mozilla.org/en/JavaScript/Reference/Glo
 * Type: *RegExp*
 * Default: ```/^image\/(gif|jpeg|png)$/```
 
+### previewMaxWidth
+A maximum width for the preview images.
+
+* Type: *integer*
+* Default: ```80```
+
+### previewMaxHeight
+A maximum height for the preview images.
+
+* Type: *integer*
+* Default: ```80```
+
+### previewLoadDelay
+A delay in milliseconds, until the preview images are loaded.  
+This setting can be useful for performance optimizations.
+
+* Type: *integer*
+* Default: ```100```
+
+### previewAsCanvas
+By default, preview images are rendered as [canvas](https://developer.mozilla.org/en/html/canvas) element, if possible. Set this option to *false* to force preview images into *img* elements.
+
+* Type: *boolean*
+* Default: ```true```
+
 ### previewSelector
 The [jQuery selector](http://api.jquery.com/category/selectors/) used to select the container for a preview image of the file to be uploaded.  
-Preview images can be loaded and displayed for local image files on browsers supporting the [URL](https://developer.mozilla.org/en/DOM/window.URL) or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces.  
+Preview images can be loaded and displayed for local image files on browsers supporting the [URL](https://developer.mozilla.org/en/DOM/window.URL), webkitURL or [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interfaces.  
 If the previewSelector does not match any container elements or the file is no image, no preview image is loaded.
 
 * Type: *String*
@@ -563,9 +582,10 @@ The [jQuery UI effect](http://jqueryui.com/demos/effect/) used to visualize the 
 ### uploadTable
 The jQuery object for the upload table or a function returning such an object.  
 This does not strictly have to be a HTML table element, but can also be a list or any other element that allows to append nodes to it.  
-Upload rows are appended to this table.
+Upload rows are appended to this table.  
+If no download table is specified, also serves as uploadTable, by replacing uploadRows with downloadRows.
 
-* Type: *Object*
+* Type: *Object* or *Function*
 * Example:
 ```js
 $('#upload_files')
@@ -574,9 +594,10 @@ $('#upload_files')
 ### downloadTable
 The jQuery object for the download table (can be the same node as the upload table) or a function returning such an object.  
 This does not strictly have to be a HTML table element, but can also be a list or any other element that allows to append nodes to it.  
-Download rows are appended to this table.
+Download rows are appended to this table.  
+If no download table is specified, the uploadTable also serves as downloadTable, by replacing uploadRows with downloadRows.
 
-* Type: *Object*
+* Type: *Object* or *Function*
 * Example:
 ```js
 $('#download_files')
@@ -620,18 +641,30 @@ function (file) {
 }
 ```
 
+### progressAllNode
+The jQuery object for the overall progress bar.
+
+* Type: *Object*
+* Example:
+```js
+$('#file_upload_progress div')
+```
+
 ### addNode
-Allows to override the way the upload/download rows are added to the upload/download tables.
+Allows to override how elements (e.g. the download rows) are added to the page by the plugin.  
+By default this method makes use of jQuery's [fadeIn](http://api.jquery.com/fadeIn) method.
 
 * Type: *function*
 * Arguments:
     1. parentNode: The parent jQuery DOM element where the new node should be added.
     2. node: The jQuery DOM element to add.
-    3. callBack: An optional method to execute after the node has been added.
+    3. callBack: An optional method to execute after the node has been added and faded in.
 * Example:
 ```js
 function (parentNode, node, callBack) {
-    parentNode.append(node);
+    if (parentNode) {
+        parentNode.append(node);
+    }
     if (typeof callBack === 'function') {
         callBack();
     }
@@ -639,17 +672,40 @@ function (parentNode, node, callBack) {
 ```
 
 ### removeNode
-Allows to override the way the upload row is removed after the upload has completed or has been canceled.
+Allows to override the way elements (e.g. the upload rows) are removed from the page by the plugin.  
+By default this method makes use of jQuery's [fadeOut](http://api.jquery.com/fadeOut) method.
 
 * Type: *function*
 * Arguments:
     1. node: The jQuery DOM element to add.
-    2. callBack: An optional method to execute after the node has been removed.
+    2. callBack: An optional method to execute after the node has been faded out and removed.
 * Example:
 ```js
 function (node, callBack) {
     if (node) {
         node.remove();
+    }
+    if (typeof callBack === 'function') {
+        callBack();
+    }
+}
+```
+
+### replaceNode
+Allows to override the way elements on the page are replaced by the plugin.  
+If *uploadTable* and *downloadTable* are referring to the same table, download rows replace upload rows.  
+This method makes use of jQuery's [fadeIn](http://api.jquery.com/fadeIn) and [fadeOut](http://api.jquery.com/fadeOut) methods.
+
+* Type: *function*
+* Arguments:
+    1. oldNode: The jQuery DOM element to remove.
+    2. newNode: The jQuery DOM element to add.
+    3. callBack: An optional method to execute after the replacement has been done.
+* Example:
+```js
+function (oldNode, newNode, callBack) {
+    if (oldNode && newNode) {
+        oldNode.replaceWith(newNode);
     }
     if (typeof callBack === 'function') {
         callBack();
@@ -674,7 +730,7 @@ function (event, files, index, xhr, handler) {
     var readyState = xhr.readyState;
     xhr.abort();
     // If readyState is below 2, abort() has no effect:
-    if (isNaN(readyState) || readyState < 2) {
+    if (typeof readyState !== 'number' || readyState < 2) {
         handler.onAbort(event, files, index, xhr, handler);
     }
 }
@@ -766,6 +822,13 @@ function (event, files, index, xhr, handler) {
     /* ... */
 }
 ```
+
+### onCompleteAll
+A callback function that is called when the client received the server responses for all current file uploads and after all rows have been added, removed and faded in and out.
+
+* Type: *function*
+* Arguments:
+    1. list: Array of argument lists of all current uploads.
 
 ### dropZoneEnlarge
 Allows to define a custom method to enlarge the dropZone.
