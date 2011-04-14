@@ -3,7 +3,7 @@
 1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the contents (without the "example" directory) to your server. 
 2. Add the following two lines to the head of your page (adjust the path to the *jquery.fileupload-ui.css* file):
 ```html
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" id="theme">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css" id="theme">
 <link rel="stylesheet" href="../jquery.fileupload-ui.css">
 ```
 3. Add the following form to the body of your page (replace *upload.php* with the path to your upload handler):
@@ -11,7 +11,7 @@
 <form id="file_upload" action="upload.php" method="POST" enctype="multipart/form-data">
     <input type="file" name="file" multiple>
     <button>Upload</button>
-    <div>Upload files</div>
+    <div class="js">Upload files</div>
 </form>
 ```
 4. Add the following line to the body of your page, where you want the upload/download table to appear:
@@ -20,8 +20,8 @@
 ```
 5. Add the following lines to the bottom of your page, before the closing body tag (adjust the paths to the *jquery.fileupload.js* and *jquery.fileupload-ui.js* files):
 ```html
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
 <script src="../jquery.fileupload.js"></script>
 <script src="../jquery.fileupload-ui.js"></script>
 <script>
@@ -29,7 +29,6 @@
 $(function () {
     $('#file_upload').fileUploadUI({
         uploadTable: $('#files'),
-        downloadTable: $('#files'),
         buildUploadRow: function (files, index) {
             return $('<tr><td>' + files[index].name + '<\/td>' +
                     '<td class="file_upload_progress"><div><\/div><\/td>' +
