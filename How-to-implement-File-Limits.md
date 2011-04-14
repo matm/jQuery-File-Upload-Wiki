@@ -100,7 +100,6 @@ var maxFiles = 10,
     filesCounter = 0;
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
-    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {
         if (filesCounter + index + 1 > maxFiles) {
             return null;
