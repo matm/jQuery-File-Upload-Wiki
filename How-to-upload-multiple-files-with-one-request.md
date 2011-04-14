@@ -2,7 +2,6 @@ By default, the plugin uploads each selected file with an individual request. Th
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
-    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {
         var fileNames;
         if (typeof index == 'number') {
