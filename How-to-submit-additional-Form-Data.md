@@ -6,7 +6,6 @@ Adding additional Form Data programmatically can be done using the beforeSend an
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
-    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {
         var file = files[index];
         return $(
@@ -72,7 +71,6 @@ Therefore, the file input field is wrapped in another container and has to be de
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
-    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {/**/},
     buildDownloadRow: function (file) {/**/},
     dropZone: $('#file_upload_container')
