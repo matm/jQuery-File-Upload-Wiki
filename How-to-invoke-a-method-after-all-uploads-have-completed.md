@@ -22,4 +22,5 @@ $(function () {
 });
 ```
 
-*Note*: The equivalent for the basic file upload is the *onLoadAll* callBack option.
+**Note**:  
+The equivalent for the basic file upload is the *onLoadAll* callBack option.
