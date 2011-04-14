@@ -31,7 +31,6 @@ $(function () {
             fileInputFilter: '#file_' + suffix,
             dropZone: $('#drop_zone_' + suffix),
             uploadTable: $('#files_' + suffix),
-            downloadTable: $('#files_' + suffix),
             buildUploadRow: function (files, index) {
                 return $('<tr><td>' + files[index].name + '<\/td>' +
                         '<td class="file_upload_progress"><div><\/div><\/td>' +
