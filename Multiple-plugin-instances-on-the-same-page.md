@@ -21,7 +21,6 @@ And the associated plugin initialization:
 $(function () {
     $('.file_upload').fileUploadUI({
         uploadTable: $('#files'),
-        downloadTable: $('#files'),
         buildUploadRow: function (files, index) {
             return $('<tr><td>' + files[index].name + '<\/td>' +
                     '<td class="file_upload_progress"><div><\/div><\/td>' +
