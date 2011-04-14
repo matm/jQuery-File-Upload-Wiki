@@ -6,7 +6,6 @@ To restrict the file size you can make use of the *beforeSend* option like this:
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
-    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {/* ... */},
     buildDownloadRow: function (file) {/* ... */},
     beforeSend: function (event, files, index, xhr, handler, callBack) {
@@ -42,7 +41,6 @@ To restrict the file types you can make use of the *beforeSend* option like this
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
-    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {/* ... */},
     buildDownloadRow: function (file) {/* ... */},
     beforeSend: function (event, files, index, xhr, handler, callBack) {
@@ -81,7 +79,6 @@ $('#file_upload').fileUpload({
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
-    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {/* ... */},
     buildDownloadRow: function (file) {/* ... */},
     beforeSend: function (event, files, index, xhr, handler, callBack) {
@@ -97,23 +94,26 @@ $('#file_upload').fileUploadUI({
 });
 ```
 
-## Example on how to limit the number of selected files:
+## Example on how to limit the number of uploadable files:
 ```js
+var maxFiles = 10,
+    filesCounter = 0;
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
     downloadTable: $('#files'),
     buildUploadRow: function (files, index) {
-        if (index > 9) {
+        if (filesCounter + index + 1 > maxFiles) {
             return null;
         }
         /* ... */
     },
     buildDownloadRow: function (file) {/* ... */},
     beforeSend: function (event, files, index, xhr, handler, callBack) {
-        if (index > 9) {
-            /* Show 'PLEASE ONLY SELECT UP TO 10 FILES!' message to user ... */
+        if (filesCounter + index + 1 > maxFiles) {
+            /* Show 'ONLY' + maxFiles + 'FILES ALLOWED!' message to user ... */
             return;
         }
+        filesCounter = filesCounter + 1;
         callBack();
     }
 });
