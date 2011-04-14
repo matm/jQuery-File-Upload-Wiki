@@ -16,7 +16,7 @@ $(function () {
             return $('<tr><td>' + file.name + '<\/td><\/tr>');
         },
         onCompleteAll: function (list) {
-            /* your code after all uplaods have completed */
+            /* your code after all uploads have completed */
         }
     });
 });
