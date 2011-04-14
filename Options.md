@@ -236,7 +236,7 @@ However it is possible to force a sequential upload, that is starting the upload
 
 ### maxChunkSize
 To upload large files in smaller chunks, set this option to a preferred maximum chunk size.  
-If set to *0* or *null* files will be uploaded as a whole.  
+If set to *0* or *null*, files will be uploaded as a whole.  
 Only browsers supporting the [Blob API](https://developer.mozilla.org/en/DOM/Blob) will respect this setting, other browsers will always upload complete files.  
 **Note**: This setting is ignored if the option *multiFileRequest* is set to *true*.
 
