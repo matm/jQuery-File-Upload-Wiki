@@ -785,7 +785,7 @@ function (event, files, index, xhr, handler, callBack) {
 ```
 
 ### parseResponse
-Allows to override the way the File Upload response is parsed. The return value is used as parameter for the buildDownloadRow method call. Should an error occur in parsing the json (it could be an html error page was returned from a runtime error on the server), the File Upload UI still removes the uploadRow and calls onError, without adding a downloadRow. If you would like to show errors against the item in the table, simply override this method in a try/catch block and return custom json to be handled in the downloadRow code.
+Allows to override the way the File Upload response is parsed. The return value is used as parameter for the buildDownloadRow method call. Should an error occur in parsing the json (it could be an html error page was returned from a runtime error on the server), the File Upload UI still removes the uploadRow and calls onError, without adding a downloadRow. If you would like to show errors against the item in the table, simply override this method in a try/catch block and return custom json to be handled in the buildDownloadRow code.
 
 * Type: *function*
 * Arguments:
