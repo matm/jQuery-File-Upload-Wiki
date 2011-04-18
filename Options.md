@@ -334,8 +334,9 @@ function (event, list) {
 ```
 
 ### onLoad
-A callback function that is called when the client receives the server response for the file upload. 
-The jQuery File Upload UI Plugin makes use of this callback to remove the uploadRow, parse the JSON response and add the downloadRow. Customize this method if you don't want to show a downloadRow depending on the server response. See also parseResponse for more information on displaying errors.
+A callback function that is called when the client receives the server response for the file upload.    
+The jQuery File Upload UI Plugin makes use of this callback to remove the uploadRow, parse the JSON response and add the downloadRow.  
+Customize this method if you don't want to show a downloadRow depending on the server response. See also parseResponse for more information on displaying errors.
 
 * Type: *function*
 * Arguments:
@@ -785,7 +786,9 @@ function (event, files, index, xhr, handler, callBack) {
 ```
 
 ### parseResponse
-Allows to override the way the File Upload response is parsed. The return value is used as parameter for the buildDownloadRow method call. Should an error occur in parsing the json (it could be an html error page was returned from a runtime error on the server), the File Upload UI still removes the uploadRow and calls onError, without adding a downloadRow. If you would like to show errors against the item in the table, simply override this method in a try/catch block and return custom json to be handled in the buildDownloadRow code.
+Allows to override the way the File Upload response is parsed.  
+The return value is used as parameter for the buildDownloadRow method call.  
+Should an error occur in parsing the json (it could be an html error page was returned from a runtime error on the server), the File Upload UI still removes the uploadRow and calls onError, without adding a downloadRow. If you would like to show errors against the item in the table, simply override this method in a try/catch block and return custom json to be handled in the buildDownloadRow code.
 
 * Type: *function*
 * Arguments:
