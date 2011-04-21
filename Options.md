@@ -811,9 +811,10 @@ Should an error occur in parsing the json (it could be an html error page was re
 * Type: *function*
 * Arguments:
     1. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. A jQuery iframe node for legacy browsers.
+    2. handler: A reference to the uploadHandler, gives access to all handler methods and allows to override the current upload settings.
 * Default:
 ```js
-function (xhr) {
+function (xhr, handler) {
     if (typeof xhr.responseText !== 'undefined') {
         return $.parseJSON(xhr.responseText);
     } else {
