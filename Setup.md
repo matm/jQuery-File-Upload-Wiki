@@ -9,9 +9,9 @@
 3. Add the following form to the body of your page (replace *upload.php* with the path to your upload handler):
 ```html
 <form id="file_upload" action="upload.php" method="POST" enctype="multipart/form-data">
-    <input type="file" name="file" multiple>
+    <input type="file" name="file[]" multiple>
     <button>Upload</button>
-    <div class="js">Upload files</div>
+    <div class="file_upload_label">Upload files</div>
 </form>
 ```
 4. Add the following line to the body of your page, where you want the upload/download table to appear:
