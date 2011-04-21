@@ -75,6 +75,16 @@ $('#file_upload').fileUpload({
 });
 ```
 
+### How to restrict the file selection dialog to show only specific file types?
+You can use the accept attribute of the file input field to limit the file type selection, though this seems to be supported only on Google Chrome and Opera.  
+An example limiting files to PNG images:
+
+```html
+<input type="file" name="file" accept="image/png" multiple>
+```
+
+Note that this will not limit files added by drag&drop and is not supported across all browsers.
+
 ## Example on how to avoid uploading empty files and folders:
 ```js
 $('#file_upload').fileUploadUI({
