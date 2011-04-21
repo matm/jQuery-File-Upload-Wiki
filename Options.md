@@ -208,7 +208,7 @@ Non-multipart uploads are also referred to as [HTTP PUT file upload](http://de.p
 ### multiFileRequest
 If set to *true*, uploads multiple selected files with one request instead of using one request per file.  
 If this option is *true*, the *index* parameter used for the callBacks is *undefined* for browsers which support multiple file selection.   
-**Note:** Uploading multiple files with one request requires the multipart option to be set to *true*.
+**Note:** Uploading multiple files with one request requires the multipart option to be set to *true* (the default).
 
 * Type: *boolean*
 * Default: *false*
