@@ -7,6 +7,17 @@ The file upload plugin makes use of iframes for browsers like *Microsoft Interne
 They will only register a load event if the [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of the response is set to *text/plain* or *text/html*, **not** if it is set to *application/json*.  
 If browsers like IE offer to download files as result of the response, try setting the content-type of your JSON response to `text/plain`.
 
+## Mozilla Firefox + GNU/Linux file managers
+**Reported by [jni-](https://github.com/jni-):**  
+If you are using linux and firefox, file drag&drop upload won't work with some file managers.  
+Tested with thunar, pcmanfm and ROX. Nautilus seems to work.  
+If you want all the details, [[have a look here|https://bugzilla.mozilla.org/show_bug.cgi?id=609284]]  
+Chrome works fine with these file managers.
+
+# Resolved Known Issues
+
+
+
 ## Opera file input with multiple option
 The plugin submits multiple files if more than one has been selected in Opera, using the iframe method (which is basically the same as a non-JavaScript form submit).
 Due to the Opera not supporting the File API, only the filename of one of the files is accessible via JavaScript (via the file input value), not the complete file list and it's only possible to submit all the selected files with one request.
@@ -37,10 +48,3 @@ See also [issue #36](https://github.com/blueimp/jQuery-File-Upload/issues/36).
 On Firefox 3.6 File Uploads are handled differently than on FF 4 and Chrome.  
 On FF 3.6 the files have to be loaded in memory via readAsBinaryString and concatenated into a multipart message string for the upload, which is the reason for the bad performance and may lead to a slowdown or even a crash of Firefox 3.6.  
 See also [issue #79](https://github.com/blueimp/jQuery-File-Upload/issues/79).
-
-## Mozilla Firefox + GNU/Linux file managers
-**Reported by [jni-](https://github.com/jni-):**  
-If you are using linux and firefox, file drag&drop upload won't work with some file managers.  
-Tested with thunar, pcmanfm and ROX. Nautilus seems to work.  
-If you want all the details, [[have a look here|https://bugzilla.mozilla.org/show_bug.cgi?id=609284]]  
-Chrome works fine with these file managers.
