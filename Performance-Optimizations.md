@@ -10,10 +10,10 @@ Another recommended tool for production use is [CSSTidy](http://csstidy.sourcefo
 ## Making use of a content delivery network for the jQuery libraries
 Google provides a reliable [CDN for common Web libraries](http://code.google.com/apis/libraries/devguide.html).  
 The more websites use this CDN instead of hosting their jQuery libraries on their own server, the more likely it is that client browsers will already have those libraries in their browser cache.  
-The easiest way to use it is to include the libraries the following way (replace http: with https: for SSL-Websites):
+The easiest way to use it is to include the libraries the following way (using a protocol relative URL):
 ```html
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
 ```
 
 Alongside the JS libraries, Google also hosts the CSS and accompanying images files for several [jQuery UI themes](http://jqueryui.com/themeroller/), e.g. the "basic" theme:
