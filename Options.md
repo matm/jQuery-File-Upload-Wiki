@@ -756,16 +756,26 @@ Must return an object providing a [progressbar value method](http://jqueryui.com
 * Default:
 ```js
 function (node, value) {
-    if (typeof node.progressbar === 'function') {
+    if (!node || !node.length) {
+        return null;
+    }
+    if (typeof node.progressbar === func) {
         return node.progressbar({
             value: value
         });
     } else {
-        var progressbar = $('<progress value="' + value + '" max="100"/>').appendTo(node);
-        progressbar.progressbar = function (key, value) {
-            progressbar.attr('value', value);
-        };
-        return progressbar;
+        node.addClass('progressbar')
+            .append($('<div/>').css('width', value + '%'))
+            .progressbar = function (key, value) {
+                return this.each(function () {
+                    if (key === 'destroy') {
+                        $(this).removeClass('progressbar').empty();
+                    } else {
+                        $(this).children().css('width', value + '%');
+                    }
+                });
+            };
+        return node;
     }
 }
 ```
