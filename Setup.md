@@ -60,7 +60,7 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
 <script src="js/jquery.fileupload-ui.js"></script>
 <script src="js/application.js"></script>
 ```
-6. Create the file application.js with the following code - feel free to adjust the content returned by *buildUploadRow* and *buildDownloadRow*, as long as one tr or tbody element is returned:
+6. Create the file application.js with the following code - feel free to adjust the content returned by *buildUploadRow* and *buildDownloadRow*, as long as one *tr* or *tbody* element is returned:
 ```js
 $(function () {
     $('#file_upload').fileUploadUI({
