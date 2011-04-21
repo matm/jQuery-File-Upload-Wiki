@@ -747,7 +747,7 @@ function (event, files, index, xhr, handler) {
 
 ### initProgressBar
 Allows to override the progressbar visualization.  
-Must return an object providing a [progressbar value method](http://jqueryui.com/demos/progressbar/#method-value).
+Must return an object providing a [progressbar value method](http://jqueryui.com/demos/progressbar/#methods).
 
 * Type: *function*
 * Arguments:
