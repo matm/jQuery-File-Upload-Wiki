@@ -14,32 +14,5 @@ Un-minified versions of the demo JavaScript files can be found here:
 
 Note that these files are sent with a [far future Expires header](http://developer.yahoo.com/performance/rules.html#expires), so you might need to refresh your browser cache to retrieve the latest versions (the demo itself uses IDs appended as query parameter to the files to make sure browsers get the latest versions).
 
-The most reusable addition of the demo implementation is a TemplateHelper function used in conjunction with the [jQuery Templates Plugin](https://github.com/jquery/jquery-tmpl):
-```js
-var TemplateHelper = function (locale, settings) {
-    var roundDecimal = function (num, dec) {
-            return Math.round(num * Math.pow(10, dec)) / Math.pow(10, dec);
-        };
-    this.locale = locale;
-    this.settings = settings;
-    this.formatFileSize = function (bytes) {
-        if (isNaN(bytes) || bytes === null) {
-            return '';
-        }
-        if (bytes >= 1000000000) {
-            return roundDecimal(bytes / 1000000000, 2) + ' GB';
-        }
-        if (bytes >= 1000000) {
-            return roundDecimal(bytes / 1000000, 2) + ' MB';
-        }
-        return roundDecimal(bytes / 1000, 2) + ' KB';
-    };
-    this.formatFileName = function (fileName) {
-        // Remove any path information:
-        return fileName.replace(/^.*[\/\\]/, '');
-    };
-}
-```
-
 The server-side of the demo is written in Python on [Google App Engine](http://code.google.com/appengine/).  
 With App Engine, adding a thumbnail picture for uploaded files is very easy thanks to the [get_serving_url](http://code.google.com/appengine/docs/python/images/functions.html#Image_get_serving_url) method of the [Images API](http://code.google.com/appengine/docs/python/images/). You basically just create a special link to the uploaded file with the thumbnail size as parameter.
