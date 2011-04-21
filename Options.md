@@ -243,6 +243,14 @@ Only browsers supporting the [Blob API](https://developer.mozilla.org/en/DOM/Blo
 * Type: *integer*
 * Default: *null*
 
+### maxFileReaderSize
+This option limits the size of files that are transferred as *multipart/form-data* via XHR using the [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interface, when the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) interface is not available.  
+If the file size is bigger than *maxFileReaderSize*, the file is submitted using the iframe method.
+The default *maxFileReaderSize* setting is 50 MB to address lockup problems in Firefox 3.6.
+
+* Type: *integer*
+* Default: *50000000*
+
 ### resumeUpload
 This callback function is called before uploading the next chunk when *maxChunkSize* has been set.  
 If defined, the upload resumes when the callBack parameter is called.
