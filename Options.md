@@ -200,7 +200,9 @@ If you are making up your own HTTP header, you MUST put a X- in front of the nam
 ### multipart
 If set to *false*, streams the file content to the server url instead of sending a [RFC 2388](http://www.ietf.org/rfc/rfc2388.txt) multipart message.  
 Non-multipart uploads are also referred to as [HTTP PUT file upload](http://de.php.net/manual/en/features.file-upload.put-method.php).  
-**Note:** Form data is ignored when the multipart option is set to *false*.
+**Notes:**  
+Setting the *multipart* option to *false* has only an effect on browsers supporting XHR file uploads.  
+Form data is ignored when the multipart option is set to *false*.
 
 * Type: *boolean*
 * Default: *true*
