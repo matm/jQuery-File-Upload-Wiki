@@ -23,13 +23,13 @@ Several server-side frameworks (including PHP and Django) cannot handle multipar
 
 ## How to resume aborted file uploads
 File uploads can be resumed by making use of the *beforeSend* and *uploadedBytes* options.  
-In the following example, the uploaded filesize for a given filename is retrieved with an AJAX call and then used to set the *uploadedBytes* option on the *handler* object before starting the upload process by invoking the *callBack* method:
+In the following example, the uploaded filesize for a given file is retrieved with an AJAX call and then used to set the *uploadedBytes* option on the *handler* object before starting the upload process by invoking the *callBack* method:
 ```js
 $('#file_upload').fileUploadUI({
     /* ... */
     multipart: false,
     maxChunkSize: 10000000,
-    beforeSend = function (event, files, index, xhr, handler, callBack) {
+    beforeSend: function (event, files, index, xhr, handler, callBack) {
         if (typeof index !== 'undefined') {
             $.getJSON(
                 handler.url,
