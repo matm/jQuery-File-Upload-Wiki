@@ -18,6 +18,7 @@
 * How to force [[Sequential Uploads]].
 * [[How to upload multiple files with one request]].
 * [[How to invoke a method after all uploads have completed]].
+* How to implement [[Chunked Uploads]].
 
 ## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]].
