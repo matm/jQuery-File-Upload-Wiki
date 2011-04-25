@@ -1,6 +1,12 @@
 ## Using jQuery-File-Upload with the Flask microframework
 (or with Werkzeug, which is the base for Flask)
 
+    #
+    # Flask/Werkzeug handler example code
+    #
+    # Please note that this is not a complete application, just some example code about how
+    # to interact with jQuery-File-Upload and how to create the json responses it expects.
+    #
     # (c) 2011 by Thomas Waldmann
     # Licensed under MIT license.
 
@@ -10,8 +16,7 @@
     @app.route('/+upload', methods=['GET', 'POST'])
     def upload():
         if request.method == 'GET':
-            # we are expected to return a list of dicts with infos about
-            # the already available files:
+            # we are expected to return a list of dicts with infos about the already available files:
             file_infos = []
             for file_name in list_files():
                 file_url = url_for('show_file', file_name=file_name)
@@ -22,8 +27,7 @@
             return jsonify(files=file_infos)
 
         if request.method == 'POST':
-            # we are expected to save the uploaded file and return some
-            # infos about it:
+            # we are expected to save the uploaded file and return some infos about it:
             #                              vvvvvvvvv   this is the name for input type=file
             data_file = request.files.get('data_file')
             file_name = data_file.filename
