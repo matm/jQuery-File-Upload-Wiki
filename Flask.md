@@ -10,7 +10,7 @@
     # (c) 2011 by Thomas Waldmann
     # Licensed under MIT license.
 
-    from flask import jsonify
+    from flask import request, url_for, jsonify
 
     #           vvvvvvvv  this is the URL you need for action= in index.html of the demo app
     @app.route('/+upload', methods=['GET', 'POST'])
@@ -19,7 +19,7 @@
             # we are expected to return a list of dicts with infos about the already available files:
             file_infos = []
             for file_name in list_files():
-                file_url = url_for('show_file', file_name=file_name)
+                file_url = url_for('download', file_name=file_name)
                 file_size = get_file_size(file_name)
                 file_infos.append(dict(name=file_name,
                                        size=file_size,
@@ -33,7 +33,8 @@
             file_name = data_file.filename
             save_file(data_file, file_name)
             file_size = get_file_size(file_name)
-            file_url = url_for('show_file', file_name=file_name)
+            file_url = url_for('download', file_name=file_name)
+            # providing the thumbnail url is optional
             thumbnail_url = url_for('thumbnail', file_name=file_name)
             return jsonify(name=file_name,
                            size=file_size,
