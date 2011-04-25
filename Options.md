@@ -58,6 +58,20 @@ Mutliple instances of the plugin can be used on the same page without having to 
 * Type: *String*
 * Default: `'file_upload'`
 
+### init
+Allows to define a function that is run after plugin initialization.  
+**Note:** The File Upload UI plugin makes use of this option and provides an alternative with the initExtended option.
+
+* Type: *function*
+* Default: `undefined`
+
+### destroy
+Allows to define a function that is run before plugin de-initialization.  
+**Note:** The File Upload UI plugin makes use of this option and provides an alternative with the destroyExtended option.
+
+* Type: *function*
+* Default: `undefined`
+
 ### uploadFormFilter
 This option allows to filter the selected forms if the plugin is called on a container with multiple forms.  
 Accepts any parameter that is suitable for the [jQuery filter](http://api.jquery.com/filter) method.
@@ -520,6 +534,18 @@ This callback function is called when files are selected with the file upload fi
     1. event: change event object.
 
 ## Additional options available for the jQuery File Upload UI Plugin
+
+### initExtended
+Allows to define a function that is run after plugin initialization.
+
+* Type: *function*
+* Default: `undefined`
+
+### destroyExtended
+Allows to define a function that is run before plugin de-initialization.
+
+* Type: *function*
+* Default: `undefined`
 
 ### imageTypes
 A [regular expression](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/regexp) limiting the file types for previews of local files to be uploaded to browser displayable image types.
