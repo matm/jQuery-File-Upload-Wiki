@@ -397,7 +397,7 @@ The jQuery File Upload UI Plugin makes use of this callback to hide and reset th
 
 * Type: *function*
 * Arguments:
-    1. list: Array of arguments arrays of all onLoad callBacks.
+    1. list: Array of arguments arrays (without the event argument) of all onLoad callBacks.
 
 ### onAbort
 A callback function that is called when the file upload has been cancelled.  
@@ -884,7 +884,7 @@ A callback function that is called when the client received the server responses
 
 * Type: *function*
 * Arguments:
-    1. list: Array of arguments arrays of all onLoad callBacks.
+    1. list: Array of arguments arrays (without the event argument) of all onLoad callBacks.
 
 ### dropZoneEnlarge
 Allows to define a custom method to enlarge the dropZone.
