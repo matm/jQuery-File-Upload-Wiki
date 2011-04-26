@@ -884,7 +884,7 @@ A callback function that is called when the client received the server responses
 
 * Type: *function*
 * Arguments:
-    1. list: Array of arguments arrays of all onComplete callBacks.
+    1. list: Array of arguments arrays of all onLoad callBacks.
 
 ### dropZoneEnlarge
 Allows to define a custom method to enlarge the dropZone.
