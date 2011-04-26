@@ -23,7 +23,7 @@
 
 ## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]].
-* [[Flask]] tipps
+* How to use the plugin with the [[Flask]] Python Microframework.
 * [[jQuery-File-Upload-for-Rails-3]]: basic Rails 3 tutorial
 * [Sample app using Rails 3, carrierwave and jquery-file-upload to upload and store files on Amazon S3](https://github.com/yortz/carrierwave_jquery_file_upload).
 * [[jQuery File Upload for Java]]: basic Java application
