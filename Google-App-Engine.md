@@ -16,7 +16,6 @@ On client-side, you can make use of the *beforeSend* option to retrieve the uplo
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
-    downloadTable: $('#files'),
     buildUploadRow: function (files, index) {/* ... */},
     buildDownloadRow: function (file) {/* ... */},
     beforeSend: function (event, files, index, xhr, handler, callBack) {
