@@ -1,6 +1,6 @@
 The [jQuery File Upload Demo](http://aquantum-demo.appspot.com/file-upload) is always equipped with the latest version of the source files ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js) and [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js)).
 
-In addition to the the [jQuery](http://jquery.com/) and [jQuery UI](http://jqueryui.com/) libraries and the files distributed with the [jQuery File Upload Plugin](https://github.com/blueimp/jQuery-File-Upload), the demo utilizes the [jQuery Templates Plugin](https://github.com/jquery/jquery-tmpl), a simple [jQuery Cookie Plugin](https://github.com/blueimp/jQuery-Cookie) and a JavaScript file with localization strings.  
+In addition to the [jQuery](http://jquery.com/) and [jQuery UI](http://jqueryui.com/) libraries and the files distributed with the [jQuery File Upload Plugin](https://github.com/blueimp/jQuery-File-Upload), the demo utilizes the [jQuery Templates Plugin](https://github.com/jquery/jquery-tmpl), a simple [jQuery Cookie Plugin](https://github.com/blueimp/jQuery-Cookie) and a JavaScript file with localization strings.  
 For [[Performance Optimizations]], the JavaScript files are merged and minified into one minified JavaScript file. 
 
 Un-minified versions of the demo JavaScript files can be found here:
