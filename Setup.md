@@ -19,12 +19,12 @@ The easiest way to add some kind of authentication system is to protect the exam
 1. Implement a file upload handler on your platform (Ruby, Python, Java, etc.) that handles normal form based file uploads and upload it to your server. See also the Server-side specific tutorials on the [Documentation Homepage](https://github.com/blueimp/jQuery-File-Upload/wiki).
 2. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) and extract the plugin archive.
 3. Edit *example/index.html* and adjust the *action* attribute of the HTML form element to the URL of your custom file upload handler. Adjust the file input *name* attribute if your upload handler requires another parameter name for the file uploads.
-4. Edit *example/application.js* and remove the *maxChunkSize* and *continueAbortedUploads* options (these options require support for chunked uploads on server-side).
-5. Upload the jQuery-File-Upload folder to your website.
-6. Extend your custom server-side upload handler to return a [JSON](http://en.wikipedia.org/wiki/JSON) response akin to the following output:
+4. Upload the jQuery-File-Upload folder to your website.
+5. Extend your custom server-side upload handler to return a [JSON](http://en.wikipedia.org/wiki/JSON) response akin to the following output:
 ```js
 {"name":"picture.jpg","size":902604,"url":"\/jQuery-File-Upload\/example\/files\/picture.jpg","thumbnail":"\/jQuery-File-Upload\/example\/thumbnails\/picture.jpg"}
 ```
+Adjust it to respond with a JSON array if your upload component handles multiple files.
 
 Visit the uploaded folder's "example" directory - you should see a file upload interface similar to the demo, allowing you to upload files to your website.
 
