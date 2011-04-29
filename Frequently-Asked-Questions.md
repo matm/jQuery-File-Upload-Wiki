@@ -56,8 +56,12 @@ However, since version 4.0 an advanced PHP based [example](https://github.com/bl
 Just make use of [jQuery's each method](http://api.jquery.com/each/) to set the *this* keyword to the element node:
 ```js
 $('#file_upload').each(function () {
+    var uploadForm = $(this);
     $(this).fileUploadUI({
-        uploadTable: $(this).find('table:first');
+        uploadTable: uploadForm.find('table:first'),
+        beforeSend: function (event, files, index, xhr, handler) {
+            uploadForm.find('table:first').fadeIn();
+        }
     });
 });
 ```
