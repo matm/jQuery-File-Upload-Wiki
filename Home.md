@@ -5,6 +5,7 @@
 * How to [[Setup]] the plugin on your website.
 * **The plugin [[API]].**
 * **List of all available [[Options]] for this plugin.**
+* Explanation of the [[Plugin files]].
 * [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
 * [[Performance Optimizations]] to speed up page load times.
 * List of [[Known Issues]].
