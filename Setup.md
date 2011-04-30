@@ -37,7 +37,7 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
 1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the contents without the "example" directory to your server.
 2. Add the following two lines to the head of your page (adjust the path to the *jquery.fileupload-ui.css* file):
 ```html
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css" id="theme">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css" id="theme">
 <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
 ```
 3. Add the following form to the body of your page (replace *upload.php* with the path to your upload handler):
@@ -55,7 +55,7 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
 5. Add the following lines to the bottom of your page, before the closing body tag (adjust the paths to the *jquery.fileupload.js* and *jquery.fileupload-ui.js* files):
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 <script src="js/jquery.fileupload.js"></script>
 <script src="js/jquery.fileupload-ui.js"></script>
 <script src="js/application.js"></script>
