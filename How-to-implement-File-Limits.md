@@ -1,5 +1,21 @@
 This page explains how to implement client-side limits for the files being uploaded, e.g. to restrict **file sizes** and **file types** or the number of selected files.  
-To enforce these constraints, you will still have to implement the same limitations within your server-side handler, as any client-side restrictions can be bypassed.
+**Note**: To enforce these constraints, you will still have to implement the same limitations within your server-side handler, as any client-side restrictions can be bypassed.
+
+## File limits example for the jQuery File Upload UIX version:
+```js
+$('#file_upload').fileUploadUIX({
+    maxFileSize: 5000000, // Size in bytes - 5 MB
+    minFileSize: 100000, // Size in bytes - 100 KB
+    // German localization:
+    locale: {
+        'File is too big': 'Datei ist zu groß',
+        'File is too small': 'Datei ist zu klein',
+        'Filetype not allowed': 'Dateityp nicht erlaubt'
+    },
+    // Accept only image file types:
+    acceptFileTypes: /(png)|(jpe?g)|(gif)$/i
+});
+```
 
 ## Example on how to limit the file size to 5 MB:
 To restrict the file size you can make use of the *beforeSend* option like this:
