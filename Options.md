@@ -917,13 +917,19 @@ Allows to override the error message localization.
 Allows to set a maximum filesize limit.
 
 * Type: *integer* (Filesize in Bytes)
-* Default: *0* (no maximum filesize limitation)
+* Default: *null* (no maximum filesize limitation)
 
 ### minFileSize
 Allows to set a minimum filesize limit.
 
 * Type: *integer* (Filesize in Bytes)
 * Default: *1* (prevent uploading folders or empty files)
+
+### maxNumberOfFiles
+Allows to set a limit for the number of uploadable files.
+
+* Type: *integer* (Filesize in Bytes)
+* Default: *null* (no limitation for the number of uploadable files)
 
 ### acceptFileTypes
 A regular expression limiting the allowed file types.  
