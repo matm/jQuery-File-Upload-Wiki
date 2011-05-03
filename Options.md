@@ -897,3 +897,49 @@ Allows to define a custom method to reduce the dropZone.
 
 * Type: *function*
 * Arguments: none
+
+## Additional options available for the jQuery File Upload UIX Plugin
+
+### locale
+Allows to override the error message localization.
+
+* Type: *object*
+* Example:
+```js
+{
+    'File is too big': 'Datei ist zu groß',
+    'File is too small': 'Datei ist zu klein',
+    'Filetype not allowed': 'Dateityp nicht erlaubt'
+}
+```
+
+### maxFileSize
+Allows to set a maximum filesize limit.
+
+* Type: *integer* (Filesize in Bytes)
+* Default: *0* (no maximum filesize limitation)
+
+### minFileSize
+Allows to set a minimum filesize limit.
+
+* Type: *integer* (Filesize in Bytes)
+* Default: *1* (prevent uploading folders or empty files)
+
+### acceptFileTypes
+A regular expression limiting the allowed file types.  
+The regular expression is matched against both the file type (if available) and the file name and accepts the file if one the tests returns a match.
+
+* Type: *RegExp*
+* Default: ```/.+$/i``` (no file type limitations)
+
+### autoUpload
+A simple option to enable automatic upload or queued upload (upload starting by user interaction).
+
+* Type: *boolean*
+* Default: *false*
+
+### forceIframeDownload
+Enables/disables the download handler that opens non-image downloads in a hidden iframe, to prevent aborting running uploads.
+
+* Type: *boolean*
+* Default: *true*
