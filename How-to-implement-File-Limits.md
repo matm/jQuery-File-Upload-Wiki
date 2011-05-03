@@ -4,13 +4,15 @@ This page explains how to implement client-side limits for the files being uploa
 ## File limits example for the jQuery File Upload UIX version:
 ```js
 $('#file_upload').fileUploadUIX({
-    maxFileSize: 5000000, // Size in bytes - 5 MB
-    minFileSize: 100000, // Size in bytes - 100 KB
+    maxFileSize: 5000000, // Size in Bytes - 5 MB
+    minFileSize: 100000, // Size in Bytes - 100 KB
+    maxNumberOfFiles: 5,
     // German localization:
     locale: {
         'File is too big': 'Datei ist zu groß',
         'File is too small': 'Datei ist zu klein',
-        'Filetype not allowed': 'Dateityp nicht erlaubt'
+        'Filetype not allowed': 'Dateityp nicht erlaubt',
+        'Max number exceeded': 'Maximalanzahl überschritten'
     },
     // Accept only image file types:
     acceptFileTypes: /(png)|(jpe?g)|(gif)$/i
