@@ -99,6 +99,13 @@ function (index) {
 ```
 * Example: `'.file_2'`
 
+### replaceFileInput
+By default, the plugin replaces the file input with a reset clone after each change event.  
+This option allows to disable the replacement by setting it to *false*.
+
+* Type: *boolean*
+* Default: *true*
+
 ### cssClass
 The CSS class that is added on plugin initialization to the dropZone.  
 The dropZone is the HTML form or HTML DOM node containing the form and defines the area on which files can be dropped.
