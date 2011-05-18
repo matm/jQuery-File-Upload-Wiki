@@ -3,6 +3,7 @@ The basic initialization of the File Upload widget is by calling the *fileupload
 ```js
 $('#fileupload').fileupload();
 ```
+
 The method accepts an object as first argument that allows to initialize the widget with various [[Options]]:
 ```js
 $('#fileupload').fileupload({
@@ -56,6 +57,7 @@ Files can be added to the upload table:
 ```js
 $('#fileupload').fileupload('add', {files: filesList});
 ```
+
 Or they can be send directly:
 ```js
 $('#fileupload').fileupload('send', {files: filesList});
