@@ -80,7 +80,54 @@ $('#fileupload').fileupload('send', {files: filesList});
 The *send* method returns a [jqXHR](http://api.jquery.com/jQuery.ajax/#jqXHR) object, that allows to bind callbacks to the ajax file upload request(s):
 ```js
 var jqXHR = $('#fileupload').fileupload('send', {files: filesList})
-    .success(function() { alert('success'); })
-    .error(function() { alert('error'); })
-    .complete(function() { alert('complete'); });
+    .success(function (result, textStatus, jqXHR) {/* ... */})
+    .error(function (jqXHR, textStatus, errorThrown) {/* ... */})
+    .complete(function (result, textStatus, jqXHR) {/* ... */});
+```
+
+## Callbacks
+The File Upload widget provides several callback hooks.  
+One way of using them is to provide callback methods as part of the [[Options]] object:
+```js
+$('#fileupload').fileupload({
+    drop: function (e, data) {
+        $.each(data.files, function (index, file) {
+            alert('Dropped file: ' + file.name);
+        });
+    },
+    change: function (e, data) {
+        $.each(data.files, function (index, file) {
+            alert('Selected file: ' + file.name);
+        });
+    }
+});
+```
+
+The second way of using them is by by binding event listeners to the widget element:
+```js
+$('#fileupload')
+    .bind('fileuploaddrop', function (e, data) {/* ... */})
+    .bind('fileuploadchange', function (e, data) {/* ... */});
+```
+Each event name has "fileupload" as prefix.
+
+One special callback is the *add* callback, as it provides a *submit* method for the data argument, that will start the file upload:
+```js
+$('#fileupload').fileupload({
+    add: function (e, data) {
+        data.submit();
+    }
+});
+```
+
+The submit method of the data argument given to the *add* callback returns a [jqXHR](http://api.jquery.com/jQuery.ajax/#jqXHR) object, that allows to bind callbacks to the ajax file upload request:
+```js
+$('#fileupload').fileupload({
+    add: function (e, data) {
+        var jqXHR = data.submit()
+            .success(function (result, textStatus, jqXHR) {/* ... */})
+            .error(function (jqXHR, textStatus, errorThrown) {/* ... */})
+            .complete(function (result, textStatus, jqXHR) {/* ... */});
+    }
+});
 ```
