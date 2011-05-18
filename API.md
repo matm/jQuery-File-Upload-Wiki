@@ -3,7 +3,7 @@ The basic initialization of the File Upload plugin is by calling the *fileupload
 ```js
 $('#fileupload').fileupload();
 ```
-The first parameter can be an object setting various [[Options]]:
+The method accepts an object as first argument that allows to initialize the widget with various [[Options]]:
 ```js
 $('#fileupload').fileupload({
     url: '/path/to/upload/handler.json',
