@@ -12,7 +12,7 @@ $('#fileupload').fileupload({
 ```
 
 ## Setting options after initialization
-It is also possible to set [[Options]] after plugin initialization:
+It is also possible to set [[Options]] after initializing the widget:
 ```js
 $('#fileupload').fileupload(
     'option',
