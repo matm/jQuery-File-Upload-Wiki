@@ -41,7 +41,7 @@ $('#fileupload').fileupload(
 );
 ```
 
-## De-initialization
+## Deinitialization
 To remove the file upload widget functionality from the element node, call the *destroy* method:
 ```js
 $('#fileupload').fileupload('destroy');
@@ -76,6 +76,7 @@ Files can also be send directly using the *send* method:
 ```js
 $('#fileupload').fileupload('send', {files: filesList});
 ```
+
 The *send* method returns a [jqXHR](http://api.jquery.com/jQuery.ajax/#jqXHR) object, that allows to bind callbacks to the ajax file upload request(s):
 ```js
 var jqXHR = $('#fileupload').fileupload('send', {files: filesList})
