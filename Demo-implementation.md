@@ -1,4 +1,4 @@
-The [jQuery File Upload Demo](http://aquantum-demo.appspot.com/file-upload) is always equipped with the latest version of the source files ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js), [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js) and [jquery.iframe-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js)).
+The [jQuery File Upload Demo](http://aquantum-demo.appspot.com/file-upload) is always equipped with the latest version of the source files ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js), [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js), [jquery.iframe-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) and [jquery.image-gallery.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.image-gallery.js)).
 
 In addition to the [jQuery](http://jquery.com/) and [jQuery UI](http://jqueryui.com/) libraries and the files distributed with the [jQuery File Upload Plugin](https://github.com/blueimp/jQuery-File-Upload), the demo utilizes the [jQuery Templates Plugin](http://api.jquery.com/category/plugins/templates/), a simple [jQuery Cookie Plugin](https://github.com/blueimp/jQuery-Cookie) and a JavaScript file with localization strings.
 
@@ -12,6 +12,7 @@ Un-minified versions of the demo JavaScript files can be found here:
 * [[http://aquantum-demo.appspot.com/static/js/jquery.tmpl.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.cookie.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.iframe-transport.js]]
+* [[http://aquantum-demo.appspot.com/static/js/jquery.iframe-gallery.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload-ui.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload-uix.js]]
