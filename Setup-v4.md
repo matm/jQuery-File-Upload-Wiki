@@ -4,7 +4,7 @@
 
 The provided example works out of the box and only needs one step for you to add it to your PHP based website:
 
-1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the extracted folder (you may rename it) to your server.
+1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/v4) the plugin archive, extract it and upload the extracted folder (you may rename it) to your server.
 
 Visit the uploaded folder's "example" directory - you should see a file upload interface similar to the demo, allowing you to upload files to your website.
 
