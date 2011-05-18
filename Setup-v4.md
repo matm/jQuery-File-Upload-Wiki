@@ -17,7 +17,7 @@ The easiest way to add some kind of authentication system is to protect the exam
 ## Simple version using the provided example for websites without PHP
 
 1. Implement a file upload handler on your platform (Ruby, Python, Java, etc.) that handles normal form based file uploads and upload it to your server. See also the Server-side specific tutorials on the [Documentation Homepage](https://github.com/blueimp/jQuery-File-Upload/wiki).
-2. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) and extract the plugin archive.
+2. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/v4) and extract the plugin archive.
 3. Edit *example/index.html* and adjust the *action* attribute of the HTML form element to the URL of your custom file upload handler. Adjust the file input *name* attribute if your upload handler requires another parameter name for the file uploads.
 4. Upload the jQuery-File-Upload folder to your website.
 5. Extend your custom server-side upload handler to return a [JSON](http://en.wikipedia.org/wiki/JSON) response akin to the following output:
@@ -34,7 +34,7 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
 
 ## Advanced version without using the provided example code
 
-1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the contents without the "example" directory to your server.
+1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/v4) the plugin archive, extract it and upload the contents without the "example" directory to your server.
 2. Add the following two lines to the head of your page (adjust the path to the *jquery.fileupload-ui.css* file):
 ```html
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css" id="theme">
