@@ -1,5 +1,5 @@
 ## Initialization
-The basic initialization of the File Upload plugin is by calling the *fileupload* method on a jQuery collection with the target HTML element (usually a container element holding the file upload form, or the file upload form itself):
+The basic initialization of the File Upload widget is by calling the *fileupload* method on a jQuery collection with the target HTML element (usually a container element holding the file upload form, or the file upload form itself):
 ```js
 $('#fileupload').fileupload();
 ```
