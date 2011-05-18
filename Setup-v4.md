@@ -1,4 +1,4 @@
-# Setup instructions (for v.4 of the plugin)
+# Setup instructions (plugin v.4)
 
 ## Simple version using the provided example for websites running PHP
 
