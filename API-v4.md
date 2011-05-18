@@ -3,10 +3,10 @@ The basic initialization of the File Upload plugin is by calling it on an elemen
 ```js
 $('#file_upload').fileUpload();
 ```
-The first (or second, if the first is the string `'init'`) parameter can be an object setting various [[Options]].
+The first (or second, if the first is the string `'init'`) parameter can be an object setting various [[Options v4]].
 
 ## Setting options after initialization
-See [[Options]] documentation.
+See [[Options v4]] documentation.
 
 ## De-initialization
 To remove the file upload widget from the element node, call the *destroy* method:
