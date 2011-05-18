@@ -5,10 +5,12 @@ For [[Performance Optimizations]], the JavaScript files are merged and minified 
 
 Un-minified versions of the demo JavaScript files can be found here:
 
+* [[http://aquantum-demo.appspot.com/static/js/jquery.tmpl.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.cookie.js]]
+* [[http://aquantum-demo.appspot.com/static/js/jquery.iframe-transport.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload-ui.js]]
-* [[http://aquantum-demo.appspot.com/static/js/jquery.tmpl.js]]
+* [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload-uix.js]]
 * [[http://aquantum-demo.appspot.com/static/js/localization/en.js]]
 * [[http://aquantum-demo.appspot.com/static/js/application.js]]
 
