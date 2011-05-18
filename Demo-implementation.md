@@ -2,7 +2,7 @@ The [jQuery File Upload Demo](http://aquantum-demo.appspot.com/file-upload) is a
 
 In addition to the [jQuery](http://jquery.com/) and [jQuery UI](http://jqueryui.com/) libraries and the files distributed with the [jQuery File Upload Plugin](https://github.com/blueimp/jQuery-File-Upload), the demo utilizes the [jQuery Templates Plugin](http://api.jquery.com/category/plugins/templates/), a simple [jQuery Cookie Plugin](https://github.com/blueimp/jQuery-Cookie) and a JavaScript file with localization strings.
 
-The demo extends the File Upload plugin with a customized widget class: [jquery.fileupload-uix.js](http://aquantum-demo.appspot.com/static/js/jquery.fileupload-uix.js)
+The demo extends the File Upload plugin with a customized widget class: [jquery.fileupload-uix.js](http://aquantum-demo.appspot.com/static/js/jquery.fileupload-uix.js)  
 Extending the widget class is the recommended way for customized versions.
 
 For [[Performance Optimizations]], the JavaScript files are merged and minified into one minified JavaScript file. 
