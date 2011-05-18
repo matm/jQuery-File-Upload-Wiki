@@ -33,7 +33,7 @@ $('#fileupload').fileupload(
 ```
 
 ## De-initialization
-To remove the file upload widget from the element node, call the *destroy* method:
+To remove the file upload widget functionality from the element node, call the *destroy* method:
 ```js
 $('#fileupload').fileupload('destroy');
 ```
@@ -49,9 +49,9 @@ $('#fileupload').fileupload('enable');
 ```
 
 ## Programmatic file upload
-Usually, file uploads are invoked by selecting files via the file upload button or dropping files on the drop zone.
+Usually, file uploads are invoked by selecting files via the file input button or dropping files on the drop zone.
 
-However it is also possible to files programmatically.  
+However it is also possible to upload files programmatically.  
 Files can be added to the upload table:
 ```js
 $('#fileupload').fileupload('add', {files: filesList});
