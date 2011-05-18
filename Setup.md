@@ -34,6 +34,7 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
 
 You can make use of the *Accept* header to offer different content types for the file upload response. Here is the (PHP) example code snippet for the *Accept* content-type variation:
 ```php
+<?php
 header('Vary: Accept');
 if (isset($_SERVER['HTTP_ACCEPT']) &&
     (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false)) {
@@ -41,4 +42,5 @@ if (isset($_SERVER['HTTP_ACCEPT']) &&
 } else {
     header('Content-type: text/plain');
 }
+?>
 ```
