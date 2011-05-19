@@ -13,7 +13,7 @@ class UploadUrlHandler(webapp.RequestHandler):
         self.response.out.write('"' + upload_url + '"')
 ```
 
-On client-side, you can override the *add* callback to retrieve the upload url and override the *url* setting:
+On client-side, you can override the *add* callback to retrieve the upload url and override the *url* setting, before adding the file to the upload queue:
 ```js
 $('#fileupload').fileupload({
     add: function (e, data) {
