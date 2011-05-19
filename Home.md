@@ -13,14 +13,14 @@
 ## Customization how-tos
 * [[Drag and drop uploads from another web page]]
 
-# Documentation for v.4 (old branch)
+## Documentation for v.4 (old branch)
 
-## Basic plugin information
+### Basic plugin information
 * How to [[Setup v4]] the plugin on your website.
 * The plugin [[API v4]].
 * List of all available [[Options v4]] for this plugin.
 
-## Server-side specific tutorials
+### Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]].
 * How to use the plugin with the [[Flask]] Python Microframework.
 * [[jQuery-File-Upload-for-Rails-3]]: basic Rails 3 tutorial
