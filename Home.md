@@ -26,7 +26,6 @@
 * How to force [[Sequential Uploads]].
 * [[How to upload multiple files with one request]].
 * [[How to invoke a method after all uploads have completed]].
-* How to implement [[Chunked Uploads]].
 * [[Drag and drop uploads from another web page]]
 
 ## Server-side specific tutorials
