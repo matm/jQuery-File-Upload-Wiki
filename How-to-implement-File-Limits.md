@@ -1,4 +1,4 @@
-How to implement file limits (v. 4 branch)
+# How to implement file limits (v. 4 branch)
 
 This page explains how to implement client-side limits for the files being uploaded, e.g. to restrict **file sizes** and **file types** or the number of selected files.  
 **Note**: To enforce these constraints, you will still have to implement the same limitations within your server-side handler, as any client-side restrictions can be bypassed.  
