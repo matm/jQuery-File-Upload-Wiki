@@ -10,23 +10,15 @@
 * [[Performance Optimizations]] to speed up page load times.
 * [[Frequently Asked Questions]] (FAQ)
 
+## Customization how-tos
+* [[Drag and drop uploads from another web page]]
+
 # Documentation for v.4 (old branch)
 
 ## Basic plugin information
 * How to [[Setup v4]] the plugin on your website.
 * The plugin [[API v4]].
 * List of all available [[Options v4]] for this plugin.
-
-## Customization how-tos
-* [[How to queue files and start uploads with a button click]].
-* [[How to implement File Limits]] (e.g. file size, file types or the number of selected files).
-* [[How to submit additional Form Data]] (POST variables).
-* How to handle [[Multiple File Input Fields in one Form]].
-* How to handle [[Multiple plugin instances on the same page]].
-* How to force [[Sequential Uploads]].
-* [[How to upload multiple files with one request]].
-* [[How to invoke a method after all uploads have completed]].
-* [[Drag and drop uploads from another web page]]
 
 ## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]].
