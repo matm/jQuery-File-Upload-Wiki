@@ -28,7 +28,7 @@ Note that the response should always be a JSON array even if only one file is up
 
 Visit the uploaded folder's "example" directory - you should see a file upload interface similar to the demo, allowing you to upload files to your website.
 
-**Note:**  
+### Content-Type Negotiation
 The file upload plugin makes use of an Iframe Transport module for browsers like *Microsoft Internet Explorer* and *Opera*, which do not yet support [XMLHTTPRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.  
 Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of *text/plain* or *text/html* for the JSON response - they will show an undesired download dialog if the iframe response is set to *application/json*.
 
