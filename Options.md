@@ -3,7 +3,25 @@ All options of the basic version are present in the UI version, while the latter
 
 For example code on how to use the options, please refer to the [[API]] documentation.
 
-## Options for the basic jQuery File Upload Plugin
+## AJAX Options
+
+The jQuery File Upload plugin makes use of [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) for the file upload requests. This is true even for browsers without support for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest), thanks to the [Iframe Transport plugin)(https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js).
+
+The options set for the File Upload plugin are passed to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) and allow to define any ajax settings or callbacks.   
+The ajax options *processData*, *contentType* and *cache* are set to *false* for the file uploads to work and should not be changed.  
+The following options are also set by the plugin, but can be useful to customize:
+
+### url
+A string containing the URL to which the request is sent.  
+If undefined or empty, it is set to the *action* property of the file upload form if available, or else the url of the current page.
+
+* Type: *String*
+* Example: `'/path/to/upload/handler.json'`
+
+### type
+The HTTP request method for the file uploads. Can be *POST* or *PUT* and defaults to *POST*.
+
+## General Options
 
 ### namespace
 The namespace used for event handler binding on the dropZone and fileInput collections.  
@@ -120,3 +138,5 @@ function (form) {
   }
 ]
 ```
+
+## Callback options
