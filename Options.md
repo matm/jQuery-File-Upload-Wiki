@@ -49,7 +49,8 @@ Set to null or an empty collection to disable the change listener.
 * Example: `$('input:file')`
 
 ### replaceFileInput
-By default, the file input field is replaced with a clone after each input field change event. This is required for iframe transport queues and allows change events to be fired for the same file selection, but can be disabled by setting this option to false.
+By default, the file input field is replaced with a clone after each input field change event.  
+This is required for iframe transport queues and allows change events to be fired for the same file selection, but can be disabled by setting this option to false.
 
 * Type: *boolean*
 * Default: `true`
