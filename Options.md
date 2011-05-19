@@ -15,11 +15,14 @@ The following options are also set by the plugin, but can be useful to customize
 A string containing the URL to which the request is sent.  
 If undefined or empty, it is set to the *action* property of the file upload form if available, or else the url of the current page.
 
-* Type: *String*
+* Type: *string*
 * Example: `'/path/to/upload/handler.json'`
 
 ### type
 The HTTP request method for the file uploads. Can be *POST* or *PUT* and defaults to *POST*.
+
+* Type: *string*
+* Example: `'PUT'`
 
 ## General Options
 
@@ -27,7 +30,7 @@ The HTTP request method for the file uploads. Can be *POST* or *PUT* and default
 The namespace used for event handler binding on the dropZone and fileInput collections.  
 If not set, the name of the widget ("fileupload") is used.
 
-* Type: *String*
+* Type: *string*
 * Example: `'myfileupload'`
 
 ### dropZone
