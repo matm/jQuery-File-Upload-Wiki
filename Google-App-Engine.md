@@ -9,19 +9,18 @@ from google.appengine.ext import webapp
 class UploadUrlHandler(webapp.RequestHandler):
     def get(self):
         upload_url = blobstore.create_upload_url('/path/to/upload/handler')
-        self.response.out.write(upload_url)
+        self.response.out.write('"' + upload_url + '"')
 ```
 
-On client-side, you can make use of the *beforeSend* option to retrieve the upload url and override the *url* setting:
+On client-side, you can override the *add* callback to retrieve the upload url and override the *url* setting:
 ```js
-$('#file_upload').fileUploadUI({
-    uploadTable: $('#files'),
-    buildUploadRow: function (files, index) {/* ... */},
-    buildDownloadRow: function (file) {/* ... */},
-    beforeSend: function (event, files, index, xhr, handler, callBack) {
-        $.get('/upload-url-handler', function (data) {
-            handler.url = data;
-            callBack();
+$('#fileupload').fileupload({
+    add: function (e, data) {
+        var that = this;
+        $.getJSON('/upload-url-handler.json', function (url) {
+            data.url = url;
+            $.blueimpUI.fileupload.prototype
+                .options.add.call(that, e, data);
         });
     }
 });
