@@ -24,6 +24,14 @@ The HTTP request method for the file uploads. Can be "POST" or "PUT" and default
 * Type: *string*
 * Example: `'PUT'`
 
+### dataType
+The type of data that is expected back from the server.  
+
+**Note:** The UI version of the File Upload plugin sets this option to "json" by default.
+
+* Type: *string*
+* Example: `'json'`
+
 ## General Options
 
 ### namespace
@@ -136,14 +144,14 @@ function (form) {
 * Example:
 ```js
 [
-  {
-    name: 'a',
-    value: 1
-  },
-  {
-    name: 'b',
-    value: 2
-  }
+    {
+        name: 'a',
+        value: 1
+    },
+    {
+        name: 'b',
+        value: 2
+    }
 ]
 ```
 
@@ -215,9 +223,9 @@ Callback for successful uploads.
 * Example:
 ```js
 function (e, data) {
-    //data.result
-    //data.textStatus;
-    //data.jqXHR;
+    // data.result
+    // data.textStatus;
+    // data.jqXHR;
 }
 ```
 
@@ -227,9 +235,9 @@ Callback for failed (abort or error) uploads
 * Example:
 ```js
 function (e, data) {
-    //data.errorThrown
-    //data.textStatus;
-    //data.jqXHR;
+    // data.errorThrown
+    // data.textStatus;
+    // data.jqXHR;
 }
 ```
 
@@ -239,9 +247,9 @@ Callback for completed (success, abort or error) requests.
 * Example:
 ```js
 function (e, data) {
-    //data.result
-    //data.textStatus;
-    //data.jqXHR;
+    // data.result
+    // data.textStatus;
+    // data.jqXHR;
 }
 ```
 
@@ -318,3 +326,93 @@ function (e) {
     // e.dataTransfer
 }
 ```
+
+## Additional Options for the UI version
+
+### autoUpload
+By default, files added to the UI widget are uploaded as soon as the user clicks on the start buttons. To enable automatic uploads, set this option to true.
+
+* Type: *boolean*
+* Default: `false`
+
+### maxNumberOfFiles
+This option limits the number of files that are allowed to be uploaded using this widget.  
+By default, unlimited file uploads are allowed.
+
+* Type: *number*
+* Example: `10`
+
+### maxFileSize
+The maximum allowed file size in bytes, by default unlimited.
+
+**Note:** This option has only an effect for browsers supporting the [File API](https://developer.mozilla.org/en/DOM/file).
+
+* Type: *number*
+* Example: `5000000`
+
+### minFileSize
+The minimum allowed file size, by default 1 byte.
+
+**Note:** This option has only an effect for browsers supporting the [File API](https://developer.mozilla.org/en/DOM/file).
+
+* Type: *number*
+* Default: `1`
+
+### acceptFileTypes
+The regular expression for allowed file types, matches against either file type or file name as only browsers with support for the [File API](https://developer.mozilla.org/en/DOM/file) report the file type.
+
+* Type: *Regular Expression*
+* Example: `/\.(gif|jpe?g|png)$/i`
+
+### previewFileTypes
+The regular expression to define for which files a preview image is shown, matched against the file type.
+
+**Note:** Preview images (before upload) are only displayed for browsers supporting the *URL* or *webkitURL* APIs or the *readAsDataURL* method of the [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interface.
+
+* Type: *Regular Expression*
+* Default: `/^image\/(gif|jpeg|png)$/`
+
+### previewMaxWidth
+The maximum width of the preview images.
+
+* Type: *number*
+* Default: `80`
+
+### previewMaxHeight
+The maximum height of the preview images.
+
+* Type: *number*
+* Default: `80`
+
+### previewAsCanvas
+By default, preview images are displayed as [canvas](https://developer.mozilla.org/en/HTML/canvas) elements if supported by the browser.  
+Set this option to false to always display preview images as *img* elements.
+
+* Type: *boolean*
+* Default: `true`
+
+### imageGalleryOptions
+Image links of uploaded files with a "rel" attribute starting with "gallery" (e.g. rel="gallery" or rel="gallery[name]") are opened with the [Image Gallery plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.image-gallery.js).  
+The Image Gallery is initialized with this options object, which is passed to [jQuery UI dialog](http://jqueryui.com/demos/dialog) and allows to set any dialog options.
+
+* Type: *object*
+* Example:
+```js
+{
+    open: function (event, ui) {/* called on dialogopen */},
+    title: 'Image Gallery' // Sets the dialog title
+}
+```
+
+### uploadTemplate
+The file upload template that is given as first argument to the [jQuery.tmpl](http://api.jquery.com/jquery.tmpl/) method to render the file uploads.
+
+* Type: *jQuery Object*
+* Default: `$('#template-upload')`
+
+### downloadTemplate
+The file download template that is given as first argument to the [jQuery.tmpl](http://api.jquery.com/jquery.tmpl/) method to render the file downloads.
+
+* Type: *jQuery Object*
+* Default: `$('#template-download')`
+
