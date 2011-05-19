@@ -13,6 +13,9 @@
 ## Customization how-tos
 * [[Drag and drop uploads from another web page]]
 
+### Server-side specific tutorials
+* How to use the plugin with [[Google App Engine]].
+
 ## Documentation for v.4 (old branch)
 
 ### Basic plugin information
@@ -21,7 +24,6 @@
 * List of all available [[Options v4]] for this plugin.
 
 ### Server-side specific tutorials
-* How to use the plugin with [[Google App Engine]].
 * How to use the plugin with the [[Flask]] Python Microframework.
 * [[jQuery-File-Upload-for-Rails-3]]: basic Rails 3 tutorial
 * [Sample app using Rails 3, carrierwave and jquery-file-upload to upload and store files on Amazon S3](https://github.com/yortz/carrierwave_jquery_file_upload).
