@@ -2,7 +2,7 @@ This page explains how to submit additional Form Data (POST variables) with your
 This can be done either programmatically, or by adding additional input fields to the form.
 
 ## Adding additional Form Data for individual file uploads programmatically
-Adding additional Form Data programmatically can be done using the beforeSend and formData [[Options]], similar to the following example:
+Adding additional Form Data programmatically can be done using the beforeSend and formData [[Options v4]], similar to the following example:
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
@@ -42,7 +42,7 @@ In the above example, the uploadRow content returned by buildUploadRow is extend
 The beforeSend option allows to queue the selected files and add the content of the input field as formData before the upload is started by invoking the callBack method.
 
 ## Sending additional Form Data by adding input fields to the upload form
-If the formData option (see [[Options]] or the previous example) is not set, the plugin automatically includes all input fields with the upload request.  
+If the formData option (see [[Options v4]] or the previous example) is not set, the plugin automatically includes all input fields with the upload request.  
 The following example will add `example=banana` along with each file upload:
 ```html
 <form id="file_upload" action="upload.php" method="POST" enctype="multipart/form-data">
