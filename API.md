@@ -24,7 +24,7 @@ $('#fileupload').fileupload(
 
 If no value is specified, the *option* method acts as a getter:
 ```js
-$('#fileupload').fileupload(
+var dropZone = $('#fileupload').fileupload(
     'option',
     'dropZone'
 );
