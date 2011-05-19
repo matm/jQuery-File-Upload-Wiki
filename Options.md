@@ -5,7 +5,7 @@ For example code on how to use the options, please refer to the [[API]] document
 
 ## AJAX Options
 
-The jQuery File Upload plugin makes use of [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) for the file upload requests. This is true even for browsers without support for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest), thanks to the [Iframe Transport plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js).
+The jQuery File Upload plugin makes use of [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) for the file upload requests. This is true even for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest), thanks to the [Iframe Transport plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js).
 
 The options set for the File Upload plugin are passed to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) and allow to define any ajax settings or callbacks.   
 The ajax options *processData*, *contentType* and *cache* are set to *false* for the file uploads to work and should not be changed.  
@@ -63,7 +63,7 @@ If undefined or empty, the name property of the file input field is used, or "fi
 * Example: `'attachments[]'`
 
 ### singleFileUploads
-By default, each file of a selection is uploaded using an individual request for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) type uploads.  
+By default, each file of a selection is uploaded using an individual request for [XHR](https://developer.mozilla.org/en/xmlhttprequest) type uploads.  
 Set this option to false to upload file selections in one request each.
 
 **Note:** Uploading multiple files with one request requires the multipart option to be set to *true* (the default).
@@ -78,14 +78,14 @@ Set this option to true to issue all file upload requests in a sequential order 
 * Default: `false`
 
 ### forceIframeTransport
-Set this option to true to force iframe transport uploads, even if the browser is capable of [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.  
-This can be useful for cross-site file uploads, if the [Access-Control-Allow-Origin](https://developer.mozilla.org/En/HTTP_Access_Control#Access-Control-Allow-Origin) header cannot be set for the server-side upload handler which is required for cross-site [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.
+Set this option to true to force iframe transport uploads, even if the browser is capable of [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.  
+This can be useful for cross-site file uploads, if the [Access-Control-Allow-Origin](https://developer.mozilla.org/En/HTTP_Access_Control#Access-Control-Allow-Origin) header cannot be set for the server-side upload handler which is required for cross-site [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.
 
 * Type: *boolean*
 * Default: `false`
 
 ### multipart
-By default, [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads are sent as multipart/form-data.  
+By default, [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads are sent as multipart/form-data.  
 The iframe transport is always using multipart/form-data.  
 If this option is set to *false*, the file content is streamed to the server url instead of sending a [RFC 2388](http://www.ietf.org/rfc/rfc2388.txt) multipart message for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.   
 Non-multipart uploads are also referred to as [HTTP PUT file upload](http://de.php.net/manual/en/features.file-upload.put-method.php).  
@@ -121,7 +121,7 @@ Set this option to false to prevent recalculating the global progress data.
 * Default: `true`
 
 ### formData
-Additional form data to be sent along with the file uploads can be set using this option, which accepts an array of objects with name and value properties, a function returning such an array, a [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) object (for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads), or a simple object.  
+Additional form data to be sent along with the file uploads can be set using this option, which accepts an array of objects with name and value properties, a function returning such an array, a [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) object (for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads), or a simple object.  
 The form of the first fileInput is given as parameter to the function.
 
 **Note:** Additional form data is ignored when the *multipart* option is set to *false*.
@@ -147,4 +147,41 @@ function (form) {
 ]
 ```
 
-## Callback options
+## Callback Options
+
+All callbacks are of type *function* and can also be bound as event listeners, using the callback name plus "fileupload" as prefix:
+
+```js
+$('#fileupload')
+    .bind('fileuploadadd', function (e, data) {/* ... */})
+    .bind('fileuploadsend', function (e, data) {/* ... */});
+```
+
+Adding additional event listeners via *bind* method is the preferred option to preserve callback settings by the [jQuery File Upload UI version](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js).
+
+### add
+The add callback is invoked as soon as files are added to the fileupload widget - via file input selection, drag & drop or *add* [[API]] call.  
+If the *singleFileUploads* option is enabled, this callback will be called once for each file in the selection for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uplaods, else once for each file selection.  
+The upload starts when the *submit* method is invoked on the data parameter.  
+The data object contains a *files* property holding the added files and allows to override plugin options as well as define ajax settings.  
+*data.submit()* returns a Promise object and allows to attach additional handlers using jQuery's [Deferred](http://api.jquery.com/category/deferred-object/) callbacks.
+
+* Default:
+```js
+function (e, data) {
+    data.submit();
+}
+```
+* Example:
+```js
+function (e, data) {
+    $.each(data.files, function (index, file) {
+        alert('Added file: ' + file.name);
+    });
+    data.url = '/path/to/upload/handler.json';
+    var jqXHR = data.submit()
+        .success(function (result, textStatus, jqXHR) {/* ... */})
+        .error(function (jqXHR, textStatus, errorThrown) {/* ... */})
+        .complete(function (result, textStatus, jqXHR) {/* ... */});
+}
+```
