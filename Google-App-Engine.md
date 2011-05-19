@@ -9,6 +9,7 @@ from google.appengine.ext import webapp
 class UploadUrlHandler(webapp.RequestHandler):
     def get(self):
         upload_url = blobstore.create_upload_url('/path/to/upload/handler')
+        self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write('"' + upload_url + '"')
 ```
 
