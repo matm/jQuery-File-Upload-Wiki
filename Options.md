@@ -416,3 +416,25 @@ The file download template that is given as first argument to the [jQuery.tmpl](
 * Type: *jQuery Object*
 * Default: `$('#template-download')`
 
+## Additional Callback Options for the UI version
+
+### destroy
+Callback for file deletion events.
+
+**Note:** Since the UI version makes use of this callback, it is recommended to use the event binding method to attach additional event listeners.
+
+* Example:
+```js
+function (e, data) {
+    // data.context: download row,
+    // data.url: deletion url,
+    // data.type: deletion request type, e.g. "DELETE",
+    // data.dataType: deletion response type, e.g. "json"
+}
+```
+* Event binding example:
+```js
+$('#fileupload')
+    .bind('fileuploaddestroy', function (e, data) {/* ... */})
+}
+```
