@@ -6,12 +6,12 @@
 * **The plugin [[API]].**
 * **List of all available [[Options]] for this plugin.**
 * Explanation of all [[Plugin files]].
-* [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
-* [[Performance Optimizations]] to speed up page load times.
 * [[Frequently Asked Questions]] (FAQ)
 
 ## Customization how-tos
 * [[Plugin extensions]] (Developer Guide)
+* [[Performance Optimizations]] to speed up page load times.
+* [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
 * [[Drag and drop uploads from another web page]]
 
 ## Server-side specific tutorials
