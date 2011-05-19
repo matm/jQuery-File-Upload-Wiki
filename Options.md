@@ -185,3 +185,126 @@ function (e, data) {
         .complete(function (result, textStatus, jqXHR) {/* ... */});
 }
 ```
+
+### send
+Callback for the start of each file upload request.  
+If this callback returns false, the file upload request is aborted.
+
+* Example:
+```js
+function (e, data) {
+    if (data.files.length > 10) {
+        return false;
+    }
+}
+```
+
+### done
+Callback for successful uploads.
+
+* Example:
+```js
+function (e, data) {
+    //data.result
+    //data.textStatus;
+    //data.jqXHR;
+}
+```
+
+### fail
+Callback for failed (abort or error) uploads
+
+* Example:
+```js
+function (e, data) {
+    //data.errorThrown
+    //data.textStatus;
+    //data.jqXHR;
+}
+```
+
+### always
+Callback for completed (success, abort or error) requests.
+
+* Example:
+```js
+function (e, data) {
+    //data.result
+    //data.textStatus;
+    //data.jqXHR;
+}
+```
+
+### progress
+Callback for upload progress events.
+
+* Example:
+```js
+function (e, data) {
+    var progress = parseInt(data.loaded / data.total * 100, 10);
+}
+```
+
+### progressall
+Callback for global upload progress events.
+
+* Example:
+```js
+function (e, data) {
+    var progress = parseInt(data.loaded / data.total * 100, 10);
+}
+```
+
+### start
+Callback for uploads start, equivalent to the global [ajaxStart](http://api.jquery.com/ajaxStart/) event (but for file upload requests only).
+
+* Example:
+```js
+function (e) {
+    alert('Uploads started');
+}
+```
+
+### stop
+Callback for uploads stop, equivalent to the global [ajaxStop](http://api.jquery.com/ajaxStop/) event (but for file upload requests only).
+
+* Example:
+```js
+function (e) {
+    alert('Uploads finished');
+}
+```
+
+### change
+Callback for change events of the fileInput collection.
+
+* Example:
+```js
+function (e, data) {
+    $.each(data.files, function (index, file) {
+        alert('Selected file: ' + file.name);
+    });
+}
+```
+
+### drop
+Callback for drop events of the dropZone collection.
+
+* Example:
+```js
+function (e, data) {
+    $.each(data.files, function (index, file) {
+        alert('Dropped file: ' + file.name);
+    });
+}
+```
+
+### dragover
+Callback for dragover events of the dropZone collection.
+
+* Example:
+```js
+function (e) {
+    // e.dataTransfer
+}
+```
