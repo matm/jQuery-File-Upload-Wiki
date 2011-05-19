@@ -154,7 +154,17 @@ All callbacks are of type *function* and can also be bound as event listeners, u
 ```js
 $('#fileupload')
     .bind('fileuploadadd', function (e, data) {/* ... */})
-    .bind('fileuploadsend', function (e, data) {/* ... */});
+    .bind('fileuploadsend', function (e, data) {/* ... */})
+    .bind('fileuploaddone', function (e, data) {/* ... */})
+    .bind('fileuploadfail', function (e, data) {/* ... */})
+    .bind('fileuploadalways', function (e, data) {/* ... */})
+    .bind('fileuploadprogress', function (e, data) {/* ... */})
+    .bind('fileuploadprogressall', function (e, data) {/* ... */})
+    .bind('fileuploadstart', function (e) {/* ... */})
+    .bind('fileuploadstop', function (e) {/* ... */})
+    .bind('fileuploadchange', function (e, data) {/* ... */})
+    .bind('fileuploaddrop', function (e, data) {/* ... */})
+    .bind('fileuploaddragover', function (e) {/* ... */});
 ```
 
 Adding additional event listeners via *bind* method is the preferred option to preserve callback settings by the [jQuery File Upload UI version](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js).
