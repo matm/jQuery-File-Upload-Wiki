@@ -8,7 +8,6 @@
 * Explanation of all [[Plugin files]].
 * [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
 * [[Performance Optimizations]] to speed up page load times.
-* List of [[Known Issues]].
 * [[Frequently Asked Questions]] (FAQ)
 
 # Documentation for v.4 (old branch)
