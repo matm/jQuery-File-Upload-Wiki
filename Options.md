@@ -13,13 +13,13 @@ The following options are also set by the plugin, but can be useful to customize
 
 ### url
 A string containing the URL to which the request is sent.  
-If undefined or empty, it is set to the *action* property of the file upload form if available, or else the url of the current page.
+If undefined or empty, it is set to the *action* property of the file upload form if available, or else the URL of the current page.
 
 * Type: *string*
 * Example: `'/path/to/upload/handler.json'`
 
 ### type
-The HTTP request method for the file uploads. Can be *POST* or *PUT* and defaults to *POST*.
+The HTTP request method for the file uploads. Can be "POST" or "PUT" and defaults to "POST".
 
 * Type: *string*
 * Example: `'PUT'`
