@@ -1,7 +1,6 @@
 The following code snippet allows to upload images by drag&drop from another webpage, though this is currently only supported on Firefox:
 ```js
-$('#file_upload').fileUploadUIX();
-$('#file_upload').bind('drop', function (e) {
+$('#fileupload').fileupload().bind('drop', function (e) {
     var url = $(e.originalEvent.dataTransfer.getData('text/html')).filter('img').attr('src');
     if (url) {
         $.getImageData({
@@ -14,7 +13,7 @@ $('#file_upload').bind('drop', function (e) {
                     file = canvas.mozGetAsFile('file.png');
                 }
                 if (file) {
-                    $('#file_upload').fileUploadUIX('upload', file);
+                    $('#fileupload').fileupload('add', {files: [file]});
                 }
             }
         });
