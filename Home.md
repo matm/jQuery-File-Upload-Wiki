@@ -11,6 +11,7 @@
 * [[Frequently Asked Questions]] (FAQ)
 
 ## Customization how-tos
+* [[Plugin extensions]]
 * [[Drag and drop uploads from another web page]]
 
 ## Server-side specific tutorials
