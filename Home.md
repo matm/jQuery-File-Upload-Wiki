@@ -13,7 +13,7 @@
 ## Customization how-tos
 * [[Drag and drop uploads from another web page]]
 
-### Server-side specific tutorials
+## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]].
 
 ## Documentation for v.4 (old branch)
