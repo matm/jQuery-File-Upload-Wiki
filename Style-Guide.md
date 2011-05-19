@@ -1,4 +1,5 @@
-The jQuery File Upload UI version of the plugin builds on [jQuery UI's theme framework](http://jqueryui.com/themeroller/) for it's look&feel.
+The jQuery File Upload UI version of the plugin builds on [jQuery UI's theme framework](http://jqueryui.com/themeroller/) for it's look&feel.  
+By including different themeroller themes, the design can be easily changed. Have a look at the theme switcher on the demo page.
 
 To get the file input button to look like a standard jQuery UI button, some hacks have to be applied, as historically, browsers only allow a very limited styling of file input fields.
 
