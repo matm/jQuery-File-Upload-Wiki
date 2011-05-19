@@ -1,9 +1,9 @@
 ## Does the plugin require a form or file input field?
 If you define the *url* (and probably *paramName*) [[Options]], you can call the plugin on any element - no form or file input field required - and the drag&drop functionality will still work.  
-To support browsers without XHR file upload capabilities, a file input field has to be part of the widget, or defined using the *fileInput* option.
+To support browsers without [XHR](https://developer.mozilla.org/en/xmlhttprequest) file upload capabilities, a file input field has to be part of the widget, or defined using the *fileInput* option.
 
 ## Internet Explorer prompting to download a file after the upload completes
-The file upload plugin makes use of an Iframe Transport module for browsers like *Microsoft Internet Explorer* and *Opera*, which do not yet support [XMLHTTPRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.  
+The file upload plugin makes use of an Iframe Transport module for browsers like *Microsoft Internet Explorer* and *Opera*, which do not yet support [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.  
 Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of *text/plain* or *text/html* for the JSON response - they will show an undesired download dialog if the iframe response is set to *application/json*.   
 Please have a look at the Content-Type Negotiation section of the [[Setup]] instructions.
 
@@ -33,7 +33,7 @@ Invoking the click event on a file input field is **not** supported on the follo
 * Opera 11.01 (tested on OSX)
 
 It works on the other major browsers including Firefox 4, so it might be a feasible solution in the future.  
-See also [[Style Guide]].
+See also: [[Style Guide]].
 
 ## How to use the *this* keyword inside of the plugin initialization options?
 Just make use of [jQuery's each method](http://api.jquery.com/each/) to set the *this* keyword to the element node:
