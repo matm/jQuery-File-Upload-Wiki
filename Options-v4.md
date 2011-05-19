@@ -22,7 +22,7 @@ $('#file_upload').fileUploadUI({
 });
 ```
 
-**Note:** The advanced user interface version requires three options, as described in the [[Setup]] Guide:
+**Note:** The advanced user interface version requires three options, as described in the [[Setup v4]] Guide:
 
 * uploadTable
 * buildUploadRow
@@ -260,7 +260,7 @@ However it is possible to force a sequential upload, that is starting the upload
 
 ### maxChunkSize
 To upload large files in smaller chunks, set this option to a preferred maximum chunk size.  
-If set to *0* or *null*, files will be uploaded as a whole. See [[Chunked Uploads]].  
+If set to *0* or *null*, files will be uploaded as a whole.  
 **Notes**:  
 Only browsers supporting the [Blob API](https://developer.mozilla.org/en/DOM/Blob) will respect this setting, other browsers will always upload complete files.  
 This setting is ignored if the option *multiFileRequest* is set to *true*.
@@ -269,7 +269,7 @@ This setting is ignored if the option *multiFileRequest* is set to *true*.
 * Default: *null*
 
 ### uploadedBytes
-When a non-multipart upload or a chunked multipart upload has been aborted, this option can be used to resume the upload by setting it to the size of the already uploaded bytes. See [[Chunked Uploads]].  
+When a non-multipart upload or a chunked multipart upload has been aborted, this option can be used to resume the upload by setting it to the size of the already uploaded bytes. 
 
 * Type: *integer*
 * Default: *undefined*
