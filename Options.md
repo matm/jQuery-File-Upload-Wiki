@@ -13,14 +13,14 @@ If not set, the name of the widget ("fileupload") is used.
 * Example: `'myfileupload'`
 
 ### dropZone
-The drop target collection, by the default the complete document.  
+The drop target [jQuery object](http://api.jquery.com/Types/#jQuery), by the default the complete document.  
 Set to null or an empty collection to disable drag & drop support:
 
 * Type: *jQuery Object*
 * Default: `$(document)`
 
 ### fileInput
-The file input field collection, that is listened for change events.  
+The file input field [jQuery object](http://api.jquery.com/Types/#jQuery), that is listened for change events.  
 If undefined, it is set to the file input fields inside of the widget element on plugin initialization.  
 Set to null or an empty collection to disable the change listener.
 
