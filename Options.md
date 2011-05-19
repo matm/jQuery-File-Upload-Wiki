@@ -435,6 +435,5 @@ function (e, data) {
 * Event binding example:
 ```js
 $('#fileupload')
-    .bind('fileuploaddestroy', function (e, data) {/* ... */})
-}
+    .bind('fileuploaddestroy', function (e, data) {/* ... */});
 ```
