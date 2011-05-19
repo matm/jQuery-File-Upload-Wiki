@@ -1,3 +1,5 @@
+# How to queue files and start uploads with a button click (v. 4 branch)
+
 By the default, the plugin uploads files automatically, after they have been selected or dropped on the dropZone.  
 But it is also possible to queue the selected files and only start the uploads after a button click, using the *beforeSend* option (see [[Options]]):
 
