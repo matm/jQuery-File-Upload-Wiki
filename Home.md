@@ -17,7 +17,6 @@
 * How to [[Setup v4]] the plugin on your website.
 * **The plugin [[API v4]].**
 * **List of all available [[Options v4]] for this plugin.**
-* Explanation of all [[Plugin files v4]].
 
 ## Customization how-tos
 * [[How to queue files and start uploads with a button click]].
