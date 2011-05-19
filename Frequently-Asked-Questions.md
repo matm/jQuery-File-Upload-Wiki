@@ -32,7 +32,8 @@ Invoking the click event on a file input field is **not** supported on the follo
 * Firefox 3.6 (tested on OSX and Windows XP)
 * Opera 11.01 (tested on OSX)
 
-It works on the other major browsers including Firefox 4, so it might be a feasible solution in the future. See also [[Style Guide]].
+It works on the other major browsers including Firefox 4, so it might be a feasible solution in the future.  
+See also [[Style Guide]].
 
 ## How to use the *this* keyword inside of the plugin initialization options?
 Just make use of [jQuery's each method](http://api.jquery.com/each/) to set the *this* keyword to the element node:
