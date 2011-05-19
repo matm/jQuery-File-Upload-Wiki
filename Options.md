@@ -63,7 +63,8 @@ If undefined or empty, the name property of the file input field is used, or "fi
 * Example: `'attachments[]'`
 
 ### singleFileUploads
-By default, each file of a selection is uploaded using an individual request for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) type uploads. Set this option to false to upload file selections in one request each.
+By default, each file of a selection is uploaded using an individual request for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) type uploads.  
+Set this option to false to upload file selections in one request each.
 
 **Note:** Uploading multiple files with one request requires the multipart option to be set to *true* (the default).
 
@@ -111,7 +112,8 @@ When a non-multipart upload or a chunked multipart upload has been aborted, this
 * Example: `10000000`
 
 ### recalculateProgress
-By default, failed (abort or error) file uploads are removed from the global progress calculation. Set this option to false to prevent recalculating the global progress data.
+By default, failed (abort or error) file uploads are removed from the global progress calculation.  
+Set this option to false to prevent recalculating the global progress data.
 
 * Type: *boolean*
 * Default: `true`
