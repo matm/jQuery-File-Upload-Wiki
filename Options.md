@@ -41,7 +41,7 @@ If undefined or empty, the name property of the file input field is used, or "fi
 * Example: `'attachments[]'`
 
 ### singleFileUploads
-By default, each file of a selection is uploaded using an individual request for XHR type uploads. Set this option to false to upload file selections in one request each.
+By default, each file of a selection is uploaded using an individual request for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) type uploads. Set this option to false to upload file selections in one request each.
 
 **Note:** Uploading multiple files with one request requires the multipart option to be set to *true* (the default).
 
@@ -62,9 +62,9 @@ This can be useful for cross-site file uploads, if the [Access-Control-Allow-Ori
 * Default: `false`
 
 ### multipart
-By default, XHR file uploads are sent as multipart/form-data.  
+By default, [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads are sent as multipart/form-data.  
 The iframe transport is always using multipart/form-data.  
-If this option is set to *false*, the file content is streamed to the server url instead of sending a [RFC 2388](http://www.ietf.org/rfc/rfc2388.txt) multipart message for XHR file uploads.   
+If this option is set to *false*, the file content is streamed to the server url instead of sending a [RFC 2388](http://www.ietf.org/rfc/rfc2388.txt) multipart message for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.   
 Non-multipart uploads are also referred to as [HTTP PUT file upload](http://de.php.net/manual/en/features.file-upload.put-method.php).  
 
 **Note:** Additional form data is ignored when the multipart option is set to *false*.
@@ -95,7 +95,7 @@ By default, failed (abort or error) file uploads are removed from the global pro
 * Default: `true`
 
 ### formData
-Additional form data to be sent along with the file uploads can be set using this option, which accepts an array of objects with name and value properties, a function returning such an array, a [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) object (for XHR file uploads), or a simple object.  
+Additional form data to be sent along with the file uploads can be set using this option, which accepts an array of objects with name and value properties, a function returning such an array, a [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) object (for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads), or a simple object.  
 The form of the first fileInput is given as parameter to the function.
 
 **Note:** Additional form data is ignored when the *multipart* option is set to *false*.
