@@ -421,7 +421,7 @@ The file download template that is given as first argument to the [jQuery.tmpl](
 ### destroy
 Callback for file deletion events.
 
-**Note:** Since the UI version makes use of this callback, it is recommended to use the event binding method to attach additional event listeners.
+**Note:** Since the UI version already sets this callback option, it is recommended to use the event binding method to attach additional event listeners.
 
 * Example:
 ```js
