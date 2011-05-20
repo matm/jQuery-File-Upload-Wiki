@@ -391,10 +391,6 @@ Set this option to false to always display preview images as *img* elements.
 * Type: *boolean*
 * Default: `true`
 
-### imageGalleryOptions
-Image links of uploaded files with a "rel" attribute starting with "gallery" (e.g. rel="gallery" or rel="gallery[name]") are opened with the [Image Gallery plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.image-gallery.js).  
-The Image Gallery is initialized with this options object, which is passed to [jQuery UI dialog](http://jqueryui.com/demos/dialog) and allows to set any dialog options.
-
 * Type: *object*
 * Example:
 ```js
