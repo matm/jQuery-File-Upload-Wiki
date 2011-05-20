@@ -131,3 +131,17 @@ $('#fileupload').fileupload({
     }
 });
 ```
+
+## How to cancel an upload
+Uploads can be canceled by invoking the *abort* method on a [jqXHR](http://api.jquery.com/jQuery.ajax/#jqXHR) object:
+```js
+var jqXHR = $('#fileupload').fileupload('send', {files: filesList})
+    .error(function (jqXHR, textStatus, errorThrown) {
+        if (errorThrown === 'abort') {
+            alert('File Upload has been canceled');
+        }
+    });
+$('button.cancel').click(function (e) {
+    jqXHR.abort();
+});
+```
