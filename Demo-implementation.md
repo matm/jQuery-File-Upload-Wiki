@@ -12,7 +12,7 @@ Un-minified versions of the demo JavaScript files can be found here:
 * [[http://aquantum-demo.appspot.com/static/js/jquery.tmpl.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.cookie.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.iframe-transport.js]]
-* [[http://aquantum-demo.appspot.com/static/js/jquery.iframe-gallery.js]]
+* [[http://aquantum-demo.appspot.com/static/js/jquery.image-gallery.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload-ui.js]]
 * [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload-uix.js]]
