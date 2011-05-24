@@ -6,6 +6,7 @@
 * **The plugin [[API]].**
 * **List of all available [[Options]] for this plugin.**
 * Explanation of all [[Plugin files]].
+* Extended [[Browser support]] information.
 * [[Frequently Asked Questions]] (FAQ)
 
 ## Customization how-tos
