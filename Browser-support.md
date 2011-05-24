@@ -1,5 +1,15 @@
+## Multiple File selection
+The following browsers support multiple file selection:
+
+* Firefox 3.6+
+* Safari 5+
+* Google Chrome
+* Opera 11+
+
+Internet Explorer has no support for multiple file selection, but allows to add multiple files to the upload queue by selecting files multiple times.
+
 ## Drag & Drop
-The following browsers support drag & drop with the File Upload widget:
+The following browsers support drag & drop:
 
 * Firefox 4+
 * Safari 5+
@@ -24,3 +34,10 @@ The following browsers have complete support for upload progress indication:
 Firefox 3.6 and Opera 11.1 have partial upload progress support via the global progress bar, which will update after each iframe based upload with the percentage of the uplaoded files compared to all file selections in the upload queue. This is possible as those browsers support the File API and report the file size of the uploaded files, although they lack the interfaces for XMLHttpRequest uploads.
 
 All versions of Internet Explorer will also update the global progress bar after each iframe based upload. However since IE does not report the file size, the global progress bar will measure each uploaded file the same without regard to the size of the uploaded file.
+
+## Image previews
+The following browsers have support for image previews prior to uploading files:
+
+* Firefox 4+
+* Google Chrome
+* Opera 11+ (some images seem to display incorrectly on Opera)
