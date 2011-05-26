@@ -15,6 +15,7 @@ The following browsers support drag & drop:
 * Safari 5+
 * Google Chrome
 
+Drag & Drop is not supported on the Windows version of Safari.  
 IE and Opera have currently no support for drag & drop.
 
 ### Firefox 3.6
