@@ -362,7 +362,7 @@ The minimum allowed file size, by default 1 byte.
 The regular expression for allowed file types, matches against either file type or file name as only browsers with support for the [File API](https://developer.mozilla.org/en/DOM/file) report the file type.
 
 * Type: *Regular Expression*
-* Example: `/\.(gif|jpe?g|png)$/i`
+* Example: `/(\.|\/)(gif|jpe?g|png)$/i`
 
 ### previewFileTypes
 The regular expression to define for which files a preview image is shown, matched against the file type.
