@@ -1,4 +1,8 @@
-The following widget class extends $.blueimpUI.fileupload (the UI version of the File Upload plugin) to add drop zone effects:
+The following widget class extends $.blueimpUI.fileupload (the UI version of the File Upload plugin) to add drop zone effects.
+
+When files are dragged onto the document window, the class "ui-state-active" will be added to the dropzone element with a transition effect.  
+When files are dragged over the dropzone element, the class "ui-state-highlight" will be added to the dropzone element with a transition effect.
+
 ```js
 $.widget('blueimpDropZoneEffects.fileupload', $.blueimpUI.fileupload, {
 
@@ -88,9 +92,6 @@ The customized widget class adjusts the default dropZone setting and expects the
     <div class="dropzone ui-corner-all">Drop files here</div>
 </div>
 ```
-
-When files are dragged onto the document window, the class "ui-state-active" will be added to the dropzone element with a transition effect.  
-When files are dragged over the dropzone element, the class "ui-state-highlight" will be added to the dropzone element with a transition effect.
 
 The following CSS definitions will show and enlarge/reduce and highlight effect for the dropzone element:
 ```css
