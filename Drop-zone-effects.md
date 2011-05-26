@@ -55,11 +55,11 @@ $.widget('blueimpDropZoneEffects.fileupload', $.blueimpUI.fileupload, {
     },
 
     _create: function () {
-        $.blueimpUI.fileupload.prototype._create.call(this);
-        var ns = this.options.namespace || this.name;
-        if (!this.options.dropZone.length) {
+        if (this.options.dropZone && !this.options.dropZone.length) {
             this.options.dropZone = this.element.find('.dropzone-container div');
         }
+        $.blueimpUI.fileupload.prototype._create.call(this);
+        var ns = this.options.namespace || this.name;
         this.options.dropZone
             .bind('dragenter.' + ns, {fileupload: this}, this._dropZoneDragEnter)
             .bind('dragleave.' + ns, {fileupload: this}, this._dropZoneDragLeave);
