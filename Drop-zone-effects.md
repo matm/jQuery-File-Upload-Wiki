@@ -93,7 +93,7 @@ The customized widget class adjusts the default dropZone setting and expects the
 </div>
 ```
 
-The following CSS definitions will show and enlarge/reduce and highlight effect for the dropzone element:
+The following CSS definitions are an example for enlarge/reduce and highlight effects for the dropzone element:
 ```css
 .dropzone-container div {
   width: 0px;
