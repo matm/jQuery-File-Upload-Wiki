@@ -1,3 +1,7 @@
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+User contributions for an updated example are welcome.
+
 ## Controller :
 ```php
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
