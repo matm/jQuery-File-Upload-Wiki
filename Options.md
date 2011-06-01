@@ -218,7 +218,7 @@ function (e, data) {
 ```
 
 ### done
-Callback for successful uploads.
+Callback for successful upload requests. This callback is the equivalent to the success callback provided by [jQuery ajax()](http://api.jquery.com/jQuery.ajax/) and will also be called if the server returns a JSON response with an error property.
 
 * Example:
 ```js
@@ -230,7 +230,7 @@ function (e, data) {
 ```
 
 ### fail
-Callback for failed (abort or error) uploads
+Callback for failed (abort or error) upload requests. This callback is the equivalent to the error callback provided by [jQuery ajax()](http://api.jquery.com/jQuery.ajax/) and will not be called if the server returns a JSON response with an error property, as this counts as successful request due to the successful HTTP response.
 
 * Example:
 ```js
@@ -242,7 +242,7 @@ function (e, data) {
 ```
 
 ### always
-Callback for completed (success, abort or error) requests.
+Callback for completed (success, abort or error) upload requests. This callback is the equivalent to the complete callback provided by [jQuery ajax()](http://api.jquery.com/jQuery.ajax/).
 
 * Example:
 ```js
