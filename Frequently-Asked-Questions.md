@@ -16,7 +16,7 @@ You can use the *accept* attribute of the file input field to limit the file typ
 An example limiting files to PNG images:
 
 ```html
-<input type="file" name="file" accept="image/png" multiple>
+<input type="file" name="files[]" accept="image/png" multiple>
 ```
 
 Note that this will not limit files added by drag&drop and is not supported across all browsers.
@@ -44,3 +44,10 @@ $('#fileupload').each(function () {
     });
 });
 ```
+
+## How to limit the file selection so users can only select one file?
+Just remove the *multiple* attribute from the file input:
+```html
+<input type="file" name="files[]">
+```
+Note that users can still drag&drop multiple files. To enforce a one file upload limit, you can make use of the *maxNumberOfFiles* option (see [[Options]]).
