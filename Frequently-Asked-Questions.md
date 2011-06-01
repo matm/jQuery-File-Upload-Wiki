@@ -53,6 +53,7 @@ Just remove the *multiple* attribute from the file input:
 Note that users can still drag&drop multiple files. To enforce a one file upload limit, you can make use of the *maxNumberOfFiles* option (see [[Options]]).
 
 ## What moment the "fileuploaddrop" callback function was called?
+What button trigger this callback function bellow?
 ```html
 $('#fileupload').bind('fileuploaddrop', function (e, data, response) {
     alert('fileuploaddrop');
