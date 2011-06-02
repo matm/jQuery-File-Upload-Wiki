@@ -1,3 +1,7 @@
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+User contributions for an updated example are welcome.
+
 # How to populate the file list on page load or between page refresh
 
 If one is editting files in a particular folder, it may be that you wish the files to be pre-populated on page load. Or perhaps you wish to be able to refresh the page and keep the list of files that were uploaded from disapearing. This is relatively simple to achieve. 
