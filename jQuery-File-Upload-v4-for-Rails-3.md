@@ -1,3 +1,7 @@
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+User contributions for an updated example are welcome.
+
 This page sums up the necessary steps to make the plugin work for Rails 3 and Paperclip.
 
 It's very basic now: no error handling.
