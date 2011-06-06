@@ -85,6 +85,15 @@ var jqXHR = $('#fileupload').fileupload('send', {files: filesList})
     .complete(function (result, textStatus, jqXHR) {/* ... */});
 ```
 
+### Programmatic file uploads for browsers without support for XHR file uploads
+It is also possible to use the *add* and *send* API methods for browsers without support for [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads, by making use of the *fileInput* option:
+```js
+$('#fileupload').fileupload('add', {files: filesList, fileInput: fileInput});
+```
+The fileInput property must be a jQuery collection with an input of type file with a valid files selection. The files property has to reflect the files selection with an array of objects with a name property for each selected file, but the objects don't have to be of type [File](https://developer.mozilla.org/en/DOM/File) or [Blob](https://developer.mozilla.org/en/DOM/Blob).
+
+Non-[XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads make use of the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js).
+
 ## Callbacks
 The File Upload widget provides several callback hooks.  
 One way of using them is to provide callback methods as part of the [[Options]] object:
