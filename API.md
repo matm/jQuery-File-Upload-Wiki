@@ -60,7 +60,7 @@ $('#fileupload').fileupload('enable');
 ## Programmatic file upload
 Usually, file uploads are invoked by selecting files via file input button or by dropping files on the drop zone.
 
-However it is also possible to upload files programmatically:
+However it is also possible to upload files programmatically for browsers with support for [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads (see [[Browser support]]):
 ```js
 $('#fileupload').fileupload('add', {files: filesList});
 ```
