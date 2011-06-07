@@ -118,7 +118,7 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
             rows = rows.add(row);
         });
         return rows;
-    },
+    }
 
 });
 ```
