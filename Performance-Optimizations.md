@@ -12,7 +12,7 @@ Google provides a reliable [CDN for common Web libraries](http://code.google.com
 The more websites use this CDN instead of hosting their jQuery libraries on their own server, the more likely it is that client browsers will already have those libraries in their browser cache.  
 The easiest way to use it is to include the libraries the following way (using a protocol relative URL):
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
 ```
 
