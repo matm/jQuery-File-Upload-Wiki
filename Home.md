@@ -4,7 +4,7 @@
 * [Demo page](http://aquantum-demo.appspot.com/file-upload) (and [[Demo implementation]] information).
 * How to [[Setup]] the plugin on your website.
 * **The plugin [[API]].**
-* **List of all available [[Options]] and callback methods.**
+* **List of all available [[Options]] - including callback methods.**
 * Explanation of all [[Plugin files]].
 * Extended [[Browser support]] information.
 * [[Frequently Asked Questions]] (FAQ)
