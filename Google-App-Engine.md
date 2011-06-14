@@ -1,8 +1,10 @@
 # Using the plugin with Google App Engine's Blobstore
 
-To upload files to the [Blobstore](http://code.google.com/appengine/docs/python/blobstore/) of [Google App Engine](http://code.google.com/appengine/), a new file upload url has to be created for every upload request.
+To upload files to the [Blobstore](http://code.google.com/appengine/docs/python/blobstore/) of [Google App Engine](http://code.google.com/appengine/) with the File Upload plugin, you implement a normal form-based file upload on server-side and then adjust it to return a JSON response.
 
-On server-side you need to create a handler, which creates these upload urls and returns them as response to the browser request:
+First, you can follow Google's documentation on [Blobstore File Uploads](http://code.google.com/appengine/docs/python/blobstore/overview.html#Uploading_a_Blob). Then, instead of redirecting the user to the uploaded blob, return a JSON response with information for the uploaded file (see [[Setup]] guide).
+
+Since a new file upload url has to be created for every upload request to the blobstore, you need to create a handler on server-side, which creates these upload urls and returns them as response to a browser GET request:
 ```py
 from google.appengine.ext import blobstore
 from google.appengine.ext import webapp
