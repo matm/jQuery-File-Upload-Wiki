@@ -13,6 +13,7 @@
 * **[[Plugin extensions]] (Developer Guide)**
 * [[Performance Optimizations]] to speed up page load times.
 * [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
+* How to implement [[Chunked file uploads]].
 * How to add [[Drop zone effects]].
 * [[Drag and drop uploads from another web page]]
 
