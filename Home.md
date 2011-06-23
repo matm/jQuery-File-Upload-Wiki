@@ -19,6 +19,7 @@
 
 ## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]].
+* [ASP.NET example code (unofficial)](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.)
 
 ## Documentation for v.4 (old branch)
 
@@ -28,10 +29,10 @@
 * List of all available [[Options v4]] for this plugin.
 
 ### Server-side specific tutorials
-* How to use the plugin with the [[Flask]] Python Microframework.
-* [[jQuery-File-Upload-v4-for-Rails-3]]: basic Rails 3 tutorial
-* [Sample app using Rails 3, carrierwave and jquery-file-upload to upload and store files on Amazon S3](https://github.com/yortz/carrierwave_jquery_file_upload).
-* [[jQuery File Upload for Java]]: basic Java application
-* [[How to use the plugin with CodeIgniter]] (PHP)
-* [[jQuery File Upload for C# (Forms)]]: basic C# Forms application
-* [[How to populate the file list on page load or between page refresh]] (C# example)
+* How to use the plugin with the [[Flask]] Python Microframework (unofficial)
+* [[jQuery-File-Upload-v4-for-Rails-3]]: basic Rails 3 tutorial (unofficial)
+* [Sample app using Rails 3, carrierwave and jquery-file-upload to upload and store files on Amazon S3](https://github.com/yortz/carrierwave_jquery_file_upload) (unofficial)
+* [[jQuery File Upload for Java]]: basic Java application (unofficial)
+* [[How to use the plugin with CodeIgniter]] (PHP) (unofficial)
+* [[jQuery File Upload for C# (Forms)]]: basic C# Forms application (unofficial)
+* C# example on [[How to populate the file list on page load or between page refresh]] (unofficial)
