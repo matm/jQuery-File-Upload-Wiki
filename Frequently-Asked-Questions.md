@@ -51,3 +51,11 @@ Just remove the *multiple* attribute from the file input:
 <input type="file" name="files[]">
 ```
 Note that users can still drag&drop multiple files. To enforce a one file upload limit, you can make use of the *maxNumberOfFiles* option (see [[Options]]).
+
+## Does the plugin support HTTP status codes?
+The File Upload plugin will properly handle HTTP response codes when the browser supports [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.
+It even displays the correct error message, e.g. "Error: Service Unavailable" for the following HTTP header :
+
+    HTTP/1.0 503 Service Unavailable
+
+However, for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads - which includes Internet Explorer and Opera - the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) is used and there is no way to retrieve the HTTP status code from an iframe load event.
