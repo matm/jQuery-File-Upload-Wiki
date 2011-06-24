@@ -26,8 +26,9 @@ $(function() {
 });
 ```
 
-* /rest/file/url returns a url bound to GAE (_ah/upload) with a callback to a multipart POST method redirecting to /rest/file (this follow [the rules defined in GAE documentation](http://code.google.com/intl/fr-FR/appengine/docs/java/blobstore/overview.html)):
-* /rest/file/meta returns a JSON response [as specified here](https://github.com/blueimp/jQuery-File-Upload/wiki/Setup):
+* `/rest/file/url` returns a url bound to GAE (/_ah/upload) with a callback to our multipart POST method [as specified here](http://code.google.com/intl/fr-FR/appengine/docs/java/blobstore/overview.html):
+* `/rest/file` POSTing save the file and redirect to /rest/file/meta
+* `/rest/file/meta` returns a JSON response [as specified here](https://github.com/blueimp/jQuery-File-Upload/wiki/Setup):
 
 ```java
 @Path("/file")
