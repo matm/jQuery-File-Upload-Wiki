@@ -20,7 +20,7 @@
 ## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]] (Python).
 * Code samples for [[Google App Engine Java]] (user contribution).
-* [ASP.NET example code (user contribution)](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.)
+* [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (user contribution)
 
 ## Documentation for v.4 (old branch)
 
