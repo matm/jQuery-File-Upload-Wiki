@@ -109,32 +109,32 @@ public class FileResource {
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class FileUrl {
-    String url;
+  String url;
 
-    public FileUrl(String url) {
-        this.url = url;
-    }
+  public FileUrl(String url) {
+    this.url = url;
+  }
 }
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class FileMeta {
-    String name;
-    long size;
-    String url;
-    String delete_url;  
-    String delete_type;  
+  String name;
+  long size;
+  String url;
+  String delete_url;  
+  String delete_type;  
 
-    public FileMeta(String filename, long size, String url) {
-        this.name = filename;
-        this.size = size;
-        this.url = url;
-        this.delete_url = url;
-        this.delete_type = "DELETE";
-    }
+  public FileMeta(String filename, long size, String url) {
+    this.name = filename;
+    this.size = size;
+    this.url = url;
+    this.delete_url = url;
+    this.delete_type = "DELETE";
+  }
 
-    public FileMeta() {
-    }
+  public FileMeta() {
+  }
 }
 ```
 
@@ -142,18 +142,18 @@ public class FileMeta {
 
 ```xml
 <web-app>
-    <servlet>
-        <servlet-name>jersey</servlet-name>
-        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-            <param-value>true</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>jersey</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping>
+  <servlet>
+    <servlet-name>jersey</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>jersey</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
 </web-app>
 ```
 
@@ -161,18 +161,18 @@ public class FileMeta {
 
 ```xml
 <dependency>
-    <groupId>com.sun.jersey</groupId>
-    <artifactId>jersey-server</artifactId>
-    <version>1.7</version>
+  <groupId>com.sun.jersey</groupId>
+  <artifactId>jersey-server</artifactId>
+  <version>1.7</version>
 </dependency>
 <dependency>
-    <groupId>com.sun.jersey</groupId>
-    <artifactId>jersey-json</artifactId>
-    <version>1.7</version>
+  <groupId>com.sun.jersey</groupId>
+  <artifactId>jersey-json</artifactId>
+  <version>1.7</version>
 </dependency>
 <dependency>
-    <groupId>com.sun.jersey.contribs</groupId>
-    <artifactId>jersey-multipart</artifactId>
-    <version>1.7</version>
+  <groupId>com.sun.jersey.contribs</groupId>
+  <artifactId>jersey-multipart</artifactId>
+  <version>1.7</version>
 </dependency>
 ```
