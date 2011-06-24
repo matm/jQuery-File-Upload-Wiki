@@ -2,6 +2,27 @@ Code samples to integrate the plugin with Google App Engine Java.
 Contributed by [yamsellem](https://github.com/yamsellem).
 
 * [index.html from the sample code](https://github.com/blueimp/jQuery-File-Upload/archives/master)
+
+```html
+<div id="fileupload">
+  <form method="post" enctype="multipart/form-data">
+    <div class="fileupload-buttonbar">
+     <label class="fileinput-button">
+      <span>Upload</span>
+      <input type="file" name="files[]" multiple>
+     </label>
+    </div>
+  </form>
+  <div class="fileupload-content">
+    <table class="files"></table>
+  </div>
+</div>
+
+<script id="template-upload" type="text/x-jquery-tmpl">
+...<!-- report all the templates from the above link here -->...
+</script>
+```html
+
 * application.js:
 
 ```javascript
