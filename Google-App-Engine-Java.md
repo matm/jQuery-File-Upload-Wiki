@@ -42,6 +42,7 @@ public class FileResource {
   @GET
   @Path("/url")
   public Response getCallbackUrl() {
+    /* this is /_ah/upload and it redirects to its given path */
     String url = blobstoreService.createUploadUrl("/rest/file");
     return Response.ok(new FileUrl(url)).build();
   }
