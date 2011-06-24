@@ -92,7 +92,7 @@ and your controller looks something like this:
   # generate the policy document that amazon is expecting.
   def s3_upload_policy_document
     return @policy if @policy
-    ret = {"expiration" => 5.days.from_now.utc.xmlschema,
+    ret = {"expiration" => 5.minutes.from_now.utc.xmlschema,
       "conditions" =>  [ 
         {"bucket" =>  YOUR_BUCKET_NAME}, 
         ["starts-with", "$key", @document.s3_key],
