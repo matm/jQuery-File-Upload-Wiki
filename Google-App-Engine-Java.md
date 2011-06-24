@@ -21,7 +21,7 @@ Contributed by [yamsellem](https://github.com/yamsellem).
 <script id="template-upload" type="text/x-jquery-tmpl">
 ...<!-- report all the templates from the above link here -->...
 </script>
-```html
+```
 
 * application.js:
 
