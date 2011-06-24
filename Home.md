@@ -21,6 +21,7 @@
 * How to use the plugin with [[Google App Engine]] (Python).
 * Code samples for [[Google App Engine Java]] (user contribution).
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (user contribution)
+* Using the plugin to [upload directly to S3](s3 uploading)
 
 ## Documentation for v.4 (old branch)
 
