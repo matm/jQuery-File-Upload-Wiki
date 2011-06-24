@@ -9,7 +9,7 @@ $(function() {
   /* activate the plugin */
   $('#fileupload').fileupload();
 
-  /* generate an App Engine url on each clic */
+  /* generate an App Engine url on each click */
   $('input:file', '#fileupload').button().click(function() {
     $.getJSON('/rest/file/url', function (response) {
       $('#fileupload form').prop('action', response.url);
