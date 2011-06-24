@@ -6,14 +6,17 @@ Contributed by [yamsellem](https://github.com/yamsellem).
 
 ```javascript
 $(function() {
-  $.getJSON('/rest/file/url', function (response) {
-    $('#fileupload form').prop('action', response.url);
-    $('#fileupload').fileupload({
-      add: function (e, data) {
+  $('#fileupload').fileupload();
+  $('input:file', '#fileupload').button().click(function() {
+    $.getJSON('/rest/file/url', function (response) {
+      $('#fileupload form').prop('action', response.url);
+      $('#fileupload').fileupload({
+        add: function (e, data) {
           var that = this;
           data.url = response.url;
           $.blueimpUI.fileupload.prototype.options.add.call(that, e, data);
-      }
+        }
+      });
     });
   });
 });
