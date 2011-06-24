@@ -1,7 +1,7 @@
 Code samples to integrate the plugin with Google App Engine Java.  
 Contributed by [yamsellem](https://github.com/yamsellem).
 
-* [index.html from the sample code](https://github.com/blueimp/jQuery-File-Upload/archives/master)
+* [index.html from the jQuery Upload Sample code](https://github.com/blueimp/jQuery-File-Upload/archives/master)
 
 ```html
 <div id="fileupload">
@@ -19,7 +19,7 @@ Contributed by [yamsellem](https://github.com/yamsellem).
 </div>
 
 <script id="template-upload" type="text/x-jquery-tmpl">
-...<!-- report all the templates from the above link here -->...
+...<!-- report all the templates from the jQuery Upload Sample code (link above) -->...
 </script>
 ```
 
