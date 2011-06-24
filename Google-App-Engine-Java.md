@@ -6,16 +6,16 @@ Contributed by [yamsellem](https://github.com/yamsellem).
 
 ```javascript
 $(function() {
-	$.getJSON('/rest/file/url', function (response) {
-		$('#fileupload form').prop('action', response.url);
-		$('#fileupload').fileupload({
-			add: function (e, data) {
-			    var that = this;
-			    data.url = response.url;
-			    $.blueimpUI.fileupload.prototype.options.add.call(that, e, data);
-			}
-		});
-	});
+  $.getJSON('/rest/file/url', function (response) {
+    $('#fileupload form').prop('action', response.url);
+    $('#fileupload').fileupload({
+      add: function (e, data) {
+          var that = this;
+          data.url = response.url;
+          $.blueimpUI.fileupload.prototype.options.add.call(that, e, data);
+      }
+    });
+  });
 });
 ```
 
@@ -26,72 +26,72 @@ $(function() {
 @Path("/file")
 public class FileResource {
 
-    private final BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
-    private final BlobInfoFactory blobInfoFactory = new BlobInfoFactory();
-    
-    /* step 1. get a unique url */
-    
-    @GET
-    @Path("/url")
-    public Response getCallbackUrl() {
-        String url = blobstoreService.createUploadUrl("/rest/file");
-        return Response.ok(new FileUrl(url)).build();
-    }
-    
-    /* step 2. post a file */
-    
-    @POST
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public void post(@Context HttpServletRequest req, @Context HttpServletResponse res) throws IOException, URISyntaxException {
-        Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(req);
-        BlobKey blobKey = blobs.get("files[]");
-        res.sendRedirect("/rest/file/" + blobKey.getKeyString() + "/meta");
-    }
-    
-    /* step 3. redirected to the meta info */
-    
-    @GET
-    @Path("/{key}/meta")
-    public Response redirect(@PathParam("key") String key) throws IOException {
-        BlobKey blobKey = new BlobKey(key);
-        BlobInfo info = blobInfoFactory.loadBlobInfo(blobKey);
+  private final BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+  private final BlobInfoFactory blobInfoFactory = new BlobInfoFactory();
+  
+  /* step 1. get a unique url */
+  
+  @GET
+  @Path("/url")
+  public Response getCallbackUrl() {
+    String url = blobstoreService.createUploadUrl("/rest/file");
+    return Response.ok(new FileUrl(url)).build();
+  }
+  
+  /* step 2. post a file */
+  
+  @POST
+  @Consumes(MediaType.MULTIPART_FORM_DATA)
+  public void post(@Context HttpServletRequest req, @Context HttpServletResponse res) throws IOException, URISyntaxException {
+    Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(req);
+    BlobKey blobKey = blobs.get("files[]");
+    res.sendRedirect("/rest/file/" + blobKey.getKeyString() + "/meta");
+  }
+  
+  /* step 3. redirected to the meta info */
+  
+  @GET
+  @Path("/{key}/meta")
+  public Response redirect(@PathParam("key") String key) throws IOException {
+    BlobKey blobKey = new BlobKey(key);
+    BlobInfo info = blobInfoFactory.loadBlobInfo(blobKey);
 
-        String name = info.getFilename();
-        long size = info.getSize();
-        String url = "/rest/file/" + key; 
-        FileMeta meta = new FileMeta(name, size, url);
+    String name = info.getFilename();
+    long size = info.getSize();
+    String url = "/rest/file/" + key; 
+    FileMeta meta = new FileMeta(name, size, url);
 
-        List<FileMeta> metas = Lists.newArrayList(meta);
-        GenericEntity<List<FileMeta>> entity = new GenericEntity<List<FileMeta>>(metas) {};
-        return Response.ok(entity).build();
-    }
+    List<FileMeta> metas = Lists.newArrayList(meta);
+    GenericEntity<List<FileMeta>> entity = new GenericEntity<List<FileMeta>>(metas) {};
+    return Response.ok(entity).build();
+  }
 
-    /* step 4. download the file */
-    
-    @GET
-    @Path("/{key}")
-    public Response serve(@PathParam("key") String key, @Context HttpServletResponse response) throws IOException {
-        BlobKey blobKey = new BlobKey(key);
-        final BlobInfo blobInfo = blobInfoFactory.loadBlobInfo(blobKey);
-        response.setHeader("Content-Disposition", "attachment; filename=" + blobInfo.getFilename());
-        BlobstoreServiceFactory.getBlobstoreService().serve(blobKey, response);
-        return Response.ok().build();
+  /* step 4. download the file */
+  
+  @GET
+  @Path("/{key}")
+  public Response serve(@PathParam("key") String key, @Context HttpServletResponse response) throws IOException {
+    BlobKey blobKey = new BlobKey(key);
+    final BlobInfo blobInfo = blobInfoFactory.loadBlobInfo(blobKey);
+    response.setHeader("Content-Disposition", "attachment; filename=" + blobInfo.getFilename());
+    BlobstoreServiceFactory.getBlobstoreService().serve(blobKey, response);
+    return Response.ok().build();
+  }
+  
+  /* step 5. delete the file */
+  
+  @DELETE
+  @Path("/{key}")
+  public Response delete(@PathParam("key") String key) {
+    Status status;
+    try {
+      blobstoreService.delete(new BlobKey(key));
+      status = Status.OK;
+    } catch (BlobstoreFailureException bfe) {
+      status = Status.NOT_FOUND;
     }
-    
-    /* step 5. delete the file */
-    
-    @DELETE
-    @Path("/{key}")
-    public Response delete(@PathParam("key") String key) {
-        Status status;
-        try {
-            blobstoreService.delete(new BlobKey(key));
-            status = Status.OK;
-        } catch (BlobstoreFailureException bfe) {
-            status = Status.NOT_FOUND;
-        }
-        return Response.status(status).build();
-    }
+    return Response.status(status).build();
+  }
 }
 ```
 
@@ -137,10 +137,6 @@ public class FileMeta {
     <servlet>
         <servlet-name>jersey</servlet-name>
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-        <init-param>
-            <param-name>com.sun.jersey.config.property.packages</param-name>
-            <param-value>com.xebia.jquery.resource</param-value>
-        </init-param>
         <init-param>
             <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
             <param-value>true</param-value>
