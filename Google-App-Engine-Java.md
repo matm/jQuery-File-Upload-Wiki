@@ -15,6 +15,7 @@ $(function() {
       $('#fileupload form').prop('action', response.url);
       $('#fileupload').fileupload({
         add: function (e, data) {
+          var that = this;
           data.url = response.url;
           /* configure the plugin with the /_ah/upload url */
           $.blueimpUI.fileupload.prototype.options.add.call(that, e, data);
