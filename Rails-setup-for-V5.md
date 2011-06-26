@@ -1,6 +1,6 @@
 ## Prerequisites
 
-* Setup jQuery
+* have jQuery setup in your app
 
 * copy jQuery File Upload files in the proper directories of your Rails app 
 
