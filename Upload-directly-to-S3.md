@@ -7,7 +7,7 @@ Ok, given you have a form like so:
 %form#file_upload(action="https://YOURBUCKET.s3.amazonaws.com" method="post" enctype="multipart/form-data")
   # order is important!
   # also, the things that are not filled in right now *will* be filled in soon.  See below.
-  %input{:type => :hidden, :name => :key)
+  %input{:type => :hidden, :name => :key}
   %input{:type => :hidden, :name => "AWSAccessKeyId", :value => "YOUR_ACCESS_KEY"}
   %input{:type => :hidden, :name => :acl,  :value => :private}
   %input{:type => :hidden, :name => :success_action_redirect}
