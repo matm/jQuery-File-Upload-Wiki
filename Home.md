@@ -21,6 +21,7 @@
 * How to use the plugin with [[Google App Engine]] (Python).
 * Code samples for [[Google App Engine Java]] (user contribution).
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (user contribution)
+* Another [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net), more complete (user contribution)
 * Using the plugin to [[Upload directly to S3]] (user contribution)
 * Rails + Carrierwave [[Rails-setup-for-V5]] (user contribution)
 
