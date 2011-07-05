@@ -43,7 +43,7 @@ The following browsers have support for image previews prior to uploading files:
 * Opera 11+ (some images seem to display incorrectly on Opera)
 
 ## File meta data
-The following browsers report file meta data (file size, file type) prior to uploading files:
+The following browsers report file meta data (**file size, file type**) prior to uploading files:
 
 * Firefox 3.6+
 * Safari 4+
