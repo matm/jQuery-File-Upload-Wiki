@@ -51,7 +51,8 @@ $(function() {
       data.submit();
     },
     send: function(e, data) {
-      // show a loading spinner because now the form will be submitted to amazon, and the file will be directly uploaded there, via an iframe in the background. 
+      // show a loading spinner because now the form will be submitted to amazon, 
+      // and the file will be directly uploaded there, via an iframe in the background. 
       $('#loading').show();
     },
     fail: function(e, data) {
