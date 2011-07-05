@@ -136,6 +136,9 @@ public class FileUrl {
   public FileUrl(String url) {
     this.url = url;
   }
+
+  public FileUrl() {
+  }
 }
 
 @XmlRootElement
