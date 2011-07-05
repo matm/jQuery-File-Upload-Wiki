@@ -30,7 +30,7 @@ $(function() {
   $('#file_upload').fileupload({
     forceIframeTransport: true,
     autoUpload: true,
-    send: function (event, data) {
+    add: function (event, data) {
       $.ajax({
         url: "/documents",
         type: 'POST',
@@ -45,8 +45,12 @@ $(function() {
           $('#file_upload').find('input[name=signature]').val(retdata.signature);
           $('#file_upload').find('input[name=success_action_redirect]').val(retdata.success_action_redirect);
         }
+        
       });
 
+      data.submit();
+    },
+    send: function(e, data) {
       // show a loading spinner because now the form will be submitted to amazon, and the file will be directly uploaded there, via an iframe in the background. 
       $('#loading').show();
     },
