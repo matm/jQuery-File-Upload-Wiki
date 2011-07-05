@@ -43,12 +43,20 @@ The following browsers have support for image previews prior to uploading files:
 * Opera 11+ (some images seem to display incorrectly on Opera)
 
 ## File meta data
-The following browsers report file meta data (**file size, file type**) prior to uploading files:
+The following browsers report complete file meta data prior to uploading files:
 
 * Firefox 3.6+
 * Safari 4+
 * Google Chrome
 * Opera 10+
+
+Internet Explorer only reports the file name.
+
+The reported file meta data consists of the following properties:
+
+* **name**: The name of the file, e.g. *banana.jpg*.
+* **size**: The size of the file in bytes, e.g. *130073* (131 KB).
+* **type**: The type of the file, e.g. *image/jpg*.
 
 ## XMLHttpRequest File Uploads
 The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads, which allows advanced usage of the file upload [[API]]:
