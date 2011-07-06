@@ -32,6 +32,16 @@
 * The plugin [[API v4]].
 * List of all available [[Options v4]] for this plugin.
 
+### Customization how-tos
+* [[How to queue files and start uploads with a button click]].
+* [[How to implement File Limits]].
+* [[How to submit additional Form Data]].
+* [[Multiple File Input Fields in one Form]].
+* [[Multiple plugin instances on the same page]].
+* [[Sequential Uploads]].
+* [[How to upload multiple files with one request]].
+* [[How to invoke a method after all uploads have completed]].
+
 ### Server-side specific tutorials
 * How to use the plugin with the [[Flask]] Python Microframework (user contribution)
 * [[jQuery-File-Upload-v4-for-Rails-3]]: basic Rails 3 tutorial (user contribution)
