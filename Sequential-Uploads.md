@@ -1,4 +1,8 @@
-# How to force sequential uploads for multiple selected files
+# How to force sequential uploads for multiple selected files (v. 4 branch)
+
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 By default, the plugin uploads multiple files simultaneously.  
 However it is possible to force a sequential upload, that is starting the upload of the second selected file after the upload of the first one has completed, starting the upload of the third file after the second file has been uploaded and so on.
 
