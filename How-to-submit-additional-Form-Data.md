@@ -1,3 +1,8 @@
+# How to submit additional form data (v. 4 branch)
+
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 This page explains how to submit additional Form Data (POST variables) with your file uploads.  
 This can be done either programmatically, or by adding additional input fields to the form.
 
