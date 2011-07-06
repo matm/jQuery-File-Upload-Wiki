@@ -1,5 +1,8 @@
 # How to queue files and start uploads with a button click (v. 4 branch)
 
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 By the default, the plugin uploads files automatically, after they have been selected or dropped on the dropZone.  
 But it is also possible to queue the selected files and only start the uploads after a button click, using the *beforeSend* option (see [[Options]]):
 
