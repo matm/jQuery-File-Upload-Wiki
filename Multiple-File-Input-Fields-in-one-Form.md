@@ -1,3 +1,8 @@
+# Multiple file input fields in one form (v. 4 branch)
+
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 To handle multiple file input fields in one form, you can make use of the *namespace*, *fileInputFilter* and *dropZone* [[Options]] and **multiple plugin instances on the same form**.  
 Here is the example HTML code for a form based on the example [[Setup]], but with three different file input fields (and different upload/download tables):
 ```html
