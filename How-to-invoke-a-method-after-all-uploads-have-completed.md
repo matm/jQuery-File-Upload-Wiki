@@ -1,3 +1,8 @@
+# How to invoke a method after all uploads have completed (v. 4 branch)
+
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 By default, the plugin uploads multiple selected (or dropped) files simultaneously and asynchronously.  
 If you don't want to use [[Sequential Uploads]] or send multiple files with one request (see [[How to upload multiple files with one request]]) but still want to call a method after all selected files have been uploaded, you can use make use of the *onCompleteAll* callBack option:
 ```js
