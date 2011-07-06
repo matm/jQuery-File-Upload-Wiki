@@ -1,5 +1,8 @@
 # How to implement file limits (v. 4 branch)
 
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 This page explains how to implement client-side limits for the files being uploaded, e.g. to restrict **file sizes** and **file types** or the number of selected files.  
 **Note**: To enforce these constraints, you will still have to implement the same limitations within your server-side handler, as any client-side restrictions can be bypassed.  
 **Note2:** If you want to allow only 1 file just remove the "multiple" attribute from the file input element in your HTML markup.
