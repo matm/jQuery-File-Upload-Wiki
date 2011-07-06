@@ -1,3 +1,8 @@
+# How to upload multiple files with one request (v. 4 branch)
+
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 By default, the plugin uploads each selected file with an individual request. The [multiFileRequest option](https://github.com/blueimp/jQuery-File-Upload/wiki/Options) allows to upload multiple files with one request:
 ```js
 $('#file_upload').fileUploadUI({
