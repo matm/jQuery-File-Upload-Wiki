@@ -1,3 +1,8 @@
+# Chunked Uploads (v. 4 branch)
+
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 Chunked Uploads are supported "out-of-the-box" by all browsers supporting [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads and the [Blob API](https://developer.mozilla.org/en/DOM/Blob).  
 Chunked Uploads are enabled if the *maxChunkSize* option is set to a value greater than 0, e.g. 10000000 bytes (10 MB):
 ```js
