@@ -1,3 +1,8 @@
+# Multiple plugin instances on the same page (v. 4 branch)
+
+**Note:**
+This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-File-Upload/tree/v4) of the plugin.
+
 Multiple File Upload Forms on the same webpage are supported out of the box and don't need any additional [[Options]].  
 
 Here is a sample HTML code with two file upload forms on the same page:
