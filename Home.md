@@ -24,6 +24,7 @@
 * Another [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net), more complete (user contribution)
 * Using the plugin to [[Upload directly to S3]] (user contribution)
 * Rails + Carrierwave [[Rails-setup-for-V5]] (user contribution)
+* Django integration [tutorial](http://garmoncheg.blogspot.com/2011/07/django-creating-multi-upload-form.html) and [demo code](https://github.com/garmoncheg/django_multiuploader_demo).
 
 ## Documentation for v.4 (old branch)
 
