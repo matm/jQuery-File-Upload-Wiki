@@ -25,6 +25,7 @@
 * Using the plugin to [[Upload directly to S3]] (user contribution)
 * Rails + Carrierwave [[Rails-setup-for-V5]] (user contribution)
 * Django integration [tutorial](http://garmoncheg.blogspot.com/2011/07/django-creating-multi-upload-form.html) and [demo code](https://github.com/garmoncheg/django_multiuploader_demo) (user contribution).
+* Another [Django integration](https://github.com/sigurdga/django-jquery-file-upload) (user contribution).
 
 ## Documentation for v.4 (old branch)
 
