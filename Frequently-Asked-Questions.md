@@ -2,7 +2,7 @@
 If you define the *url* (and probably *paramName*) [[Options]], you can call the plugin on any element - no form or file input field required - and the drag&drop functionality will still work.  
 To support browsers without [XHR](https://developer.mozilla.org/en/xmlhttprequest) file upload capabilities, a file input field has to be part of the widget, or defined using the *fileInput* option.
 
-## Internet Explorer prompting to download a file after the upload completes
+## Why does Internet Explorer prompt to download a file after the upload completes?
 The file upload plugin makes use of an Iframe Transport module for browsers like *Microsoft Internet Explorer* and *Opera*, which do not yet support [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.  
 Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of *text/plain* or *text/html* for the JSON response - they will show an undesired download dialog if the iframe response is set to *application/json*.   
 Please have a look at the Content-Type Negotiation section of the [[Setup]] instructions.
@@ -59,3 +59,6 @@ It even displays the correct error message, e.g. "Error: Service Unavailable" fo
     HTTP/1.0 503 Service Unavailable
 
 However, for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads - which includes Internet Explorer and Opera - the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) is used and there is no way to retrieve the HTTP status code from an iframe load event.
+
+## Is it possible to resize images prior to uploading?
+It's technically possible (via the canvas element and replacing the File objects with Blobs), but currently only supported on Mozilla Firefox (via [canvas.mozGetAsFile](https://developer.mozilla.org/en/DOM/HTMLCanvasElement)). As soon as Google Chrome and other browsers support the [BlobBuilder](http://dev.w3.org/2009/dap/file-system/file-writer.html) interface, it's also possible on those browsers.
