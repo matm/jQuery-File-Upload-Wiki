@@ -85,6 +85,13 @@ Set this option to true to issue all file upload requests in a sequential order 
 * Type: *boolean*
 * Default: `false`
 
+### limitConcurrentUploads
+To limit the number of concurrent uploads, set this option to an integer value greater than 0.
+
+* Type: *number*
+* Default: `undefined`
+* Example: `3`
+
 ### forceIframeTransport
 Set this option to true to force iframe transport uploads, even if the browser is capable of [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.  
 This can be useful for cross-site file uploads, if the [Access-Control-Allow-Origin](https://developer.mozilla.org/En/HTTP_Access_Control#Access-Control-Allow-Origin) header cannot be set for the server-side upload handler which is required for cross-site [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.
