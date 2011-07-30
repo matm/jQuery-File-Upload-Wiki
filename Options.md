@@ -186,7 +186,7 @@ Adding additional event listeners via *bind* method is the preferred option to p
 
 ### add
 The add callback is invoked as soon as files are added to the fileupload widget - via file input selection, drag & drop or *add* [[API]] call.  
-If the *singleFileUploads* option is enabled, this callback will be called once for each file in the selection for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uplaods, else once for each file selection.  
+If the *singleFileUploads* option is enabled, this callback will be called once for each file in the selection for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads, else once for each file selection.  
 The upload starts when the *submit* method is invoked on the data parameter.  
 The data object contains a *files* property holding the added files and allows to override plugin options as well as define ajax settings.  
 *data.submit()* returns a [Promise](http://api.jquery.com/Types/#Promise) object and allows to attach additional handlers using jQuery's [Deferred](http://api.jquery.com/category/deferred-object/) callbacks.
