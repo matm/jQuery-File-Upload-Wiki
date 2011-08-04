@@ -5,7 +5,7 @@
 * copy jQuery File Upload files in the proper directories of your Rails app 
 
 ## Models
-
+### For use with the Carrierwave gem
 We'll use basic Carrierwave uploader:
 
     class AvatarUploader < CarrierWave::Uploader::Base
@@ -28,6 +28,26 @@ Let's set up a `Picture` model
         "size" => avatar.size,
         "url" => avatar.url,
         "thumbnail_url" => avatar.thumb.url,
+        "delete_url" => picture_path(id),
+        "delete_type" => "DELETE" 
+       }
+      end
+    end
+
+### For use with the Dragonfly gem
+set up a `Picture` model (make sure you have both avatar_uid and avatar_name columns in your database)
+
+    class Picture < ActiveRecord::Base
+      include Rails.application.routes.url_helpers
+      image_accessor :avatar
+
+      #one convenient method to pass jq_upload the necessary information
+      def to_jq_upload
+      {
+        "name" => read_attribute(:avatar_name),
+        "size" => avatar.size,
+        "url" => avatar.url,
+        "thumbnail_url" => avatar.thumb('80x80#').url,
         "delete_url" => picture_path(id),
         "delete_type" => "DELETE" 
        }
