@@ -23,7 +23,7 @@
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (user contribution)
 * Another [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net), more complete (user contribution)
 * Using the plugin to [[Upload directly to S3]] (user contribution)
-* Rails + Carrierwave [[Rails-setup-for-V5]] (user contribution)
+* Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V5]] (user contribution)
 * Django integration [tutorial](http://garmoncheg.blogspot.com/2011/07/django-creating-multi-upload-form.html) and [demo code](https://github.com/garmoncheg/django_multiuploader_demo) (user contribution).
 * Same [Django reusable Plugin](https://github.com/garmoncheg/django_multiuploader) and [article](http://garmoncheg.blogspot.com/2011/07/django-beautiful-multiple-files-upload.html) (user contribution).
 * Another [Django integration](https://github.com/sigurdga/django-jquery-file-upload) (user contribution).
