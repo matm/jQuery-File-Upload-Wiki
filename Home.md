@@ -1,5 +1,5 @@
 # Documentation Overview
-is this a bug or something? i just deleted setup page, i'm sorry. :(
+
 ## Basic plugin information
 * [Demo page](http://aquantum-demo.appspot.com/file-upload) (and [[Demo implementation]] information).
 * How to [[Setup]] the plugin on your website.
