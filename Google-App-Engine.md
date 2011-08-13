@@ -5,6 +5,7 @@ To upload files to the [Blobstore](http://code.google.com/appengine/docs/python/
 First, you can follow Google's documentation on [Blobstore File Uploads](http://code.google.com/appengine/docs/python/blobstore/overview.html#Uploading_a_Blob). Then, instead of redirecting the user to the uploaded blob, redirect to a page that returns a JSON response with an array of objects with information for each uploaded file (see [[Setup]] guide). The demo does this by appending the file IDs to the redirect url.
 
 Since a new file upload url has to be created for every upload request to the blobstore, you need to create a handler on server-side, which creates these upload urls and returns them as response to a browser GET request:
+* xx.py
 ```
 from google.appengine.ext import blobstore
 from google.appengine.ext import webapp
