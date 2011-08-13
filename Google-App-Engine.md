@@ -1,5 +1,24 @@
 # Using the plugin with Google App Engine's Blobstore
 
+```xml
+<dependency>
+  <groupId>com.sun.jersey</groupId>
+  <artifactId>jersey-server</artifactId>
+  <version>1.7</version>
+</dependency>
+<dependency>
+  <groupId>com.sun.jersey</groupId>
+  <artifactId>jersey-json</artifactId>
+  <version>1.7</version>
+</dependency>
+<dependency>
+  <groupId>com.sun.jersey.contribs</groupId>
+  <artifactId>jersey-multipart</artifactId>
+  <version>1.7</version>
+</dependency>
+```
+
+
 To upload files to the [Blobstore](http://code.google.com/appengine/docs/python/blobstore/) of [Google App Engine](http://code.google.com/appengine/) with the File Upload plugin, you implement a normal form-based file upload on server-side and then adjust it to return a JSON response.
 
 First, you can follow Google's documentation on [Blobstore File Uploads](http://code.google.com/appengine/docs/python/blobstore/overview.html#Uploading_a_Blob). Then, instead of redirecting the user to the uploaded blob, redirect to a page that returns a JSON response with an array of objects with information for each uploaded file (see [[Setup]] guide). The demo does this by appending the file IDs to the redirect url.
