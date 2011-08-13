@@ -6,7 +6,7 @@ First, you can follow Google's documentation on [Blobstore File Uploads](http://
 
 Since a new file upload url has to be created for every upload request to the blobstore, you need to create a handler on server-side, which creates these upload urls and returns them as response to a browser GET request:
 * xx.py
-```py
+```python
 from google.appengine.ext import blobstore
 from google.appengine.ext import webapp
 class UploadUrlHandler(webapp.RequestHandler):
