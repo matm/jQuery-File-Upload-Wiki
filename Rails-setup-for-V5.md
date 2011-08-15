@@ -28,7 +28,7 @@ Let's set up a `Picture` model
         "size" => avatar.size,
         "url" => avatar.url,
         "thumbnail_url" => avatar.thumb.url,
-        "delete_url" => picture_path(id),
+        "delete_url" => picture_path(:id => id),
         "delete_type" => "DELETE" 
        }
       end
@@ -48,7 +48,7 @@ set up a `Picture` model (make sure you have both avatar_uid and avatar_name col
         "size" => avatar.size,
         "url" => avatar.url,
         "thumbnail_url" => avatar.thumb('80x80#').url,
-        "delete_url" => picture_path(id),
+        "delete_url" => picture_path(:id => id),
         "delete_type" => "DELETE" 
        }
       end
