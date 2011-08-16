@@ -41,7 +41,8 @@ It is up to you obviously to choose a class to represent the file. It should hav
 For those that are interested in the server side code here it is:
 
 C# MVC Server side code:
-`
+
+```
         public ActionResult UploadFiles()
         {
             string path = "C:\Some Path";                       //The path for the uploads
@@ -49,6 +50,6 @@ C# MVC Server side code:
             ViewData["FileEntryCollection"] = di.GetFiles();
             return View();
         }
-`
+```
 
 
