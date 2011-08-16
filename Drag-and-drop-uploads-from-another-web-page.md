@@ -1,4 +1,5 @@
 The following code snippet allows to upload images by drag&drop from another webpage, though this is currently only supported on Firefox:
+
 ```js
 $('#fileupload').fileupload().bind('drop', function (e) {
     var url = $(e.originalEvent.dataTransfer.getData('text/html')).filter('img').attr('src');
