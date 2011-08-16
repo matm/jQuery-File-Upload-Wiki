@@ -7,6 +7,7 @@ User contributions for an updated example are welcome.
 If one is editting files in a particular folder, it may be that you wish the files to be pre-populated on page load. Or perhaps you wish to be able to refresh the page and keep the list of files that were uploaded from disapearing. This is relatively simple to achieve. 
 
 This is all done by creating the correct rows in the following element that was created in step 4 of the Setup Demo:
+
 ```html
 <table class="download_files">...populate rows here...</table>
 ```
@@ -16,6 +17,7 @@ One simply needs to add the table rows inside of this element, in the identical 
 
 
 C# MVC Example:
+
 ```html
 <table class="download_files">
     <% foreach (System.IO.FileInfo  file in (System.IO.FileInfo[])ViewData["FileEntryCollection"]) { %>
