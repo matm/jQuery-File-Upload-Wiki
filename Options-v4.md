@@ -6,6 +6,7 @@ This page lists the various options that can be set for the plugin and examples 
 ## Setting options on plugin initialization
 
 The default way to set options is on plugin initialization - an example for the basic version:
+
 ```js
 $('#file_upload').fileUpload({
     url: '/path/to/upload/handler.json',
@@ -14,6 +15,7 @@ $('#file_upload').fileUpload({
 ```
 
 And an example for the advanced user interface version:
+
 ```js
 $('#file_upload').fileUploadUI({
     url: '/path/to/upload/handler.json'
@@ -31,6 +33,7 @@ $('#file_upload').fileUploadUI({
 ## Setting options after plugin initialization
 
 It is also possible to set options after plugin initialization, similar to jQuery UI widgets:
+
 ```js
 $('#file_upload').fileUploadUI(
     'option',
@@ -40,6 +43,7 @@ $('#file_upload').fileUploadUI(
 ```
 
 Or multiple options at once:
+
 ```js
 $('#file_upload').fileUploadUI(
     'option',
@@ -79,11 +83,13 @@ Accepts any parameter that is suitable for the [jQuery filter](http://api.jquery
 
 * Type: *String* or *function* or *object*
 * Default: A function returning true so no forms are filtered out:
+
 ```js
 function (index) {
     return true;
 }
 ```
+
 * Example: `'.upload_form_1'`
 
 ### fileInputFilter
@@ -92,11 +98,13 @@ Accepts any parameter that is suitable for the [jQuery filter](http://api.jquery
 
 * Type: *String* or *function* or *object*
 * Default: A function returning true so no file input fields are filtered out:
+
 ```js
 function (index) {
     return true;
 }
 ```
+
 * Example: `'.file_2'`
 
 ### replaceFileInput
@@ -134,11 +142,13 @@ Accepts a String or a function returning a String.
 
 * Type: *String* or *function*
 * Default: A function returning the action attribute of the file upload form:
+
 ```js
 function (form) {
     return form.attr('action');
 }
 ```
+
 * Example: `'/path/to/upload/handler.json'`
 
 ### method
@@ -148,11 +158,13 @@ Accepts a String or a function returning a String.
 
 * Type: *String* or *function*
 * Default: A function returning the method attribute of the file upload form (*POST*):
+
 ```js
 function (form) {
     return form.attr('method');
 }
 ```
+
 * Example: `'PUT'`
 
 ### fieldName
@@ -161,11 +173,13 @@ Accepts a String or a function returning a String.
 
 * Type: *String* or *function*
 * Default: A function returning the name attribute of the file input field:
+
 ```js
 function (input) {
     return input.attr('name');
 }
 ```
+
 * Example: `'file'`
 
 ### formData
@@ -175,12 +189,15 @@ Accepts an Array of Objects with name and value attributes, a Function returning
 
 * Type: *Array*, *Object* or *function*
 * Default: A function returning the form fields as [serialized Array](http://api.jquery.com/serializeArray):
+
 ```js
 function (form) {
     return form.serializeArray();
 }
 ```
+
 * Example:
+
 ```js
 [
   {
@@ -202,10 +219,13 @@ If you are making up your own HTTP header, you MUST put a X- in front of the nam
 
 * Type: *Array* or *Object*
 * Default: The basic file upload doesn't set this option (*undefined*), but the advanced user interface version uses the following default to make sure the server sends JSON as response type: 
+
 ```js
 {'Accept': 'application/json, text/javascript, */*; q=0.01'}
 ```
+
 * Example:
+
 ```js
 [
   {
@@ -295,6 +315,7 @@ If defined, the upload resumes when the callBack parameter is called.
     5. handler: A reference to the uploadHandler, gives access to all handler methods and allows to override the current upload settings.
     6. callBack: The function to be called to start the next chunk upload.
 * Example:
+
 ```js
 function (event, files, index, xhr, handler, callBack) {
     handler.url = '/path/to/upload/handler.json';
@@ -316,6 +337,7 @@ The jQuery File Upload UI Plugin makes use of this callback to set the progress 
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
+
 ```js
 function (event, files, index, xhr, handler) {
     if (!xhr.upload && handler.progressbar) {
@@ -341,6 +363,7 @@ The jQuery File Upload UI Plugin makes use of this callback to update the progre
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Default:
+
 ```js
 function (event, files, index, xhr, handler) {
     if (handler.progressbar) {
@@ -361,6 +384,7 @@ The jQuery File Upload UI Plugin makes use of this callback to update the overal
     1. event: progress event object, or a similar object providing the attributes lengthComputable/loaded/total).
     2. list: Array of argument lists of all current uploads.
 * Default:
+
 ```js
 function (event, list) {
     if (uploadHandler.progressbarAll && event.lengthComputable) {
@@ -386,6 +410,7 @@ Customize this method if you don't want to show a downloadRow depending on the s
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
+
 ```js
 function (event, files, index, xhr, handler) {
     var json;
@@ -420,6 +445,7 @@ A callback function that is called when the file upload has been cancelled.
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Example:
+
 ```js
 function (event, files, index, xhr, handler) {
     handler.removeNode(handler.uploadRow);
@@ -439,6 +465,7 @@ A callback function that is called on XHR upload or JSON parsing errors.
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
        The jQuery File Upload UI Plugin provides the attributes `handler.uploadRow`, `handler.progressbar` and `handler.originalEvent` with references to the uploadRow and progressbar as well as the original onLoad event for the JSON parsing error.
 * Example:
+
 ```js
 function (event, files, index, xhr, handler) {
     // For JSON parsing errors, the load event is saved as handler.originalEvent:
@@ -466,6 +493,7 @@ The jQuery File Upload UI plugin makes use of this callback and provides an equi
     5. handler: A reference to the uploadHandler, gives access to all handler methods and allows to override the current upload settings.
     6. callBack: The function to be called to start the file upload.
 * Example:
+
 ```js
 function (event, files, index, xhr, handler, callBack) {
     handler.url = '/path/to/upload/handler.json';
@@ -639,6 +667,7 @@ If no download table is specified, also serves as uploadTable, by replacing uplo
 
 * Type: *Object* or *Function*
 * Example:
+
 ```js
 $('#upload_files')
 ```
@@ -651,6 +680,7 @@ If no download table is specified, the uploadTable also serves as downloadTable,
 
 * Type: *Object* or *Function*
 * Example:
+
 ```js
 $('#download_files')
 ```
@@ -666,6 +696,7 @@ The content does not strictly have to be a HTML table row, but can be any elemen
     2. index: The index of the current [File](https://developer.mozilla.org/en/DOM/File) object.
     3. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.
 * Example:
+
 ```js
 function (files, index) {
     return $('<tr><td>' + files[index].name + '<\/td>' +
@@ -687,6 +718,7 @@ The content does not strictly have to be a HTML table row, but can be any elemen
     1. file: JSON response with information for the uploaded file.
     2. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.
 * Example:
+
 ```js
 function (file) {
     return $('<tr><td>' + file.name + '<\/td><\/tr>');
@@ -698,6 +730,7 @@ The jQuery object for the overall progress bar.
 
 * Type: *Object*
 * Example:
+
 ```js
 $('#file_upload_progress div')
 ```
@@ -712,6 +745,7 @@ By default this method makes use of jQuery's [fadeIn](http://api.jquery.com/fade
     2. node: The jQuery DOM element to add.
     3. callBack: An optional method to execute after the node has been added and faded in.
 * Example:
+
 ```js
 function (parentNode, node, callBack) {
     if (parentNode) {
@@ -732,6 +766,7 @@ By default this method makes use of jQuery's [fadeOut](http://api.jquery.com/fad
     1. node: The jQuery DOM element to add.
     2. callBack: An optional method to execute after the node has been faded out and removed.
 * Example:
+
 ```js
 function (node, callBack) {
     if (node) {
@@ -754,6 +789,7 @@ This method makes use of jQuery's [fadeIn](http://api.jquery.com/fadeIn) and [fa
     2. newNode: The jQuery DOM element to add.
     3. callBack: An optional method to execute after the replacement has been done.
 * Example:
+
 ```js
 function (oldNode, newNode, callBack) {
     if (oldNode && newNode) {
@@ -777,6 +813,7 @@ Allows to override the method to cancel uploads.
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
        Provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
 * Default:
+
 ```js
 function (event, files, index, xhr, handler) {
     var readyState = xhr.readyState;
@@ -797,6 +834,7 @@ Must return an object providing a [progressbar value method](http://jqueryui.com
     1. node: The jQuery DOM element where the progress bar should be displayed.
     2. value: initial progress value (0-100).
 * Default:
+
 ```js
 function (node, value) {
     if (!node || !node.length) {
@@ -839,6 +877,7 @@ If set, the upload starts when the callBack parameter is called.
        Provides the attributes `handler.uploadRow` and `handler.progressbar` with references to the uploadRow and progressbar.
     6. callBack: The function to be called to start the file upload.
 * Example:
+
 ```js
 function (event, files, index, xhr, handler, callBack) {
     handler.url = '/path/to/upload/handler.json';
@@ -856,6 +895,7 @@ Should an error occur in parsing the json (it could be an html error page was re
     1. xhr: The [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) object for the current file upload. A jQuery iframe node for legacy browsers.
     2. handler: A reference to the uploadHandler, gives access to all handler methods and allows to override the current upload settings.
 * Default:
+
 ```js
 function (xhr, handler) {
     if (typeof xhr.responseText !== 'undefined') {
@@ -880,6 +920,7 @@ It allows adding custom functionality on upload completion without having to ove
     5. handler: A reference to the uploadHandler, gives access to all handler methods and upload settings.  
        Provides the attributes `handler.response` and `handler.downloadRow` with references to the JSON response and the downloadRow.
 * Example:
+
 ```js
 function (event, files, index, xhr, handler) {
     var json = handler.response;
@@ -913,6 +954,7 @@ Allows to override the error message localization.
 
 * Type: *object*
 * Example:
+
 ```js
 {
     'File is too big': 'Datei ist zu groß',
