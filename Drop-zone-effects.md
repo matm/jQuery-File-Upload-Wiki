@@ -87,6 +87,7 @@ $.widget('blueimpDropZoneEffects.fileupload', $.blueimpUI.fileupload, {
 ```
 
 The customized widget class adjusts the default dropZone setting and expects the following HTML code as child element of the file upload widget:
+
 ```html
 <div class="dropzone-container">
     <div class="dropzone ui-corner-all">Drop files here</div>
@@ -94,6 +95,7 @@ The customized widget class adjusts the default dropZone setting and expects the
 ```
 
 The following CSS definitions are an example for enlarge/reduce and highlight effects for the dropzone element:
+
 ```css
 .dropzone-container div {
   width: 0px;
