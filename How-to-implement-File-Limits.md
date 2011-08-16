@@ -8,6 +8,7 @@ This page explains how to implement client-side limits for the files being uploa
 **Note2:** If you want to allow only 1 file just remove the "multiple" attribute from the file input element in your HTML markup.
 
 ## File limits example for the jQuery File Upload UIX version:
+
 ```js
 $('#file_upload').fileUploadUIX({
     maxFileSize: 5000000, // Size in Bytes - 5 MB
@@ -27,6 +28,7 @@ $('#file_upload').fileUploadUIX({
 
 ## Example on how to limit the file size to 5 MB:
 To restrict the file size you can make use of the *beforeSend* option like this:
+
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
@@ -46,6 +48,7 @@ $('#file_upload').fileUploadUI({
 ```
 
 The equivalent for the basic file upload makes use of the *initUpload* option:
+
 ```js
 $('.upload').fileUpload({
     initUpload: function (event, files, index, xhr, handler, callBack) {
@@ -62,6 +65,7 @@ $('.upload').fileUpload({
 
 ## Example on how to limit the file types to web suitable images:
 To restrict the file types you can make use of the *beforeSend* option like this:
+
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
@@ -84,6 +88,7 @@ $('#file_upload').fileUploadUI({
 ```
 
 The equivalent for the basic file upload makes use of the *init* option:
+
 ```js
 $('#file_upload').fileUpload({
     initUpload: function (event, files, index, xhr, handler, callBack) {
@@ -110,6 +115,7 @@ An example limiting files to PNG images:
 Note that this will not limit files added by drag&drop and is not supported across all browsers.
 
 ## Example on how to avoid uploading empty files and folders:
+
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
@@ -129,6 +135,7 @@ $('#file_upload').fileUploadUI({
 ```
 
 ## Example on how to limit the number of uploadable files:
+
 ```js
 var maxFiles = 10,
     filesCounter = 0;
