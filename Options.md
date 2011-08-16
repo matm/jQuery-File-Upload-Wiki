@@ -143,12 +143,15 @@ The form of the first fileInput is given as parameter to the function.
 
 * Type: *Array*, *Object*, *function* or *FormData*
 * Default: A function returning the form fields as [serialized Array](http://api.jquery.com/serializeArray):
+
 ```js
 function (form) {
     return form.serializeArray();
 }
 ```
+
 * Example:
+
 ```js
 [
     {
@@ -192,12 +195,15 @@ The data object contains a *files* property holding the added files and allows t
 *data.submit()* returns a [Promise](http://api.jquery.com/Types/#Promise) object and allows to attach additional handlers using jQuery's [Deferred](http://api.jquery.com/category/deferred-object/) callbacks.
 
 * Default:
+
 ```js
 function (e, data) {
     data.submit();
 }
 ```
+
 * Example:
+
 ```js
 function (e, data) {
     $.each(data.files, function (index, file) {
@@ -216,6 +222,7 @@ Callback for the start of each file upload request.
 If this callback returns false, the file upload request is aborted.
 
 * Example:
+
 ```js
 function (e, data) {
     if (data.files.length > 10) {
@@ -228,6 +235,7 @@ function (e, data) {
 Callback for successful upload requests. This callback is the equivalent to the success callback provided by [jQuery ajax()](http://api.jquery.com/jQuery.ajax/) and will also be called if the server returns a JSON response with an error property.
 
 * Example:
+
 ```js
 function (e, data) {
     // data.result
@@ -240,6 +248,7 @@ function (e, data) {
 Callback for failed (abort or error) upload requests. This callback is the equivalent to the error callback provided by [jQuery ajax()](http://api.jquery.com/jQuery.ajax/) and will not be called if the server returns a JSON response with an error property, as this counts as successful request due to the successful HTTP response.
 
 * Example:
+
 ```js
 function (e, data) {
     // data.errorThrown
@@ -252,6 +261,7 @@ function (e, data) {
 Callback for completed (success, abort or error) upload requests. This callback is the equivalent to the complete callback provided by [jQuery ajax()](http://api.jquery.com/jQuery.ajax/).
 
 * Example:
+
 ```js
 function (e, data) {
     // data.result
@@ -264,6 +274,7 @@ function (e, data) {
 Callback for upload progress events.
 
 * Example:
+
 ```js
 function (e, data) {
     var progress = parseInt(data.loaded / data.total * 100, 10);
@@ -274,6 +285,7 @@ function (e, data) {
 Callback for global upload progress events.
 
 * Example:
+
 ```js
 function (e, data) {
     var progress = parseInt(data.loaded / data.total * 100, 10);
@@ -284,6 +296,7 @@ function (e, data) {
 Callback for uploads start, equivalent to the global [ajaxStart](http://api.jquery.com/ajaxStart/) event (but for file upload requests only).
 
 * Example:
+
 ```js
 function (e) {
     alert('Uploads started');
@@ -294,6 +307,7 @@ function (e) {
 Callback for uploads stop, equivalent to the global [ajaxStop](http://api.jquery.com/ajaxStop/) event (but for file upload requests only).
 
 * Example:
+
 ```js
 function (e) {
     alert('Uploads finished');
@@ -304,6 +318,7 @@ function (e) {
 Callback for change events of the fileInput collection.
 
 * Example:
+
 ```js
 function (e, data) {
     $.each(data.files, function (index, file) {
@@ -316,6 +331,7 @@ function (e, data) {
 Callback for drop events of the dropZone collection.
 
 * Example:
+
 ```js
 function (e, data) {
     $.each(data.files, function (index, file) {
@@ -328,6 +344,7 @@ function (e, data) {
 Callback for dragover events of the dropZone collection.
 
 * Example:
+
 ```js
 function (e) {
     // e.dataTransfer
@@ -400,6 +417,7 @@ Set this option to false to always display preview images as *img* elements.
 
 * Type: *object*
 * Example:
+
 ```js
 {
     open: function (event, ui) {/* called on dialogopen */},
@@ -427,6 +445,7 @@ Callback for file deletion events.
 **Note:** Since the UI version already sets this callback option, it is recommended to use the event binding method to attach additional event listeners.
 
 * Example:
+
 ```js
 function (e, data) {
     // data.context: download row,
@@ -435,7 +454,9 @@ function (e, data) {
     // data.dataType: deletion response type, e.g. "json"
 }
 ```
+
 * Event binding example:
+
 ```js
 $('#fileupload')
     .bind('fileuploaddestroy', function (e, data) {/* ... */});
