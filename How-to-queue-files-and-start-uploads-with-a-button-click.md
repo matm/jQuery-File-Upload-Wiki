@@ -35,9 +35,11 @@ $('#file_upload').fileUploadUI({
 ```
 
 A button to start the upload of all queued files could be added with the following code:
+
 ```html
 <button id="start_uploads">Start uploads</button>
 ```
+
 ```js
 $('#start_uploads').click(function () {
     $('.file_upload_start button').click();
