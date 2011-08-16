@@ -7,6 +7,7 @@ By default, the plugin uploads multiple files simultaneously.
 However it is possible to force a sequential upload, that is starting the upload of the second selected file after the upload of the first one has completed, starting the upload of the third file after the second file has been uploaded and so on.
 
 Since version 4.1, sequential uploads are supported out of the box by setting the *sequentialUploads* option to *true* (see [[Options]]):
+
 ```js
 /*global $ */
 $(function () {
