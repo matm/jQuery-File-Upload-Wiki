@@ -21,9 +21,11 @@ The easiest way to add some kind of authentication system is to protect the exam
 3. Edit *example/index.html* and adjust the *action* attribute of the HTML form element to the URL of your custom file upload handler. Adjust the file input *name* attribute if your upload handler requires another parameter name for the file uploads.
 4. Upload the jQuery-File-Upload folder to your website.
 5. Extend your custom server-side upload handler to return a [JSON](http://en.wikipedia.org/wiki/JSON) response akin to the following output:
+
 ```js
 {"name":"picture.jpg","size":902604,"url":"\/jQuery-File-Upload\/example\/files\/picture.jpg","thumbnail":"\/jQuery-File-Upload\/example\/thumbnails\/picture.jpg"}
 ```
+
 Adjust it to respond with a JSON array if your upload component handles multiple files.
 
 Visit the uploaded folder's "example" directory - you should see a file upload interface similar to the demo, allowing you to upload files to your website.
@@ -36,11 +38,14 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
 
 1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/v4) the plugin archive, extract it and upload the contents without the "example" directory to your server.
 2. Add the following two lines to the head of your page (adjust the path to the *jquery.fileupload-ui.css* file):
+
 ```html
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css" id="theme">
 <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
 ```
+
 3. Add the following form to the body of your page (replace *upload.php* with the path to your upload handler):
+
 ```html
 <form id="file_upload" action="upload.php" method="POST" enctype="multipart/form-data">
     <input type="file" name="file[]" multiple>
@@ -48,11 +53,15 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
     <div class="file_upload_label">Upload files</div>
 </form>
 ```
+
 4. Add the following line to the body of your page, where you want the upload/download table to appear:
+
 ```html
 <table id="files"></table>
 ```
+
 5. Add the following lines to the bottom of your page, before the closing body tag (adjust the paths to the *jquery.fileupload.js* and *jquery.fileupload-ui.js* files):
+
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
@@ -60,7 +69,9 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
 <script src="js/jquery.fileupload-ui.js"></script>
 <script src="js/application.js"></script>
 ```
+
 6. Create the file application.js with the following code - feel free to adjust the content returned by *buildUploadRow* and *buildDownloadRow*, as long as one *tr* or *tbody* element is returned:
+
 ```js
 $(function () {
     $('#file_upload').fileUploadUI({
@@ -79,7 +90,9 @@ $(function () {
     });
 });
 ```
+
 7. Implement your server-side file upload handler to store the uploaded files and return a JSON response with the file information, e.g.:
+
 ```js
 {"name":"picture.jpg","type":"image/jpeg","size":"123456789"}
 ```
