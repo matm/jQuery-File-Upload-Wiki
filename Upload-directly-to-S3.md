@@ -3,6 +3,7 @@ Here is a rails-specific example of uploading directly to S3 using the newest ve
 It makes a lot of assumptions, but it will get you where you need to be!
 
 Ok, given you have a form like so:
+
 ```haml
 %form#file_upload(action="https://YOURBUCKET.s3.amazonaws.com" method="post" enctype="multipart/form-data")
   # order is important!
