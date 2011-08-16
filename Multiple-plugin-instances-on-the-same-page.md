@@ -6,6 +6,7 @@ This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-
 Multiple File Upload Forms on the same webpage are supported out of the box and don't need any additional [[Options]].  
 
 Here is a sample HTML code with two file upload forms on the same page:
+
 ```html
 <form class="file_upload" action="upload.php" method="POST" enctype="multipart/form-data">
     <input type="file" name="file" multiple>
@@ -21,6 +22,7 @@ Here is a sample HTML code with two file upload forms on the same page:
 ```
 
 And the associated plugin initialization:
+
 ```js
 /*global $ */
 $(function () {
