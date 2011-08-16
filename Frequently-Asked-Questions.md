@@ -37,6 +37,7 @@ See also: [[Style Guide]].
 
 ## How to use the *this* keyword inside of the plugin initialization options?
 Just make use of [jQuery's each method](http://api.jquery.com/each/) to set the *this* keyword to the element node:
+
 ```js
 $('#fileupload').each(function () {
     $(this).fileupload({
@@ -47,9 +48,11 @@ $('#fileupload').each(function () {
 
 ## How to limit the file selection so users can only select one file?
 Just remove the *multiple* attribute from the file input:
+
 ```html
 <input type="file" name="files[]">
 ```
+
 Note that users can still drag&drop multiple files. To enforce a one file upload limit, you can make use of the *maxNumberOfFiles* option (see [[Options]]).
 
 ## Does the plugin support HTTP status codes?
