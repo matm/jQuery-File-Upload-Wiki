@@ -36,6 +36,7 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
 
 ## Example on how to override existing plugin methods
 The following example overrides the *_renderUploadTemplate* and *_renderDownloadTemplate* methods and provides a simple template mechanism that doesn't require the jQuery Templates plugin:
+
 ```js
 $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
 
