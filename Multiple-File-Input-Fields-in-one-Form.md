@@ -5,6 +5,7 @@ This tutorial is for the outdated [v4 branch](https://github.com/blueimp/jQuery-
 
 To handle multiple file input fields in one form, you can make use of the *namespace*, *fileInputFilter* and *dropZone* [[Options]] and **multiple plugin instances on the same form**.  
 Here is the example HTML code for a form based on the example [[Setup]], but with three different file input fields (and different upload/download tables):
+
 ```html
 <form id="file_upload" action="upload.php" method="POST" enctype="multipart/form-data">
     <div id="drop_zone_1">
@@ -27,6 +28,7 @@ Here is the example HTML code for a form based on the example [[Setup]], but wit
 ```
 
 And the associated plugin initializations:
+
 ```js
 /*global $ */
 $(function () {
@@ -56,6 +58,7 @@ $(function () {
 ```
 
 Lastly, some CSS adjustments have to be made, adding "div" in front of some of the selectors:
+
 ```css
 div.file_upload {
   /* unchanged attributes */
