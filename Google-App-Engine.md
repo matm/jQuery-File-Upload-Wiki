@@ -16,9 +16,9 @@ class UploadUrlHandler(webapp.RequestHandler):
 ```
 
 On client-side, you can override the *add* callback to retrieve the upload url and override the *url* setting, before adding the file to the upload queue:
-```javascript
+```js
 $('#fileupload').fileupload({
-   add: function (e, data) {
+    add: function (e, data) {
         var that = this;
         $.getJSON('/upload-url-handler.json', function (url) {
             data.url = url;
