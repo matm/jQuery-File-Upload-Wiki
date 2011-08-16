@@ -8,6 +8,7 @@ This can be done either programmatically, or by adding additional input fields t
 
 ## Adding additional Form Data for individual file uploads programmatically
 Adding additional Form Data programmatically can be done using the beforeSend and formData [[Options v4]], similar to the following example:
+
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
@@ -49,6 +50,7 @@ The beforeSend option allows to queue the selected files and add the content of 
 ## Sending additional Form Data by adding input fields to the upload form
 If the formData option (see [[Options v4]] or the previous example) is not set, the plugin automatically includes all input fields with the upload request.  
 The following example will add `example=banana` along with each file upload:
+
 ```html
 <form id="file_upload" action="upload.php" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="example" value="banana">
@@ -59,6 +61,7 @@ The following example will add `example=banana` along with each file upload:
 ```
 
 It is also possible to add visible form fields that allow user customizable input:
+
 ```html
 <form id="file_upload" action="upload.php" method="POST" enctype="multipart/form-data">
     <input type="text" name="example_text">
@@ -73,6 +76,7 @@ It is also possible to add visible form fields that allow user customizable inpu
 
 By default, the whole form is used as dropZone and file selection button, effectively hiding any other input fields.
 Therefore, the file input field is wrapped in another container and has to be defined as dropZone:
+
 ```js
 $('#file_upload').fileUploadUI({
     uploadTable: $('#files'),
@@ -83,6 +87,7 @@ $('#file_upload').fileUploadUI({
 ```
 
 Lastly, some CSS adjustments have to be made, adding "div" in front of some of the selectors:
+
 ```css
 div.file_upload {
   /* unchanged attributes */
