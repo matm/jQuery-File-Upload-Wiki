@@ -79,6 +79,15 @@ Set this option to false to upload file selections in one request each.
 * Type: *boolean*
 * Default: `true`
 
+### limitMultiFileUploads
+To limit the number of files uploaded with one [XHR](https://developer.mozilla.org/en/xmlhttprequest) request, set the following option to an integer greater than 0:
+
+* Type: *number*
+* Default: `undefined`
+* Example: `3`
+
+**Note:** This option is ignored, if *singleFileUploads* is set to true.
+
 ### sequentialUploads
 Set this option to true to issue all file upload requests in a sequential order instead of simultaneous requests.
 
