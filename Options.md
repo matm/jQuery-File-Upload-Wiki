@@ -424,16 +424,6 @@ Set this option to false to always display preview images as *img* elements.
 * Type: *boolean*
 * Default: `true`
 
-* Type: *object*
-* Example:
-
-```js
-{
-    open: function (event, ui) {/* called on dialogopen */},
-    title: 'Image Gallery' // Sets the dialog title
-}
-```
-
 ### uploadTemplate
 The file upload template that is given as first argument to the [jQuery.tmpl](http://api.jquery.com/jquery.tmpl/) method to render the file uploads.
 
