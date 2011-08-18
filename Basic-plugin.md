@@ -1,7 +1,7 @@
 The plugin [download package](https://github.com/blueimp/jQuery-File-Upload/archives/master) comes with a complete user interface based on jQuery UI and an example PHP file upload handler that is easy to [[Setup]].
 
 However, if you want to build your own user interface, it is possible to use only the [basic plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js) version and a minimal setup.  
-The following is an alternative to *example/index.html* with only the minimal requirements and a simple *done* callback handler (see [[API]] and [[Options]]):
+The following is an alternative to *example/index.html* with only the minimal requirements and a simple *done* callback handler (see [[API]] and [[Options]] on how to use the different options and callbacks):
 
 ```html
 <!DOCTYPE HTML>
