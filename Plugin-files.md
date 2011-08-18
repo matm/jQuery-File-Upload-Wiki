@@ -20,7 +20,6 @@
 * [.gitignore](https://github.com/blueimp/jQuery-File-Upload/blob/master/.gitignore) contains instructions which [files to ignore for the Git source code repository](http://help.github.com/git-ignore/).
 * [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
 * [README.txt](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.txt) contains basic plugin information in plain text format.
-* [loading.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/* [pbar-ani.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/pbar-ani.gif) is an animated GIf used for the loading animation of the image gallery dialogs.
 * [pbar-ani.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/pbar-ani.gif) is an animated GIf used for the animation of the upload progress bars.
 * [example/files/.htaccess](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/files/.htaccess) contains instructions for [Apache](http://httpd.apache.org/) to serve all uploaded files with a content-type of *application/octet-stream*, except image files. This prevents executing any uploaded script files and makes sure non-image files produce a download dialog.
 * [example/thumbnails/.htaccess](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/thumbnails/.htaccess) doesn't serve any purpose other than making sure the thumbnails folder shows up in the Git source code repository.
