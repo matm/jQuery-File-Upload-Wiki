@@ -47,7 +47,7 @@
 * [[Sequential Uploads]] v4.
 * [[How to upload multiple files with one request]] v4.
 * [[How to invoke a method after all uploads have completed]] v4.
-* [[Chunked Uploads]] v4.
+* [[Chunked Uploads v4]].
 
 ### Server-side specific tutorials
 * How to use the plugin with the [[Flask]] Python Microframework (user contribution)
