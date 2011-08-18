@@ -19,9 +19,7 @@ You only need to set the *discard_aborted_uploads* option to *false*:
 ```php
 <?php
 // ...
-$upload_handler = new UploadHandler(array(
-    'discard_aborted_uploads' => false
-));
+'discard_aborted_uploads' => false
 // ...
 ?>
 ```
