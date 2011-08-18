@@ -47,3 +47,6 @@ if (isset($_SERVER['HTTP_ACCEPT']) &&
 }
 ?>
 ```
+
+## Using only the basic version of the jQuery File Upload plugin
+If you want to build your own interface, please refer to the [[Basic plugin]] guide (minimal setup guide).
