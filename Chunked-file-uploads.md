@@ -10,7 +10,7 @@ $('#fileupload').fileupload({
 });
 ```
 
-For chunked uploads to work in Mozilla Firefox, the *multipart* option has to be set to *false* - see the [[Options]] documentation on *maxChunkSize* for an explanation.
+For chunked uploads to work in Mozilla Firefox 4-6, the *multipart* option has to be set to *false* - see the [[Options]] documentation on *maxChunkSize* for an explanation.
 
 ## Server-side setup
 The [example PHP upload handler](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/upload.php) supports chunked uploads out of the box.
