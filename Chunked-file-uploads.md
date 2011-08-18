@@ -56,7 +56,7 @@ Access-Control-Allow-Headers X-File-Name,X-File-Type,X-File-Size
 ```
 
 ## Resuming file uploads
-Using the *uploadedBytes* options (see [[Options]]), it is possible to resume aborted uploads:
+Using the *uploadedBytes* option (see [[Options]]), it is possible to resume aborted uploads:
 
 ```js
 $('#fileupload').fileupload({
