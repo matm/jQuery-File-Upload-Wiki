@@ -3,8 +3,8 @@ Chunked Uploads are enabled if the *maxChunkSize* option (see [[Options]]) is se
 
 ```js
 $('#fileupload').fileupload({
-    maxChunkSize: 10000000,
-    multipart: false
+    multipart: false,
+    maxChunkSize: 10000000
 });
 ```
 
