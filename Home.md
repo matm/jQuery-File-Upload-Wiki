@@ -16,6 +16,7 @@
 * How to implement [[Chunked file uploads]].
 * How to add [[Drop zone effects]].
 * [[Drag and drop uploads from another web page]]
+* [[Multiple File Upload Widgets on the same page]]
 
 ## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]] (Python).
