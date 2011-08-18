@@ -29,7 +29,7 @@ Ok, given you have a form like so:
 ```javascript
 $(function() {
   $('#file_upload').fileupload({
-    forceIframeTransport: true,
+    forceIframeTransport: true,    // VERY IMPORTANT.  you will get 405 Method Not Allowed if you don't add this.
     autoUpload: true,
     add: function (event, data) {
       $.ajax({
