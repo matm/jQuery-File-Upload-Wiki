@@ -1,3 +1,5 @@
+# Multiple File Input Fields in one Form
+
 The plugin can be applied to a form with multiple file input fields out of the box.
 The files are sent to the server with the parameter name of the file input field clicked by the user.
 
