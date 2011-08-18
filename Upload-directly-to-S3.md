@@ -11,7 +11,7 @@ Ok, given you have a form like so:
   %input{:type => :hidden, :name => :key}
   %input{:type => :hidden, :name => "AWSAccessKeyId", :value => "YOUR_ACCESS_KEY"}
   %input{:type => :hidden, :name => :acl,  :value => :private}
-  %input{:type => :hidden, :name => :success_action_redirect}
+  %input{:type => :hidden, :name => :success_action_status, :value => "200"}
   %input{:type => :hidden, :name => :policy}
   %input{:type => :hidden, :name => :signature}
 
@@ -44,7 +44,6 @@ $(function() {
           $('#file_upload').find('input[name=key]').val(retdata.key);
           $('#file_upload').find('input[name=policy]').val(retdata.policy);
           $('#file_upload').find('input[name=signature]').val(retdata.signature);
-          $('#file_upload').find('input[name=success_action_redirect]').val(retdata.success_action_redirect);
         }
         
       });
@@ -103,7 +102,7 @@ and your controller looks something like this:
         {"bucket" =>  YOUR_BUCKET_NAME}, 
         ["starts-with", "$key", @document.s3_key],
         {"acl" => "private"},
-        {"success_action_redirect" => document_upload_success_document_url(@doucment)},
+        {"success_action_status" => "200"},
         ["content-length-range", 0, 1048576]
       ]
     }
