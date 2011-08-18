@@ -2,7 +2,6 @@
 * [jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js) is the basic plugin - it enhances the file upload process, but doesn't make any assumptions about the user interface or the content-type of the response.
 * [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js) is an extension to *jquery.fileupload.js*. The UI version expects JSON as the response content and adds a complete user interface.
 * [jquery.iframe-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) adds iframe transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
-* [jquery.image-gallery.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.image-gallery.js) adds gallery functionality for uploaded images and exposes a *scale* method that is used for the preview images.
 * [example/application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/application.js) is an example how to initialize and use the File Upload plugin.
 * [tests/tests.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/tests.js) contains the JS code for the unit tests.
 
