@@ -17,6 +17,7 @@
 * How to add [[Drop zone effects]].
 * [[Drag and drop uploads from another web page]]
 * [[Multiple File Upload Widgets on the same page]]
+* [[Multiple File Input Fields in one Form]].
 
 ## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]] (Python).
@@ -41,7 +42,7 @@
 * [[How to queue files and start uploads with a button click]] v4.
 * [[How to implement File Limits]] v4.
 * [[How to submit additional Form Data]] v4.
-* [[Multiple File Input Fields in one Form]] v4.
+* [[Multiple File Input Fields in one Form v4]].
 * [[Multiple plugin instances on the same page]] v4.
 * [[Sequential Uploads]] v4.
 * [[How to upload multiple files with one request]] v4.
