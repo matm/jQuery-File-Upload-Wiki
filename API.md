@@ -98,6 +98,10 @@ var jqXHR = $('#fileupload').fileupload('send', {files: filesList})
     .complete(function (result, textStatus, jqXHR) {/* ... */});
 ```
 
+**Note**: The *send* API method sends the given files directly, without splitting them up into multiple requests.
+So if your files argument is made up of 3 files, it will still only send one request.
+If the *multipart* option is true, it will still send all 3 files as part of one multipart request, else it will only send the first file.
+
 ### Programmatic file uploads for browsers without support for XHR file uploads
 It is also possible to use the *add* and *send* API methods for browsers without support for [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads, by making use of the *fileInput* option:
 
