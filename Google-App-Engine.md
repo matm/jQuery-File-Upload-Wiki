@@ -35,9 +35,9 @@ $('#fileupload').fileupload({
 Documentation on how to create your own widget class based on the File Upload plugin can be found at the [[Plugin extensions]] page.
 
 
-A few more code examples that might help you to get going on GAE:
+###A few more code examples that might help you to get going on GAE:
 
-If you want to push a file and request the browser to open a SaveAs Dialogue:
+If you want to push a file to the user and want the browser to open a SaveAs Dialogue:
 
 ```py
 # Definition in the webapp.WSGIApplication
