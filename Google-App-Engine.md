@@ -32,11 +32,15 @@ $('#fileupload').fileupload({
 ```
 *$.blueimpUI.fileupload* is the widget class of [jQuery File Upload UI](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js). It extends the basic widget class of [jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js).
 
+Documentation on how to create your own widget class based on the File Upload plugin can be found at the [[Plugin extensions]] page.
+
+
 A few more code examples that might help you to get going on GAE:
 
 If you want to push a file and request the browser to open a SaveAs Dialogue:
+
 ```py
-#Definition in the webapp.WSGIApplication
+# Definition in the webapp.WSGIApplication
 # Called as /files/download/ BlobKey / Filename
 # Example: /files/download/isYQ5ATaec9cddCYhStvjg==/reports.jpeg
 ('/files/download/([^/]+)?/(.*)', UploadDownloadHandler),
@@ -51,6 +55,3 @@ class UploadDownloadHandler(blobstore_handlers.BlobstoreDownloadHandler):
             # The filename can include the full path on windows uploads, which can lead the Browser to put the full path into the Save Dialogue box
             self.send_blob(myblob, save_as=myblob.filename.split("\\")[-1])
 ```
-
-
-Documentation on how to create your own widget class based on the File Upload plugin can be found at the [[Plugin extensions]] page.
