@@ -19,6 +19,7 @@
 * [[Drag and drop uploads from another web page]]
 * [[Multiple File Upload Widgets on the same page]]
 * [[Multiple File Input Fields in one Form]].
+* [[Cross domain uploads]].
 
 ## Server-side specific tutorials
 * How to use the plugin with [[Google App Engine]] (Python).
