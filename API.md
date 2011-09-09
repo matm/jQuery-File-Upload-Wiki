@@ -143,6 +143,9 @@ $('#fileupload')
 
 Each event name has "fileupload" as prefix.
 
+**Note:**
+Adding additional event listeners via *bind* method is the preferred option to preserve callback settings by the [jQuery File Upload UI version](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js).
+
 One special callback is the *add* callback, as it provides a *submit* method for the data argument, that will start the file upload:
 
 ```js
