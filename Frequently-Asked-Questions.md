@@ -65,3 +65,7 @@ However, for browsers without support for [XHR](https://developer.mozilla.org/en
 
 ## Is it possible to resize images prior to uploading?
 It's technically possible (via the canvas element and replacing the File objects with Blobs), but currently only supported on Mozilla Firefox (via [canvas.mozGetAsFile](https://developer.mozilla.org/en/DOM/HTMLCanvasElement)). As soon as Google Chrome and other browsers support the [BlobBuilder](http://dev.w3.org/2009/dap/file-system/file-writer.html) interface, it's also possible on those browsers.
+
+## Ist is possible to drag&drop a folder of files?
+The current browser APIs only support drag&drop of (multiple) files, not of folders.  
+See also [issue #573](https://github.com/blueimp/jQuery-File-Upload/issues/573).
