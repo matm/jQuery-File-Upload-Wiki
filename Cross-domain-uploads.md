@@ -1,7 +1,7 @@
 The plugin supports two methods of doing cross-site (cross-domain) file uploads:
 
-* Cross-site XMLHttpRequest file uploads.
-* Forcing iframe transport uploads by setting the option *forceIframeTransport* to true.
+* Cross-site XMLHttpRequest file uploads
+* Cross-site iframe transport uploads
 
 ## Cross-site XMLHttpRequest file uploads
 Cross-site XHR file uploads don't require any work on client side, but are only supported by browsers supporting XHR File Uploads - see [[Browser support]].
