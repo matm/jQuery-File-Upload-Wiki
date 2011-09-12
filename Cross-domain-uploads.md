@@ -1,26 +1,45 @@
-jQuery-File-Upload allows cross domain requests.
+The plugin supports two methods of doing cross-site (cross-domain) file uploads:
 
-We can modify the example to demonstrate this feature.
+* Cross-site XMLHttpRequest file uploads.
+* Forcing iframe transport uploads by setting the option *forceIframeTransport* to true.
 
-To allow cross domain uploads modify example/upload.php near the top:
+## Cross-site XMLHttpRequest file uploads
+Cross-site XHR file uploads don't require any work on client side, but are only supported by browsers supporting XHR File Uploads - see [[Browser support]].
 
-    'script_url' => "http://<MY IP/DOMAIN HERE>".$_SERVER['PHP_SELF'],
-    'upload_url' => "http://<MY IP/DOMAIN HERE>/".dirname($_SERVER['PHP_SELF']).'/files/',
+To allow cross-site XHR file uploads, the receiving server must set the appropriate [Access-Control-Allow-Origin](https://developer.mozilla.org/En/HTTP_access_control#Access-Control-Allow-Origin) headers, e.g.:
 
-and a few lines later:
+```
+Access-Control-Allow-Origin http://example.org
+```
 
-    'thumbnail' => array(
-        'upload_url' => "http://<MY IP/DOMAIN HERE>/".dirname($_SERVER['PHP_SELF']).'/thumbnails/',
+**Note:**  
+For cross-browser compatibility, the header must be set as response to both the file upload (POST) request as well as response to OPTIONS requests. See [Preflighted requests](https://developer.mozilla.org/En/HTTP_access_control#Preflighted_requests) for more information.
 
-also add:
+If the *multipart* option is set to *false* or [[Chunked file uploads]] are enabled, you also need to set [Access-Control-Allow-Headers](https://developer.mozilla.org/En/HTTP_access_control#Access-Control-Allow-Headers) to allow custom headers used by the plugin to transmit file meta information:
 
-    case 'OPTIONS':
-        break;
+```
+Access-Control-Allow-Headers X-File-Name,X-File-Type,X-File-Size
+```
 
-on the supported request methods at the end of upload.php.
+With the appropriate headers set on server-side, cross-domain XHR file uploads work just like file uploads to the same domain.
 
-You also need to add Header set Access-Control-Allow-Origin * to your "upload server". For documentation on how to do this for the apache server check this page: [[http://enable-cors.org/#how-apache]]. You will also find how to do it for PHP and other servers on the same page.
+## Cross-site iframe transport uploads
 
-Don't forget to ensure that you have GD enabled and suitable directory permissions on the files and thumbnails directories.
+To force all browser to make use of the iframe transport module for file uploads, the *forceIframeTransport* option can be set to *true*:
 
-Tested with Firefox 6.0.1, Chrome 13.0 and IE6 (it uploads successfully but gives some Javascript error – known limitation)
+```js
+$('#fileupload').fileupload({
+    forceIframeTransport: true
+});
+```
+
+Cross-site iframe transport uploads don't require any additional server response headers.  
+Unfortunately, it is not possible to access the response body of iframes on a different domain.
+
+However if both servers - the server hosting the upload form and the target server for the file uploads - are just on different subdomains (e.g. source.example.org and target.example.org), it is possible to access the iframe content by adding the following line of Javascript to both webpages (the upload form page and the upload server response page):
+
+```
+document.domain = 'example.com';
+```
+
+Note that this requires the server response to be a HTML document (and not JSON as is the default for the UI version of the plugin).
