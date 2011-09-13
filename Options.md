@@ -24,6 +24,9 @@ The HTTP request method for the file uploads. Can be "POST" or "PUT" and default
 * Type: *string*
 * Example: `'PUT'`
 
+**Note:**  
+"PUT" is only supported by browser supporting XHR file uploads, as iframe transport uploads rely on standard HTML forms which only support "POST" file uploads.
+
 ### dataType
 The type of data that is expected back from the server.  
 
