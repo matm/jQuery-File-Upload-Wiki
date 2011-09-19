@@ -207,6 +207,9 @@ The upload starts when the *submit* method is invoked on the data parameter.
 The data object contains a *files* property holding the added files and allows to override plugin options as well as define ajax settings.  
 *data.submit()* returns a [Promise](http://api.jquery.com/Types/#Promise) object and allows to attach additional handlers using jQuery's [Deferred](http://api.jquery.com/category/deferred-object/) callbacks.
 
+**Note:**
+For browsers supporting [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads (see [[Browser support]], the *add* callback is by default called once for each selected file, with a *data.files* array length of one, as each file is uploaded individually.
+
 * Default:
 
 ```js
