@@ -201,10 +201,12 @@ $('#fileupload')
 Adding additional event listeners via *bind* method is the preferred option to preserve callback settings by the [jQuery File Upload UI version](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js).
 
 ### add
-The add callback can be understood as the callback for the file upload request queue. It is invoked as soon as files are added to the fileupload widget - via file input selection, drag & drop or *add* [[API]] call.  
-If the *singleFileUploads* option is enabled (which is the default), this callback will be called once for each file in the selection for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads, with a *data.files* array length of one, as each file is uploaded individually. Else the *add* callback will be called once for each file selection.  
+The add callback can be understood as the callback for the file upload request queue. It is invoked as soon as files are added to the fileupload widget - via file input selection, drag & drop or *add* [[API]] call.
+  
+The data parameter allows to override plugin options as well as define ajax settings.  
+*data.files* holds a list of files for the upload request: If the *singleFileUploads* option is enabled (which is the default), the add callback will be called once for each file in the selection for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads, with a *data.files* array length of one, as each file is uploaded individually. Else the *add* callback will be called once for each file selection.
+
 The upload starts when the *submit* method is invoked on the data parameter.  
-The data object contains a *files* property holding the added files and allows to override plugin options as well as define ajax settings.  
 *data.submit()* returns a [Promise](http://api.jquery.com/Types/#Promise) object and allows to attach additional handlers using jQuery's [Deferred](http://api.jquery.com/category/deferred-object/) callbacks.
 
 * Default:
