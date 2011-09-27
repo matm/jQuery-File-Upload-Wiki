@@ -61,7 +61,7 @@ Set to null or an empty jQuery collection to disable the change listener.
 
 ### replaceFileInput
 By default, the file input field is replaced with a clone after each input field change event.  
-This is required for iframe transport queues and allows change events to be fired for the same file selection, but can be disabled by setting this option to false.
+This is required for iframe transport queues and allows change events to be fired for the same file selection, but can be disabled by setting this option to false (more in-depth information can be found [here](https://github.com/blueimp/jQuery-File-Upload/issues/638#issuecomment-2203920)).
 
 * Type: *boolean*
 * Default: `true`
