@@ -67,8 +67,15 @@ However, for browsers without support for [XHR](https://developer.mozilla.org/en
 It's technically possible (via the canvas element and replacing the File objects with Blobs), but currently only supported on Mozilla Firefox (via [canvas.mozGetAsFile](https://developer.mozilla.org/en/DOM/HTMLCanvasElement)). As soon as Google Chrome and other browsers support the [BlobBuilder](http://dev.w3.org/2009/dap/file-system/file-writer.html) interface, it's also possible on those browsers.
 
 ## Is it possible to drag&drop a folder of files?
-The current browser APIs only support drag&drop of (multiple) files, not of folders.  
-See also [issue #573](https://github.com/blueimp/jQuery-File-Upload/issues/573).
+The current browser APIs only supports drag&drop of (multiple) files, not of folders.  
+See also [issue #573](https://github.com/blueimp/jQuery-File-Upload/issues/573).  
+However, it is possible to allow selecting a folder (instead of files) via the file input element by adding browser-vendor specific "directory" attributes:
+
+```html
+<input type="file" name="files[]" multiple directory webkitdirectory mozdirectory>
+```
+
+Note that this currently only works in the latest versions of Google Chrome and Firefox.
 
 ## How to clear the list of uploaded files?
 The example in the download package comes with code that retrieves and displays a list of existing files.  
