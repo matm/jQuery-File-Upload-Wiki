@@ -1,5 +1,9 @@
 The following widget class extends *$.blueimpUI.fileupload* (the UI version of the File Upload plugin) to add drop zone effects.
 
+**Note:**  
+It's also possible to apply the following guide to the basic plugin version.
+You only have to replace all occurrences of *blueimpUI* with *blueimp* in the JavaScript widget definition.
+
 When files are dragged onto the document window, the class "ui-state-active" will be added to the dropzone element with a transition effect.  
 When files are dragged over the dropzone element, the class "ui-state-highlight" will be added to the dropzone element with a transition effect.
 
