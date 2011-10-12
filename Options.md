@@ -117,7 +117,8 @@ The iframe transport is always using multipart/form-data.
 If this option is set to *false*, the file content is streamed to the server url instead of sending a [RFC 2388](http://www.ietf.org/rfc/rfc2388.txt) multipart message for [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest) file uploads.   
 Non-multipart uploads are also referred to as [HTTP PUT file upload](http://de.php.net/manual/en/features.file-upload.put-method.php).  
 
-**Note:** Additional form data is ignored when the multipart option is set to *false*.
+**Note:** Additional form data is ignored when the multipart option is set to *false*.  
+Non-multipart uploads (*multipart: false*) are broken in Safari 5.1 - see [issue #700](https://github.com/blueimp/jQuery-File-Upload/issues/700).
 
 * Type: *boolean*
 * Default: `true`
