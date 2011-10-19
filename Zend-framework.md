@@ -2,11 +2,15 @@
 CONTRIBUTOR: Christopher Hogan <ceo@foundco.com> http://foundco.com
 
 // USER CONTROLLER (example form with one action ... "index")
+
 ./modules/users/controller/UserController.php
+
 ./modules/users/views/scripts/index/index.phtml (view action)
+
 ./modules/users/views/scripts/forms/myform.phtml (view action form)
 
 // UPLOAD CONTROLLER (example code below, this is used for uploading files sent from jquery-file-upload iframe module)
+
 ./modules/users/controller/UploadController.php
 
 # Script Examples
