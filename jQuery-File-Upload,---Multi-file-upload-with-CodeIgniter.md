@@ -9,12 +9,13 @@ This is a handy piece of code if you are using ajax/json. put this in your confi
 define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
 ```
 
-## controler:
+## controller: upload.php
 
-difference from the original tutorial is setting the json data that is returned to the page.  the image resize is commented out and I added a delete function
+difference from the original tutorial is setting the json data that is returned to the page.  the image resize is commented out (because I didn't test it yet, should work though) and I added a delete function
 
 
-```<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+```
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Upload extends Controller {
 
@@ -33,29 +34,27 @@ class Upload extends Controller {
 		public function do_upload()
 	{
 	
-	$gallery_path_url = base_url().'uploads/';
+	$upload_path_url = base_url().'uploads/';
 	
 		$config['upload_path'] = FCPATH.'uploads/';
 		$config['allowed_types'] = 'jpg';
 		$config['max_size'] = '30000';
 		
-
 	  	$this->load->library('upload', $config);
 
 	  	if ( ! $this->upload->do_upload())
 	  	{
 	  		$error = array('error' => $this->upload->display_errors());
-
 	  		$this->load->view('upload', $error);
 	  	}
 	  	else
 	  	{ 		
 		   $data = $this->upload->data();
 		/*	
-                  // to re-size for thumbnail images enable and set path	
+                  // to re-size for thumbnail images un-comment and set path here and in json array	
 		   $config = array(
 			'source_image' => $data['full_path'],
-			'new_image' => $this->$gallery_path_url '/thumbs',
+			'new_image' => $this->$upload_path_url '/thumbs',
 			'maintain_ration' => true,
 			'width' => 80,
 			'height' => 80
@@ -68,13 +67,13 @@ class Upload extends Controller {
 	$info->name = $data[file_name];
         $info->size = $data[file_size];
 	$info->type = $data[file_type];
-        $info->url = $gallery_path_url .$data[file_name];
-	$info->thumbnail_url = $gallery_path_url .$data[file_name];//I set this to original file since I did not create thumbs.  change to thumbnail directory if you do
+        $info->url = $upload_path_url .$data[file_name];
+	$info->thumbnail_url = $upload_path_url .$data[file_name];//I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data[file_name]
         $info->delete_url = base_url().'upload/deleteImage/'.$data[file_name];
         $info->delete_type = 'DELETE';
           
 
-	if (IS_AJAX) {   //this is what we put in the constants to pass only json data
+	if (IS_AJAX) {   //this is why we put this in the constants to pass only json data
 	           echo json_encode(array($info));
                       }
 	else {   // so that this will still work if java is not enabled
@@ -87,25 +86,27 @@ class Upload extends Controller {
 }
 	
 
-public function deleteImage($file)
+public function deleteImage($file)//gets the job done but you might want to add error checking and security
 	{
 		$success =unlink(FCPATH.'uploads/' .$file);
 		//info to see if it is doing what it is supposed to	
 		$info->sucess =$success;
 		$info->path =base_url().'uploads/' .$file;
 		$info->file =is_file(FCPATH.'uploads/' .$file);
-	if (IS_AJAX) {
+	if (IS_AJAX) {//I don't think it matters if this is set but good for error checking in the console/firebug
 	    echo json_encode(array($info));}
 	else {     //here you will need to decide what you want to show for a successful delete
-		  	$file_data = 'success';
-		  	$this->load->view('admin/delete_success', $file_data);
-				
-				}
-					
-					}
+		  	$file_data['delete_data'] = $file';
+		  	$this->load->view('admin/delete_success', $file_data); 
+	       }
+}
 ```
-## View:
+## View: index.php
  this is mostly unchanged from the example code. Change name="files[]" to name="userfile"
+
+I also set the img width to 80px since I did not set a thumbnail image.  I know scaling is a bad idea 
+
+I appended the application.js to the bottom so it does not get excluded
 
 ```
 <html>
@@ -136,7 +137,6 @@ public function deleteImage($file)
             <button type="submit" class="start">Start upload</button>
             <button type="reset" class="cancel">Cancel upload</button>
             <button type="button" class="delete">Delete files</button>
-												<input type="hidden" name="path" value="install" />
         </div>
     </form>
     <div class="fileupload-content">
@@ -251,10 +251,16 @@ public function deleteImage($file)
 
 
 
-## Success View :
+## Success View : upload_success.php
 ```php
 <?php
 echo '{"name":"'.$upload_data['file_name'].'","type":"'.$upload_data['file_type'].'","size":"'.$upload_data['file_size'].'"}';
+?>
+```
+## Delete View :  delete_success.php
+```php
+<?php
+echo 'file:' .$delete_data .'-delted' ;
 ?>
 ```
 -Make sure Uploads/ directory is writable
