@@ -1,4 +1,4 @@
-### This page expands the example bundled with the plugin and the previous example of using codeigniter
+### This page expands on the example bundled with the plugin and the previous example of using codeigniter
 
 ***
 
@@ -21,17 +21,17 @@ class Upload extends Controller {
 
 
 
-	public function __construct()
+public function __construct()
 	{
 		parent::__construct();
 		$this->load->helper(array('form', 'url'));
 	}
 
-	public function index()
+public function index()
 	{
 		$this->load->view('admin/upload', array('error' => ''));
 	}
-		public function do_upload()
+public function do_upload()
 	{
 	
 	$upload_path_url = base_url().'uploads/';
@@ -75,8 +75,11 @@ class Upload extends Controller {
 
 	if (IS_AJAX) {   //this is why we put this in the constants to pass only json data
 	           echo json_encode(array($info));
+                    //this has to be the only the only data returned or you will get an error.
+                    //if you don't give this a json array it will give you a Empty file upload result error
+                    //it you set this without the if(IS_AJAX)...else... you get ERROR:TRUE (my experience anyway)
                       }
-	else {   // so that this will still work if java is not enabled
+	else {   // so that this will still work if javascript is not enabled
 		  	$file_data['upload_data'] = $this->upload->data();
 		  	$this->load->view('admin/upload_success', $file_data);
 		}
@@ -201,8 +204,7 @@ I appended the application.js to the bottom so it does not get excluded
             <td colspan="2"></td>
         {{/if}}
         <td class="delete">
-            <!--<button data-type="${delete_type}" data-url="${delete_url}">Delete</button>-->
-												<button data-type="${delete_type}" data-url="${delete_url}">Delete</button>
+	    <button data-type="${delete_type}" data-url="${delete_url}">Delete</button>
         </td>
     </tr>
 </script>
@@ -214,8 +216,11 @@ I appended the application.js to the bottom so it does not get excluded
 <script src="<?php echo base_url(); ?>js/jquery.fileupload.js"></script>
 <script src="<?php echo base_url(); ?>js/jquery.fileupload-ui.js"></script>
 <!--<script src="<?php echo base_url(); ?>js/application.js"></script>-->
-				<script>
-			$(function () {
+
+
+<script>
+//this is the application.js file from the example code//
+$(function () {
     'use strict';
 
     // Initialize the jQuery File Upload widget:
@@ -252,12 +257,19 @@ I appended the application.js to the bottom so it does not get excluded
 
 
 ## Success View : upload_success.php
+
+this will only show if javascript is disabled or the browser does not support the plugin. When testing this with javascript disabled, it will only upload the last file in the list if multiple items are selected.
+delete does not work because of no direct access for security
+
 ```php
 <?php
 echo '{"name":"'.$upload_data['file_name'].'","type":"'.$upload_data['file_type'].'","size":"'.$upload_data['file_size'].'"}';
 ?>
+<br/><br/><br/>
+<a href= "<?php echo base_url().'uploads/' .$upload_data['file_name'] ?>" ><img style="float:left; padding: 20px;" width="80" src="<?php echo base_url().'uploads/' .$upload_data['file_name']/*or set to thumbnail image*/ ?>"/></a><?php echo '<br/>name: ' .$upload_data['file_name'] .'<br/>size: ' .$upload_data['file_size'] .' k' ?> <!-- <br/><a href="upload/delete <?php echo $upload_data['file_name']?>"  >DELETE</a>-->
 ```
 ## Delete View :  delete_success.php
+probably won't be used but here is is anyway
 ```php
 <?php
 echo 'file:' .$delete_data .'-delted' ;
@@ -265,5 +277,9 @@ echo 'file:' .$delete_data .'-delted' ;
 ```
 -Make sure Uploads/ directory is writable
 
+-make sure you have the jquery-file-upload  .js and .css files in the right place
+
 -I had a problem with seeing images/thumbnails initially then I realized I had not set uploads/ directory in
    my .htacces file
+
+***
