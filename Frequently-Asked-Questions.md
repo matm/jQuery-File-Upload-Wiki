@@ -26,6 +26,9 @@ It is possible to upload large files (> 1 GB) with the jQuery File Upload plugin
 HTTP might not be the ideal protocol for uploading large files, but the jQuery File Upload plugin doesn't put any layer on top of the HTTP upload implementation of the browser.  
 So any files that can be uploaded with a simple HTML form can be uploaded with the jQuery File Upload plugin as well.
 
+## How to prevent the page from becoming unresponsive, when adding a large number of image files?
+Remove the "preview" class from the upload template to avoid rendering the preview images, which have the potential to block the main JS thread.
+
 ## Is it possible to trigger the file selection dialog programmatically?
 Invoking the click event on a file input field is **not** supported on the following browsers:
 
