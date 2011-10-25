@@ -23,14 +23,14 @@ Note that this will not limit files added by drag&drop and is not supported acro
 
 ## Why do I get an empty file upload result when uploading large files?
 You probably have a server-side setting preventing you to upload larger files.  
-Try adding the following to a .htaccess file in the same folder as your upload.php file:
+Try adding the following to a [.htaccess](http://httpd.apache.org/docs/current/howto/htaccess.html) file in the same folder as your upload.php file:
 
 ```
 php_value upload_max_filesize 99999M
 php_value post_max_size 99999M
 ```
 
-If this doesn't work, try creating a file php.ini in the example directory and add the following two lines:
+If this doesn't work, try creating a [php.ini](http://www.php.net/manual/en/ini.php) file in the example directory and add the following two lines:
 
 ```
 upload_max_filesize = 99999
