@@ -21,6 +21,24 @@ An example limiting files to PNG images:
 
 Note that this will not limit files added by drag&drop and is not supported across all browsers.
 
+## Why do I get an empty file upload result when uploading large files?
+You probably have a server-side setting preventing you to upload larger files.  
+Try adding the following to a .htaccess file in the same folder as your upload.php file:
+
+```
+php_value upload_max_filesize 99999M
+php_value post_max_size 99999M
+```
+
+If this doesn't work, try creating a file php.ini in the example directory and add the following two lines:
+
+```
+upload_max_filesize = 99999
+post_max_size = 99999
+```
+
+If this also doesn't work, contact your hosting provider.
+
 ## What is the maximum file size limitation?
 It is possible to upload large files (> 1 GB) with the jQuery File Upload plugin, but with some reservations.  
 HTTP might not be the ideal protocol for uploading large files, but the jQuery File Upload plugin doesn't put any layer on top of the HTTP upload implementation of the browser.  
