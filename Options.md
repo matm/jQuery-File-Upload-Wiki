@@ -194,6 +194,7 @@ $('#fileupload')
     .bind('fileuploadstart', function (e) {/* ... */})
     .bind('fileuploadstop', function (e) {/* ... */})
     .bind('fileuploadchange', function (e, data) {/* ... */})
+    .bind('fileuploadpaste', function (e, data) {/* ... */})
     .bind('fileuploaddrop', function (e, data) {/* ... */})
     .bind('fileuploaddragover', function (e) {/* ... */});
 ```
@@ -339,6 +340,19 @@ Callback for change events of the fileInput collection.
 function (e, data) {
     $.each(data.files, function (index, file) {
         alert('Selected file: ' + file.name);
+    });
+}
+```
+
+### paste
+Callback for paste events to the dropZone collection.
+
+* Example:
+
+```js
+function (e, data) {
+    $.each(data.files, function (index, file) {
+        alert('Pasted file type: ' + file.type);
     });
 }
 ```
