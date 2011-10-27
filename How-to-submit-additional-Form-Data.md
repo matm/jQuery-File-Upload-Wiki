@@ -57,7 +57,7 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
 If the submit event callback returns false, the upload request will not start.
 
 ### Setting formData on upload start for each individual file upload
-First, we adjust the upload template and add a new cell with an input field for the title:  
+First, we adjust the upload template and add a new cell with an input field for a file title:  
 
 ```html
 <script id="template-upload" type="text/x-jquery-tmpl">
@@ -65,7 +65,7 @@ First, we adjust the upload template and add a new cell with an input field for 
         <td class="preview"></td>
         <td class="name">{{if name}}${name}{{else}}Untitled{{/if}}</td>
         <td class="size">${sizef}</td>
-        <td class="title"><label>Title: <input name="title"></label></td>
+        <td class="title"><label>Title: <input name="title[]" required></label></td>
         {{if error}}
             <td class="error" colspan="2">Error:
                 {{if error === 'maxFileSize'}}File is too big
@@ -84,16 +84,16 @@ First, we adjust the upload template and add a new cell with an input field for 
 </script>
 ```
 
+The title field has "title[]" as name to account for multi-file request uploads. The "required" attribute is used to prevent the file upload if this field is not filled out.
+
 Next we only need to adjust the submit event callback method to gather the form data via the context option, which has been set by the UI version of the plugin inside of the *add* callback to the upload row:
 
 ```js
 $('#fileupload').bind('fileuploadsubmit', function (e, data) {
-    data.formData = data.context.find(':input').serializeArray();
-    if (!data.formData.length || !data.formData[0].value) {
-      data.context.find(':input')[0].focus();
-      return false;
+    var inputs = data.context.find(':input');
+    if (inputs.filter('[required][value=""]').first().focus().length) {
+        return false;
     }
+    data.formData = inputs.serializeArray();
 });
 ```
-
-The above submit callback also works when multiple input fields are added to the upload template (thanks to the [serializeArray method](http://api.jquery.com/serializeArray)), but only checks the first one for a value.
