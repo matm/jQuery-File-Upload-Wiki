@@ -185,6 +185,7 @@ All callbacks are of type *function* and can also be bound as event listeners, u
 ```js
 $('#fileupload')
     .bind('fileuploadadd', function (e, data) {/* ... */})
+    .bind('fileuploadsubmit', function (e, data) {/* ... */})
     .bind('fileuploadsend', function (e, data) {/* ... */})
     .bind('fileuploaddone', function (e, data) {/* ... */})
     .bind('fileuploadfail', function (e, data) {/* ... */})
@@ -231,6 +232,23 @@ function (e, data) {
         .success(function (result, textStatus, jqXHR) {/* ... */})
         .error(function (jqXHR, textStatus, errorThrown) {/* ... */})
         .complete(function (result, textStatus, jqXHR) {/* ... */});
+}
+```
+
+### submit
+Callback for the submit event of each file upload.  
+If this callback returns false, the file upload request is not started.
+
+* Example:
+
+```js
+function (e, data) {
+    var input = $('#input');
+    data.formData = {example: input.val()};
+    if (!data.formData.example) {
+      input.focus();
+      return false;
+    }
 }
 ```
 
