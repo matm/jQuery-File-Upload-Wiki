@@ -75,9 +75,9 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(params[:picture])
     if @picture.save
-      render :json => [ @picture.to_jq_upload ].to_json
+      render :json => @picture.to_jq_upload.to_json
     else 
-      render :json => [ @picture.to_jq_upload.merge({ :error => "custom_failure" }) ].to_json
+      render :json => { :error => "custom_failure"}, :status => 304
     end
   end
 
