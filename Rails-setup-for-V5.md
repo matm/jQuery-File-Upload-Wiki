@@ -77,7 +77,7 @@ class PicturesController < ApplicationController
     if @picture.save
       render :json => @picture.to_jq_upload.to_json
     else 
-      render :json => { :error => "custom_failure"}, :status => 304
+      render :json => {:error => "custom_failure"}, :status => 304
     end
   end
 
