@@ -35,11 +35,8 @@
 ### Java
 * Code samples for [[Google App Engine Java]] (user contribution).
 
-### ASP (VBscript)
-* [ASP Detials](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
-* [ASP Example](http://184.168.19.38/10000/jqueryfileupload-asp/example/index.asp) (user contribution)
-* [DOWNLOAD](http://184.168.19.38/10000/jqueryfileupload-asp/jqueryfileupload-asp.rar) (user contribution)
-
+### ASP (Classic)
+* [ASP VBscript example](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
 
 ### ASP.NET
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (user contribution)
