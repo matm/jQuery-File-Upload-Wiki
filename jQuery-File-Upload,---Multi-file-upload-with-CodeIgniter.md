@@ -64,12 +64,12 @@ public function do_upload()
 		$this->image_lib->resize();
 		*/
 	//set the data for the json array	
-	$info->name = $data[file_name];
-        $info->size = $data[file_size];
-	$info->type = $data[file_type];
-        $info->url = $upload_path_url .$data[file_name];
-	$info->thumbnail_url = $upload_path_url .$data[file_name];//I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data[file_name]
-        $info->delete_url = base_url().'upload/deleteImage/'.$data[file_name];
+	$info->name = $data['file_name'];
+        $info->size = $data['file_size'];
+	$info->type = $data['file_type'];
+        $info->url = $upload_path_url .$data['file_name'];
+	$info->thumbnail_url = $upload_path_url .$data['file_name'];//I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data['file_name']
+        $info->delete_url = base_url().'upload/deleteImage/'.$data['file_name'];
         $info->delete_type = 'DELETE';
           
 
