@@ -7,13 +7,13 @@ The jQuery File Upload plugin triggers callbacks for progress events, that can b
 
 The following code snippet displays all this information inside of a specific HTML element.
 It works with both the basic file upload plugin and the UI version.  
-Just add the following element to your HTML page:
+Just add the following element to your HTML page (e.g. *index.html*):
 
 ```
 <div id="fileupload-progress"></div>
 ```
 
-Then add the following code to your JavaScript file:
+Then add the following code to your JavaScript file (e.g. *application.js*):
 
 ```js
 $('#fileupload').bind('fileuploadstart', function () {
