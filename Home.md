@@ -20,6 +20,7 @@
 * How to implement [[Chunked file uploads]].
 * [[Cross domain uploads]].
 * How to add [[Drop zone effects]].
+* How to display [[Extended progress information]].
 * [[Drag and drop uploads from another web page]]
 
 ## Server-side specific tutorials
