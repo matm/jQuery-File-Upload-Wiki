@@ -2,7 +2,7 @@ This page lists several Performance Optimizations to speed up page load times wh
 
 ## JavaScript minification
 The source code of this plugin is not distributed in a minified format.  
-However, it is recommended to make use of [Google's Closure Compiler](http://code.google.com/closure/compiler/) or a similar tool to combine and minify all your application JavaScript files for production use.
+However, it is recommended to make use of [UglifyJS](https://github.com/mishoo/UglifyJS), [Google's Closure Compiler](http://code.google.com/closure/compiler/) or a similar tool to combine and minify all your application JavaScript files for production use.
 
 ## CSS minification
 Another recommended tool for production use is [CSSTidy](http://csstidy.sourceforge.net/), to tidy and minify the CSS source.
