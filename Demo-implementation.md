@@ -11,4 +11,4 @@ You can also find an example PHP based server-side implementation under the [php
 Both implementations can be run in cross-site scenarios, which means the HTML pages can be hosted on a different domain than the upload handlers.  
 e.g. the App Engine demo runs on *jquery-file-upload.appspot.com*, while the upload form is hosted on *blueimp.github.com*.
 
-Both implementations support every available File Upload plugin options (see [[Options]] documentation), with the exception of non-multipart and chunked uploads, which have not been implemented for the Google App Engine version yet.
+Both implementations support every available File Upload plugin option (see [[Options]] documentation), with the exception of non-multipart and chunked uploads, which have not been implemented for the Google App Engine version yet.
