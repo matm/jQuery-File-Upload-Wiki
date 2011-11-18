@@ -1,3 +1,6 @@
+A complete server-side Google App Engine implementation example can be found in the *gae* folder of the source code tree:
+https://github.com/blueimp/jQuery-File-Upload/tree/master/gae
+
 # Using the plugin with Google App Engine's Blobstore
 
 To upload files to the [Blobstore](http://code.google.com/appengine/docs/python/blobstore/) of [Google App Engine](http://code.google.com/appengine/) with the File Upload plugin, you implement a normal form-based file upload on server-side and then adjust it to return a JSON response.
@@ -33,25 +36,3 @@ $('#fileupload').fileupload({
 *$.blueimpUI.fileupload* is the widget class of [jQuery File Upload UI](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js). It extends the basic widget class of [jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js).
 
 Documentation on how to create your own widget class based on the File Upload plugin can be found at the [[Plugin extensions]] page.
-
-
-###A few more code examples that might help you to get going on GAE:
-
-If you want to push a file to the user and want the browser to open a SaveAs Dialogue:
-
-```py
-# Definition in the webapp.WSGIApplication
-# Called as /files/download/ BlobKey / Filename
-# Example: /files/download/isYQ5ATaec9cddCYhStvjg==/reports.jpeg
-('/files/download/([^/]+)?/(.*)', UploadDownloadHandler),
-
-class UploadDownloadHandler(blobstore_handlers.BlobstoreDownloadHandler):
-    def get(self, blob_key, blob_name):
-        blob_key = str(urllib.unquote(blob_key))
-        if not blobstore.get(blob_key):
-            self.error(404)
-        else:
-            myblob = blobstore.BlobInfo.get(blob_key)
-            # The filename can include the full path on windows uploads, which can lead the Browser to put the full path into the Save Dialogue box
-            self.send_blob(myblob, save_as=myblob.filename.split("\\")[-1])
-```
