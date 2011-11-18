@@ -1,10 +1,10 @@
-*The PHP and Google App Engine implementations ("php" and "gae" folders in the source code tree) come with full cross-domain support out of the box.*
-
-
 The plugin supports two methods of doing cross-site (cross-domain) file uploads:
 
 * Cross-site XMLHttpRequest file uploads
 * Cross-site iframe transport uploads
+
+**Node:**
+The PHP and Google App Engine implementations ("php" and "gae" folders in the source code tree) come with full cross-domain support out of the box.
 
 ## Cross-site XMLHttpRequest file uploads
 Cross-site XHR file uploads don't require any work on client side, but are only supported by browsers supporting XHR File Uploads - see [[Browser support]].
