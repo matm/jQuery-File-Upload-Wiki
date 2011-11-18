@@ -1,25 +1,14 @@
-The [jQuery File Upload Demo](http://aquantum-demo.appspot.com/file-upload) is always equipped with the latest version of the source files ([jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js), [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js) and [jquery.iframe-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js)).
+The [jQuery File Upload Demo](http://blueimp.github.com/jQuery-File-Upload/) is hosted on GitHub, but the files are uploaded to [App Engine](http://code.google.com/appengine/) (AppID *jquery-file-upload*).
 
-In addition to the [jQuery](http://jquery.com/) and [jQuery UI](http://jqueryui.com/) libraries and the files distributed with the [jQuery File Upload Plugin](https://github.com/blueimp/jQuery-File-Upload), the demo utilizes the [jQuery Templates Plugin](http://api.jquery.com/category/plugins/templates/), the official [jQuery Cookie Plugin](https://github.com/carhartl/jquery-cookie), the [jQuery Image Gallery Plugin](https://github.com/blueimp/jQuery-Image-Gallery) and a JavaScript file with localization strings.
+The files are publicly accessible, but without a public file listing nobody will see your test uploads if you don't forward someone the download links.  
+Every file will be automatically deleted after 5 minutes, but might be longer accessible due to caching.
 
-The demo extends the File Upload plugin with a customized widget class: [jquery.fileupload-uix.js](http://aquantum-demo.appspot.com/static/js/jquery.fileupload-uix.js)  
-Extending the widget class is the recommended way for customized versions.
+You can find the complete source code for the client (GitHub Pages) and server-side (App Engine) implementations in the master and gh-pages branches of this project.  
+The App Engine source code is located in the [gae](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae) folder.
 
-For [[Performance Optimizations]], the JavaScript files are merged and minified into one minified JavaScript file. 
+You can also find an example PHP based server-side implementation under the [php](https://github.com/blueimp/jQuery-File-Upload/tree/master/php) folder that can be run on any typical PHP webhosting platform.
 
-Un-minified versions of the demo JavaScript files can be found here:
+Both implementations can be run in cross-site scenarios, which means the HTML pages can be hosted on a different domain than the upload handlers.  
+e.g. the App Engine demo runs on *jquery-file-upload.appspot.com*, while the upload form is hosted on *blueimp.github.com*.
 
-* [[http://aquantum-demo.appspot.com/static/js/jquery.tmpl.js]]
-* [[http://aquantum-demo.appspot.com/static/js/jquery.cookie.js]]
-* [[http://aquantum-demo.appspot.com/static/js/jquery.iframe-transport.js]]
-* [[http://aquantum-demo.appspot.com/static/js/jquery.image-gallery.js]]
-* [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload.js]]
-* [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload-ui.js]]
-* [[http://aquantum-demo.appspot.com/static/js/jquery.fileupload-uix.js]]
-* [[http://aquantum-demo.appspot.com/static/js/localization/en.js]]
-* [[http://aquantum-demo.appspot.com/static/js/application.js]]
-
-Note that these files are sent with a [far future Expires header](http://developer.yahoo.com/performance/rules.html#expires), so you might need to refresh your browser cache to retrieve the latest versions (the demo itself uses IDs appended as query parameter to the files to make sure browsers get the latest versions).
-
-The server-side of the demo is written in Python on [Google App Engine](http://code.google.com/appengine/).  
-With App Engine, adding a thumbnail picture for uploaded files is very easy thanks to the [get_serving_url](http://code.google.com/appengine/docs/python/images/functions.html#Image_get_serving_url) method of the [Images API](http://code.google.com/appengine/docs/python/images/). You basically just create a special link to the uploaded file with the thumbnail size as parameter.
+Both implementations support every available File Upload plugin options (see [[Options]] documentation), with the exception of non-multipart and chunked uploads, which have not been implemented for the Google App Engine version yet.
