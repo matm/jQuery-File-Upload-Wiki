@@ -36,3 +36,18 @@ $('#fileupload').fileupload({
 *$.blueimpUI.fileupload* is the widget class of [jQuery File Upload UI](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js). It extends the basic widget class of [jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js).
 
 Documentation on how to create your own widget class based on the File Upload plugin can be found at the [[Plugin extensions]] page.
+
+# App Engine Blobstore and Cross-domain uploads
+Since I've rewritten the demo to be hosted on Github pages while the uploads are still done to App Engine, I've had to tackle the Cross-Domain Blobstore issue.
+
+First, you might want to star this issue, so the App Engine developers might give us the possibility to add custom headers to Blobstore upload urls:
+http://code.google.com/p/googleappengine/issues/detail?id=5059
+Though I think this might be more complicated, as the upload urls would also have to respond to preflighted OPTIONS requests.
+
+The current implementation of the demo (which can be found in the project source code in the gae folder) accepts File uploads with a custom File Upload handler and writes the files to the blobstore programmatically:
+http://code.google.com/appengine/docs/python/blobstore/overview.html#Writing_Files_to_the_Blobstore
+Unfortunately, this is not the most performant solution - file uploads will be limited by the max request size and memory consumption limits of the App Engine instance.
+
+Therefore I've also followed the [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) approach and also added support for it to the latest version of the plugin.
+To use postMessage transport file uploads, add the plugin to the script section of your HTML page and initialize the fileupload plugin with the postMessage option, which must point to the URL of the postmessage.html file.
+postMessage file uploads are currently only supported by Google Chrome and Firefox (8.0+), while Firefox doesn't allow cross-domain postMessage transports with File, Blob or FileList objects (see this issue: https://bugzilla.mozilla.org/show_bug.cgi?id=673742 ).
