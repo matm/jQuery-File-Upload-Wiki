@@ -8,6 +8,9 @@ The following browsers support multiple file selection:
 
 Internet Explorer has no support for multiple file selection, but allows to add multiple files to the upload queue by selecting files multiple times.
 
+**Note:**
+Safari on Windows has [a bug](http://stackoverflow.com/questions/7231054/file-input-size-issue-in-safari-for-multiple-file-selection) and reports a file size of 0 bytes when selecting multiple files. Selecting single files works.
+
 ## Drag & Drop
 The following browsers support drag & drop:
 
@@ -16,6 +19,9 @@ The following browsers support drag & drop:
 * Google Chrome
 
 IE and Opera have currently no support for drag & drop.
+
+**Note:**
+Safari on Windows has a bug that adds "￿" characters at the end of the file name or mangles the file name in another way and reports a file size of 0 bytes when dropping files. Trying to drop the same file(s) again seems to work.
 
 ### Firefox 3.6
 The outdated v4 branch of the plugin supported drag & drop for Firefox 3.6, but since version 5 of the plugin, drag&drop is not supported on versions below Firefox 4 anymore (for multipart uploads).
