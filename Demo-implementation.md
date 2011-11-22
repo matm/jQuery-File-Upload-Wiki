@@ -4,11 +4,12 @@ The uploaded files are publicly accessible, but without a public file listing no
 Every file will be automatically deleted after 5 minutes, but might be longer accessible due to caching.
 
 You can find the complete source code for the client (GitHub Pages) and server-side (App Engine) implementations in the master and gh-pages branches of this project.  
-The App Engine source code is located in the [gae](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae) folder.
+The App Engine source code is located in the [gae-python](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-python) and [gae-python](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-go) folders.  
+Originally, the demo had been built for the [Python runtime of Google App Engine](http://code.google.com/appengine/docs/python/), but it's since been rebuilt for the [Go Runtime Environment](http://code.google.com/appengine/docs/go/).
 
 You can also find an example PHP based server-side implementation under the [php](https://github.com/blueimp/jQuery-File-Upload/tree/master/php) folder that can be run on any typical PHP webhosting platform.
 
-Both implementations can be run in cross-site scenarios, which means the HTML pages can be hosted on a different domain than the upload handlers.  
+All implementations can be run in cross-site scenarios, which means the HTML pages can be hosted on a different domain than the upload handlers.  
 e.g. the App Engine demo runs on *jquery-file-upload.appspot.com*, while the upload form is hosted on *blueimp.github.com*.
 
-Both implementations support every available File Upload plugin option (see [[Options]] documentation), with the exception of non-multipart and chunked uploads, which have not been implemented for the Google App Engine version yet.
+All implementations support every available File Upload plugin option (see [[Options]] documentation), with the exception of non-multipart and chunked uploads, which have not been implemented for the Google App Engine versions yet.
