@@ -1,11 +1,17 @@
-A complete server-side Google App Engine implementation example can be found in the *gae* folder of the source code tree:
-https://github.com/blueimp/jQuery-File-Upload/tree/master/gae
+Two complete server-side Google App Engine implementation examples can be found in the *gae-python* and *gae-go* directories of the source code tree:
+https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-python
+https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-go
+
+Those versions are the same that have been (Python) or are (Go) running as the demo implementation.
+However, since the demo is relying on Cross-domain communication (from Github Pages to App Engine), it has to write Files to the Blobstore programmatically, instead of using the direct upload feature.
+Uploading directly to the Blobstore improves upload performance and allows you to upload very large file sizes, but doesn't allow you to set any custom headers required for Cross-Domain access.
+You can find more information regarding this issue at the end of this howto.
 
 # Using the plugin with Google App Engine's Blobstore
 
 To upload files to the [Blobstore](http://code.google.com/appengine/docs/python/blobstore/) of [Google App Engine](http://code.google.com/appengine/) with the File Upload plugin, you implement a normal form-based file upload on server-side and then adjust it to return a JSON response.
 
-First, you can follow Google's documentation on [Blobstore File Uploads](http://code.google.com/appengine/docs/python/blobstore/overview.html#Uploading_a_Blob). Then, instead of redirecting the user to the uploaded blob, redirect to a page that returns a JSON response with an array of objects with information for each uploaded file (see [[Setup]] guide). The demo does this by appending the file IDs to the redirect url.
+First, you can follow Google's documentation on [Blobstore File Uploads](http://code.google.com/appengine/docs/python/blobstore/overview.html#Uploading_a_Blob). Then, instead of redirecting the user to the uploaded blob, redirect to a page that returns a JSON response with an array of objects with information for each uploaded file (see [[Setup]] guide).
 
 Since a new file upload url has to be created for every upload request to the blobstore, you need to create a handler on server-side, which creates these upload urls and returns them as response to a browser GET request:
 
