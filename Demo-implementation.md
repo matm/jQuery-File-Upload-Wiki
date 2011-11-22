@@ -4,7 +4,7 @@ The uploaded files are publicly accessible, but without a public file listing no
 Every file will be automatically deleted after 5 minutes, but might be longer accessible due to caching.
 
 You can find the complete source code for the client (GitHub Pages) and server-side (App Engine) implementations in the master and gh-pages branches of this project.  
-The App Engine source code is located in the [gae-python](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-python) and [gae-python](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-go) folders.  
+The App Engine source code is located in the [gae-python](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-python) and [gae-go](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-go) folders.  
 Originally, the demo had been built for the [Python runtime of Google App Engine](http://code.google.com/appengine/docs/python/), but it's since been rebuilt for the [Go Runtime Environment](http://code.google.com/appengine/docs/go/).
 
 You can also find an example PHP based server-side implementation under the [php](https://github.com/blueimp/jQuery-File-Upload/tree/master/php) folder that can be run on any typical PHP webhosting platform.
