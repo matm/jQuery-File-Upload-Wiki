@@ -7,4 +7,4 @@ Most browsers prevent submitting files when the input field didn't receive a dir
 Firefox 4 (and later) is so far the only browser which supports invoking "click"-Events on a completely hidden (*display: none*) file input field. This will eventually allow to use any element as button for file selects when this feature is supported across browsers.  
 The programmatic triggering of the click event itself is supported on IE, but no files will be submitted on subsequent form submits.
 
-So far, to achieve a cross-browser styling of the "Upload files" button, the file input field is made transparent and positioned on top of the *fileinput-button* label - see [jquery.fileupload-ui.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
+To achieve a cross-browser styling of the "Upload files" button, the file input field is made transparent and positioned on top of the *fileinput-button* label - see [jquery.fileupload-ui.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
