@@ -103,6 +103,6 @@ The example in the download package comes with code that retrieves and displays 
 Remove lines 21-31 in the file [application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/application.js) if you don't need that functionality.
 
 ## Why is the protocol ("http:") missing from the script references in the HTML source code?
-This is called a [protocol relative url](https://www.google.com/search?q=protocol+relative+URL) and a perfectly valid way to define a resource, relative to the current URL protocol.  
+This is called a [protocol relative url](//www.google.com/search?q=protocol+relative+URL) and a perfectly valid way to define a resource, relative to the current URL protocol.  
 This ensures that the referenced scripts are loaded via the same protocol as the current page, which avoids security notifications when loading resources via unencrypted HTTP on a page loaded via HTTPS.  
 See also issue [#514](https://github.com/blueimp/jQuery-File-Upload/issues/514) as well as pull requests [#722](https://github.com/blueimp/jQuery-File-Upload/pull/772) and [#833](https://github.com/blueimp/jQuery-File-Upload/pull/833).
