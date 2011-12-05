@@ -51,6 +51,7 @@
 * [[Zend-framework]] integration (user contribution).
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
 * [[PHP Subfolder example]]
+* [[PHP Session Upload Progress]] HowTo
 
 ## Documentation for v.4 (old branch)
 
