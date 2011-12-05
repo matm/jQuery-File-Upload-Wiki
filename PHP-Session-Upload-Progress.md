@@ -43,8 +43,8 @@ $('#fileupload').bind('fileuploadsend', function (e, data) {
   $s = $_SESSION['upload_progress_'.intval($_GET['PHP_SESSION_UPLOAD_PROGRESS'])];
   $progress = array(
     'lengthComputable' => true,
-    'loaded' => $s['content_length'],
-    'total' => $s['bytes_processed']
+    'loaded' => $s['bytes_processed'],
+    'total' => $s['content_length']
   );
   echo json_encode($progress);
 ?>
