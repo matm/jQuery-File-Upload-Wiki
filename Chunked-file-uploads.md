@@ -62,7 +62,7 @@ $('#fileupload').fileupload({
     multipart: false, // required for Mozilla Firefox
     add: function (e, data) {
         var that = this;
-        $.getJSON('upload.php', {file: data.files[0].name}, function (file) {
+        $.getJSON('php/index.php', {file: data.files[0].name}, function (file) {
             data.uploadedBytes = file && file.size;
             $.blueimpUI.fileupload.prototype
                 .options.add.call(that, e, data);
