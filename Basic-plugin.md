@@ -20,7 +20,7 @@ The following is an alternative to *example/index.html* with only the minimal re
 $(function () {
     $('#fileupload').fileupload({
         dataType: 'json',
-        url: 'upload.php',
+        url: 'php/index.php',
         done: function (e, data) {
             $.each(data.result, function (index, file) {
                 $('<p/>').text(file.name).appendTo('body');
