@@ -5,12 +5,11 @@ To upload large files in smaller chunks, set the *maxChunkSize* option (see [[Op
 
 ```js
 $('#fileupload').fileupload({
-    maxChunkSize: 10000000, // 10 MB
-    multipart: false // required for Mozilla Firefox
+    maxChunkSize: 10000000 // 10 MB
 });
 ```
 
-For chunked uploads to work in Mozilla Firefox 4-6, the *multipart* option has to be set to *false* - see the [[Options]] documentation on *maxChunkSize* for an explanation.
+For chunked uploads to work in Mozilla Firefox 4-6, the *multipart* option also has to be set to *false* - see the [[Options]] documentation on *maxChunkSize* for an explanation.
 
 ## Server-side setup
 The [example PHP upload handler](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/upload.php) supports chunked uploads out of the box.
@@ -59,7 +58,6 @@ Using the *uploadedBytes* option (see [[Options]]), it is possible to resume abo
 ```js
 $('#fileupload').fileupload({
     maxChunkSize: 10000000, // 10 MB
-    multipart: false, // required for Mozilla Firefox
     add: function (e, data) {
         var that = this;
         $.getJSON('php/index.php', {file: data.files[0].name}, function (file) {
