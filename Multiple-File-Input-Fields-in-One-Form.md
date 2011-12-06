@@ -7,7 +7,7 @@ In *example/index.html* duplicate the *label* with the *class* "fileinput-button
 
 ```html
 <div id="fileupload">
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
+    <form action="php/index.php" method="POST" enctype="multipart/form-data">
         <div class="fileupload-buttonbar">
             <label class="fileinput-button">
                 <span>Add files...</span>
