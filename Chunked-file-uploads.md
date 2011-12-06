@@ -71,3 +71,44 @@ $('#fileupload').fileupload({
 
 The above code overrides the add callback and sends a JSON request with the current file name to the server. If a file with the given name exists, the server responds with the file information including the file size, which is set as *uploadedBytes* option.  
 If *uploadedBytes* is set, the plugin only uploads the remaining parts of the file as blob upload.
+
+### Automatic resume
+
+The following code snippet implements an automatic resume functionality, based on the previous code:
+
+```js
+$('#fileupload').fileupload({
+    /* ... settings as above plus the following ... */
+    maxRetries: 100,
+    retryTimeout: 500,
+    fail: function (e, data) {
+        var fu = $(this).data('fileupload'),
+            retries = data.context.data('retries') || 0,
+            retry = function () {
+                $.getJSON('php/index.php', {file: data.files[0].name})
+                    .done(function (file) {
+                        data.uploadedBytes = file && file.size;
+                        data.submit();
+                    })
+                    .fail(function () {
+                        fu._trigger('fail', e, data);
+                    });
+            };
+        if (data.errorThrown !== 'abort' &&
+                data.errorThrown !== 'uploadedBytes' &&
+                retries < fu.options.maxRetries) {
+            retries += 1;
+            data.context.data('retries', retries);
+            window.setTimeout(retry, retries * fu.options.retryTimeout);
+            return;
+        }
+        data.context.removeData('retries');
+        $.blueimpUI.fileupload.prototype
+            .options.fail.call(this, e, data);
+    }
+});
+```
+
+If the upload fails, the code above will automatically resume the file upload after retrieving the uploaded bytes.  
+To prevent endless loops, the number of retries can be limited with the *maxRetries* setting.  
+The *retryTimeout* setting defines a timeout in milliseconds, before the file upload is resumed. It is increased for every subsequent retry to extend the waiting time.
