@@ -9,7 +9,7 @@ $('#fileupload').fileupload({
 });
 ```
 
-For chunked uploads to work in Mozilla Firefox 4-6, the *multipart* option also has to be set to *false* - see the [[Options]] documentation on *maxChunkSize* for an explanation.
+For chunked uploads to work in Mozilla Firefox 4-6 (XHR upload capable Firefox versions prior to Firefox 7), the *multipart* option also has to be set to *false* - see the [[Options]] documentation on *maxChunkSize* for an explanation.
 
 ## Server-side setup
 The [example PHP upload handler](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/upload.php) supports chunked uploads out of the box.
@@ -21,6 +21,21 @@ You only need to set the *discard_aborted_uploads* option to *false*:
 'discard_aborted_uploads' => false
 // ...
 ?>
+```
+
+To still be able to discard partial uploads if the user aborts the upload process, a DELETE request for the uploaded file has to be issued after every cancel action, e.g. with the following code:
+
+```js
+$('#fileupload').bind('fileuploadfail', function (e, data) {
+    if (data.errorThrown === 'abort') {
+        $.ajax({
+            url: 'php/index.php?' + $.param({
+                file: data.files[0].name
+            }),
+            type: 'DELETE'
+        });
+    }
+});
 ```
 
 To support chunked uploads, the upload handler compares the given file name and file size (transmitted via *X-File-Name* and *X-File-Size* headers) with already uploaded files to determine if the current blob has to be appended to an existing file.  
