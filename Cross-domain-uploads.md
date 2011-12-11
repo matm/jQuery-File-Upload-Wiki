@@ -12,7 +12,7 @@ Cross-site XHR file uploads don't require any work on client side, but are only 
 To allow cross-site XHR file uploads, the receiving server must set the appropriate [Access-Control-Allow-Origin](https://developer.mozilla.org/En/HTTP_access_control#Access-Control-Allow-Origin) headers, e.g.:
 
 ```
-Access-Control-Allow-Origin http://example.org
+Access-Control-Allow-Origin: http://example.org
 ```
 
 **Note:**  
@@ -21,8 +21,27 @@ For cross-browser compatibility, the header must be set as response to both the 
 If the *multipart* option is set to *false* or [[Chunked file uploads]] are enabled, you also need to set [Access-Control-Allow-Headers](https://developer.mozilla.org/En/HTTP_access_control#Access-Control-Allow-Headers) to allow custom headers used by the plugin to transmit file meta information:
 
 ```
-Access-Control-Allow-Headers X-File-Name,X-File-Type,X-File-Size
+Access-Control-Allow-Headers: X-File-Name,X-File-Type,X-File-Size
 ```
+
+If you need to send along cookies (e.g. for authentication), set the *withCredentials* [$.ajax()](http://api.jquery.com/jQuery.ajax/) setting as fileupload widget option:
+
+```js
+$('#fileupload').fileupload('option', {
+    xhrFields: {
+        withCredentials: true
+    }
+});
+```
+
+On server-side, you need to set the header [Access-Control-Allow-Credentials](https://developer.mozilla.org/en/http_access_control#Requests_with_credentials) to *true*:
+
+```
+Access-Control-Allow-Origin: http://example.org
+Access-Control-Allow-Credentials: true
+```
+
+**Note:** when responding to a credentialed request, the server must specify a domain, and cannot use wild carding (*).
 
 With the appropriate headers set on server-side, cross-domain XHR file uploads work just like file uploads to the same domain.
 
@@ -39,7 +58,9 @@ $('#fileupload').fileupload({
 Cross-site iframe transport uploads don't require any additional server response headers.  
 Unfortunately, it is not possible to access the response body of iframes on a different domain.
 
-However if both servers - the server hosting the upload form and the target server for the file uploads - are just on different subdomains (e.g. source.example.org and target.example.org), it is possible to access the iframe content by adding the following line of Javascript to both webpages (the upload form page and the upload server response page):
+Therefore Cross-site iframe transport uploads require a redirect back to the origin server to retrieve the upload results. The example implementation makes use of [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/result.html) as redirect page. See also the example code in [application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/application.js).
+
+If both servers - the server hosting the upload form and the target server for the file uploads - are just on different subdomains (e.g. source.example.org and target.example.org), it is possible to access the iframe content on the subdomain by adding the following line of Javascript to both webpages (the upload form page and the upload server response page):
 
 ```
 document.domain = 'example.com';
