@@ -9,12 +9,12 @@
 
 ## CSS
 * [jquery.fileupload-ui.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css) adds styling for the file input field, progress bars and upload buttons. See [[Style Guide]].
-* [style.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/style.css) adds some basic styling for the example file upload form page.
+* [style.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/style.css) adds some basic styling for the example file upload form page.
 
 ## HTML
-* [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/index.html) is a helper page which allows to access cross-domain iframe contents via redirects.
-* [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
-* [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
+* [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/result.html) is a helper page which allows to access cross-domain iframe contents via redirects.
+* [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
+* [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
 * [tests/index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/index.html) contains the HTML markup for the unit tests.
 
 ## Google App Engine
