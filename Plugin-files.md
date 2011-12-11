@@ -2,6 +2,7 @@
 * [jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js) is the basic plugin - it enhances the file upload process, but doesn't make any assumptions about the user interface or the content-type of the response.
 * [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js) is an extension to *jquery.fileupload.js*. The UI version expects JSON as the response content and adds a complete user interface.
 * [jquery.iframe-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) adds iframe transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
+* [jquery.postmessage-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) adds [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
 * [jquery.xdr-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.xdr-transport.js) adds XDomainRequest transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
 * [application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/application.js) is an example how to initialize and use the File Upload plugin.
 * [tests/tests.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/tests.js) contains the JS code for the unit tests.
@@ -13,7 +14,7 @@
 ## HTML
 * [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/index.html) is a helper page which allows to access cross-domain iframe contents via redirects.
 * [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
-* [postmessage.html](https://developer.mozilla.org/en/DOM/window.postMessage) serves as an experimental API for cross-domain postMessage based file uploads.
+* [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
 * [tests/index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/index.html) contains the HTML markup for the unit tests.
 
 ## Google App Engine
