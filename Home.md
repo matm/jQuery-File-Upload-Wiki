@@ -18,7 +18,7 @@
 * [[Multiple File Upload Widgets on the same page]]
 * [[Multiple File Input Fields in one Form]].
 * How to implement [[Chunked file uploads]].
-* [[Cross domain uploads]].
+* [[Cross domain uploads]] (Cross-site uploads).
 * How to add [[Drop zone effects]].
 * How to display [[Extended progress information]].
 * [[Drag and drop uploads from another web page]]
