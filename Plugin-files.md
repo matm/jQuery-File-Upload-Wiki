@@ -13,6 +13,7 @@
 ## HTML
 * [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/index.html) is a helper page which allows to access cross-domain iframe contents via redirects.
 * [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
+* [postmessage.html](https://developer.mozilla.org/en/DOM/window.postMessage) serves as an experimental API for cross-domain postMessage based file uploads.
 * [tests/index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/index.html) contains the HTML markup for the unit tests.
 
 ## Google App Engine
@@ -27,5 +28,4 @@
 ## Other
 * [.gitignore](https://github.com/blueimp/jQuery-File-Upload/blob/master/.gitignore) contains instructions which [files to ignore for the Git source code repository](http://help.github.com/git-ignore/).
 * [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
-* [README.txt](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.txt) contains basic plugin information in plain text format.
 * [pbar-ani.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/pbar-ani.gif) is an animated GIf used for the animation of the upload progress bars.
