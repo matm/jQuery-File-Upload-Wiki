@@ -47,7 +47,8 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
                             '<td class="preview"></td>' +
                                 '<td class="name"><a></a></td>' +
                                 '<td class="size"></td><td colspan="2"></td>'
-                    ) + '<td class="delete"><button>Delete</button></td></tr>');
+                    ) + '<td class="delete"><button>Delete</button>' +
+                        '<input type="checkbox" name="delete" value="1"></td></tr>');
                 row.find('.size').text(o.formatFileSize(file.size));
                 if (file.error) {
                     row.find('.name').text(file.name);
