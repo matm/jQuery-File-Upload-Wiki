@@ -463,18 +463,6 @@ Set this option to false to always display preview images as *img* elements.
 * Type: *boolean*
 * Default: `true`
 
-### uploadTemplate
-The file upload template that is given as first argument to the [jQuery.tmpl](http://api.jquery.com/jquery.tmpl/) method to render the file uploads.
-
-* Type: *jQuery Object*
-* Default: `$('#template-upload')`
-
-### downloadTemplate
-The file download template that is given as first argument to the [jQuery.tmpl](http://api.jquery.com/jquery.tmpl/) method to render the file downloads.
-
-* Type: *jQuery Object*
-* Default: `$('#template-download')`
-
 ## Additional Callback Options for the UI version
 
 ### destroy
