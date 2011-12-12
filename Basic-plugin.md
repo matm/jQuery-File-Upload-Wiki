@@ -12,10 +12,10 @@ The following is an alternative to *example/index.html* with only the minimal re
 </head>
 <body>
 <input id="fileupload" type="file" name="files[]" multiple>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-<script src="../jquery.iframe-transport.js"></script>
-<script src="../jquery.fileupload.js"></script>
+<script src="jquery.iframe-transport.js"></script>
+<script src="jquery.fileupload.js"></script>
 <script>
 $(function () {
     $('#fileupload').fileupload({
@@ -23,7 +23,7 @@ $(function () {
         url: 'php/index.php',
         done: function (e, data) {
             $.each(data.result, function (index, file) {
-                $('<p/>').text(file.name).appendTo('body');
+                $('<p/>').text(file.name).appendTo(document.body);
             });
         }
     });
