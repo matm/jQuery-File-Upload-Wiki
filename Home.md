@@ -23,6 +23,7 @@
 * How to add [[Drop zone effects]].
 * How to display [[Extended progress information]].
 * [[Drag and drop uploads from another web page]]
+* [[Fixing Safari hanging on very high speed connections (1Gbps)]]
 
 ## Server-side specific tutorials
 
