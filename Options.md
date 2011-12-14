@@ -444,6 +444,12 @@ The regular expression to define for which files a preview image is shown, match
 * Type: *Regular Expression*
 * Default: `/^image\/(gif|jpeg|png)$/`
 
+### previewMaxFileSize
+The maximum file size for preview images in bytes.
+
+* Type: *number*
+* Default: `5000000`
+
 ### previewMaxWidth
 The maximum width of the preview images.
 
