@@ -15,7 +15,7 @@
 * [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/result.html) is a helper page which allows to access cross-domain iframe contents via redirects.
 * [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
 * [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
-* [test/index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/index.html) contains the HTML markup for the unit tests.
+* [test/index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/test/index.html) contains the HTML markup for the unit tests.
 
 ## Google App Engine
 * [gae/main.py](https://github.com/blueimp/jQuery-File-Upload/blob/master/gae/main.py) is an example for a Python based server-side file upload handler component.
