@@ -5,7 +5,7 @@
 * [jquery.postmessage-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.postmessage-transport.js) adds [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
 * [jquery.xdr-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.xdr-transport.js) adds XDomainRequest transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
 * [application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/application.js) is an example how to initialize and use the File Upload plugin.
-* [tests/tests.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/tests.js) contains the JS code for the unit tests.
+* [test/test.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/test/test.js) contains the JS code for the unit tests.
 
 ## CSS
 * [jquery.fileupload-ui.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css) adds styling for the file input field, progress bars and upload buttons. See [[Style Guide]].
@@ -15,7 +15,7 @@
 * [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/result.html) is a helper page which allows to access cross-domain iframe contents via redirects.
 * [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
 * [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
-* [tests/index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/index.html) contains the HTML markup for the unit tests.
+* [test/index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/tests/index.html) contains the HTML markup for the unit tests.
 
 ## Google App Engine
 * [gae/main.py](https://github.com/blueimp/jQuery-File-Upload/blob/master/gae/main.py) is an example for a Python based server-side file upload handler component.
@@ -27,6 +27,5 @@
 * [php/thumbnails/.htaccess](https://github.com/blueimp/jQuery-File-Upload/blob/master/php/thumbnails/.htaccess) doesn't serve any purpose other than making sure the thumbnails folder shows up in the Git source code repository.
 
 ## Other
-* [.gitignore](https://github.com/blueimp/jQuery-File-Upload/blob/master/.gitignore) contains instructions which [files to ignore for the Git source code repository](http://help.github.com/git-ignore/).
 * [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
-* [pbar-ani.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/pbar-ani.gif) is an animated GIf used for the animation of the upload progress bars.
+* [progressbar.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/progressbar.gif) is an animated GIf used for the animation of the upload progress bars.
