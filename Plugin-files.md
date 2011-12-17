@@ -29,4 +29,4 @@
 
 ## Other
 * [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
-* [progressbar.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/progressbar.gif) is an animated GIf used for the animation of the upload progress bars.
+* [progressbar.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/progressbar.gif) is an animated GIF image file used for the animation of the upload progress bars.
