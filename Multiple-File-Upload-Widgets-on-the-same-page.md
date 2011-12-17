@@ -1,43 +1,51 @@
-In *example/index.html* duplicate the *div* with the *id* "fileupload" and change *id* to *class* like this:
+In *index.html* duplicate the *form* tag with the *id* "fileupload" and change *id* to *class* like this:
 
 ```html
-<div class="fileupload">
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
-        <div class="fileupload-buttonbar">
-            <label class="fileinput-button">
+<form class="fileupload" action="php/index.php" method="POST" enctype="multipart/form-data">
+    <div class="row">
+        <div class="span16 fileupload-buttonbar">
+            <div class="progressbar fileupload-progressbar"><div style="width:0%;"></div></div>
+            <span class="btn success fileinput-button">
                 <span>Add files...</span>
                 <input type="file" name="files[]" multiple>
-            </label>
-            <button type="submit" class="start">Start upload</button>
-            <button type="reset" class="cancel">Cancel upload</button>
-            <button type="button" class="delete">Delete files</button>
+            </span>
+            <button type="submit" class="btn primary start">Start upload</button>
+            <button type="reset" class="btn info cancel">Cancel upload</button>
+            <button type="button" class="btn danger delete">Delete selected</button>
+            <input type="checkbox" class="toggle">
         </div>
-    </form>
-    <div class="fileupload-content">
-        <table class="files"></table>
-        <div class="fileupload-progressbar"></div>
     </div>
-</div>
-<div class="fileupload">
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
-        <div class="fileupload-buttonbar">
-            <label class="fileinput-button">
+    <br>
+    <div class="row">
+        <div class="span16">
+            <table class="zebra-striped"><tbody class="files"></tbody></table>
+        </div>
+    </div>
+</form>
+<form class="fileupload" action="php/index.php" method="POST" enctype="multipart/form-data">
+    <div class="row">
+        <div class="span16 fileupload-buttonbar">
+            <div class="progressbar fileupload-progressbar"><div style="width:0%;"></div></div>
+            <span class="btn success fileinput-button">
                 <span>Add files...</span>
                 <input type="file" name="files[]" multiple>
-            </label>
-            <button type="submit" class="start">Start upload</button>
-            <button type="reset" class="cancel">Cancel upload</button>
-            <button type="button" class="delete">Delete files</button>
+            </span>
+            <button type="submit" class="btn primary start">Start upload</button>
+            <button type="reset" class="btn info cancel">Cancel upload</button>
+            <button type="button" class="btn danger delete">Delete selected</button>
+            <input type="checkbox" class="toggle">
         </div>
-    </form>
-    <div class="fileupload-content">
-        <table class="files"></table>
-        <div class="fileupload-progressbar"></div>
     </div>
-</div>
+    <br>
+    <div class="row">
+        <div class="span16">
+            <table class="zebra-striped"><tbody class="files"></tbody></table>
+        </div>
+    </div>
+</form>
 ```
 
-In *example/application.js* change
+In *application.js* change
 
 ```js
 $('#fileupload').fileupload();
