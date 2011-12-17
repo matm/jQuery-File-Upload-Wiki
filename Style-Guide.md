@@ -9,4 +9,4 @@ To achieve a cross-browser styling of the "Upload files" button, the file input 
 The current version of the plugin builds on Twitter's [Bootstrap](http://twitter.github.com/bootstrap/) toolkit for it's look&feel.
 
 ## jQuery UI
-A [[jQuery UI]] version of the plugin is also available - see [[jQuery UI]].
+A [[jQuery UI]] version of the plugin, which builds on [jQuery UI's theme framework](http://jqueryui.com/themeroller/) for it's look&feel is also available - see [[jQuery UI]].
