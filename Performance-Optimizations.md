@@ -7,13 +7,18 @@ However, it is recommended to make use of [UglifyJS](https://github.com/mishoo/U
 ## CSS minification
 Another recommended tool for production use is [CSSTidy](http://csstidy.sourceforge.net/) or [LESS](http://lesscss.org/), to tidy and minify the CSS source.
 
-## Making use of a content delivery network for the jQuery libraries
+## Making use of a content delivery network for JavaScript libraries
 Google provides a reliable [CDN for common Web libraries](http://code.google.com/apis/libraries/devguide.html).  
-The more websites use this CDN instead of hosting their jQuery libraries on their own server, the more likely it is that client browsers will already have those libraries in their browser cache.  
+The more websites use this CDN instead of hosting their JavaScript libraries on their own server, the more likely it is that client browsers will already have those libraries in their browser cache.  
 The easiest way to use it is to include the libraries the following way (using a protocol relative URL):
 
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+```
+
+An older version of the plugin made use of [[jQuery UI]], which can also be used via Google's CDN:
+
+```js
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 ```
 
