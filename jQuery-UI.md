@@ -2,4 +2,4 @@ An older version of the plugin is available, which builds on [jQuery UI](http://
 
 It is available via the [jquery-ui](https://github.com/blueimp/jQuery-File-Upload/tree/jquery-ui) branch and can be downloaded here:
 
-**[jQuery File Upload Download - jQuery UI version](https://github.com/blueimp/jQuery-File-Upload/archives/jquery-ui)**
+**[jQuery File Upload - Download - jQuery UI version](https://github.com/blueimp/jQuery-File-Upload/archives/jquery-ui)**
