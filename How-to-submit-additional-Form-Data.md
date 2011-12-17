@@ -4,8 +4,8 @@ The easiest way to submit additional form data is by adding additional input fie
 ```html
 <form id="fileupload" action="php/index.php" method="POST" enctype="multipart/form-data">
     <!-- additional form data start / -->
+    <input type="hidden" name="example1" value="test">
     <div class="row">
-        <input type="hidden" name="example1" value="test">
         <label>Example: <input type="text" name="example2"></label>
     </div>
     <!-- / additional form data stop -->
