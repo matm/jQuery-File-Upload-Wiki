@@ -2,27 +2,33 @@
 The easiest way to submit additional form data is by adding additional input fields to the upload form:
 
 ```html
-<div id="fileupload">
-    <form action="php/index.php" method="POST" enctype="multipart/form-data">
-        <!-- additional form data start / -->
+<form id="fileupload" action="php/index.php" method="POST" enctype="multipart/form-data">
+    <!-- additional form data start / -->
+    <div class="row">
         <input type="hidden" name="example1" value="test">
         <label>Example: <input type="text" name="example2"></label>
-        <!-- / additional form data stop -->
-        <div class="fileupload-buttonbar">
-            <label class="fileinput-button">
+    </div>
+    <!-- / additional form data stop -->
+    <div class="row">
+        <div class="span16 fileupload-buttonbar">
+            <div class="progressbar fileupload-progressbar"><div style="width:0%;"></div></div>
+            <span class="btn success fileinput-button">
                 <span>Add files...</span>
                 <input type="file" name="files[]" multiple>
-            </label>
-            <button type="submit" class="start">Start upload</button>
-            <button type="reset" class="cancel">Cancel upload</button>
-            <button type="button" class="delete">Delete files</button>
+            </span>
+            <button type="submit" class="btn primary start">Start upload</button>
+            <button type="reset" class="btn info cancel">Cancel upload</button>
+            <button type="button" class="btn danger delete">Delete selected</button>
+            <input type="checkbox" class="toggle">
         </div>
-    </form>
-    <div class="fileupload-content">
-        <table class="files"></table>
-        <div class="fileupload-progressbar"></div>
     </div>
-</div>
+    <br>
+    <div class="row">
+        <div class="span16">
+            <table class="zebra-striped"><tbody class="files"></tbody></table>
+        </div>
+    </div>
+</form>
 ```
 
 By default, the plugin calls [jQuery's serializeArray method](http://api.jquery.com/serializeArray) on the upload form to gather additional form data for all input fields (including hidden fields).  
@@ -60,27 +66,26 @@ If the submit event callback returns false, the upload request will not start.
 First, we adjust the upload template and add a new cell with an input field for a file title:  
 
 ```html
-<script id="template-upload" type="text/x-jquery-tmpl">
-    <tr class="template-upload{{if error}} ui-state-error{{/if}}">
-        <td class="preview"></td>
-        <td class="name">{{if name}}${name}{{else}}Untitled{{/if}}</td>
-        <td class="size">${sizef}</td>
+<script id="template-upload" type="text/html">
+{% for (var i=0, files=o.files, l=files.length, file=files[0]; i<l; file=files[++i]) { %}
+    <tr class="template-upload fade">
+        <td class="preview"><span class="fade"></span></td>
+        <td class="name">{%=file.name%}</td>
+        <td class="size">{%=o.formatFileSize(file.size)%}</td>
+        <!-- additional form data start / -->
         <td class="title"><label>Title: <input name="title[]" required></label></td>
-        {{if error}}
-            <td class="error" colspan="2">Error:
-                {{if error === 'maxFileSize'}}File is too big
-                {{else error === 'minFileSize'}}File is too small
-                {{else error === 'acceptFileTypes'}}Filetype not allowed
-                {{else error === 'maxNumberOfFiles'}}Max number of files exceeded
-                {{else}}${error}
-                {{/if}}
-            </td>
-        {{else}}
-            <td class="progress"><div></div></td>
-            <td class="start"><button>Start</button></td>
-        {{/if}}
-        <td class="cancel"><button>Cancel</button></td>
+        <!-- / additional form data stop -->
+        {% if (file.error) { %}
+            <td class="error" colspan="2"><span class="label important">Error</span> {%=fileUploadErrors[file.error] || file.error%}</td>
+        {% } else if (o.files.valid && !i) { %}
+            <td class="progress"><div class="progressbar"><div style="width:0%;"></div></div></td>
+            <td class="start">{% if (!o.options.autoUpload) { %}<button class="btn primary">Start</button>{% } %}</td>
+        {% } else { %}
+            <td colspan="2"></td>
+        {% } %}
+        <td class="cancel">{% if (!i) { %}<button class="btn info">Cancel</button>{% } %}</td>
     </tr>
+{% } %}
 </script>
 ```
 
