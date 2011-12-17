@@ -1,7 +1,7 @@
-The plugin [download package](https://github.com/blueimp/jQuery-File-Upload/archives/master) comes with a complete user interface based on jQuery UI and an example PHP file upload handler that is easy to [[Setup]].
+The plugin [download package](https://github.com/blueimp/jQuery-File-Upload/archives/master) comes with a complete user interface based on [Bootstrap](http://twitter.github.com/bootstrap/) and an example PHP file upload handler that is easy to [[Setup]].
 
 However, if you want to build your own user interface, it is possible to use only the [basic plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js) version and a minimal setup.  
-The following is an alternative to *example/index.html* with only the minimal requirements and a simple *done* callback handler (see [[API]] and [[Options]] on how to use the different options and callbacks):
+The following is an alternative to [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) with only the minimal requirements and a simple *done* callback handler (see [[API]] and [[Options]] on how to use the different options and callbacks):
 
 ```html
 <!DOCTYPE HTML>
@@ -13,7 +13,7 @@ The following is an alternative to *example/index.html* with only the minimal re
 <body>
 <input id="fileupload" type="file" name="files[]" multiple>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script src="vendor/jquery.ui.widget.js"></script>
 <script src="jquery.iframe-transport.js"></script>
 <script src="jquery.fileupload.js"></script>
 <script>
@@ -32,5 +32,3 @@ $(function () {
 </body> 
 </html>
 ```
-
-Note that instead of including the complete jQuery UI library, only the jQuery UI Widget component is required and can be downloaded using [jQuery UI's custom download builder](http://jqueryui.com/download).
