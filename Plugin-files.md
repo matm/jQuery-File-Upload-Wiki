@@ -6,6 +6,7 @@
 * [jquery.xdr-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.xdr-transport.js) adds XDomainRequest transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
 * [application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/application.js) is an example how to initialize and use the File Upload plugin.
 * [test/test.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/test/test.js) contains the JS code for the unit tests.
+* [vendor/jquery.ui.widget.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/vendor/jquery.ui.widget.js) provides the [jQuery UI widget factory](http://wiki.jqueryui.com/w/page/12138135/Widget-factory).
 
 ## CSS
 * [jquery.fileupload-ui.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css) adds styling for the file input field, progress bars and upload buttons. See [[Style Guide]].
