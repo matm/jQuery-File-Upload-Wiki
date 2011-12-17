@@ -13,7 +13,7 @@ The more websites use this CDN instead of hosting their jQuery libraries on thei
 The easiest way to use it is to include the libraries the following way (using a protocol relative URL):
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 ```
 
