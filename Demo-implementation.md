@@ -3,7 +3,7 @@ The [jQuery File Upload Demo](http://blueimp.github.com/jQuery-File-Upload/) is 
 The uploaded files are publicly accessible, but without a public file listing nobody will see your test uploads, if you don't forward someone the rather cryptic download links.  
 Every file will be automatically deleted after 5 minutes, but might be longer accessible due to caching.
 
-You can find the complete source code for the client ([GitHub Pages](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CCUQFjAA&url=http%3A%2F%2Fpages.github.com%2F&ei=VjPMTs7vGqX6mAW37J3aDQ&usg=AFQjCNHt2CUmUiQf3LKcuMYcV1wShuC0Pg&sig2=nVtYFr5Xx95qPL6dq0Pu6w)) and server-side ([App Engine](http://code.google.com/appengine/)) implementations in the [master](https://github.com/blueimp/jQuery-File-Upload/tree/master) and [gh-pages](https://github.com/blueimp/jQuery-File-Upload/tree/gh-pages) branches of this project.  
+You can find the complete source code for the client ([GitHub Pages](http://pages.github.com/)) and server-side ([App Engine](http://code.google.com/appengine/)) implementations in the [master](https://github.com/blueimp/jQuery-File-Upload/tree/master) and [gh-pages](https://github.com/blueimp/jQuery-File-Upload/tree/gh-pages) branches of this project.  
 The App Engine source code is located in the [gae-python](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-python) and [gae-go](https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-go) folders.  
 Originally, the demo had been built for the [Python runtime of Google App Engine](http://code.google.com/appengine/docs/python/), but it's since been rebuilt for the [Go Runtime Environment](http://code.google.com/appengine/docs/go/).
 
