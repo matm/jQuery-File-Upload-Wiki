@@ -1,123 +1,68 @@
-The following widget class extends *$.blueimpUI.fileupload* (the UI version of the File Upload plugin) to add drop zone effects.
+This tutorial shows how to add [CSS transition](https://developer.mozilla.org/en/CSS/CSS_transitions) effects to your drop zone, e.g. an enlarging effect when the user drags files over the document window.
 
-**Note:**  
-It's also possible to apply the following guide to the basic plugin version.
-You only have to replace all occurrences of *blueimpUI* with *blueimp* in the JavaScript widget definition.
-
-When files are dragged onto the document window, the class "ui-state-active" will be added to the dropzone element with a transition effect.  
-When files are dragged over the dropzone element, the class "ui-state-highlight" will be added to the dropzone element with a transition effect.
+By default, the plugin uses the complete document as target for dropping files, although it is possible to set the **dropZone** to a specific jQuery collection object (see [[Options]] and [[API]]):
 
 ```js
-$.widget('blueimpDropZoneEffects.fileupload', $.blueimpUI.fileupload, {
-
-    options: {
-        dropZone: $()
-    },
-
-    _dropZoneActivate: function () {
-        this.options.dropZone.addClass(
-            'ui-state-active',
-            'normal'
-        );
-        this._dropZoneActive = true;
-    },
-
-    _dropZoneDeactivate: function () {
-        this.options.dropZone.removeClass(
-            'ui-state-active',
-            'normal'
-        );
-        this._dropZoneActive = false;
-    },
-
-    _dropZoneHighLight: function (dropZone) {
-        dropZone.toggleClass(
-            'ui-state-highlight',
-            'normal'
-        );
-    },
-
-    _dropZoneDragEnter: function (e) {
-        var fu = e.data.fileupload;
-        fu._dropZoneHighLight($(e.target));
-    },
-    
-    _dropZoneDragLeave: function (e) {
-        var fu = e.data.fileupload;
-        fu._dropZoneHighLight($(e.target));
-    },
-
-    _documentDragEnter: function (e) {
-        var fu = e.data.fileupload;
-        if (!fu._dropZoneActive) {
-            fu._dropZoneActivate();
-        }
-    },
-
-    _documentDragOver: function (e) {
-        var fu = e.data.fileupload;
-        clearTimeout(fu._dragoverTimeout);
-        fu._dragoverTimeout = setTimeout(function () {
-            fu._dropZoneDeactivate();
-        }, 200);
-    },
-
-    _create: function () {
-        if (this.options.dropZone && !this.options.dropZone.length) {
-            this.options.dropZone = this.element.find('.dropzone-container div');
-        }
-        $.blueimpUI.fileupload.prototype._create.call(this);
-        var ns = this.options.namespace || this.name;
-        this.options.dropZone
-            .bind('dragenter.' + ns, {fileupload: this}, this._dropZoneDragEnter)
-            .bind('dragleave.' + ns, {fileupload: this}, this._dropZoneDragLeave);
-        $(document)
-            .bind('dragenter.' + ns, {fileupload: this}, this._documentDragEnter)
-            .bind('dragover.' + ns, {fileupload: this}, this._documentDragOver);
-    },
-    
-    destroy: function () {
-        var ns = this.options.namespace || this.name;
-        this.options.dropZone
-            .unbind('dragenter.' + ns, this._dropZoneDragEnter)
-            .unbind('dragleave.' + ns, this._dropZoneDragLeave);
-        $(document)
-            .unbind('dragenter.' + ns, this._documentDragEnter)
-            .unbind('dragover.' + ns, this._documentDragOver);
-        $.blueimpUI.fileupload.prototype.destroy.call(this);
-    }
-
+$('#fileupload').fileupload({
+    dropZone: $('#dropzone')
 });
 ```
 
-The customized widget class adjusts the default dropZone setting and expects the following HTML code as child element of the file upload widget:
+The drop zone could be the following HTML element node:
 
 ```html
-<div class="dropzone-container">
-    <div class="dropzone ui-corner-all">Drop files here</div>
-</div>
+<div id="dropzone" class="fade well">Drop files here</div>
 ```
 
-The following CSS definitions are an example for enlarge/reduce and highlight effects for the dropzone element:
+With the following CSS definitions:
 
 ```css
-.dropzone-container div {
-  width: 0px;
-  height: 0px;
-  line-height: 0px;
-  font-size: 0em;
-  text-align: center;
+#dropzone {
+    background: palegreen;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
 }
+#dropzone.in {
+    width: 600px;
+    height: 200px;
+    line-height: 200px;
+    font-size: larger;
+}
+#dropzone.hover {
+    background: lawngreen;
+}
+#dropzone.fade {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    opacity: 1;
+}
+```
 
-.dropzone-container div.ui-state-active {
-  width: 600px;
-  height: 200px;
-  line-height: 200px;
-  font-size: 3em;
-  background: lightgreen;
-}
+Now you only need to add the following JavaScript code the get [CSS transition](https://developer.mozilla.org/en/CSS/CSS_transitions) effects for the drop zone:
 
-.dropzone-container div.ui-state-highlight {
-  background: limegreen;
-}
+```js
+$(document).bind('dragover', function (e) {
+    var dropZone = $('#dropzone'),
+        timeout = window.dropZoneTimeout;
+    if (!timeout) {
+        dropZone.addClass('in');
+    } else {
+        clearTimeout(timeout);
+    }
+    if (e.target === dropZone[0]) {
+        dropZone.addClass('hover');
+    } else {
+        dropZone.removeClass('hover');
+    }
+    window.dropZoneTimeout = setTimeout(function () {
+        window.dropZoneTimeout = null;
+        dropZone.removeClass('in hover');
+    }, 100);
+});
 ```
