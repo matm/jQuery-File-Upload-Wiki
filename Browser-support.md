@@ -48,6 +48,20 @@ The following browsers have support for image previews prior to uploading files:
 * Google Chrome
 * Opera 11+ (some images seem to display incorrectly on Opera)
 
+* IE9 has support for image preview, but not with the same JavaScript as the others. IE9 populates this.value with file name rather than this.files[0]. As a result, it can be used with window.loadImage like this:
+document.getElementById('file-input').onchange = function (e) {
+    var target = e.target;
+    window.loadImage(
+        (target.files ? target.files[0] : target.value),
+        function (img) {
+            document.body.appendChild(img);
+        },
+        {maxWidth: 600}
+    );
+};
+
+
+
 ## File meta data
 The following browsers report complete file meta data prior to uploading files:
 
