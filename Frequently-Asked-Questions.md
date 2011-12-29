@@ -114,5 +114,5 @@ See also issue [#514](https://github.com/blueimp/jQuery-File-Upload/issues/514) 
 Please see the comments for [Issue #893](https://github.com/blueimp/jQuery-File-Upload/issues/893).
 
 ## Why does Firefox never show 100% upload progress?
-See Firefox Bug [#642463](https://bugzilla.mozilla.org/show_bug.cgi?id=642463).
+See Firefox Bug [#642463](https://bugzilla.mozilla.org/show_bug.cgi?id=642463).  
 If desired, you can workaround this bug by manually setting the progress bar to 100% when the load event (done event) fires.
