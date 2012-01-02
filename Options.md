@@ -51,7 +51,7 @@ Set to null or an empty jQuery collection to disable drag & drop support:
 * Type: *jQuery Object*
 * Default: `$(document)`
 
-**Note:**
+**Note:**  
 If you want to allow specific drop zones but disable the default browser action for file drops on the document, add the following JavaScript code:
 
 ```js
