@@ -63,7 +63,7 @@ $('.fileupload').each(function () {
 
 This will give you two complete independent file upload widgets with their own dropZone.
 
-**Note:**
+**Note:**  
 If you want to allow specific drop zones but disable the default browser action for file drops on the document, add the following JavaScript code:
 
 ```js
