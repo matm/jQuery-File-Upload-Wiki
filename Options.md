@@ -51,6 +51,17 @@ Set to null or an empty jQuery collection to disable drag & drop support:
 * Type: *jQuery Object*
 * Default: `$(document)`
 
+**Note:**
+If you want to allow specific drop zones but disable the default browser action for file drops on the document, add the following JavaScript code:
+
+```js
+$(document).bind('drop dragover', function (e) {
+    e.preventDefault();
+});
+```
+
+Note that preventing the default action for both the "drop" and "dragover" events is required to disable the default browser drop action.
+
 ### fileInput
 The file input field [jQuery object](http://api.jquery.com/Types/#jQuery), that is listened for change events.  
 If undefined, it is set to the file input fields inside of the widget element on plugin initialization.  
