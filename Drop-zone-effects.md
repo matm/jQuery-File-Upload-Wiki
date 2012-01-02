@@ -66,3 +66,14 @@ $(document).bind('dragover', function (e) {
     }, 100);
 });
 ```
+
+**Note:**
+If you want to allow specific drop zones but disable the default browser action for file drops on the document, add the following JavaScript code:
+
+```js
+$(document).bind('drop dragover', function (e) {
+    e.preventDefault();
+});
+```
+
+Note that preventing the default action for both the "drop" and "dragover" events is required to disable the default browser drop action.
