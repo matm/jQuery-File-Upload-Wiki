@@ -16,7 +16,7 @@ The easiest way to add some kind of authentication system is to protect the exam
 
 ## Using jQuery File Upload (UI version) with Google App Engine
 
-1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the **gae-python** or **gae-go** folder (depending on which runtime environment you want to use) as your App Engine instance, after editing the *app.yaml* inside if the folder with your own App ID.
+1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the **gae-python** or **gae-go** folder (depending on which runtime environment you want to use) as your App Engine instance, after editing the *app.yaml* inside if the folder and replacing "jquery-file-upload" with your own App ID.
 2. Upload the jQuery-File-Upload folder (without the gae-python, gae-go and php subfolders) to any server, after adjusting the form action target to point to the url of your App Engine instance.
 
 Visit the uploaded directory - you should see the same file upload interface as the demo, allowing you to upload files to your App Engine instance.
