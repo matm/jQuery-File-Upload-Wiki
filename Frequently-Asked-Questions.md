@@ -55,7 +55,7 @@ However, another file input button can be used to trigger the file selection and
 ```js
 $('#some-file-input-field').bind('change', function (e) {
     $('#fileupload').fileupload('add', {
-        files: e.target.files || [{name: this.value}],
+        files: e.target.files || [{name: this.value}],
         fileInput: $(this)
     });
 });
