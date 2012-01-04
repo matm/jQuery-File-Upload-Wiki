@@ -25,6 +25,7 @@
 * How to display [[Extended progress information]].
 * [[Drag and drop uploads from another web page]]
 * [[Fixing Safari hanging on very high speed connections (1Gbps)]]
+* Direct upload to [[YouTube]]
 
 ## Server-side specific tutorials
 
