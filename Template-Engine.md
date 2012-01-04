@@ -19,14 +19,15 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
             var rows = $();
             $.each(o.files, function (index, file) {
                 var row = $('<tr class="template-upload">' +
-                    '<td class="preview"></td>' +
+                    '<td class="preview"><span class="fade"></span></td>' +
                     '<td class="name"></td>' +
                     '<td class="size"></td>' +
                     (file.error ? '<td class="error" colspan="2"></td>' :
-                            '<td class="progress"><div></div></td>' +
-                                '<td class="start"><button>Start</button></td>'
-                    ) + '<td class="cancel"><button>Cancel</button></td></tr>');
-                row.find('.name').text(123 + file.name);
+                            '<td class="progress"><div class="progressbar">' +
+                                '<div style="width:0%;"></div></div></td>' +
+                                '<td class="start"><button class="btn primary">Start</button></td>'
+                    ) + '<td class="cancel"><button class="btn info">Cancel</button></td></tr>');
+                row.find('.name').text(file.name);
                 row.find('.size').text(o.formatFileSize(file.size));
                 if (file.error) {
                     row.addClass('ui-state-error');
@@ -47,7 +48,7 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
                             '<td class="preview"></td>' +
                                 '<td class="name"><a></a></td>' +
                                 '<td class="size"></td><td colspan="2"></td>'
-                    ) + '<td class="delete"><button>Delete</button>' +
+                    ) + '<td class="delete"><button class="btn danger">Delete</button> ' +
                         '<input type="checkbox" name="delete" value="1"></td></tr>');
                 row.find('.size').text(o.formatFileSize(file.size));
                 if (file.error) {
@@ -77,4 +78,8 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
 });
 ```
 
-Note that this code snippet assumes a global variable *fileUploadErrors* with a map of error codes to error messages. In a real application, this information would come from your localization system.
+**Notes:**
+
+* This code snippet assumes a global variable **fileUploadErrors** with a map of error codes to error messages. In a real application, this information would come from your localization system.
+* The **_renderTemplate** is supposed to return a jQuery collection object of the rendered upload/download template.
+* The **data** parameter passed via **add** callback is stored via [jQuery.data](http://api.jquery.com/data/) on this jQuery collection object and later reused when submitting or canceling the file upload.
