@@ -23,14 +23,14 @@ Note that this will not limit files added by drag&drop and is not supported acro
 
 ## Why do I get an empty file upload result when uploading large files?
 You probably have a server-side setting preventing you to upload larger files.  
-Try adding the following to a [.htaccess](http://httpd.apache.org/docs/current/howto/htaccess.html) file in the same folder as your upload.php file:
+Try adding the following to a [.htaccess](http://httpd.apache.org/docs/current/howto/htaccess.html) file in the php directory:
 
 ```
 php_value upload_max_filesize 99999M
 php_value post_max_size 99999M
 ```
 
-If this doesn't work, try creating a [php.ini](http://www.php.net/manual/en/ini.php) file in the example directory and add the following two lines:
+If this doesn't work, try creating a [php.ini](http://www.php.net/manual/en/ini.php) file in the php directory and add the following two lines:
 
 ```
 upload_max_filesize = 99999
@@ -48,13 +48,18 @@ So any files that can be uploaded with a simple HTML form can be uploaded with t
 Remove the "preview" class from the upload template to avoid rendering the preview images, which have the potential to block the main JS thread.
 
 ## Is it possible to trigger the file selection dialog programmatically?
-Invoking the click event on a file input field is **not** supported on the following browsers:
+Invoking a click event on the file input field programmatically is not supported across browsers - see [[Style Guide]].
 
-* Firefox 3.6 (tested on OSX and Windows XP)
-* Opera 11.01 (tested on OSX)
+However, another file input button can be used to trigger the file selection and passed as parameter to the fileupload **add** or **send** [[API]]:
 
-It works on the other major browsers including Firefox 4, so it might be a feasible solution in the future.  
-See also: [[Style Guide]].
+```js
+$('#some-file-input-field').bind('change', function (e) {
+    $('#fileupload').fileupload('add', {
+        files: [{name: this.value}],
+        fileInput: $(this)
+    });
+});
+```
 
 ## How to use the *this* keyword inside of the plugin initialization options?
 Just make use of [jQuery's each method](http://api.jquery.com/each/) to set the *this* keyword to the element node:
@@ -100,7 +105,7 @@ Note that this currently only works in the latest versions of Google Chrome and 
 
 ## How to clear the list of uploaded files?
 The example in the download package comes with code that retrieves and displays a list of existing files.  
-Remove lines 21-31 in the file [application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/application.js) if you don't need that functionality.
+Remove the **$.getJSON** call from [application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/application.js) if you don't need that functionality.
 
 ## Why is the protocol ("http:") missing from the script references in the HTML source code?
 This is called a [protocol relative url](//www.google.com/search?q=protocol+relative+URL) and a perfectly valid way to define a resource, relative to the current URL protocol.  
@@ -111,6 +116,9 @@ However, it also requires that the current protocol is either "http:" or "https:
 See also issue [#514](https://github.com/blueimp/jQuery-File-Upload/issues/514) as well as pull requests [#722](https://github.com/blueimp/jQuery-File-Upload/pull/772) and [#833](https://github.com/blueimp/jQuery-File-Upload/pull/833).
 
 ## Why can't I print the files index in the template for loop?
+The template will be rendered for each **add** call.  
+As long as the option **singleFileUploads** is set to *true* (which is the default), multiple selects/drops get split up into single **add** calls, so the index will always be **0**.
+
 Please see the comments for [Issue #893](https://github.com/blueimp/jQuery-File-Upload/issues/893).
 
 ## Why does Firefox never show 100% upload progress?
