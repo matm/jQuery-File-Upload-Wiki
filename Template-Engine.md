@@ -81,5 +81,6 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
 **Notes:**
 
 * This code snippet assumes a global variable **fileUploadErrors** with a map of error codes to error messages. In a real application, this information would come from your localization system.
-* The **_renderTemplate** is supposed to return a jQuery collection object of the rendered upload/download template.
+* The **_renderTemplate** is supposed to return a jQuery collection object of the rendered upload / download template.
+* The returned jQuery element is expected to have a class of **template-upload** / **template-download**.
 * The **data** parameter passed via **add** callback is stored via [jQuery.data](http://api.jquery.com/data/) on this jQuery collection object and later reused when submitting or canceling the file upload.
