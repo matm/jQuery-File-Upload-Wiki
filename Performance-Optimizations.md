@@ -19,7 +19,7 @@ The easiest way to use it is to include the libraries the following way (using a
 An older version of the plugin made use of [[jQuery UI]], which can also be used via Google's CDN:
 
 ```js
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 ```
 
 Alongside the JS libraries, Google also hosts the CSS and accompanying images files for several [jQuery UI themes](http://jqueryui.com/themeroller/), e.g. the "basic" theme:
