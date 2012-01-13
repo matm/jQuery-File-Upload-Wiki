@@ -23,8 +23,8 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
                     '<td class="name"></td>' +
                     '<td class="size"></td>' +
                     (file.error ? '<td class="error" colspan="2"></td>' :
-                            '<td class="progress"><div class="progressbar">' +
-                                '<div style="width:0%;"></div></div></td>' +
+                            '<td class="progress">' +
+                                '<div></div></td>' +
                                 '<td class="start"><button class="btn primary">Start</button></td>'
                     ) + '<td class="cancel"><button class="btn info">Cancel</button></td></tr>');
                 row.find('.name').text(file.name);
