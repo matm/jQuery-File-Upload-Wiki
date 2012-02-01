@@ -49,7 +49,7 @@
 
 ### Ruby (Rails)
 * Using the plugin to [[Upload directly to S3]] (user contribution)
-* Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V5]] (user contribution)
+* Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V6]] (user contribution)
 
 ### PHP
 * [[Zend-framework]] integration (user contribution).
