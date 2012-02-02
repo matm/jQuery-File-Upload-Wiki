@@ -44,9 +44,9 @@ All versions of Internet Explorer will also update the global progress bar after
 ## Image previews
 The following browsers have support for image previews prior to uploading files:
 
-* Firefox 4+
+* Firefox 3.6+
 * Google Chrome
-* Opera 11+ (some images seem to display incorrectly on Opera)
+* Opera 11+
 
 ## File meta data
 The following browsers report complete file meta data prior to uploading files:
