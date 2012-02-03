@@ -7,6 +7,10 @@ The file upload plugin makes use of an Iframe Transport module for browsers like
 Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#Content-Type) of *text/plain* or *text/html* for the JSON response - they will show an undesired download dialog if the iframe response is set to *application/json*.   
 Please have a look at the Content-Type Negotiation section of the [[Setup]] instructions.
 
+## Why doesn't Internet Explorer show HTML snippets as part of the JSON response?
+This is due to how the response content is parsed when using the iframe transport, which is required by Internet Explorer.  
+Have a look at [an explanation and solution from user espeoneefi](https://github.com/blueimp/jQuery-File-Upload/issues/659#issuecomment-2999298).
+
 ## Why do I get a JSON parsing error?
 Your JSON response is probably not valid JSON.  
 You can test your JSON response for validity on [jsonlint.com](http://www.jsonlint.com/).
