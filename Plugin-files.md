@@ -19,7 +19,7 @@
 
 ## Google App Engine Go
 * [server/gae-go/app/main.go](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/app/main.go) is an example for a file upload handler component implemented in Go.
-* [server/gae-go/app/resize/resize.go](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/app/resize/resize.go) is a Go image resizing library.
+* [server/gae-go/resize/resize.go](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/resize/resize.go) is a Go image resizing library.
 * [server/gae-go/app.yaml](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/app.yaml) is the configuration file for the Go App Engine application.
 
 ## Google App Engine Python
