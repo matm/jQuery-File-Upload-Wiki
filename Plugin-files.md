@@ -17,9 +17,14 @@
 * [cors/postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
 * [test/index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/test/index.html) contains the HTML markup for the unit tests.
 
-## Google App Engine
-* [server/gae/main.py](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae/main.py) is an example for a Python based server-side file upload handler component.
-* [server/gae/app.yaml](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae/app.yaml) is the configuration file for the App Engine application.
+## Google App Engine Go
+* [server/gae-go/app/main.go](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/app/main.go) is an example for a file upload handler component implemented in Go.
+* [server/gae-go/app/resize/resize.go](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/app/resize/resize.go) is a Go image resizing library.
+* [server/gae-go/app.yaml](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/app.yaml) is the configuration file for the Go App Engine application.
+
+## Google App Engine Python
+* [server/gae-python/main.py](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-python/main.py) is an example for a Python based server-side file upload handler component.
+* [server/gae-python/app.yaml](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-python/app.yaml) is the configuration file for the Python App Engine application.
 
 ## PHP
 * [server/php/index.php](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/index.php) is an example for a PHP upload handler.
