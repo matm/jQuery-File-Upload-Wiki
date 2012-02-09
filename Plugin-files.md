@@ -5,8 +5,8 @@
 * [js/main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js) is an example how to initialize and use the File Upload plugin.
 * [js/cors/jquery.postmessage-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.postmessage-transport.js) adds [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
 * [js/cors/jquery.xdr-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.xdr-transport.js) adds XDomainRequest transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
-* [test/test.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/test/test.js) contains the JS code for the unit tests.
 * [js/vendor/jquery.ui.widget.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/vendor/jquery.ui.widget.js) provides the [jQuery UI widget factory](http://wiki.jqueryui.com/w/page/12138135/Widget-factory).
+* [test/test.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/test/test.js) contains the JS code for the unit tests.
 
 ## CSS
 * [css/jquery.fileupload-ui.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui.css) adds styling for the file input field, progress bars and upload buttons. See [[Style Guide]].
