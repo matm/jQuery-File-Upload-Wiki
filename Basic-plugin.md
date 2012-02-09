@@ -1,6 +1,6 @@
 The plugin [download package](https://github.com/blueimp/jQuery-File-Upload/archives/master) comes with a complete user interface based on [Bootstrap](http://twitter.github.com/bootstrap/) and an example PHP file upload handler that is easy to [[Setup]].
 
-However, if you want to build your own user interface, it is possible to use only the [basic plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js) version and a minimal setup.  
+However, if you want to build your own user interface, it is possible to use only the [basic plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload.js) version and a minimal setup.  
 The following is an alternative to [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) with only the minimal requirements and a simple *done* callback handler (see [[API]] and [[Options]] on how to use the different options and callbacks):
 
 ```html
@@ -13,14 +13,14 @@ The following is an alternative to [index.html](https://github.com/blueimp/jQuer
 <body>
 <input id="fileupload" type="file" name="files[]" multiple>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="vendor/jquery.ui.widget.js"></script>
-<script src="jquery.iframe-transport.js"></script>
-<script src="jquery.fileupload.js"></script>
+<script src="js/vendor/jquery.ui.widget.js"></script>
+<script src="js/jquery.iframe-transport.js"></script>
+<script src="js/jquery.fileupload.js"></script>
 <script>
 $(function () {
     $('#fileupload').fileupload({
         dataType: 'json',
-        url: 'php/index.php',
+        url: 'server/php/',
         done: function (e, data) {
             $.each(data.result, function (index, file) {
                 $('<p/>').text(file.name).appendTo(document.body);
