@@ -83,4 +83,4 @@
 * [[How to use the plugin with CodeIgniter]] (PHP) (user contribution)
 * [[jQuery File Upload for C# (Forms)]]: basic C# Forms application (user contribution)
 * C# example on [[How to populate the file list on page load or between page refresh]] (user contribution)
-* [How to use the plugin with Yii framework]] (PHP) (http://www.yiiframework.com/extension/xupload/)
+* [How to use the plugin with Yii framework](http://www.yiiframework.com/extension/xupload/) (PHP) (user contribution)
