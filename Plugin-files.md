@@ -28,7 +28,7 @@
 
 ## PHP
 * [server/php/index.php](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/index.php) is an example for a PHP upload handler.
-* [server/php/upload.class.php](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/index.php) is an example PHP upload handler class used by index.php.
+* [server/php/upload.class.php](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/upload.class.php) is an example PHP upload handler class used by index.php.
 * [server/php/files/.htaccess](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/files/.htaccess) contains instructions for [Apache](http://httpd.apache.org/) to serve all uploaded files with a content-type of *application/octet-stream*, except image files. This prevents executing any uploaded script files and makes sure non-image files produce a download dialog.
 * [server/php/thumbnails/.htaccess](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/thumbnails/.htaccess) doesn't serve any purpose other than making sure the thumbnails folder shows up in the Git source code repository.
 
