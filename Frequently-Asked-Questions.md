@@ -128,3 +128,8 @@ Please see the comments for [Issue #893](https://github.com/blueimp/jQuery-File-
 ## Why does Firefox never show 100% upload progress?
 See Firefox Bug [#642463](https://bugzilla.mozilla.org/show_bug.cgi?id=642463).  
 If desired, you can workaround this bug by manually setting the progress bar to 100% when the load event (done event) fires.
+
+## Why does the plugin display 1000 Bytes as 1 KB (and 1000000 Bytes as 1 MB)?
+The plugin makes use of [metric prefixes](http://en.wikipedia.org/wiki/SI_prefix) in conformance of the [International System of Units](http://en.wikipedia.org/wiki/International_System_of_Units).
+This is the same unit system that is used by hard drive manufacturers and e.g. the Mac OSX operating system to report hard drive capacities.
+Unfortunately, the terms "kilobytes", "megabytes", etc. have historically been used in ambiguous meanings. Please have a look at the [Binary Prefix](http://en.wikipedia.org/wiki/Binary_prefix) article on Wikipedia for background information.
