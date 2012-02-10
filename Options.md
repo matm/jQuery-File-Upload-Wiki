@@ -527,5 +527,6 @@ The **stopped** callback is the equivalent to the **stop** callback and is trigg
 
 **Note:** Unlike the stop callback, which is always called after all done callbacks, the stopped callback might be called before the completed callbacks, depending on the duration of the transition effects in those callbacks.
 
+
 ### destroyed
 The **destroyed** callback is the equivalent to the **destroy** callback and is triggered after files have been deleted, the transition effects have completed and the download template has been removed.
