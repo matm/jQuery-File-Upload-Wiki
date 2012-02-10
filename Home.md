@@ -5,7 +5,7 @@
 * How to [[Setup]] the plugin on your website.
 * How to use only the [[Basic plugin]] (minimal setup guide).
 * **The plugin [[API]].**
-* **List of all available [[Options]] - including callback methods.**
+* **List of all available [[Options]] - including events and callback methods.**
 * Explanation of all [[Plugin files]].
 * Extended [[Browser support]] information.
 * [[Frequently Asked Questions]] (FAQ)
