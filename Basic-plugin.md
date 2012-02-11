@@ -1,4 +1,4 @@
-## How to use only the Basic plugin (minimal setup guide).
+## How to use only the Basic plugin (minimal setup guide)
 
 The plugin [download package](https://github.com/blueimp/jQuery-File-Upload/archives/master) comes with a complete user interface based on [Bootstrap](http://twitter.github.com/bootstrap/) and an example PHP file upload handler that is easy to [[Setup]].
 
