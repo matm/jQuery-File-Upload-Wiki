@@ -139,7 +139,7 @@ $('#fileupload').fileupload('resize', {
     resizeMinWidth: 800,
     // The minimum height of the resized images:
     resizeMinHeight: 600,
-}).done(function (e) {
+}).done(function () {
     // Resized image files have been converted in place
     // and are available in the given files array
 });
