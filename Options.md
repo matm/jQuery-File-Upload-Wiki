@@ -447,7 +447,7 @@ The regular expression for allowed file types, matches against either file type 
 * Type: *Regular Expression*
 * Example: `/(\.|\/)(gif|jpe?g|png)$/i`
 
-### previewFileTypes
+### previewSourceFileTypes
 The regular expression to define for which files a preview image is shown, matched against the file type.
 
 **Note:** Preview images (before upload) are only displayed for browsers supporting the *URL* or *webkitURL* APIs or the *readAsDataURL* method of the [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interface.
@@ -455,7 +455,7 @@ The regular expression to define for which files a preview image is shown, match
 * Type: *Regular Expression*
 * Default: `/^image\/(gif|jpeg|png)$/`
 
-### previewMaxFileSize
+### previewMaxSourceFileSize
 The maximum file size for preview images in bytes.
 
 * Type: *number*
@@ -479,6 +479,44 @@ Set this option to false to always display preview images as *img* elements.
 
 * Type: *boolean*
 * Default: `true`
+
+## Image Processing Options
+
+### resizeSourceFileTypes
+The regular expression to define which image files are to be resized, given that the browser supports the operation.
+
+* Type: *Regular Expression*
+* Default: `/^image\/(gif|jpeg|png)$/`
+
+### resizeSourceMaxFileSize
+The maximum file size of images that are to be resized.
+
+* Type: *number*
+* Default: `20000000`
+
+### resizeMaxWidth
+The maximum width of the resized images.
+
+* Type: *number*
+* Default: `undefined`
+
+### resizeMaxHeight
+The maximum height of the resized images.
+
+* Type: *number*
+* Default: `undefined`
+
+### resizeMinWidth
+The minimum width of the resized images.
+
+* Type: *number*
+* Default: `undefined`
+
+### resizeMinHeight
+The minimum height of the resized images.
+
+* Type: *number*
+* Default: `undefined`
 
 ## Additional Callback Options for the UI version
 
