@@ -410,6 +410,45 @@ function (e) {
 }
 ```
 
+## Image Processing Options
+
+### resizeSourceFileTypes
+The regular expression to define which image files are to be resized, given that the browser supports the operation.
+
+* Type: *Regular Expression*
+* Default: `/^image\/(gif|jpeg|png)$/`
+
+### resizeSourceMaxFileSize
+The maximum file size of images that are to be resized.
+
+* Type: *number*
+* Default: `20000000`
+
+### resizeMaxWidth
+The maximum width of the resized images.
+
+* Type: *number*
+* Default: `undefined`
+
+### resizeMaxHeight
+The maximum height of the resized images.
+
+* Type: *number*
+* Default: `undefined`
+
+### resizeMinWidth
+The minimum width of the resized images.
+
+* Type: *number*
+* Default: `undefined`
+
+### resizeMinHeight
+The minimum height of the resized images.
+
+* Type: *number*
+* Default: `undefined`
+
+
 ## Additional Options for the UI version
 
 ### autoUpload
@@ -479,44 +518,6 @@ Set this option to false to always display preview images as *img* elements.
 
 * Type: *boolean*
 * Default: `true`
-
-## Image Processing Options
-
-### resizeSourceFileTypes
-The regular expression to define which image files are to be resized, given that the browser supports the operation.
-
-* Type: *Regular Expression*
-* Default: `/^image\/(gif|jpeg|png)$/`
-
-### resizeSourceMaxFileSize
-The maximum file size of images that are to be resized.
-
-* Type: *number*
-* Default: `20000000`
-
-### resizeMaxWidth
-The maximum width of the resized images.
-
-* Type: *number*
-* Default: `undefined`
-
-### resizeMaxHeight
-The maximum height of the resized images.
-
-* Type: *number*
-* Default: `undefined`
-
-### resizeMinWidth
-The minimum width of the resized images.
-
-* Type: *number*
-* Default: `undefined`
-
-### resizeMinHeight
-The minimum height of the resized images.
-
-* Type: *number*
-* Default: `undefined`
 
 ## Additional Callback Options for the UI version
 
