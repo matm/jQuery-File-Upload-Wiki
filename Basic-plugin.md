@@ -1,3 +1,5 @@
+## How to use only the Basic plugin (minimal setup guide).
+
 The plugin [download package](https://github.com/blueimp/jQuery-File-Upload/archives/master) comes with a complete user interface based on [Bootstrap](http://twitter.github.com/bootstrap/) and an example PHP file upload handler that is easy to [[Setup]].
 
 However, if you want to build your own user interface, it is possible to use only the [basic plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload.js) version and a minimal setup.  
@@ -32,3 +34,28 @@ $(function () {
 </body> 
 </html>
 ```
+
+## How to use image resizing functionality with the basic plugin
+
+Include the following additional scripts (include jquery.fileupload-ip.js after jquery.fileupload.js):
+
+```html
+<script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
+<script src="http://blueimp.github.com/JavaScript-Canvas-to-Blob/canvas-to-blob.min.js"></script>
+<script src="js/jquery.fileupload-ip.js"></script>
+```
+
+If you don't override the **add** callback option, you'll have image resizing functionality automatically. Else, you can make use of the **resize** API like this:
+
+```js
+$('#fileupload').fileupload({
+    /* ... */
+    add: function (e, data) {
+        $(this).fileupload('resize', data).done(function () {
+            data.submit();
+        });
+    }
+});
+```
+
+Please have a look at the [[API]] and [[Options]] documentations.
