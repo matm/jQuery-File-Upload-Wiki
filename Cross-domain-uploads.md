@@ -4,7 +4,7 @@ The plugin supports two methods of doing cross-site (cross-domain) file uploads:
 * Cross-site iframe transport uploads
 
 **Node:**
-The PHP and Google App Engine implementations ("php" and "gae" folders in the source code tree) come with full cross-domain support out of the box.
+The PHP and Google App Engine implementations come with full cross-domain support out of the box.
 
 ## Cross-site XMLHttpRequest file uploads
 Cross-site XHR file uploads don't require any work on client side, but are only supported by browsers supporting XHR File Uploads - see [[Browser support]].
@@ -58,7 +58,7 @@ $('#fileupload').fileupload({
 Cross-site iframe transport uploads don't require any additional server response headers.  
 Unfortunately, it is not possible to access the response body of iframes on a different domain.
 
-Therefore Cross-site iframe transport uploads require a redirect back to the origin server to retrieve the upload results. The example implementation makes use of [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) as redirect page. See also the example code in [application.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/application.js).
+Therefore Cross-site iframe transport uploads require a redirect back to the origin server to retrieve the upload results. The example implementation makes use of [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) as redirect page. See also the example code in [main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js).
 
 If both servers - the server hosting the upload form and the target server for the file uploads - are just on different subdomains (e.g. source.example.org and target.example.org), it is possible to access the iframe content on the subdomain by adding the following line of Javascript to both webpages (the upload form page and the upload server response page):
 
