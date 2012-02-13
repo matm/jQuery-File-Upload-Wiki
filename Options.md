@@ -122,6 +122,27 @@ This can be useful for cross-site file uploads, if the [Access-Control-Allow-Ori
 * Type: *boolean*
 * Default: `false`
 
+### redirect
+Set this option to the location of a redirect url on the origin server (the server that hosts the file upload form), for cross-domain iframe transport uploads.  
+The upload server is supposed to redirect the browser to this url after the upload completes and append the upload information as URL-encoded JSON string to the redirect URL, e.g. by replacing the "%s" character sequence.
+
+* Type: *string*
+* Example: `'http://example.org/cors/result.html?%s'`
+
+### redirectParamName
+The parameter name for the redirect url, sent as part of the form data and set to 'redirect' if this option is empty.
+
+* Type: *string*
+* Example: `'redirect-url'`
+
+### postMessage
+Set this option to the location of a postMessage window on the upload server, to enable cross-domain [postMessage transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.postmessage-transport.js) uploads.
+
+* Type: *string*
+* Example: `'http://example.org/upload/postmessage.html'`
+
+**Note:** This feature is currently only fully supported by Google Chrome.
+
 ### multipart
 By default, [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads are sent as multipart/form-data.  
 The iframe transport is always using multipart/form-data.  
