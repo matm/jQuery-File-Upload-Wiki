@@ -112,7 +112,7 @@ In whatever view file you want, copy paste this code and enjoy.
 ``` html
 
 <h2><%= t('photos.title') %></h2>
-<%= form_for Photo.new, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
+<%= form_for Picture.new, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
   <div class="row">
     <div class="span16 fileupload-buttonbar">
       <div class="progressbar fileupload-progressbar nofade"><div style="width:0%;"></div></div>
