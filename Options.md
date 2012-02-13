@@ -542,6 +542,19 @@ Set this option to false to always display preview images as *img* elements.
 
 ## Additional Callback Options for the UI version
 
+All callbacks are of type function and can also be bound as event listeners, using the callback name plus "fileupload" as prefix:
+
+$('#fileupload')
+    .bind('fileuploaddestroy', function (e, data) {/* ... */})
+    .bind('fileuploadadded', function (e, data) {/* ... */})
+    .bind('fileuploadstarted', function (e, data) {/* ... */})
+    .bind('fileuploadsent', function (e, data) {/* ... */})
+    .bind('fileuploadcompleted', function (e, data) {/* ... */})
+    .bind('fileuploadfailed', function (e, data) {/* ... */})
+    .bind('fileuploadstart', function (e) {/* ... */})
+    .bind('fileuploadstopped', function (e) {/* ... */})
+    .bind('fileuploaddestroyed', function (e) {/* ... */});
+
 ### destroy
 Callback for file deletion events.
 
