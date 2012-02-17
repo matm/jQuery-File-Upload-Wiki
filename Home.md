@@ -17,6 +17,7 @@
 * [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
 * Using the plugin with [[jQuery UI]].
 * [[How to submit additional Form Data]].
+* How to [[submit files asynchronously]].
 * [[Multiple File Upload Widgets on the same page]]
 * [[Multiple File Input Fields in one Form]].
 * How to implement [[Chunked file uploads]].
