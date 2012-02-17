@@ -40,6 +40,7 @@ $('#fileupload').fileupload({
     submit: function (e, data) {
         var $this = $(this);
         $.getJSON('/example/url', function (result) {
+            data.formData = result; // e.g. {id: 123}
             $this.fileupload('send', data);
         });
         return false;
