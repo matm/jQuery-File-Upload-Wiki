@@ -102,3 +102,6 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
     data.formData = inputs.serializeArray();
 });
 ```
+
+## How to retrieve and set form data asynchronously.
+See how to [[submit files asynchronously]].
