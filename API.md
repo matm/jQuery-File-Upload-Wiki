@@ -14,6 +14,27 @@ $('#fileupload').fileupload({
 });
 ```
 
+### Data attributes
+It is possible to initialize the file upload widget using [HTML5 data attributes](http://api.jquery.com/data/#data-html5):
+
+```html
+<input id="fileupload" type="file" name="files[]" multiple
+    data-url="/path/to/upload/handler.json"
+    data-sequential-uploads="true"
+    data-form-data='{"script": "true"}'>
+```
+
+```js
+/* Initializes the File Upload widget with
+{
+    url: '/path/to/upload/handler.json',
+    sequentialUploads: true,
+    formData: {script: true}
+}
+*/
+$('#fileupload').fileupload();
+```
+
 ## Options
 It is possible to change [[Options]] after initializing the widget:
 
