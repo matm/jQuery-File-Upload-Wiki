@@ -1,6 +1,6 @@
 # Setup instructions
 
-## Using jQuery File Upload (UI version) on PHP websites
+## Using jQuery File Upload (UI version) on [PHP](http://www.php.net/) websites
 
 The provided example implementation works out of the box and only needs one step for you to add it to your PHP based website:
 
@@ -14,12 +14,29 @@ If uploading files doesn't work, make sure that the *php/files* and *php/thumbna
 The provided PHP upload handler allows anyone to upload files. The uploaded files are also accessible for anyone to download.  
 The easiest way to add some kind of authentication system is to protect the example directory by adding [.htaccess based password protection](http://httpd.apache.org/docs/2.2/howto/auth.html#gettingitworking).
 
-## Using jQuery File Upload (UI version) with Google App Engine
+## Using jQuery File Upload (UI version) with [Google App Engine](http://code.google.com/appengine/)
 
 1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the **server/gae-python** or **server/gae-go** folder (depending on which runtime environment you want to use) as your App Engine instance, after editing the *app.yaml* inside if the folder and replacing "jquery-file-upload" with your own App ID.
 2. Upload the jQuery-File-Upload folder (without the **server** subfolder) to any server, after adjusting the form action target to point to the url of your App Engine instance.
 
 Visit the uploaded directory - you should see the same file upload interface as the demo, allowing you to upload files to your App Engine instance.
+
+## Using jQuery File Upload (UI version) with [Node.js](http://nodejs.org/)
+
+You can install the sample [Node.js](http://nodejs.org/) upload service on your server via [npm](http://npmjs.org/):
+
+```sh
+npm install blueimp-file-upload-node
+```
+
+You can start the service by running the following command:
+
+```sh
+./node_modules/blueimp-file-upload-node/server.js
+```
+
+Next, [download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it, edit **index.html** and adjust the HTML form's **action** attribute to point to your [Node.js](http://nodejs.org/) service (e.g. "http://localhost:8080").  
+You can then upload the project folder (without the unnecessary **server** subfolder) to any static file server and use it as interface to your [Node.js](http://nodejs.org/) upload service.
 
 ## Using jQuery File Upload (UI version) with a custom server-side upload handler
 
