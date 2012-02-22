@@ -3,6 +3,9 @@
 ```html
 <html>
     <head>
+          <link rel="stylesheet" type="text/css" media="screen" href="http://url/assets/css/bootstrap.css"/>
+          <link rel="stylesheet" type="text/css" media="screen" href="http://url/assets/css/fileupload/bootstrap-image-gallery.min.css"/>
+          <link rel="stylesheet" type="text/css" media="screen" href="http://url/assets/css/fileupload/jquery.fileupload-ui.css"/>
           <link rel="stylesheet" type="text/css" media="screen" href="http://url/assets/css/jquery-ui.css"/>
           
           <script  src="http://code.jquery.com/jquery-1.7.min.js" ></script>
