@@ -90,8 +90,53 @@ class Upload extends CI_Controller {
 
   function __construct() {
         parent::__construct();
+        $this->load->helper(array('form', 'url'));
+  }
+
+  public function index() {
+      $this->load->view('upload_v/upload_view');
+  }
+
+// Function called by the form
+  public function upload_img() {
+
+        //Format the name
+        $name = $_FILES['userfile']['name'];
+        $name = strtr($name, 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+
+// replace characters other than letters, numbers and . by _
+
+        $name = preg_replace('/([^.a-z0-9]+)/i', '_', $name);
+
+        //Your upload directory, see CI user guide
+        $config['upload_path'] = './assets/img/articles/';
+        $upload_path_url = $config['upload_path'];
+        $config['allowed_types'] = 'gif|jpg|png|JPG|GIF|PNG';
+        $config['max_size'] = '1000';
+        $config['file_name'] = $name;
+
+       //Load the upload library
+        $this->load->library('upload', $config);
+  }
+
+//Function for the upload : return true/false
+  public function do_upload() {
+
+        if (!$this->upload->do_upload()) {
+            $error = array('error' => $this->upload->display_errors());
+            foreach ($error as $v) {
+                echo $v;
+            }
+            return false;
+        } else {
+            //$data = array('upload_data' => $this->upload->data());
+
+            return true;
+        }
+     }
+
   }
 
 
-}
+
 ```
