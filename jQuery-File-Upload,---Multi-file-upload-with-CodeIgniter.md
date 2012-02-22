@@ -19,8 +19,6 @@ difference from the original tutorial is setting the json data that is returned 
 
 class Upload extends Controller {
 
-
-
 public function __construct()
 	{
 		parent::__construct();
