@@ -83,7 +83,7 @@
 ## Controller Upload : 
 
 ```php
-if (!defined('BASEPATH'))
+<?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Upload extends CI_Controller {
