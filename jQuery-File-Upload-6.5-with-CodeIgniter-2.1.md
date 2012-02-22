@@ -11,6 +11,18 @@
           <script  src="http://code.jquery.com/jquery-1.7.min.js" ></script>
           <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" ></script>
 
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/tmpl.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/load-image.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/canvas-to-blob.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/bootstrap.min.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/bootstrap-image-gallery.min.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/jquery.iframe-transport.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/jquery.fileupload.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/jquery.fileupload-ip.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/jquery.fileupload-ui.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/locale.js" ></script>
+          <script  type="text/javascript" src="http://url/assets/js/fileupload/main.js" ></script>
+
 
     </head>
 <body>
