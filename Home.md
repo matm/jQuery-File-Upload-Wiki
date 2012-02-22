@@ -53,6 +53,7 @@
 * Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V6]] (user contribution)
 
 ### PHP
+* [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery)
 * [[Zend-framework]] integration (user contribution).
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
 * [[PHP Subfolder example]]
