@@ -104,8 +104,7 @@ class Upload extends CI_Controller {
         $name = $_FILES['userfile']['name'];
         $name = strtr($name, 'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
 
-// replace characters other than letters, numbers and . by _
-
+        // replace characters other than letters, numbers and . by _
         $name = preg_replace('/([^.a-z0-9]+)/i', '_', $name);
 
         //Your upload directory, see CI user guide
@@ -117,16 +116,62 @@ class Upload extends CI_Controller {
 
        //Load the upload library
         $this->load->library('upload', $config);
+
+       if ($this->do_upload()) {
+            
+            //If you want to resize 
+            $config['new_image'] = './assets/img/articles/thumbnails/';
+            $config['image_library'] = 'gd2';
+            $config['source_image'] = './assets/img/articles/' . $name;
+            $config['create_thumb'] = FALSE;
+            $config['maintain_ratio'] = TRUE;
+            $config['width'] = 193;
+            $config['height'] = 94;
+
+            $this->load->library('image_lib', $config);
+
+            $this->image_lib->resize();
+
+           $data = $this->upload->data();
+
+            //Get info 
+            $info = new stdClass();
+            
+            $info->name = $data['file_name'];
+            $info->size = $data['file_size'];
+            $info->type = $data['file_type'];
+            $info->url = $upload_path_url . $data['file_name'];
+            $info->thumbnail_url = $upload_path_url.'thumbnails/' . $data['file_name']; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data['file_name']
+            $info->delete_url = base_url() . 'upload/deleteImage/' . $data['file_name'];
+            $info->delete_type = 'DELETE';
+
+
+           //Return JSON data
+           if (IS_AJAX) {   //this is why we put this in the constants to pass only json data
+                echo json_encode(array($info));
+                //this has to be the only the only data returned or you will get an error.
+                //if you don't give this a json array it will give you a Empty file upload result error
+                //it you set this without the if(IS_AJAX)...else... you get ERROR:TRUE (my experience anyway)
+            } else {   // so that this will still work if javascript is not enabled
+                $file_data['upload_data'] = $this->upload->data();
+                echo json_encode(array($info));
+            }
+        } else {
+
+            $error = array('error' => $this->upload->display_errors());
+
+            echo json_encode($error);
+        }
+
+
+       }
   }
 
 //Function for the upload : return true/false
   public function do_upload() {
 
         if (!$this->upload->do_upload()) {
-            $error = array('error' => $this->upload->display_errors());
-            foreach ($error as $v) {
-                echo $v;
-            }
+
             return false;
         } else {
             //$data = array('upload_data' => $this->upload->data());
