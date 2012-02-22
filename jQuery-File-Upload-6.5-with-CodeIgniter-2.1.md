@@ -1,4 +1,5 @@
 ## config/constants.php
+This is a handy piece of code if you are using ajax/json. put this in your config/constants.php
 
 ```php
 <?php
