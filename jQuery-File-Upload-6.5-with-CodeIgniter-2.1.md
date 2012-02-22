@@ -180,7 +180,29 @@ class Upload extends CI_Controller {
         }
      }
 
-  }
+
+//Function Delete image
+    public function deleteImage() {
+
+        //Get the name in the url
+        $file = $this->uri->segment(3);
+        
+        $success = unlink(FCPATH . 'assets/img/articles/' . $file);
+        $success_th = unlink(FCPATH . 'assets/img/articles/thumbnails/' . $file);
+
+        //info to see if it is doing what it is supposed to	
+        $info = new stdClass();
+        $info->sucess = $success;
+        $info->path = base_url() . 'assets/img/articles/' . $file;
+        $info->file = is_file(FCPATH . 'assets/img/articles/' . $file);
+        if (IS_AJAX) {//I don't think it matters if this is set but good for error checking in the console/firebug
+            echo json_encode(array($info));
+        } else {     //here you will need to decide what you want to show for a successful delete
+            var_dump($file);
+        }
+    }
+
+}
 
 
 
