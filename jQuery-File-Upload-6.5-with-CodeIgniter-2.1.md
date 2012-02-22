@@ -1,4 +1,4 @@
-## View :
+## Upload View :
 
 ```html
 <html>
@@ -45,5 +45,9 @@
         <table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
    </form>
 </div>
+
+
+
+
 </html>
 ```
