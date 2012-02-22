@@ -6,7 +6,7 @@
 <div id="upload-img">
     <h2>Upload a file</h2>
 
-<!-- Your controller with the upload function on action form -->
+<!-- Upload function on action form -->
     <form id="fileupload" action="<? echo base_url() . 'upload/upload_img'; ?>" method="POST" enctype="multipart/form-data">
 
 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
