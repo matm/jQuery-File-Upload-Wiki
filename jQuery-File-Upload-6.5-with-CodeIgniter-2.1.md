@@ -22,9 +22,7 @@
           <script  type="text/javascript" src="http://url/assets/js/fileupload/jquery.fileupload-ui.js" ></script>
           <script  type="text/javascript" src="http://url/assets/js/fileupload/locale.js" ></script>
           <script  type="text/javascript" src="http://url/assets/js/fileupload/main.js" ></script>
-
-
-    </head>
+     </head>
 <body>
 
 <div id="upload-img">
