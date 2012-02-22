@@ -6,7 +6,7 @@
           <link rel="stylesheet" type="text/css" media="screen" href="http://url/assets/css/jquery-ui.css"/>
           
           <script  src="http://code.jquery.com/jquery-1.7.min.js" ></script>
-<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" ></script>
+          <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" ></script>
 
 
     </head>
