@@ -202,6 +202,52 @@ class Upload extends CI_Controller {
         }
     }
 
+
+//Load the files
+    public function get_files() {
+
+        $this->get_scan_files();
+    }
+
+//Get info and Scan the directory
+    public function get_scan_files() {
+
+        $file_name = isset($_REQUEST['file']) ?
+                basename(stripslashes($_REQUEST['file'])) : null;
+        if ($file_name) {
+            $info = $this->get_file_object($file_name);
+        } else {
+            $info = $this->get_file_objects();
+        }
+        header('Content-type: application/json');
+        echo json_encode($info);
+    }
+
+    protected function get_file_object($file_name) {
+        $file_path = FCPATH . 'assets/img/articles/' . $file_name;
+        if (is_file($file_path) && $file_name[0] !== '.') {
+
+            $file = new stdClass();
+            $file->name = $file_name;
+            $file->size = filesize($file_path);
+            $file->url = base_url() . 'assets/img/articles/' . rawurlencode($file->name);
+            $file->thumbnail_url = base_url() . 'assets/img/articles/thumbnails/' . rawurlencode($file->name);
+            //File name in the url to delete 
+            $file->delete_url = base_url() ."upload/deleteImage/". rawurlencode($file->name);
+            $file->delete_type = 'DELETE';
+            
+            return $file;
+        }
+        return null;
+    }
+
+//Scan
+       protected function get_file_objects() {
+        return array_values(array_filter(array_map(
+             array($this, 'get_file_object'), scandir(FCPATH . 'assets/img/articles/')
+                   )));
+    }
+
 }
 
 
