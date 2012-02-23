@@ -100,7 +100,7 @@ define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVE
 ```
 
 ## Controller Upload : 
-
+ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ
 ```php
 <?php if (!defined('BASEPATH'))
     exit('No direct script access allowed');
