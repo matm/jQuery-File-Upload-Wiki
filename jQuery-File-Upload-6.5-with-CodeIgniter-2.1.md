@@ -49,6 +49,7 @@ define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVE
 <!-- The fileinput-button span is used to style the file input field as button -->
             <span class="btn btn-success fileinput-button">
                 <span><i class="icon-plus icon-white"></i> Add files...</span>
+<!-- Replace name of this input by userfile-->
                 <input type="file" name="userfile" multiple>
             </span>
             <button type="submit" class="btn btn-primary start">
