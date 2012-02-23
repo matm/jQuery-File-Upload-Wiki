@@ -1,3 +1,13 @@
+## Issues
+If the upload doesn't work :
+
+1 - Look if your upload directory exist and is writable
+    is_dir(), is_writable()
+2 - Look your php.ini 
+    Safe_mod, file_uploads ...
+3 - The .htaccess may be false
+4 - You have an error in your code ahah !
+
 ## config/constants.php
 This is a handy piece of code if you are using ajax/json. put this in your config/constants.php
 
