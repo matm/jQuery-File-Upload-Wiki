@@ -48,7 +48,8 @@
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (user contribution)
 * Another [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net), more complete (user contribution)
 
-### Ruby (Rails)
+### Ruby (on Rails)
+* [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example)
 * Using the plugin to [[Upload directly to S3]] (user contribution)
 * Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V6]] (user contribution)
 
