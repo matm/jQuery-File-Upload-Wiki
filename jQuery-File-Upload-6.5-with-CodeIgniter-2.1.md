@@ -1,9 +1,8 @@
 ## Issues
 If the upload doesn't work :
-* Look if your upload directory exist and is writable
-*     is_dir(), is_writable()
-* Look your php.ini 
-    Safe_mod, file_uploads ...
+
+* Look if your upload directory exist and is writable : is_dir(), is_writable()
+* Look your php.ini : Safe_mod, file_uploads ...
 * The .htaccess may be false
 * You have an error in your code ahah !
 
