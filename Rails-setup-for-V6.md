@@ -208,7 +208,7 @@ In whatever view file you want, copy paste this code and enjoy.
         $('#fileupload').fileupload();
         // 
         // Load existing files:
-        $.getJSON($('#fileupload form').prop('action'), function (files) {
+        $.getJSON($('#fileupload').prop('action'), function (files) {
           var fu = $('#fileupload').data('fileupload'), 
             template;
           fu._adjustMaxNumberOfFiles(-files.length);
