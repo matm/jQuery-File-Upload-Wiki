@@ -540,6 +540,18 @@ Set this option to false to always display preview images as *img* elements.
 * Type: *boolean*
 * Default: `true`
 
+### uploadTemplateId
+The ID of the upload template, given as parameter to the [tmpl()](https://github.com/blueimp/JavaScript-Templates) method. This option is only recognized on widget initialization. Set the **uploadTemplate** option to change the upload template function after widget initialization.
+
+* Type: *string*
+* Default: `'template-upload'`
+
+### downloadTemplateId
+The ID of the download template, given as parameter to the [tmpl()](https://github.com/blueimp/JavaScript-Templates) method. This option is only recognized on widget initialization. Set the **downloadTemplate** option to change the download template function after widget initialization.
+
+* Type: *string*
+* Default: `'template-upload'`
+
 ## Additional Callback Options for the UI version
 
 All callbacks are of type function and can also be bound as event listeners, using the callback name plus "fileupload" as prefix:
