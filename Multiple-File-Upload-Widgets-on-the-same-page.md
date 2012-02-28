@@ -1,7 +1,7 @@
 In *index.html* duplicate the *form* tag with the *id* "fileupload" and change *id* to *class* like this:
 
 ```html
-<form class="fileupload" action="php/index.php" method="POST" enctype="multipart/form-data">
+<form class="fileupload" action="server/php/" method="POST" enctype="multipart/form-data">
     <div class="row">
         <div class="span16 fileupload-buttonbar">
             <div class="progressbar fileupload-progressbar"><div style="width:0%;"></div></div>
