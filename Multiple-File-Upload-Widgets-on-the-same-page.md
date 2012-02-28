@@ -2,46 +2,10 @@ In *index.html* duplicate the *form* tag with the *id* "fileupload" and change *
 
 ```html
 <form class="fileupload" action="server/php/" method="POST" enctype="multipart/form-data">
-    <div class="row">
-        <div class="span16 fileupload-buttonbar">
-            <div class="progressbar fileupload-progressbar"><div style="width:0%;"></div></div>
-            <span class="btn success fileinput-button">
-                <span>Add files...</span>
-                <input type="file" name="files[]" multiple>
-            </span>
-            <button type="submit" class="btn primary start">Start upload</button>
-            <button type="reset" class="btn info cancel">Cancel upload</button>
-            <button type="button" class="btn danger delete">Delete selected</button>
-            <input type="checkbox" class="toggle">
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="span16">
-            <table class="zebra-striped"><tbody class="files"></tbody></table>
-        </div>
-    </div>
+    <!-- ... -->
 </form>
-<form class="fileupload" action="php/index.php" method="POST" enctype="multipart/form-data">
-    <div class="row">
-        <div class="span16 fileupload-buttonbar">
-            <div class="progressbar fileupload-progressbar"><div style="width:0%;"></div></div>
-            <span class="btn success fileinput-button">
-                <span>Add files...</span>
-                <input type="file" name="files[]" multiple>
-            </span>
-            <button type="submit" class="btn primary start">Start upload</button>
-            <button type="reset" class="btn info cancel">Cancel upload</button>
-            <button type="button" class="btn danger delete">Delete selected</button>
-            <input type="checkbox" class="toggle">
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="span16">
-            <table class="zebra-striped"><tbody class="files"></tbody></table>
-        </div>
-    </div>
+<form class="fileupload" action="server/php/" method="POST" enctype="multipart/form-data">
+    <!-- ... -->
 </form>
 ```
 
@@ -73,3 +37,24 @@ $(document).bind('drop dragover', function (e) {
 ```
 
 Note that preventing the default action for both the "drop" and "dragover" events is required to disable the default browser drop action.
+
+## Individual upload/download templates
+To use different upload/download templates for the different fileupload widgets, you can set the following options on widget initialization (see [[Options]] documentation):
+
+* uploadTemplateId
+* downloadTemplateId
+
+The easiest way to set these options is to make use of data attributes in the following way:
+
+```html
+<form class="fileupload" action="server/php/" method="POST" enctype="multipart/form-data"
+    data-upload-template-id="template-upload-1"
+    data-download-template-id="template-download-1">
+    <!-- ... -->
+</form>
+<form class="fileupload" action="server/php/" method="POST" enctype="multipart/form-data"
+    data-upload-template-id="template-upload-2"
+    data-download-template-id="template-download-2">
+    <!-- ... -->
+</form>
+```
