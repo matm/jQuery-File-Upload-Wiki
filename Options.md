@@ -499,7 +499,7 @@ The minimum allowed file size, by default 1 byte.
 **Note:** This option has only an effect for browsers supporting the [File API](https://developer.mozilla.org/en/DOM/file).
 
 * Type: *number*
-* Default: `1`
+* Example: `1`
 
 ### acceptFileTypes
 The regular expression for allowed file types, matches against either file type or file name as only browsers with support for the [File API](https://developer.mozilla.org/en/DOM/file) report the file type.
