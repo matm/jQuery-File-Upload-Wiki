@@ -564,7 +564,6 @@ $('#fileupload')
     .bind('fileuploadsent', function (e, data) {/* ... */})
     .bind('fileuploadcompleted', function (e, data) {/* ... */})
     .bind('fileuploadfailed', function (e, data) {/* ... */})
-    .bind('fileuploadstart', function (e) {/* ... */})
     .bind('fileuploadstopped', function (e) {/* ... */})
     .bind('fileuploaddestroyed', function (e) {/* ... */});
 ```
