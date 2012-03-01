@@ -556,6 +556,7 @@ The ID of the download template, given as parameter to the [tmpl()](https://gith
 
 All callbacks are of type function and can also be bound as event listeners, using the callback name plus "fileupload" as prefix:
 
+```js
 $('#fileupload')
     .bind('fileuploaddestroy', function (e, data) {/* ... */})
     .bind('fileuploadadded', function (e, data) {/* ... */})
@@ -566,6 +567,7 @@ $('#fileupload')
     .bind('fileuploadstart', function (e) {/* ... */})
     .bind('fileuploadstopped', function (e) {/* ... */})
     .bind('fileuploaddestroyed', function (e) {/* ... */});
+```
 
 ### destroy
 Callback for file deletion events.
