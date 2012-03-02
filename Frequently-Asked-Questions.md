@@ -49,7 +49,7 @@ HTTP might not be the ideal protocol for uploading large files, but the jQuery F
 So any files that can be uploaded with a simple HTML form can be uploaded with the jQuery File Upload plugin as well.
 
 ## How to prevent the page from becoming unresponsive, when adding a large number of image files?
-Remove the "preview" class from the upload template to avoid rendering the preview images, which have the potential to block the main JS thread.
+Lower the **previewMaxSourceFileSize** setting or remove the "preview" class from the upload template to avoid rendering large preview images, which have the potential to block the main JS thread.
 
 ## Is it possible to trigger the file selection dialog programmatically?
 Invoking a click event on the file input field programmatically is not supported across browsers - see [[Style Guide]].
@@ -94,7 +94,7 @@ It even displays the correct error message, e.g. "Error: Service Unavailable" fo
 However, for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads - which includes Internet Explorer and Opera - the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) is used and there is no way to retrieve the HTTP status code from an iframe load event.
 
 ## Is it possible to resize images prior to uploading?
-It's technically possible (via the canvas element and replacing the File objects with Blobs), but currently only supported on Mozilla Firefox (via [canvas.mozGetAsFile](https://developer.mozilla.org/en/DOM/HTMLCanvasElement)). As soon as Google Chrome and other browsers support the [BlobBuilder](http://dev.w3.org/2009/dap/file-system/file-writer.html) interface, it's also possible on those browsers.
+This has been built-in and is currently supported by the latest versions of Mozilla Firefox and Google Chrome. Please have a look at the **resizeMaxWidth**, **resizeMaxHeight**, etc. [[Options]].
 
 ## Is it possible to drag&drop a folder of files?
 The current browser APIs only supports drag&drop of (multiple) files, not of folders.  
