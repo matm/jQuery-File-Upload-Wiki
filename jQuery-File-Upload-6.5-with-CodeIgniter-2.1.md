@@ -144,9 +144,9 @@ class Upload extends CI_Controller {
        if ($this->do_upload()) {
             
             //If you want to resize 
-            $config['new_image'] = './assets/img/articles/thumbnails/';
+            $config['new_image'] = $upload_path_url.'thumbnails/';
             $config['image_library'] = 'gd2';
-            $config['source_image'] = './assets/img/articles/' . $name;
+            $config['source_image'] = $upload_path_url . $name;
             $config['create_thumb'] = FALSE;
             $config['maintain_ratio'] = TRUE;
             $config['width'] = 193;
