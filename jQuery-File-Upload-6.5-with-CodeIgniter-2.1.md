@@ -6,12 +6,12 @@ If the upload doesn't work :
 * The .htaccess may be false
 * You have an error in your code ahah !
 
+##Source 
+If you want the [source](http://perrot-julien.fr/tuto/Ci_source.zip)
+
 ## config/constants.php
 This is a handy piece of code if you are using ajax/json. put this in your config/constants.php
 
-
-##Source 
-If you want the [source](http://perrot-julien.fr/tuto/Ci_source.zip)
 
 
 ```php
