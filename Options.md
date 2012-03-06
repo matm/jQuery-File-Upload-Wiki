@@ -541,12 +541,12 @@ Set this option to false to always display preview images as *img* elements.
 * Default: `true`
 
 ### filesContainer
-The container for the files listed for upload / download.
-Must be a jQuery collection object.
+The container for the files listed for upload / download.  
+Is transformed into a [jQuery object](http://api.jquery.com/Types/#jQuery) if set as DOM node or string.
 
 * Type: *object*
 * Default: `widgetContainer.find('.files')`
-* Example: `$('#files')`
+* Example: `'#files'`
 
 ### uploadTemplate
 The upload template function - see [[Template Engine]].
