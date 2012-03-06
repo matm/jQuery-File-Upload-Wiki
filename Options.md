@@ -540,14 +540,32 @@ Set this option to false to always display preview images as *img* elements.
 * Type: *boolean*
 * Default: `true`
 
+### filesContainer
+The container for the files listed for upload / download.
+Must be a jQuery collection object.
+
+* Type: *object*
+* Default: `widgetContainer.find('.files')`
+* Example: `$('#files')`
+
+### uploadTemplate
+The upload template function - see [[Template Engine]].
+
+* Type: *function*
+
 ### uploadTemplateId
-The ID of the upload template, given as parameter to the [tmpl()](https://github.com/blueimp/JavaScript-Templates) method. This option is only recognized on widget initialization. Set the **uploadTemplate** option to change the upload template function after widget initialization.
+The ID of the upload template, given as parameter to the [tmpl()](https://github.com/blueimp/JavaScript-Templates) method to set the **uploadTemplate** option.
 
 * Type: *string*
 * Default: `'template-upload'`
 
+### downloadTemplate
+The download template function - see [[Template Engine]].
+
+* Type: *function*
+
 ### downloadTemplateId
-The ID of the download template, given as parameter to the [tmpl()](https://github.com/blueimp/JavaScript-Templates) method. This option is only recognized on widget initialization. Set the **downloadTemplate** option to change the download template function after widget initialization.
+The ID of the download template, given as parameter to the [tmpl()](https://github.com/blueimp/JavaScript-Templates) method to set the **downloadTemplate** option.
 
 * Type: *string*
 * Default: `'template-upload'`
