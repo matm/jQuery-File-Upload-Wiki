@@ -129,15 +129,17 @@ class Upload extends CI_Controller {
         $this->load->helper(array('form', 'url'));
 
 //Set relative Path with CI Constant
-        $this->path_img_upload_folder = FCPATH . "assets/img/articles/";
-        $this->path_img_thumb_upload_folder = FCPATH . "assets/img/articles/thumbnails/";
+        $this->setPath_img_upload_folder(FCPATH . "assets/img/articles/");
+        $this->setPath_img_thumb_upload_folder(FCPATH . "assets/img/articles/thumbnails/");
+
         
 //Delete img url
-        $this->delete_img_url = base_url() . 'admin/deleteImage/';
+        $this->setDelete_img_url(base_url() . 'admin/deleteImage/');
+ 
 
 //Set url img with Base_url()
-        $this->path_url_img_upload_folder = base_url() . "assets/img/articles/";
-        $this->path_url_img_thumb_upload_folder = base_url() . "assets/img/articles/thumbnails/";
+        $this->setPath_url_img_upload_folder(base_url() . "assets/img/articles/");
+        $this->setPath_url_img_thumb_upload_folder(base_url() . "assets/img/articles/thumbnails/");
   }
 
   public function index() {
@@ -155,7 +157,7 @@ class Upload extends CI_Controller {
         $name = preg_replace('/([^.a-z0-9]+)/i', '_', $name);
 
         //Your upload directory, see CI user guide
-        $config['upload_path'] = $this->path_img_upload_folder;
+        $config['upload_path'] = $this->getPath_img_upload_folder();
   
         $config['allowed_types'] = 'gif|jpg|png|JPG|GIF|PNG';
         $config['max_size'] = '1000';
@@ -167,9 +169,9 @@ class Upload extends CI_Controller {
        if ($this->do_upload()) {
             
             //If you want to resize 
-            $config['new_image'] = $this->path_img_thumb_upload_folder;
+            $config['new_image'] = $this->getPath_img_thumb_upload_folder();
             $config['image_library'] = 'gd2';
-            $config['source_image'] = $this->path_img_upload_folder . $name;
+            $config['source_image'] = $this->getPath_img_upload_folder() . $name;
             $config['create_thumb'] = FALSE;
             $config['maintain_ratio'] = TRUE;
             $config['width'] = 193;
@@ -187,9 +189,9 @@ class Upload extends CI_Controller {
             $info->name = $data['file_name'];
             $info->size = $data['file_size'];
             $info->type = $data['file_type'];
-            $info->url = $this->path_img_upload_folder . $data['file_name'];
-            $info->thumbnail_url = $this->path_img_thumb_upload_folder . $data['file_name']; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data['file_name']
-            $info->delete_url = $this->delete_img_url . $data['file_name'];
+            $info->url = $this->getPath_img_upload_folder() . $data['file_name'];
+            $info->thumbnail_url = $this->getPath_img_thumb_upload_folder() . $data['file_name']; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data['file_name']
+            $info->delete_url = $this->getDelete_img_url() . $data['file_name'];
             $info->delete_type = 'DELETE';
 
 
@@ -234,14 +236,14 @@ class Upload extends CI_Controller {
         //Get the name in the url
         $file = $this->uri->segment(3);
         
-        $success = unlink($this->path_img_upload_folder . $file);
-        $success_th = unlink($this->path_img_thumb_upload_folder . $file);
+        $success = unlink($this->getPath_img_upload_folder() . $file);
+        $success_th = unlink($this->getPath_img_thumb_upload_folder() . $file);
 
         //info to see if it is doing what it is supposed to	
         $info = new stdClass();
         $info->sucess = $success;
-        $info->path = $this->path_url_img_upload_folder . $file;
-        $info->file = is_file($this->path_img_upload_folder . $file);
+        $info->path = $this->getPath_url_img_upload_folder() . $file;
+        $info->file = is_file($this->getPath_img_upload_folder() . $file);
         if (IS_AJAX) {//I don't think it matters if this is set but good for error checking in the console/firebug
             echo json_encode(array($info));
         } else {     //here you will need to decide what you want to show for a successful delete
@@ -271,16 +273,16 @@ class Upload extends CI_Controller {
     }
 
     protected function get_file_object($file_name) {
-        $file_path = $this->path_img_upload_folder . $file_name;
+        $file_path = $this->getPath_img_upload_folder() . $file_name;
         if (is_file($file_path) && $file_name[0] !== '.') {
 
             $file = new stdClass();
             $file->name = $file_name;
             $file->size = filesize($file_path);
-            $file->url = $this->path_url_img_upload_folder . rawurlencode($file->name);
-            $file->thumbnail_url = $this->path_url_img_thumb_upload_folder . rawurlencode($file->name);
+            $file->url = $this->getPath_url_img_upload_folder() . rawurlencode($file->name);
+            $file->thumbnail_url = $this->getPath_url_img_thumb_upload_folder() . rawurlencode($file->name);
             //File name in the url to delete 
-            $file->delete_url = $this->delete_img_url . rawurlencode($file->name);
+            $file->delete_url = $this->getDelete_img_url() . rawurlencode($file->name);
             $file->delete_type = 'DELETE';
             
             return $file;
@@ -291,7 +293,7 @@ class Upload extends CI_Controller {
 //Scan
        protected function get_file_objects() {
         return array_values(array_filter(array_map(
-             array($this, 'get_file_object'), scandir($this->path_img_upload_folder)
+             array($this, 'get_file_object'), scandir($this->getPath_img_upload_folder())
                    )));
     }
 
