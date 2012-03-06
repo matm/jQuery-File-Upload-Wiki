@@ -295,6 +295,52 @@ class Upload extends CI_Controller {
                    )));
     }
 
+
+
+// GETTER & SETTER 
+
+
+    public function getPath_img_upload_folder() {
+        return $this->path_img_upload_folder;
+    }
+
+    public function setPath_img_upload_folder($path_img_upload_folder) {
+        $this->path_img_upload_folder = $path_img_upload_folder;
+    }
+
+    public function getPath_img_thumb_upload_folder() {
+        return $this->path_img_thumb_upload_folder;
+    }
+
+    public function setPath_img_thumb_upload_folder($path_img_thumb_upload_folder) {
+        $this->path_img_thumb_upload_folder = $path_img_thumb_upload_folder;
+    }
+
+    public function getPath_url_img_upload_folder() {
+        return $this->path_url_img_upload_folder;
+    }
+
+    public function setPath_url_img_upload_folder($path_url_img_upload_folder) {
+        $this->path_url_img_upload_folder = $path_url_img_upload_folder;
+    }
+
+    public function getPath_url_img_thumb_upload_folder() {
+        return $this->path_url_img_thumb_upload_folder;
+    }
+
+    public function setPath_url_img_thumb_upload_folder($path_url_img_thumb_upload_folder) {
+        $this->path_url_img_thumb_upload_folder = $path_url_img_thumb_upload_folder;
+    }
+
+    public function getDelete_img_url() {
+        return $this->delete_img_url;
+    }
+
+    public function setDelete_img_url($delete_img_url) {
+        $this->delete_img_url = $delete_img_url;
+    }
+
+
 }
 
 
