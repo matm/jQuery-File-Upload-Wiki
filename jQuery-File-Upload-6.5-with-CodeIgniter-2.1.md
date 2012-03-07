@@ -186,7 +186,7 @@ class Upload extends CI_Controller {
             //Get info 
             $info = new stdClass();
             
-            $info->name = $data['file_name'];
+            $info->name = $name;
             $info->size = $data['file_size'];
             $info->type = $data['file_type'];
             $info->url = $this->getPath_img_upload_folder() . $name;
