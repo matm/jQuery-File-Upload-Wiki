@@ -189,9 +189,9 @@ class Upload extends CI_Controller {
             $info->name = $data['file_name'];
             $info->size = $data['file_size'];
             $info->type = $data['file_type'];
-            $info->url = $this->getPath_img_upload_folder() . $data['file_name'];
-            $info->thumbnail_url = $this->getPath_img_thumb_upload_folder() . $data['file_name']; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data['file_name']
-            $info->delete_url = $this->getDelete_img_url() . $data['file_name'];
+            $info->url = $this->getPath_img_upload_folder() . $name;
+            $info->thumbnail_url = $this->getPath_img_thumb_upload_folder() . $name; //I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$name
+            $info->delete_url = $this->getDelete_img_url() . $name;
             $info->delete_type = 'DELETE';
 
 
