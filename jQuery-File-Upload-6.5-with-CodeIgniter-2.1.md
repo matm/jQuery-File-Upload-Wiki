@@ -129,8 +129,8 @@ class Upload extends CI_Controller {
         $this->load->helper(array('form', 'url'));
 
 //Set relative Path with CI Constant
-        $this->setPath_img_upload_folder(FCPATH . "assets/img/articles/");
-        $this->setPath_img_thumb_upload_folder(FCPATH . "assets/img/articles/thumbnails/");
+        $this->setPath_img_upload_folder("assets/img/articles/");
+        $this->setPath_img_thumb_upload_folder("assets/img/articles/thumbnails/");
 
         
 //Delete img url
