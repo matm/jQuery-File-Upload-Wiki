@@ -14,7 +14,7 @@
 * **[[Plugin extensions]] (Developer Guide)**
 * How to implement a different [[Template Engine]].
 * [[Performance Optimizations]] to speed up page load times.
-* [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.css).
+* [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui.css).
 * Using the plugin with [[jQuery UI]].
 * [[How to submit additional Form Data]].
 * How to [[submit files asynchronously]].
