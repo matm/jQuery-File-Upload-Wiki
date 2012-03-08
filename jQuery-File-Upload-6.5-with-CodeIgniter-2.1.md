@@ -209,7 +209,7 @@ class Upload extends CI_Controller {
 
             $error = array('error' => $this->upload->display_errors());
 
-            echo json_encode($error);
+            echo json_encode(array($error));
         }
 
 
