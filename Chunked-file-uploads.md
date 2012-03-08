@@ -29,7 +29,7 @@ To still be able to discard partial uploads if the user aborts the upload proces
 $('#fileupload').bind('fileuploadfail', function (e, data) {
     if (data.errorThrown === 'abort') {
         $.ajax({
-            url: 'php/index.php?' + $.param({
+            url: 'server/php/index.php?' + $.param({
                 file: data.files[0].name
             }),
             type: 'DELETE'
@@ -75,7 +75,7 @@ $('#fileupload').fileupload({
     maxChunkSize: 10000000, // 10 MB
     add: function (e, data) {
         var that = this;
-        $.getJSON('php/index.php', {file: data.files[0].name}, function (file) {
+        $.getJSON('server/php/index.php', {file: data.files[0].name}, function (file) {
             data.uploadedBytes = file && file.size;
             $.blueimpUI.fileupload.prototype
                 .options.add.call(that, e, data);
@@ -100,7 +100,7 @@ $('#fileupload').fileupload({
         var fu = $(this).data('fileupload'),
             retries = data.context.data('retries') || 0,
             retry = function () {
-                $.getJSON('php/index.php', {file: data.files[0].name})
+                $.getJSON('server/php/index.php', {file: data.files[0].name})
                     .done(function (file) {
                         data.uploadedBytes = file && file.size;
                         data.submit();
