@@ -2,32 +2,12 @@
 The easiest way to submit additional form data is by adding additional input fields to the upload form:
 
 ```html
-<form id="fileupload" action="php/index.php" method="POST" enctype="multipart/form-data">
-    <!-- additional form data start / -->
+<form id="fileupload" action="server/php/" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="example1" value="test">
     <div class="row">
         <label>Example: <input type="text" name="example2"></label>
     </div>
-    <!-- / additional form data stop -->
-    <div class="row">
-        <div class="span16 fileupload-buttonbar">
-            <div class="progressbar fileupload-progressbar"><div style="width:0%;"></div></div>
-            <span class="btn success fileinput-button">
-                <span>Add files...</span>
-                <input type="file" name="files[]" multiple>
-            </span>
-            <button type="submit" class="btn primary start">Start upload</button>
-            <button type="reset" class="btn info cancel">Cancel upload</button>
-            <button type="button" class="btn danger delete">Delete selected</button>
-            <input type="checkbox" class="toggle">
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="span16">
-            <table class="zebra-striped"><tbody class="files"></tbody></table>
-        </div>
-    </div>
+    <!-- ... -->
 </form>
 ```
 
@@ -66,24 +46,12 @@ If the submit event callback returns false, the upload request will not start.
 First, we adjust the upload template and add a new cell with an input field for a file title:  
 
 ```html
-<script id="template-upload" type="text/html">
-{% for (var i=0, files=o.files, l=files.length, file=files[0]; i<l; file=files[++i]) { %}
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
-        <td class="preview"><span class="fade"></span></td>
-        <td class="name">{%=file.name%}</td>
-        <td class="size">{%=o.formatFileSize(file.size)%}</td>
-        <!-- additional form data start / -->
+        <!-- ... -->
         <td class="title"><label>Title: <input name="title[]" required></label></td>
-        <!-- / additional form data stop -->
-        {% if (file.error) { %}
-            <td class="error" colspan="2"><span class="label important">Error</span> {%=fileUploadErrors[file.error] || file.error%}</td>
-        {% } else if (o.files.valid && !i) { %}
-            <td class="progress"><div class="progressbar"><div style="width:0%;"></div></div></td>
-            <td class="start">{% if (!o.options.autoUpload) { %}<button class="btn primary">Start</button>{% } %}</td>
-        {% } else { %}
-            <td colspan="2"></td>
-        {% } %}
-        <td class="cancel">{% if (!i) { %}<button class="btn info">Cancel</button>{% } %}</td>
+        <!-- ... -->
     </tr>
 {% } %}
 </script>
@@ -91,7 +59,7 @@ First, we adjust the upload template and add a new cell with an input field for 
 
 The title field has "title[]" as name to account for multi-file request uploads. The "required" attribute is used to prevent the file upload if this field is not filled out.
 
-Next we only need to adjust the submit event callback method to gather the form data via the context option, which has been set by the UI version of the plugin inside of the *add* callback to the upload row:
+Next we need to bind a callback to the "submit" event to gather the form data via the upload row context (the context is set by the UI version of the plugin inside of the *add* callback to the upload row node):
 
 ```js
 $('#fileupload').bind('fileuploadsubmit', function (e, data) {
