@@ -7,7 +7,7 @@ If the upload doesn't work :
 * You have an error in your code ahah !
 
 ##Source 
-If you want the [source](http://perrot-julien.fr/tuto/Ci_source.zip)
+If you want the [source](http://perrot-julien.fr/tuto/ci_source.rar)
 
 ## config/constants.php
 This is a handy piece of code if you are using ajax/json. put this in your config/constants.php
