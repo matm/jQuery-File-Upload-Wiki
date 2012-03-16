@@ -48,7 +48,7 @@
 ### ASP.NET
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (user contribution)
 * Another [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net), more complete (user contribution)
-
+* And [ASP.NET MVC 3 example](https://github.com/maxpavlov/jQuery-File-Upload.MVC3) with the same functionality as an original plugin demo (user contribution)
 ### Ruby (on Rails)
 * [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example)
 * Using the plugin to [[Upload directly to S3]] (user contribution)
