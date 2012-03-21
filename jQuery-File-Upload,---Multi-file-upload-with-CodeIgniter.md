@@ -270,7 +270,7 @@ echo '{"name":"'.$upload_data['file_name'].'","type":"'.$upload_data['file_type'
 probably won't be used but here is is anyway
 ```php
 <?php
-echo 'file:' .$delete_data .'-delted' ;
+echo 'file:' .$delete_data .'-deleted' ;
 ?>
 ```
 -Make sure Uploads/ directory is writable
