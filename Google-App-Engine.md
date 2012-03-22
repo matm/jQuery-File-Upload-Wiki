@@ -25,23 +25,22 @@ class UploadUrlHandler(webapp.RequestHandler):
         self.response.out.write('"' + upload_url + '"')
 ```
 
-On client-side, you can override the *add* callback to retrieve the upload url and override the *url* setting, before adding the file to the upload queue:
+On client-side, you can make use of the *submit* callback to retrieve the upload url and override the *url* setting, before sending the file to the upload handler:
 
 ```js
 $('#fileupload').fileupload({
-    add: function (e, data) {
-        var that = this;
-        $.getJSON('/upload-url-handler.json', function (url) {
+    submit: function (e, data) {
+        var $this = $(this);
+        $.getJSON('/upload-url-handler.json', function (result) {
             data.url = url;
-            $.blueimpUI.fileupload.prototype
-                .options.add.call(that, e, data);
+            $this.fileupload('send', data);
         });
-    }
+        return false;
+    } 
 });
 ```
-*$.blueimpUI.fileupload* is the widget class of [jQuery File Upload UI](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js). It extends the basic widget class of [jQuery File Upload](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload.js).
 
-Documentation on how to create your own widget class based on the File Upload plugin can be found at the [[Plugin extensions]] page.
+See also how to [[submit files asynchronously]] and the [[Plugin extensions]] documentation.
 
 # App Engine Blobstore and Cross-domain uploads
 Since I've rewritten the demo to be hosted on Github pages while the uploads are still done to App Engine, I've had to tackle the Cross-Domain Blobstore issue.
