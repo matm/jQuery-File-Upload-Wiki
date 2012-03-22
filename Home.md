@@ -52,12 +52,12 @@
 * Another [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net) (user contribution)
 
 ### Ruby (on Rails)
-* [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example)
+* [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example) (user contribution)
 * Using the plugin to [[Upload directly to S3]] (user contribution)
 * Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V6]] (user contribution)
 
 ### PHP
-* [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery)
+* [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
 * [[Zend-framework]] integration (user contribution).
 * [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
