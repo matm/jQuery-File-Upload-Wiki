@@ -111,6 +111,6 @@ and your controller looks something like this:
 
   # sign our request by Base64 encoding the policy document.
   def s3_upload_signature
-    signature = Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha1'), YOUR_ACCESS_KEY, s3_upload_policy_document)).gsub("\n","")
+    signature = Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha1'), YOUR_SECRET_KEY, s3_upload_policy_document)).gsub("\n","")
   end
 ```
