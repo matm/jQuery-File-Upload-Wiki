@@ -13,7 +13,9 @@ The following is an alternative to [index.html](https://github.com/blueimp/jQuer
 <title>jQuery File Upload Example</title>
 </head>
 <body>
-<input id="fileupload" type="file" name="files[]" multiple>
+<form id="fileupload" action="server/php/" method="POST" enctype="multipart/form-data">
+    <input type="file" name="files[]" multiple>
+</form>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="js/vendor/jquery.ui.widget.js"></script>
 <script src="js/jquery.iframe-transport.js"></script>
@@ -22,7 +24,6 @@ The following is an alternative to [index.html](https://github.com/blueimp/jQuer
 $(function () {
     $('#fileupload').fileupload({
         dataType: 'json',
-        url: 'server/php/',
         done: function (e, data) {
             $.each(data.result, function (index, file) {
                 $('<p/>').text(file.name).appendTo(document.body);
@@ -59,3 +60,6 @@ $('#fileupload').fileupload({
 ```
 
 Please have a look at the [[API]] and [[Options]] documentations.
+
+**Note:**
+Although it is possible to call the fileupload widget method directly on the file input element, it is recommended to use a wrapping form element instead, to prevent [a bug in IE6/IE7](https://github.com/blueimp/jQuery-File-Upload/issues/1153).
