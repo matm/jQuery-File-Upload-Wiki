@@ -16,7 +16,7 @@ The following is an alternative to [index.html](https://github.com/blueimp/jQuer
 <form id="fileupload" action="server/php/" method="POST" enctype="multipart/form-data">
     <input type="file" name="files[]" multiple>
 </form>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="js/vendor/jquery.ui.widget.js"></script>
 <script src="js/jquery.iframe-transport.js"></script>
 <script src="js/jquery.fileupload.js"></script>
