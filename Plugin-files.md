@@ -29,6 +29,11 @@
 * [server/gae-python/main.py](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-python/main.py) is an example for a Python based server-side file upload handler component.
 * [server/gae-python/app.yaml](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-python/app.yaml) is the configuration file for the Python App Engine application.
 
+## Node.js
+* [server/node/.gitignore](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/node/.gitignore) is a [Git configuration file](http://help.github.com/ignore-files/).
+* [server/node/package.json](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/node/package.json) contains machine readable information about the node package in [JSON](http://www.json.org/) format.
+* [server/node/server.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/node/server.js) is an example for a [Node.js](http://nodejs.org/) file upload handler implementation.
+
 ## PHP
 * [server/php/index.php](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/index.php) is an example for a PHP upload handler.
 * [server/php/upload.class.php](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/upload.class.php) is an example PHP upload handler class used by index.php.
@@ -39,4 +44,4 @@
 * [.gitignore](https://github.com/blueimp/jQuery-File-Upload/blob/master/.gitignore) is a [Git configuration file](http://help.github.com/ignore-files/).
 * [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
 * [img/progressbar.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/img/progressbar.gif) is an animated GIF image file used for the animation of the upload progress bars for browsers without support for CSS animations.
-* [package.json](https://github.com/blueimp/jQuery-File-Upload/blob/master/package.json) contains machine readable information about the plugin.
+* [package.json](https://github.com/blueimp/jQuery-File-Upload/blob/master/package.json) contains machine readable information about the plugin in [JSON](http://www.json.org/) format.
