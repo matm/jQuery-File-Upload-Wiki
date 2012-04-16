@@ -30,6 +30,8 @@ X-Content-Type-Options: nosniff
 
 Please note that all provided implementations allow cross-site file uploads. If you don't need that functionality, you should remove the code parts that set the "Access-Control-Allow" headers.
 
+Please also note that the provided implementations allow anyone to upload files. The uploaded files are also accessible for anyone to download. It's up to you to incorporate the server-side file upload implementation into your user-authentication system.
+
 ### Google App Engine (Python, Go)
 On Google App Engine, uploaded files cannot be saved directly on the file system and are instead stored in the Blobstore. This prevents executing uploaded files (e.g. Python scripts) on server-side in the context of your web application.  
 The provided Python and Go implementations also restrict uploaded files by default to image files (GIF, JPEG, PNG).
