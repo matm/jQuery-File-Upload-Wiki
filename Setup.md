@@ -11,8 +11,7 @@ Visit the uploaded directory - you should see the same file upload interface as 
 If uploading files doesn't work, make sure that the *php/files* and *php/thumbnails* directories permissions allow your server write access.
 
 **Note:**  
-The provided PHP upload handler allows anyone to upload files. The uploaded files are also accessible for anyone to download.  
-The easiest way to add some kind of authentication system is to protect the example directory by adding [.htaccess based password protection](http://httpd.apache.org/docs/2.2/howto/auth.html#gettingitworking).
+Please keep in mind some [[Security]] considerations when running a file upload handler on your server.
 
 ## Using jQuery File Upload (UI version) with [Google App Engine](http://code.google.com/appengine/)
 
