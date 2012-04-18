@@ -548,6 +548,13 @@ Is transformed into a [jQuery object](http://api.jquery.com/Types/#jQuery) if se
 * Default: `widgetContainer.find('.files')`
 * Example: `'#files'`
 
+### prependFiles
+By default, files are appended to the files container.  
+Set this option to true, to prepend files instead.
+
+* Type: *boolean*
+* Default: `false`
+
 ### uploadTemplate
 The upload template function - see [[Template Engine]].
 
