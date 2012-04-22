@@ -439,6 +439,7 @@ A list of file processing actions.
 * Type: *array*
 * Default: `[]` (empty array)
 * Example:
+
 ```js
 [
     {
