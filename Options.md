@@ -431,44 +431,33 @@ function (e) {
 }
 ```
 
-## Image Processing Options
+## File Processing Options
 
-### resizeSourceFileTypes
-The regular expression to define which image files are to be resized, given that the browser supports the operation.
+### process
+A list of file processing actions.
 
-* Type: *Regular Expression*
-* Default: `/^image\/(gif|jpeg|png)$/`
-
-### resizeSourceMaxFileSize
-The maximum file size of images that are to be resized.
-
-* Type: *number*
-* Default: `20000000`
-
-### resizeMaxWidth
-The maximum width of the resized images.
-
-* Type: *number*
-* Default: `undefined`
-
-### resizeMaxHeight
-The maximum height of the resized images.
-
-* Type: *number*
-* Default: `undefined`
-
-### resizeMinWidth
-The minimum width of the resized images.
-
-* Type: *number*
-* Default: `undefined`
-
-### resizeMinHeight
-The minimum height of the resized images.
-
-* Type: *number*
-* Default: `undefined`
-
+* Type: *array*
+* Default: `[]` (empty array)
+* Example:
+```js
+[
+    {
+        action: 'load',
+        fileTypes: /^image\/(gif|jpeg|png)$/,
+        maxFileSize: 20000000 // 20MB
+    },
+    {
+        action: 'resize',
+        maxWidth: 1920,
+        maxHeight: 1200,
+        minWidth: 800,
+        minHeight: 600
+    },
+    {
+        action: 'save'
+    }
+],
+```
 
 ## Additional Options for the UI version
 
