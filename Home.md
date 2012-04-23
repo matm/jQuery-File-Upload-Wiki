@@ -54,8 +54,10 @@
 * A fully functional github hosted [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net) (contribution by Iain Ballard), based on ashx handlers. Provides full upload / delete / thumbnail functionality.
 
 ### Ruby (on Rails)
-* [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example) (user contribution)
-* Using the plugin to [[Upload directly to S3]] (user contribution)
+* [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example) (user contribution).
+  Is able to use XHR uploads directly to S3, despite S3 not supporting `Access-Control-Allow-Origin`, by hosting an (iframed) upload form on S3 itself (tricksy!) 
+* Using the plugin to [[Upload directly to S3]] (user contribution).
+  Uses the iframe-transport fallback, so lacks niceties like the progress bar
 * Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V6]] (user contribution)
 
 ### PHP
