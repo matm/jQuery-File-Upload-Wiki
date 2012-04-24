@@ -26,6 +26,7 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
     }
 
 });
+
 Example on how to override existing plugin methods
 
 See Template Engine.
