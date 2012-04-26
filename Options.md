@@ -123,7 +123,7 @@ This can be useful for cross-site file uploads, if the [Access-Control-Allow-Ori
 * Default: `false`
 
 ### redirect
-Set this option to the location of a redirect url on the origin server (the server that hosts the file upload form), for cross-domain iframe transport uploads.  
+Set this option to the location of a redirect url on the origin server (the server that hosts the file upload form), for cross-domain iframe transport uploads. If set, this value is sent as part of the form data to the upload server.  
 The upload server is supposed to redirect the browser to this url after the upload completes and append the upload information as URL-encoded JSON string to the redirect URL, e.g. by replacing the "%s" character sequence.
 
 * Type: *string*
