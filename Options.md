@@ -180,6 +180,18 @@ Set this option to false to prevent recalculating the global progress data.
 * Type: *boolean*
 * Default: `true`
 
+### progressInterval
+The minimum time interval in milliseconds to calculate and trigger progress events.
+
+* Type: *number*
+* Default: `100`
+
+### bitrateInterval
+The minimum time interval in milliseconds to calculate progress bitrate.
+
+* Type: *number*
+* Default: `500`
+
 ### formData
 Additional form data to be sent along with the file uploads can be set using this option, which accepts an array of objects with name and value properties, a function returning such an array, a [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) object (for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads), or a simple object.  
 The form of the first fileInput is given as parameter to the function.
