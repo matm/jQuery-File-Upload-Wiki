@@ -73,7 +73,7 @@ The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpReq
 
 If the *multipart* option is set to *false* (see [[Options]]), Firefox 3.6 also supports [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads.
 
-The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js#files is used for other browsers. The Iframe Transport requires a file input selection to upload files.
+The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js#files) is used for other browsers. The Iframe Transport requires a file input selection to upload files.
 
 ## Image Resizing Functionality
 
