@@ -73,7 +73,7 @@ $('#fileupload').fileupload({
 * The **data** parameter passed via **add** callback is stored via [jQuery.data](http://api.jquery.com/data/) on the rendered templates and later reused when submitting or canceling the file upload.
 * The rendered templates are expected to have a class of **template-upload** / **template-download** for the start and cancel handlers to retrieve the **data** parameter and for the delete handler to set the context to the template.
 
-Alternatively, you could also provide your own **window.tmpl** template method which accepts template IDs and returns template functions accepting a data parameter and rendering the template content as HTML string:
+Alternatively, you could also provide your own **window.tmpl** template method which accepts template IDs and returns template functions accepting a data parameter and rendering the template content as HTML string or jQuery collection:
 
 ```js
 window.tmpl = function (id) {
