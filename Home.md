@@ -59,6 +59,7 @@
 * Using the plugin to [[Upload directly to S3]] (user contribution).
   Uses the iframe-transport fallback, so lacks niceties like the progress bar
 * Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V6]] (user contribution)
+* [Rails 3.1.3 without asset-pipeline demo app](https://github.com/banditj/fily/tree/no-asset-pipeline) (user contribution)
 
 ### PHP
 * [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
