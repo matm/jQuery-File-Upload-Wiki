@@ -1,7 +1,7 @@
 PHP 5.4 will likely introduce built-in support for server-side upload progress status:  
 http://php.net/manual/en/session.upload-progress.php
 
-The following code snippets outline how to use this feature with the File Upload plugin:
+The following code snippets outline how to use this feature with the File Upload plugin::
 
 ## JavaScript (application.js)
 
