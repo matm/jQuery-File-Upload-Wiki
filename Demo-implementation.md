@@ -1,4 +1,4 @@
-**The** [jQuery File Upload Demo](http://blueimp.github.com/jQuery-File-Upload/) is hosted on GitHub, but the files are uploaded to [Google App Engine](http://code.google.com/appengine/).
+The [jQuery File Upload Demo](http://blueimp.github.com/jQuery-File-Upload/) is hosted on GitHub, but the files are uploaded to [Google App Engine](http://code.google.com/appengine/).
 
 The uploaded files are publicly accessible, but without a public file listing nobody will see your test uploads, if you don't forward someone the rather cryptic download links.  
 Every file will be automatically deleted after 5 minutes, but might be longer accessible due to caching.
