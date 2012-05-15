@@ -104,7 +104,7 @@ $('#fileupload').fileupload('add', {files: filesList, url: '/path/to/upload/hand
 ```
 
 The *add* method uploads files by adding them to the upload queue, the same way that files are added via the file input button or drag&drop.  
-Files can also be send directly using the *send* method:
+Files can also be sent directly using the *send* method:
 
 ```js
 $('#fileupload').fileupload('send', {files: filesList});
