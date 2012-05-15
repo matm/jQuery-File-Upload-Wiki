@@ -193,7 +193,7 @@ $('#fileupload').fileupload({
 });
 ```
 
-The second way of using them is by by binding event listeners to the widget element:
+The second way of using them is by binding event listeners to the widget element:
 
 ```js
 $('#fileupload')
