@@ -52,6 +52,7 @@
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (contribution from Sam at webtrendset.com), a simple ashx based example, available as a zip file download. Upload support only. Focus on IE handling.
 * An [ASP.NET MVC 3 example](https://github.com/maxpavlov/jQuery-File-Upload.MVC3) with the same functionality as an original plugin demo + large files upload support for ASP.NET (contribution from Max Pavlov)
 * A fully functional github hosted [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net) (contribution by Iain Ballard), based on ashx handlers. Provides full upload / delete / thumbnail functionality.
+* [.NET File Upload Handler](https://github.com/swhitley/jQuery-File-Upload) implementation by [Shannon Whitley](https://github.com/swhitley)
 
 ### Ruby (on Rails)
 * [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example) (user contribution).
