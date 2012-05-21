@@ -13,7 +13,8 @@ Have a look at [an explanation and solution from user espeoneefi](https://github
 
 ## Why do I get a JSON parsing error?
 Your JSON response is probably not valid JSON.  
-You can test your JSON response for validity on [jsonlint.com](http://www.jsonlint.com/).
+You can test your JSON response for validity on [jsonlint.com](http://www.jsonlint.com/).  
+To retrieve the JSON response, make use of the network tab of your browser development tools (e.g. Google Chrome's and Safari's developer console or Firebug).
 
 ## How to restrict the file selection dialog to show only specific file types?
 You can use the *accept* attribute of the file input field to limit the file type selection, though this seems to be supported only on Google Chrome and Opera.  
