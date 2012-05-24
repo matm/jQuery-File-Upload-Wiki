@@ -103,6 +103,8 @@ $('#fileupload').fileupload({
                 $.getJSON('server/php/', {file: data.files[0].name})
                     .done(function (file) {
                         data.uploadedBytes = file && file.size;
+                        // clear the previous data:
+                        data.data = null;
                         data.submit();
                     })
                     .fail(function () {
