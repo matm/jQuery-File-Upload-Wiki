@@ -2,11 +2,17 @@
 
 ***
 
-This is a handy piece of code if you are using ajax/json. put this in your config/constants.php 
+This is a handy piece of code if you are using ajax/json. put this in your config/constants.php.
 
 ```
 // Define Ajax Request
 define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
+```
+
+Alternatively you can use CI's native ajax detection
+
+```
+$this->input->is_ajax_request();
 ```
 
 ## controller: upload.php
