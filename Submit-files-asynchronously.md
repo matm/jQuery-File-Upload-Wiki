@@ -1,6 +1,6 @@
 # How to submit files asynchronously
 Sometimes you will want to retrieve extra parameters asynchronously via AJAX request before submitting files to the upload server.
-
+;lol
 ## Overriding the add callback
 One way to do this is by overriding the default **add** callback of the basic file upload plugin and calling the **submit()** method on the **data** parameter after retrieving your parameters and setting them as formData object:
 
