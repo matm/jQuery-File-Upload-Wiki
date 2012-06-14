@@ -59,3 +59,7 @@ ForceType application/octet-stream
 ```
 
 The [ForceType](http://httpd.apache.org/docs/2.4/mod/core.html#forcetype) directive "application/octet-stream" enforces Apache to serve all files with an attachment header to force a download dialog. More importantly, it prevents Apache to run any of the uploaded files through an interpreter like PHP, even if the file extension is ".php".
+
+### HTTP Basic Authentication
+Although HTTP Basic Authentication (e.g. via **.htaccess**) is a simple means to add password protection, it's advisable to use Cookie based authentication instead, since IE does seem to have problems with HTTP Basic Authentication and invisible Iframes, which are used for the Iframe Transport.  
+See also Issue [#1264](https://github.com/blueimp/jQuery-File-Upload/issues/1264).
