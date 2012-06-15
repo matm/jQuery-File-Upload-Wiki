@@ -17,8 +17,9 @@ The following browsers support drag & drop:
 * Firefox 4+
 * Safari 5+
 * Google Chrome
+* Opera 12+
 
-IE and Opera have currently no support for drag & drop.
+IE has currently no support for drag & drop.
 
 **Note:**
 Safari on Windows has a bug that adds "￿" characters at the end of the file name or mangles the file name in another way and reports a file size of 0 bytes when dropping files. Trying to drop the same file(s) again seems to work.
@@ -36,6 +37,7 @@ The following browsers have complete support for upload progress indication:
 * Firefox 4+
 * Safari 5+
 * Google Chrome
+* Opera 12+
 
 Firefox 3.6 and Opera 11.1 have partial upload progress support via the global progress bar, which will update after each iframe based upload with the percentage of the uplaoded files compared to all file selections in the upload queue. This is possible as those browsers support the File API and report the file size of the uploaded files, although they lack the interfaces for XMLHttpRequest uploads.
 
@@ -70,6 +72,7 @@ The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpReq
 * Firefox 4+
 * Safari 5+
 * Google Chrome
+* Opera 12+
 
 If the *multipart* option is set to *false* (see [[Options]]), Firefox 3.6 also supports [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads.
 
