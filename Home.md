@@ -42,7 +42,7 @@
 
 ### Java
 * Code samples for [[Google App Engine Java]] (user contribution).
-* File Upload with Spring and jQuery (http://krams915.blogspot.com/2012/06/file-upload-with-spring-and-jquery-part_2793.html) (user contribution).
+* [File Upload with Spring and jQuery] (http://krams915.blogspot.com/2012/06/file-upload-with-spring-and-jquery-part_2793.html) (user contribution).
 
 ### ASP (Classic)
 * [ASP VBscript example](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
