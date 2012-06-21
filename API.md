@@ -141,7 +141,7 @@ The fileInput property must be a jQuery collection with an input of type file wi
 Non-[XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads make use of the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js).
 
 ## Image resizing
-If you include the [file processing plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-fp.js), the following additional API is available:
+If you include the [file processing plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-fp.js), the following additional API is available:
 
 ```js
 $('#fileupload').fileupload('process', {
