@@ -9,7 +9,9 @@ Originally, the demo had been built for the [Python runtime of Google App Engine
 
 You can also find an example PHP based server-side implementation under the [server/php](https://github.com/blueimp/jQuery-File-Upload/tree/master/server/php) folder that can be run on any typical PHP webhosting platform.
 
+A [Node.js](http://nodejs.org/) implementation can be found under the [server/node](https://github.com/blueimp/jQuery-File-Upload/tree/master/server/node) folder.
+
 All implementations can be run in [cross-site](https://github.com/blueimp/jQuery-File-Upload/wiki/Cross-domain-uploads) scenarios, which means the HTML pages can be hosted on a different domain than the upload handlers.  
 e.g. the App Engine demo runs on *jquery-file-upload.appspot.com*, while the upload form is hosted on *blueimp.github.com*.
 
-All implementations support every available File Upload plugin option (see [[Options]] documentation), with the exception of non-multipart and chunked uploads, which have not been implemented for the Google App Engine versions.
+All implementations support every available File Upload plugin option (see [[Options]] documentation), with the exception of non-multipart and chunked uploads, which have not been implemented for the Google App Engine and Node.js versions.
