@@ -73,6 +73,11 @@ The plugin will transmit the absolute URL set as **redirect** option as part of 
 On server-side, you need to check if a request parameter **redirect** has been transmitted with the file upload. In this case, the server response to the upload has to be a redirect to this parameter, with the urlencoded result contents appended to the redirect URL.
 Note that the redirect URL is supposed to have a placeholder (e.g. **%s**) as part of the URL, where the upload server will append the urlencoded upload results.
 
+The [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) page adds the decoded result content as body content. This allows the plugin to access the response without cross-domain access issues.
+
+**Note:**
+The response should not exceed a certain length, as the redirect URL is limited by the [maximum URL length](What is the maximum length of a URL?) that browsers will process.
+
 ### Cross-site uploads to different subdomains
 
 If both servers - the server hosting the upload form and the target server for the file uploads - are just on different subdomains (e.g. source.example.org and target.example.org), it is possible to access the iframe content on the subdomain by adding the following line of Javascript to both webpages (the upload form page and the upload server response page):
