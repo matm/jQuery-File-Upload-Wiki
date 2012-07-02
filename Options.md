@@ -136,7 +136,7 @@ The parameter name for the redirect url, sent as part of the form data and set t
 * Example: `'redirect-url'`
 
 ### postMessage
-Set this option to the location of a postMessage window on the upload server, to enable cross-domain [postMessage transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.postmessage-transport.js) uploads.
+Set this option to the location of a [postMessage API](https://developer.mozilla.org/en/DOM/window.postMessage) on the upload server, to enable cross-domain [postMessage transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.postmessage-transport.js) uploads.
 
 * Type: *string*
 * Example: `'http://example.org/upload/postmessage.html'`
