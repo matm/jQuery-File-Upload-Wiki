@@ -123,5 +123,7 @@ $('#fileupload').fileupload(
 );
 ```
 
+The PostMessage API has [a configuration setting for which origin hosts to allow to upload files](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html#L25). Edit this setting to a regular expression for which domains you want to enable.
+
 **Note:**
 PostMessage transport uploads are currently only fully supported by Google Chrome.
