@@ -58,7 +58,22 @@ $('#fileupload').fileupload({
 Cross-site iframe transport uploads don't require any additional server response headers.  
 Unfortunately, it is not possible to access the response body of iframes on a different domain.
 
-Therefore Cross-site iframe transport uploads require a redirect back to the origin server to retrieve the upload results. The example implementation makes use of [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) as redirect page. See also the example code in [main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js).
+Therefore Cross-site iframe transport uploads require a redirect back to the origin server to retrieve the upload results. Set the **redirect** option to the absolute url of your [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) file, which must reside on the origin server:
+
+```js
+$('#fileupload').fileupload(
+    'option',
+    'redirect',
+    'http://example.org/result.html?%s'
+);
+```
+
+The plugin will transmit the absolute URL set as **redirect** option as part of the formData (with the parameter name **redirect** if the option **redirectParamName** is not set as well) if the file upload is a cross-domain iframe  transport upload. Else (for XHR file uploads or same-domain iframe uploads), the option is ignored.  
+
+On server-side, you need to check if a request parameter **redirect** has been transmitted with the file upload. In this case, the server response to the upload has to be a redirect to this parameter, with the urlencoded result contents appended to the redirect URL.
+Note that the redirect URL is supposed to have a placeholder (e.g. **%s**) as part of the URL, where the upload server will append the urlencoded upload results.
+
+### Cross-site uploads to different subdomains
 
 If both servers - the server hosting the upload form and the target server for the file uploads - are just on different subdomains (e.g. source.example.org and target.example.org), it is possible to access the iframe content on the subdomain by adding the following line of Javascript to both webpages (the upload form page and the upload server response page):
 
