@@ -78,7 +78,7 @@ The [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors
 **Note:**
 The response should not exceed a certain length, as the redirect URL is limited by the [maximum URL length](What is the maximum length of a URL?) that browsers will process.
 
-### Cross-site uploads to different subdomains
+### Cross-site iframe transport uploads to different subdomains
 
 If both servers - the server hosting the upload form and the target server for the file uploads - are just on different subdomains (e.g. source.example.org and target.example.org), it is possible to access the iframe content on the subdomain by adding the following line of Javascript to both webpages (the upload form page and the upload server response page):
 
@@ -87,3 +87,41 @@ document.domain = 'example.com';
 ```
 
 Note that this requires the server response to be a HTML document (and not JSON as is the default for the UI version of the plugin).
+
+## Additional cross-domain resources
+
+The jQuery File Upload repository also provides two additional scripts for Cross-Origin-Resource-Sharing.
+
+### XDomainRequest Transport
+The [XDomainRequest Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.xdr-transport.js) is included for cross-domain file deletion for IE8+:
+
+```html
+<!--[if gte IE 8]><script src="js/cors/jquery.xdr-transport.js"></script><![endif]-->
+```
+
+The XDomainRequest Transport enables cross-domain GET and POST AJAX requests for IE8+.
+However, since IE doesn't support AJAX file uploads, it doesn't allow cross-domain file uploads.
+
+### PostMessage Transport
+The [PostMessage Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.postmessage-transport.js) allows an alternative means of XHR cross-domain uploads, which doesn't require any cross-domain headers, but requires a [postMessage API](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) on the target server.
+
+The [PostMessage Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.postmessage-transport.js) and the [postMessage API](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) make use of [window.postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) to transfer files between two different domains.
+
+To use it, include the [PostMessage Transport script](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.postmessage-transport.js):
+
+```html
+<script src="js/cors/jquery.postmessage-transport.js"></script>
+```
+
+And set the postMessage option to the location of the [postMessage API](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) on the target server:
+
+```js
+$('#fileupload').fileupload(
+    'option',
+    'postMessage',
+    'http://example.org/postmessage.html'
+);
+```
+
+**Note:**
+PostMessage transport uploads are currently only fully supported by Google Chrome.
