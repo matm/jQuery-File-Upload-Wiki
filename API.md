@@ -130,13 +130,12 @@ It is also possible to use the *add* and *send* API methods for browsers without
 ```js
 $('#some-file-input-field').bind('change', function (e) {
     $('#fileupload').fileupload('add', {
-        files: [{name: this.value}],
         fileInput: $(this)
     });
 });
 ```
 
-The fileInput property must be a jQuery collection with an input of type file with a valid files selection. The files property has to reflect the files selection with an array of objects with a name property for each selected file, but the objects don't have to be of type [File](https://developer.mozilla.org/en/DOM/File) or [Blob](https://developer.mozilla.org/en/DOM/Blob).
+The fileInput property must be a jQuery collection with an input of type file with a valid files selection.
 
 Non-[XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads make use of the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js).
 
