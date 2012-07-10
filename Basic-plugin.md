@@ -34,6 +34,39 @@ $(function () {
 </html>
 ```
 
+## How to display upload progress with the basic plugin
+
+The fileupload plugin triggers progress events for both individual uploads (**progress**) and all running uploads combined (**progressall**). Event handlers can be set via the event binding mechanism or as widget options (see [[API]] and [[Options]] documentation):
+
+```js
+$('#fileupload').fileupload({
+    /* ... */
+    progressall: function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#progress .bar').css(
+            'width',
+            progress + '%'
+        );
+    }
+});
+```
+
+The previous code assumes a progress node with an inner element that displays the progress status via its width percentage:
+
+```html
+<div id="progress">
+    <div class="bar" style="width: 0%;"></div>
+</div>
+```
+
+The inner element should have a different background color than the container node:
+
+```css
+.bar {
+    background: green;
+}
+```
+
 ## How to use image resizing functionality with the basic plugin
 
 Include the following additional scripts (include jquery.fileupload-fp.js after jquery.fileupload.js):
