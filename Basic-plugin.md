@@ -59,7 +59,7 @@ The previous code assumes a progress node with an inner element that displays th
 </div>
 ```
 
-The inner element should have a different background color than the container node:
+The inner element should have a different background color than the container node, set via CSS:
 
 ```css
 .bar {
