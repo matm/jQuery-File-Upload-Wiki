@@ -30,7 +30,7 @@
 * [[Fixing Safari hanging on very high speed connections (1Gbps)]]
 * Direct upload to [[YouTube]]
 
-## Server-side specific tutorials
+## Server-side
 
 ### Python (Google App Engine, Django, web2py)
 * How to use the plugin with [[Google App Engine]] (Python).
@@ -39,6 +39,9 @@
 * Another [Django integration](https://github.com/sigurdga/django-jquery-file-upload) (user contribution).
 * Django >= 1.2.5 integration with CSRF enabled [repo](https://github.com/miki725/Django-jQuery-File-Uploader-Integration-demo) [wiki](https://github.com/miki725/Django-jQuery-File-Uploader-Integration-demo/wiki) (user contribution).
 * [web2py (Python framework) port](https://github.com/hellais/jQuery-File-Upload) (user contribution).
+
+### Go
+* [`jfu` package](https://github.com/jmcvetta/jfu) for integration with Go applications, backed by MongoDB + Memcache  (user contribution).
 
 ### Java
 * Code samples for [[Google App Engine Java]] (user contribution).
