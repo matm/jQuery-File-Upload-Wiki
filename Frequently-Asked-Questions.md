@@ -134,18 +134,3 @@ If desired, you can workaround this bug by manually setting the progress bar to 
 The plugin makes use of [metric prefixes](http://en.wikipedia.org/wiki/SI_prefix) in conformance of the [International System of Units](http://en.wikipedia.org/wiki/International_System_of_Units).
 This is the same unit system that is used by hard drive manufacturers and e.g. the Mac OSX operating system to report hard drive capacities.
 Unfortunately, the terms "kilobytes", "megabytes", etc. have historically been used in ambiguous meanings. Please have a look at the [Binary Prefix](http://en.wikipedia.org/wiki/Binary_prefix) article on Wikipedia for background information.
-
-## How can I prevent duplicate file names?
-
-```js
-$('#fileupload').bind('fileuploadadd', function(e,data) {
-    var currentfiles = [];
-    $(this).fileupload('option').filesContainer.children().each(function(){
-        currentfiles.push($(this).data('data').files[0].name);
-    });
-    data.files = $.map(data.files, function(file,i){
-        if ($.inArray(file.name,currentfiles) >= 0) { return null; }
-        return file;
-    });
-});
-```
