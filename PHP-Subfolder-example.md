@@ -1,6 +1,7 @@
 This is a modified example of the PHP upload handler with subfolder support.
 That is, files are uploaded into subfolders based on their filenames.
 To create your own subfolder rules, just edit the method *get_subdir*.
+If you use this don't forget to remove the /server/php/index.php file and change the Form action to the file name.
 
 ```php
 <?php
