@@ -59,12 +59,32 @@ The previous code assumes a progress node with an inner element that displays th
 </div>
 ```
 
-The inner element should have a different background color than the container node, set via CSS:
+The inner element should have a different background color than the container node, set via CSS and needs a height applied:
 
 ```css
 .bar {
+    height: 18px;
     background: green;
 }
+```
+
+## How to tie a file to an element node during the life cycle of an upload
+Often, you will display a file to upload in an element node. This can be done in the **add** callback.  
+To be able to refer to the same element node in other callbacks related to the upload, you can make use of the **context** option (which is actually an option of [jquery.ajax](http://api.jquery.com/jQuery.ajax/)):
+
+```js
+
+$(function () {
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        add: function (e, data) {
+            data.context = $('<p/>').text('Uploading...').appendTo(document.body);
+        },
+        done: function (e, data) {
+            data.context.text('Upload finished.')
+        }
+    });
+});
 ```
 
 ## How to use image resizing functionality with the basic plugin
