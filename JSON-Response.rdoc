@@ -1,0 +1,16 @@
+The following is the response from the server for the file upload plugin
+```javascript
+[
+  {
+    url: "http://url.to/file/or/page",
+    thumbnail_url: "http://url.to/thumnail.jpg ",
+    name: "thumb2.jpg",
+    type: "image/jpeg",
+    size: 46353,
+    delete_url: "http://url.to/delete /file/",
+    delete_type: "DELETE"
+  }
+]
+```
+
+This json can be used to show the images during the initial loading of the plugin to show list of images.
