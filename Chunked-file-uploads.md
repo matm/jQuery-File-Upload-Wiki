@@ -41,6 +41,26 @@ $('#fileupload').bind('fileuploadfail', function (e, data) {
 To support chunked uploads, the upload handler compares the given file name and file size (transmitted via *X-File-Name* and *X-File-Size* headers) with already uploaded files to determine if the current blob has to be appended to an existing file.  
 If your setup requires other information than the file name for chunked uploads (e.g. a file ID), this information could be provided via session parameters.
 
+### Chunk index and total number of chunks
+
+The plugin exposes the current chunk index and the total number of chunks to upload via two config variables.
+They can be used the following way to transmit them to the server, e.g. as extra HTTP headers:
+
+
+```js
+$('#fileupload').fileupload({
+    maxChunkSize: 100000,
+    beforeSend: function (jqXHR, settings) {
+        if (settings.chunksNumber) {
+            jqXHR.setRequestHeader('X-Chunk-Index',
+settings.chunkIndex);
+            jqXHR.setRequestHeader('X-Chunks-Number',
+settings.chunksNumber);
+        }
+    }
+});
+```
+
 ## How do chunked uploads work?
 If *maxChunkSize* is set to an integer value greater than 0, the File Upload plugin splits up files with a file size bigger than *maxChunkSize* into multiple [blobs](https://developer.mozilla.org/en/DOM/Blob) and submits each of these blobs to the upload url in sequential order.
 
