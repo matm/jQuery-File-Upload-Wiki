@@ -73,3 +73,7 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
 
 ## How to retrieve and set form data asynchronously.
 See how to [[submit files asynchronously]].
+
+
+
+
