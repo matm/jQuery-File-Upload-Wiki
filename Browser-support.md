@@ -47,6 +47,7 @@ All versions of Internet Explorer will also update the global progress bar after
 The following browsers have support for image previews prior to uploading files:
 
 * Firefox 3.6+
+* Safari 6+
 * Google Chrome
 * Opera 11+
 
@@ -83,4 +84,5 @@ The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master
 The following browsers support client-side image resizing functionality:
 
 * Firefox 4+
+* Safari 6+
 * Google Chrome
