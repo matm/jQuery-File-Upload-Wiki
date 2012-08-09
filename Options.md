@@ -84,6 +84,13 @@ If undefined or empty, the name property of the file input field is used, or "fi
 * Type: *string* or *array*
 * Example: `'attachments[]'`
 
+### formAcceptCharset
+Allows to set the accept-charset attribute for the iframe upload forms.  
+If formAcceptCharset is not set, the accept-charset attribute of the file upload widget form is used, if available.
+
+* Type: *string*
+* Example: `'utf-8'`
+
 ### singleFileUploads
 By default, each file of a selection is uploaded using an individual request for [XHR](https://developer.mozilla.org/en/xmlhttprequest) type uploads.  
 Set this option to false to upload file selections in one request each.
