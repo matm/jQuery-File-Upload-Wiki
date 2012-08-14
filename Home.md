@@ -77,7 +77,7 @@
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
 * [[PHP Subfolder example]]
 * [[PHP Session Upload Progress]]
-* Database integration ([[Working with Databases]])
+* Database integration ([[Working with Databases]])  
 ## Documentation for v.4 (old branch)
 
 ### Basic plugin information
