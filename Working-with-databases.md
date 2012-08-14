@@ -62,4 +62,3 @@ Now we must call the function, this time of the delete function.
 Go to the delete function and search this line : **if ($success) {** paste the following code over this.  
 >$this->delete_img($file_name);
 
-_If you find a mistake or want to provide feedback, just send me a message :)_
