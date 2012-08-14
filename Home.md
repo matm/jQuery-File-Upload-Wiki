@@ -78,6 +78,7 @@
 * [[PHP Subfolder example]]
 * [[PHP Session Upload Progress]]
 * Database integration ([[Working with Databases]])  
+
 ## Documentation for v.4 (old branch)
 
 ### Basic plugin information
