@@ -98,15 +98,14 @@ However, for browsers without support for [XHR](https://developer.mozilla.org/en
 This has been built-in and is currently supported by the latest versions of Mozilla Firefox and Google Chrome. Please have a look at the **resizeMaxWidth**, **resizeMaxHeight**, etc. [[Options]].
 
 ## Is it possible to drag&drop a folder of files?
-The current browser APIs only supports drag&drop of (multiple) files, not of folders.  
-See also [issue #573](https://github.com/blueimp/jQuery-File-Upload/issues/573).  
-However, it is possible to allow selecting a folder (instead of files) via the file input element by adding browser-vendor specific "directory" attributes:
+Yes, with the latest version of Google Chrome it is possible.  
+It is also possible to allow selecting a folder (instead of files) via the file input element by adding browser-vendor specific "directory" attributes, though this seems to be only supported in Google Chrome so far:
 
 ```html
 <input type="file" name="files[]" multiple directory webkitdirectory mozdirectory>
 ```
 
-Note that this currently only works in the latest versions of Google Chrome and Firefox.
+See also [issue #573](https://github.com/blueimp/jQuery-File-Upload/issues/573).
 
 ## How to clear the list of uploaded files?
 The example in the download package comes with code that retrieves and displays a list of existing files on page load.  
