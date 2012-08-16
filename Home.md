@@ -1,4 +1,4 @@
-# Documentation [11](113)
+# Documentation Overview
 
 ## Basic plugin information
 * [Demo page](http://blueimp.github.com/jQuery-File-Upload/) (and [[Demo implementation]] information).
