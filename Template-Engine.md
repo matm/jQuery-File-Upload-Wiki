@@ -1,7 +1,7 @@
 jQuery File Upload makes use of the [JavaScript Templates](https://github.com/blueimp/JavaScript-Templates) engine to render the list of files.
 You can find documentation for this template engine on the [project page](https://github.com/blueimp/JavaScript-Templates).
 
-However, you are not required to use this specific template engine and can replace it with a different implementation, by setting the **uploadTemplateId*, **downloadTemplateId**, **uploadTemplate** and **downloadTemplate** [[Options]]:
+However, you are not required to use this specific template engine and can replace it with a different implementation, by setting the **uploadTemplateId**, **downloadTemplateId**, **uploadTemplate** and **downloadTemplate** [[Options]]:
 
 ```js
 $('#fileupload').fileupload({
