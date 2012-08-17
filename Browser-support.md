@@ -11,6 +11,14 @@ Internet Explorer has no support for multiple file selection, but allows to add 
 **Note:**
 Safari on Windows has [a bug](http://stackoverflow.com/questions/7231054/file-input-size-issue-in-safari-for-multiple-file-selection) and reports a file size of 0 bytes when selecting multiple files. Selecting single files works.
 
+### Folder selection
+It is possible to select a complete folder structure, though this is currently only supported by Google Chrome.  
+To enable this feature, the following vendor-specific **directory** attributes have to be added to the file input field:
+
+```js
+<input type="file" name="files[]" multiple directory webkitdirectory mozdirectory>
+```
+
 ## Drag & Drop
 The following browsers support drag & drop:
 
@@ -24,10 +32,13 @@ IE has currently no support for drag & drop.
 **Note:**
 Safari on Windows has a bug that adds "￿" characters at the end of the file name or mangles the file name in another way and reports a file size of 0 bytes when dropping files. Trying to drop the same file(s) again seems to work.
 
+### Folder Drag&Drop
+It is possible to drag&drop a complete folder structure, though this is currently only supported by Google Chrome.
+
 ### Firefox 3.6
 The outdated v4 branch of the plugin supported drag & drop for Firefox 3.6, but since version 5 of the plugin, drag&drop is not supported on versions below Firefox 4 anymore (for multipart uploads).
 
-The reason for this is that Firefox 3.6 does not support the FormData interface for multipart form uploads and required extra code using the FileReader interface to built a multipart/form-data upload. This code was rather inefficient for large files and since version 4 of Firefox is stable and widespread and selecting files still works on Firefox 3.6, I (the developer) decided to remove the extra code for the rewritten version 5 of the plugin.
+The reason for this is that Firefox 3.6 does not support the FormData interface for multipart form uploads and required extra code using the FileReader interface to built a multipart/form-data upload. This code was rather inefficient for large files and since version 4 of Firefox is stable and widespread and selecting files still works on Firefox 3.6 the extra code has been removed for the rewritten version 5 of the plugin.
 
 It is still possible to enable drag & drop support on Firefox 3.6 with version 5 of the plugin by setting the multipart option to *false* (see [[Options]]).
 
