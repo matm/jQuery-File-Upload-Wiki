@@ -592,14 +592,14 @@ All callbacks are of type function and can also be bound as event listeners, usi
 
 ```js
 $('#fileupload')
-    .bind('fileuploaddestroy', function (e, data) {/* ... */})
     .bind('fileuploadadded', function (e, data) {/* ... */})
-    .bind('fileuploadstarted', function (e, data) {/* ... */})
     .bind('fileuploadsent', function (e, data) {/* ... */})
     .bind('fileuploadcompleted', function (e, data) {/* ... */})
     .bind('fileuploadfailed', function (e, data) {/* ... */})
+    .bind('fileuploaddestroy', function (e, data) {/* ... */})
+    .bind('fileuploaddestroyed', function (e, data) {/* ... */});
+    .bind('fileuploadstarted', function (e) {/* ... */})
     .bind('fileuploadstopped', function (e) {/* ... */})
-    .bind('fileuploaddestroyed', function (e) {/* ... */});
 ```
 
 ### destroy
