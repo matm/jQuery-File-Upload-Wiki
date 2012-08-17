@@ -79,12 +79,12 @@ Alternatively, you could also provide your own **window.tmpl** template method w
 window.tmpl = function (id) {
     if (id === 'template-upload') {
         return function (data) {
-            return '<tr><!-- ... --></tr>';
+            return '<tr class="template-upload"><!-- ... --></tr>';
         };
     }
     if (id === 'template-download') {
         return function (data) {
-            return '<tr><!-- ... --></tr>';
+            return '<tr class="template-download"><!-- ... --></tr>';
         };
     }
 }
