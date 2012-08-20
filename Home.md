@@ -40,7 +40,7 @@
 * Another [Django integration](https://github.com/sigurdga/django-jquery-file-upload) (user contribution).
 * Django >= 1.2.5 integration with CSRF enabled [repo](https://github.com/miki725/Django-jQuery-File-Uploader-Integration-demo) [wiki](https://github.com/miki725/Django-jQuery-File-Uploader-Integration-demo/wiki) (user contribution).
 * [web2py (Python framework) port](https://github.com/hellais/jQuery-File-Upload) (user contribution).
-* Pyramid port (https://github.com/grooverdan/pyramid-jQuery-File-Upload-demo) (user contribution).
+* [Pyramid demo port](https://github.com/grooverdan/pyramid-jQuery-File-Upload-demo) (user contribution).
 
 ### Go
 * [`jfu` package](https://github.com/jmcvetta/jfu) for integration with Go applications, backed by MongoDB + Memcache  (user contribution).
