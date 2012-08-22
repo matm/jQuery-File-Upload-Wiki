@@ -81,16 +81,17 @@ The bulk of this code is primarily the Upload Controller.  This will replace the
               $files = $adapter->getFileInfo();
               foreach ($files as $file => $info) {
                   $name = $adapter->getFileName($file);
+
+                  // you could apply a filter like this too (if you want), to rename the file:     
+                  //  $name = ExampleLibrary::generateFilename($name);
+                  //  $adapter->addFilter('rename', $dest_path . '/' .$newName);
+
                   // file uploaded & is valid
                   if (!$adapter->isUploaded($file)) continue; 
                   if (!$adapter->isValid($file)) continue;
     
                   // receive the files into the user directory
                   $adapter->receive($file); // this has to be on top
-           
-                        // you could apply a filter like this too (if you want), to rename the file:     
-                        //  $filterFileRename = new Zend_Filter_File_Rename(array('target' => $rename));
-                        //  $filterFileRename->filter($name); // this has to use name
     
                   $fileclass = new stdClass();
     
