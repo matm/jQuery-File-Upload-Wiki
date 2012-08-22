@@ -84,7 +84,7 @@ The bulk of this code is primarily the Upload Controller.  This will replace the
 
                   // you could apply a filter like this too (if you want), to rename the file:     
                   //  $name = ExampleLibrary::generateFilename($name);
-                  //  $adapter->addFilter('rename', $dest_path . '/' .$newName);
+                  //  $adapter->addFilter('rename', $user_path . '/' .$name);
 
                   // file uploaded & is valid
                   if (!$adapter->isUploaded($file)) continue; 
