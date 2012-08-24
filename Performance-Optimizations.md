@@ -13,17 +13,17 @@ The more websites use this CDN instead of hosting their JavaScript libraries on 
 The easiest way to use it is to include the libraries the following way (using a protocol relative URL):
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 ```
 
-An older version of the plugin made use of [[jQuery UI]], which can also be used via Google's CDN:
+Another branch of the plugin makes use of [[jQuery UI]], which can also be used via Google's CDN:
 
 ```js
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
 ```
 
 Alongside the JS libraries, Google also hosts the CSS and accompanying images files for several [jQuery UI themes](http://jqueryui.com/themeroller/), e.g. the "basic" theme:
 
 ```html
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/themes/base/jquery-ui.css">
 ```
