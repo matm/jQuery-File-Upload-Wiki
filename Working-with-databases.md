@@ -30,8 +30,8 @@ So now you have to write a function for the SQL Query, copy & paste the followin
 >	die(mysql_error());  
 >	}  
 >	$result = mysql_query($query);  
->	return $result;  
 >	mysql_close($link);  
+>	return $result;  
 >	}  
 
 ## Add file details to database
