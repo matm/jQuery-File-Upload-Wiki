@@ -62,6 +62,16 @@ $(document).bind('drop dragover', function (e) {
 
 Note that preventing the default action for both the "drop" and "dragover" events is required to disable the default browser drop action.
 
+### pasteZone
+The paste target [jQuery object](http://api.jquery.com/Types/#jQuery), by the default the complete document.  
+Set to null or an empty jQuery collection to disable paste support:
+
+* Type: *jQuery Object*
+* Default: `$(document)`
+
+**Note:**  
+Uploading files via copy&paste is currently only supported by Google Chrome.
+
 ### fileInput
 The file input field [jQuery object](http://api.jquery.com/Types/#jQuery), that is listened for change events.  
 If undefined, it is set to the file input fields inside of the widget element on plugin initialization.  
