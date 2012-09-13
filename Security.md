@@ -49,6 +49,8 @@ $upload_handler = new UploadHandler(array(
 ));
 ```
 
+Please note that the **accept_file_types** option isn't meant to prevent attackers from uploading and executing PHP scripts. This is done with a **.htaccess** directive explained in the following paragraphs.
+
 The PHP implementation stores uploaded files in the pre-defined directory "files". This directory contains a file **.htaccess** that is absolutely required as it contains directives for Apache to enforce security restrictions:
 
 ```
