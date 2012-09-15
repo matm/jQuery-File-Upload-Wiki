@@ -14,6 +14,9 @@ The easiest way to submit additional form data is by adding additional input fie
 By default, the plugin calls [jQuery's serializeArray method](http://api.jquery.com/serializeArray) on the upload form to gather additional form data for all input fields (including hidden fields).  
 The value of these form fields will be sent to the server along with the selected files.
 
+**Note:**
+if you set formData option, these fields won't be send to the server: the formData object will override them.
+
 ## Adding additional form data programmatically
 The formData option (see [[Options]] documentation) can be used to set additional form data programmatically, e.g.:
 
