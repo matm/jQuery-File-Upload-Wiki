@@ -16,7 +16,7 @@ The value of these form fields will be sent to the server along with the selecte
 
 **Note:**  
 If you set the formData option, these fields won't be send to the server, since the formData object will override them.  
-You can however create a formData object of the form fields manually using jQuery's [serializeArray](http://api.jquery.com/serializeArray/) method:
+You can however create a formData object of the form fields manually using [jQuery's serializeArray method](http://api.jquery.com/serializeArray) method:
 
 ```js
 var formData = $('form').serializeArray();
@@ -81,6 +81,5 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
 
 ## How to retrieve and set form data asynchronously.
 See how to [[submit files asynchronously]].
-
 
 
