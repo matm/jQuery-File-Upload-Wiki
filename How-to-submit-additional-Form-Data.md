@@ -19,7 +19,7 @@ If you set the formData option, these fields won't be send to the server, since 
 You can however create a formData object of the form fields manually using jQuery's [serializeArray](http://api.jquery.com/serializeArray/) method:
 
 ```js
-var formData =$('form').serializeArray();
+var formData = $('form').serializeArray();
 ```
 
 ## Adding additional form data programmatically
