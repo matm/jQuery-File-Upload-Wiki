@@ -60,6 +60,7 @@
 * An [ASP.NET MVC 3 example](https://github.com/maxpavlov/jQuery-File-Upload.MVC3) with the same functionality as an original plugin demo + large files upload support for ASP.NET (contribution from Max Pavlov)
 * A fully functional github hosted [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net) (contribution by Iain Ballard), based on ashx handlers. Provides full upload / delete / thumbnail functionality.
 * [.NET File Upload Handler](https://github.com/swhitley/jQuery-File-Upload) implementation by [Shannon Whitley](https://github.com/swhitley)
+* [ASP.NET Multiple File Upload With Drag & Drop and Progress Bar Using HTML5](http://www.codeproject.com/Articles/460142/ASP-NET-Multiple-File-Upload-With-Drag-Drop-and-Pr)
 
 ### Ruby (on Rails)
 * [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example) (user contribution).
