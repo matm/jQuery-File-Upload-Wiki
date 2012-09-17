@@ -19,7 +19,7 @@
 * Using the plugin with [[jQuery UI]].
 * [[How to submit additional Form Data]].
 * How to [[submit files asynchronously]].
-* [[Upload multiple resolutions of one image with multiple resize options]]
+* [[Upload multiple resolutions of one image with multiple resize options]].
 * [[Multiple File Upload Widgets on the same page]]
 * [[Multiple File Input Fields in one Form]].
 * How to implement [[Chunked file uploads]].
