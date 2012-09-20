@@ -1,5 +1,5 @@
 ## What is the maximum file size limitation?
-It is possible to upload files up to 4 GB with the jQuery File Upload plugin.
+It is possible to upload files up to **4 GB** with the jQuery File Upload plugin.  
 The restriction of 4 GB is due to some browser limitations, which might be fixed in future updates to those browsers:
 
 Firefox bug references:  
