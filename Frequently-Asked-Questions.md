@@ -2,11 +2,11 @@
 It is possible to upload files up to 4 GB with the jQuery File Upload plugin.
 The restriction of 4 GB is due to some browser limitations, which might be fixed in future updates to those browsers:
 
-Firefox bug references:
-https://bugzilla.mozilla.org/show_bug.cgi?id=215450
+Firefox bug references:  
+https://bugzilla.mozilla.org/show_bug.cgi?id=215450  
 https://bugzilla.mozilla.org/show_bug.cgi?id=660159
 
-Chrome bug references:
+Chrome bug references:  
 http://code.google.com/p/chromium/issues/detail?id=139815
 
 ## Does the plugin require a form or file input field?
