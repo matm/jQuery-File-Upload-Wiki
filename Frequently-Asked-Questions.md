@@ -1,3 +1,14 @@
+## What is the maximum file size limitation?
+It is possible to upload files up to 4 GB with the jQuery File Upload plugin.
+The restriction of 4 GB is due to some browser limitations, which might be fixed in future updates to those browsers:
+
+Firefox bug references:
+https://bugzilla.mozilla.org/show_bug.cgi?id=215450
+https://bugzilla.mozilla.org/show_bug.cgi?id=660159
+
+Chrome bug references:
+http://code.google.com/p/chromium/issues/detail?id=139815
+
 ## Does the plugin require a form or file input field?
 If you define the *url* (and probably *paramName*) [[Options]], you can call the plugin on any element - no form or file input field required - and the drag&drop functionality will still work.  
 To support browsers without [XHR](https://developer.mozilla.org/en/xmlhttprequest) file upload capabilities, a file input field has to be part of the widget, or defined using the *fileInput* option.
@@ -26,7 +37,7 @@ An example limiting files to PNG images:
 
 Note that this will not limit files added by drag&drop and is not supported across all browsers.
 
-## Why do I get an empty file upload result when uploading large files?
+## Why do I get an empty file upload result when uploading large files (PHP)?
 You probably have a server-side setting preventing you to upload larger files.  
 Try adding the following to a [.htaccess](http://httpd.apache.org/docs/current/howto/htaccess.html) file in the php directory:
 
@@ -43,11 +54,6 @@ post_max_size = 99999
 ```
 
 If this also doesn't work, contact your hosting provider.
-
-## What is the maximum file size limitation?
-It is possible to upload large files (> 1 GB) with the jQuery File Upload plugin, but with some reservations.  
-HTTP might not be the ideal protocol for uploading large files, but the jQuery File Upload plugin doesn't put any layer on top of the HTTP upload implementation of the browser.  
-So any files that can be uploaded with a simple HTML form can be uploaded with the jQuery File Upload plugin as well.
 
 ## How to prevent the page from becoming unresponsive, when adding a large number of image files?
 Lower the **previewMaxSourceFileSize** setting or remove the "preview" class from the upload template to avoid rendering large preview images, which have the potential to block the main JS thread.
