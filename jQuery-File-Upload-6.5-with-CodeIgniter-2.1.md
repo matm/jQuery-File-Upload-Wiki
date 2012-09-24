@@ -210,7 +210,6 @@ class Upload extends CI_Controller {
 
 
        }
-  }
 
 //Function for the upload : return true/false
   public function do_upload() {
