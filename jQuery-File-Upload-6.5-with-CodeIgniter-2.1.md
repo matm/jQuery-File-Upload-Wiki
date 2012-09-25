@@ -162,6 +162,11 @@ class Upload extends CI_Controller {
 
        if ($this->do_upload()) {
             
+            // Codeigniter Upload class alters name automatically (e.g. periods are escaped with an
+            //underscore) - so use the altered name for thumbnail
+            $data = $this->upload->data();
+            $name = $data['file_name'];
+
             //If you want to resize 
             $config['new_image'] = $this->getPath_img_thumb_upload_folder();
             $config['image_library'] = 'gd2';
@@ -174,8 +179,6 @@ class Upload extends CI_Controller {
             $this->load->library('image_lib', $config);
 
             $this->image_lib->resize();
-
-           $data = $this->upload->data();
 
             //Get info 
             $info = new stdClass();
