@@ -3,7 +3,6 @@
 * [js/jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-ui.js) is an extension to *jquery.fileupload.js*. The UI version expects JSON as the response content and adds a complete user interface.
 * [js/jquery.fileupload-fp.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-fp.js) extends the basic or UI version of the fileupload plugin and adds image processing (image resizing) functionality.
 * [js/jquery.iframe-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js) adds iframe transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
-* [js/locale.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/locale.js) is an example localization file used by the UI version.
 * [js/main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js) is an example how to initialize and use the File Upload plugin.
 * [js/cors/jquery.postmessage-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.postmessage-transport.js) adds [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
 * [js/cors/jquery.xdr-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/cors/jquery.xdr-transport.js) adds XDomainRequest transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
@@ -22,7 +21,6 @@
 
 ## Google App Engine Go
 * [server/gae-go/app/main.go](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/app/main.go) is an example for a file upload handler component implemented in Go.
-* [server/gae-go/resize/resize.go](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/resize/resize.go) is a Go image resizing library.
 * [server/gae-go/app.yaml](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/gae-go/app.yaml) is the configuration file for the Go App Engine application.
 
 ## Google App Engine Python
