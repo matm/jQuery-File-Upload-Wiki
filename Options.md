@@ -594,7 +594,7 @@ The download template function - see [[Template Engine]].
 The ID of the download template, given as parameter to the [tmpl()](https://github.com/blueimp/JavaScript-Templates) method to set the **downloadTemplate** option.
 
 * Type: *string*
-* Default: `'template-upload'`
+* Default: `'template-download'`
 
 ## Additional Callback Options for the UI version
 
