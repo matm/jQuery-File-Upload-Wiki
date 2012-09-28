@@ -67,6 +67,7 @@
   Is able to use XHR uploads directly to S3, despite S3 not supporting `Access-Control-Allow-Origin`, by hosting an (iframed) upload form on S3 itself (tricksy!) 
 * Using the plugin to [[Upload directly to S3]] (user contribution).
   Uses the iframe-transport fallback, so lacks niceties like the progress bar
+* Using the plugin to [upload directly to S3](http://pjambet.github.com/blog/direct-upload-to-s3/) with new CORS support
 * Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V6]] (user contribution)
 * [Rails 3.1.3 without asset-pipeline demo app](https://github.com/banditj/fily/tree/no-asset-pipeline) (user contribution)
 * [Rails 3.2.8 wit asset-pipeline demo app](https://github.com/jalagrange/bootstrap_uploader) (Forked and improved from banditj user contribution)
