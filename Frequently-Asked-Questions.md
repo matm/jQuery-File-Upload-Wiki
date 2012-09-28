@@ -42,15 +42,21 @@ You probably have a server-side setting preventing you to upload larger files.
 Try adding the following to a [.htaccess](http://httpd.apache.org/docs/current/howto/htaccess.html) file in the php directory:
 
 ```
-php_value upload_max_filesize 99999M
-php_value post_max_size 99999M
+php_value upload_max_filesize 9G
+php_value post_max_size 9G
+php_value max_execution_time 200
+php_value max_input_time 200
+php_value memory_limit 256M
 ```
 
-If this doesn't work, try creating a [php.ini](http://www.php.net/manual/en/ini.php) file in the php directory and add the following two lines:
+If this doesn't work, try creating a [php.ini](http://www.php.net/manual/en/ini.php) file in the php directory and add the following lines:
 
 ```
-upload_max_filesize = 99999
-post_max_size = 99999
+upload_max_filesize 9G
+post_max_size 9G
+max_execution_time 200
+max_input_time 200
+memory_limit 256M
 ```
 
 If this also doesn't work, contact your hosting provider.
