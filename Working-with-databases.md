@@ -8,10 +8,10 @@ _Search this line - > **$this->options = array(**_
  Add the following Code in the next lines :
 
 >// mysql connection settings  
->	        'database' => **YOUR DATABASE**,  
->	        'host' => **localhost**,  
->	        'username' => **YOUR USERNAME**,  
->	        'password' => **YOUR PASSWORD**,  
+>	        'database' => '**YOUR DATABASE**',  
+>	        'host' => '**localhost**',  
+>	        'username' => '**YOUR USERNAME**',  
+>	        'password' => '**YOUR PASSWORD**',  
 >// end
 
 So now you have to write a function for the SQL Query, copy & paste the following code for example after the **handle_file_upload** function :
