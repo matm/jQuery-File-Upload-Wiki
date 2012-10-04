@@ -507,6 +507,8 @@ By default, unlimited file uploads are allowed.
 **Note**:  
 The **maxNumberOfFiles** setting acts like an internal counter and will adjust automatically when files are uploaded or deleted. That is, if you set it to **2** and upload one file (successfully), it will be decreased to **1**. If you delete one of the existing files, it will be increased again.
 
+See also issue [#1747](https://github.com/blueimp/jQuery-File-Upload/issues/1747).
+
 ### maxFileSize
 The maximum allowed file size in bytes, by default unlimited.
 
