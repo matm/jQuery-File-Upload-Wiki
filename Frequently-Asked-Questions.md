@@ -108,7 +108,7 @@ It even displays the correct error message, e.g. "Error: Service Unavailable" fo
 However, for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads - which includes Internet Explorer and Opera - the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) is used and there is no way to retrieve the HTTP status code from an iframe load event.
 
 ## Is it possible to resize images prior to uploading?
-This has been built-in and is currently supported by the latest versions of Mozilla Firefox and Google Chrome. Please have a look at the **resizeMaxWidth**, **resizeMaxHeight**, etc. [[Options]].
+This has been built-in and is currently supported by the latest versions of Mozilla Firefox and Google Chrome. Please have a look at the **process** [[Options]].
 
 ## Is it possible to drag&drop a folder of files?
 Yes, with the latest version of Google Chrome it is possible.  
