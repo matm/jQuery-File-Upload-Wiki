@@ -30,4 +30,4 @@ The code snippet above makes use of the [canvas.toBlob](https://github.com/bluei
 Due to the [Same Origin policy](http://en.wikipedia.org/wiki/Same_origin_policy), which also applies to [the canvas element](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#security-with-canvas-elements), it is not possible to load an image directly from another domain.  
 Therefore one of the requirements for the code snippet above is a server-side proxy to retrieve the image data: The [$.getImageData](http://www.maxnov.com/getimagedata/) library has to be included along with the jQuery File Upload libraries.
 
-The example contains a hard-coded reference to the content type "image/jpeg", you will want to change this out depending on the image being upload.  You could update your proxy server script to return the content type.
+The example contains a hard-coded reference to the content type "image/jpeg", you will want to change this out depending on the image being uploaded.  You could update your proxy server script to return the content type.
