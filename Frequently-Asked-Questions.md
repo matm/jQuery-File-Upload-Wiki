@@ -160,6 +160,10 @@ class CustomUploadHandler extends UploadHandler {
 $upload_handler = new CustomUploadHandler();
 ```
 
+### Why does string comparison fail with non-ASCII file names returned from the server?
+Depending on your server-environment, you might have to do [Unicode normalization](http://unicode.org/faq/normalization.html), to achieve the same binary representation of strings with Unicode characters.  
+See also issue [#1339](https://github.com/blueimp/jQuery-File-Upload/issues/1339).
+
 ### Does the plugin support HTTP status codes?
 The File Upload plugin will properly handle HTTP response codes when the browser supports [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.
 It even displays the correct error message, e.g. "Error: Service Unavailable" for the following HTTP header :
