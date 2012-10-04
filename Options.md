@@ -504,6 +504,9 @@ By default, unlimited file uploads are allowed.
 * Type: *number*
 * Example: `10`
 
+**Note**:  
+The **maxNumberOfFiles** setting acts like an internal counter and will adjust automatically when files are uploaded or deleted. That is, if you set it to **2** and upload one file (successfully), it will be decreased to **1**. If you delete one of the existing files, it will be increased again.
+
 ### maxFileSize
 The maximum allowed file size in bytes, by default unlimited.
 
@@ -513,7 +516,7 @@ The maximum allowed file size in bytes, by default unlimited.
 * Example: `5000000`
 
 ### minFileSize
-The minimum allowed file size, by default 1 byte.
+The minimum allowed file size, by default *undefined* (can be 0 bytes).
 
 **Note:** This option has only an effect for browsers supporting the [File API](https://developer.mozilla.org/en/DOM/file).
 
