@@ -143,6 +143,23 @@ memory_limit 256M
 
 If this also doesn't work, contact your hosting provider.
 
+### Is there a problem uploading files with non-ASCII characters (PHP, Windows server)?
+If your non-ASCII file names get uploaded with strange characters like Ã¤, Ã¶ or Ã¼ you probably need to apply the [utf8-decode()](http://de.php.net/manual/en/function.utf8-decode.php) method on the file names of uploaded files, e.g. by overriding the *trim_file_name* method:
+
+```php
+<?php
+require('upload.class.php');
+
+class CustomUploadHandler extends UploadHandler {
+    protected trim_file_name($name, $type, $index) {
+        $name = utf8_decode($name);
+        return parent::trim_file_name($name, $type, $index);
+    }
+}
+
+$upload_handler = new CustomUploadHandler();
+```
+
 ### Does the plugin support HTTP status codes?
 The File Upload plugin will properly handle HTTP response codes when the browser supports [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.
 It even displays the correct error message, e.g. "Error: Service Unavailable" for the following HTTP header :
