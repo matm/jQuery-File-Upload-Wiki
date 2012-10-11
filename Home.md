@@ -71,6 +71,8 @@
 * Rails + (Carrierwave || Dragonfly) [[Rails-setup-for-V6]] (user contribution)
 * [Rails 3.1.3 without asset-pipeline demo app](https://github.com/banditj/fily/tree/no-asset-pipeline) (user contribution)
 * [Rails 3.2.8 with asset-pipeline demo app](https://github.com/jalagrange/bootstrap_uploader) (Forked and improved from banditj user contribution)
+* [Screencast 381 - jQuery File Upload](http://railscasts.com/episodes/381-jquery-file-upload) (Ryan Bates, RailsCasts)
+* [Screencast 383 - Uploading to Amazon S3](http://railscasts.com/episodes/383-uploading-to-amazon-s3) (Ryan Bates, RailsCasts)
 
 ### PHP
 * [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
