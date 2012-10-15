@@ -13,68 +13,24 @@ For chunked uploads to work in Mozilla Firefox 4-6 (XHR upload capable Firefox v
 
 ## Server-side setup
 The [example PHP upload handler](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/upload.php) supports chunked uploads out of the box.
-You only need to set the *discard_aborted_uploads* option to *false*:
 
-```php
-<?php
-// ...
-'discard_aborted_uploads' => false
-// ...
-?>
-```
-
-To still be able to discard partial uploads if the user aborts the upload process, a DELETE request for the uploaded file has to be issued after every cancel action, e.g. with the following code:
-
-```js
-$('#fileupload').bind('fileuploadfail', function (e, data) {
-    if (data.errorThrown === 'abort') {
-        $.ajax({
-            url: 'server/php/?' + $.param({
-                file: data.files[0].name
-            }),
-            type: 'DELETE'
-        });
-    }
-});
-```
-
-To support chunked uploads, the upload handler compares the given file name and file size (transmitted via *X-File-Name* and *X-File-Size* headers) with already uploaded files to determine if the current blob has to be appended to an existing file.  
-If your setup requires other information than the file name for chunked uploads (e.g. a file ID), this information could be provided via session parameters.
-
-### Chunk index and total number of chunks
-
-The plugin exposes the current chunk index and the total number of chunks to upload via two config variables.
-They can be used the following way to transmit them to the server, e.g. as extra HTTP headers:
-
-
-```js
-$('#fileupload').fileupload({
-    maxChunkSize: 100000,
-    beforeSend: function (jqXHR, settings) {
-        if (settings.chunksNumber) {
-            jqXHR.setRequestHeader('X-Chunk-Index',
-settings.chunkIndex);
-            jqXHR.setRequestHeader('X-Chunks-Number',
-settings.chunksNumber);
-        }
-    }
-});
-```
+To support chunked uploads, the upload handler makes use of the [Content-Range header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16), which is transmitted by the plugin for each chunk.
 
 ## How do chunked uploads work?
 If *maxChunkSize* is set to an integer value greater than 0, the File Upload plugin splits up files with a file size bigger than *maxChunkSize* into multiple [blobs](https://developer.mozilla.org/en/DOM/Blob) and submits each of these blobs to the upload url in sequential order.
+
+The byte range of the blob is transmitted via the [Content-Range header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16).
 
 Chunked uploads (as well as all non-multipart uploads) set the following custom headers:
 
 ```js
 {
     'X-File-Name': file.name,
-    'X-File-Type': file.type,
-    'X-File-Size': file.size
+    'X-File-Type': file.type
 }
 ```
 
-These headers transmit the original attributes of the chunked file and allow the server-side application to combine the uploaded blobs into one file.
+For non-multipart uploads, the *X-File-Type* header is omitted since it is transmitted via the *Content-Type* header.
 
 ## Callbacks
 Chunked file uploads trigger the same callbacks as normal file uploads, e.g. the *done* callback (see [[API]]) will only be triggered after the last blob has been successfully uploaded.
@@ -96,7 +52,7 @@ $('#fileupload').fileupload({
 By default, browsers don't allow custom headers on cross-site file uploads, if they are not explicitly defined as allowed with the following server-side headers:
 
 ```
-Access-Control-Allow-Headers X-File-Name,X-File-Type,X-File-Size
+Access-Control-Allow-Headers X-File-Name,X-File-Type
 ```
 
 ## Resuming file uploads
