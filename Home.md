@@ -33,6 +33,17 @@
 
 ## Server-side
 
+### PHP
+* [[PHP user directories]]
+* [[PHP Session Upload Progress]]
+* Database integration ([[Working with Databases]]) 
+* [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
+* [jQuery File Upload + CakePHP 2.1.x](https://github.com/hugodias/FileUpload) (user contribution)
+* [Source for Amazon S3 Upload with PHP SDK](https://s3.amazonaws.com/parsec_it_examples/s3-php.zip) by [roberto colonello](https://github.com/robertocolonello)
+* [[Zend-framework]] integration (user contribution).
+* [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
+* [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
+
 ### Python (Google App Engine, Django, web2py)
 * How to use the plugin with [[Google App Engine]] (Python).
 * Django integration [tutorial](http://garmoncheg.blogspot.com/2011/07/django-creating-multi-upload-form.html) and [demo code](https://github.com/garmoncheg/django_multiuploader_demo) (user contribution).
@@ -73,17 +84,6 @@
 * [Rails 3.2.8 with asset-pipeline demo app](https://github.com/jalagrange/bootstrap_uploader) (Forked and improved from banditj user contribution)
 * [Screencast 381 - jQuery File Upload](http://railscasts.com/episodes/381-jquery-file-upload) (Ryan Bates, RailsCasts)
 * [Screencast 383 - Uploading to Amazon S3](http://railscasts.com/episodes/383-uploading-to-amazon-s3) (Ryan Bates, RailsCasts)
-
-### PHP
-* [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
-* [jQuery File Upload + CakePHP 2.1.x](https://github.com/hugodias/FileUpload) (user contribution)
-* [Source for Amazon S3 Upload with PHP SDK](https://s3.amazonaws.com/parsec_it_examples/s3-php.zip) by [roberto colonello](https://github.com/robertocolonello)
-* [[Zend-framework]] integration (user contribution).
-* [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
-* [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
-* [[PHP Subfolder example]]
-* [[PHP Session Upload Progress]]
-* Database integration ([[Working with Databases]])  
 
 ## Documentation for v.4 (old branch)
 
