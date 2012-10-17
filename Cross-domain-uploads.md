@@ -21,7 +21,7 @@ For cross-browser compatibility, the header must be set as response to both the 
 If the *multipart* option is set to *false* or [[Chunked file uploads]] are enabled, you also need to set [Access-Control-Allow-Headers](https://developer.mozilla.org/En/HTTP_access_control#Access-Control-Allow-Headers) to allow custom headers used by the plugin to transmit file meta information:
 
 ```
-Access-Control-Allow-Headers: X-File-Name,X-File-Type,X-File-Size
+Access-Control-Allow-Headers: X-File-Name,X-File-Type
 ```
 
 If you need to send along cookies (e.g. for authentication), set the *withCredentials* [$.ajax()](http://api.jquery.com/jQuery.ajax/) setting as fileupload widget option:
