@@ -37,10 +37,6 @@ The type of data that is expected back from the server.
 
 ## General Options
 
-### namespace
-The namespace used for event handler binding on the dropZone and fileInput collections.  
-If not set, the name of the widget ("fileupload") is used.
-
 * Type: *string*
 * Example: `'myfileupload'`
 
