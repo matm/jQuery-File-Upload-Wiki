@@ -58,6 +58,8 @@ All versions of Internet Explorer will also update the global progress bar after
 Depending on the size of the file, the operating system platform and the network throughput, the number of progress events triggered might differ.  
 e.g. Google Chrome might only trigger one progress event for the upload of a 100KB file on Windows XP, but trigger multiple progress events for the same file on Windows 7 and Mac OSX (tested with Google Chrome version 22.0.1229.94).
 
+Please also note that some programs that analyze network traffic are known to interfere with the number of progress events triggered, e.g. Web Debugging Proxies or Firewall/Antivirus software.
+
 ## Image previews
 The following browsers have support for image previews prior to uploading files:
 
