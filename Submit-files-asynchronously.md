@@ -23,7 +23,7 @@ $('#fileupload').fileupload({
     add: function (e, data) {
         $.getJSON('/example/url', function (result) {
             data.formData = result; // e.g. {id: 123}
-            $.blueimpUI.fileupload.prototype
+            $.blueimp.fileupload.prototype
                 .options.add.call(this, e, data);
         });
     } 
