@@ -65,7 +65,7 @@ $('#fileupload').fileupload({
         var that = this;
         $.getJSON('server/php/', {file: data.files[0].name}, function (file) {
             data.uploadedBytes = file && file.size;
-            $.blueimpUI.fileupload.prototype
+            $.blueimp.fileupload.prototype
                 .options.add.call(that, e, data);
         });
     }
@@ -108,7 +108,7 @@ $('#fileupload').fileupload({
             return;
         }
         data.context.removeData('retries');
-        $.blueimpUI.fileupload.prototype
+        $.blueimp.fileupload.prototype
             .options.fail.call(this, e, data);
     }
 });
