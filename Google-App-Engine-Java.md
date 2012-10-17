@@ -39,7 +39,7 @@ $(function() {
           var that = this;
           data.url = response.url;
           /* configure the plugin with the /_ah/upload url */
-          $.blueimpUI.fileupload.prototype.options.add.call(that, e, data);
+          $.blueimp.fileupload.prototype.options.add.call(that, e, data);
         }
       });
     });
