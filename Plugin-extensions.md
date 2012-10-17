@@ -1,4 +1,4 @@
-The recommended way to extend the jQuery File Upload plugin is by using the extension mechanism of the [jQuery UI Widget Factory](http://docs.jquery.com/UI_Developer_Guide#The_widget_factory).  
+The recommended way to extend the jQuery File Upload plugin is by using the extension mechanism of the [jQuery UI Widget Factory](http://api.jqueryui.com/jQuery.widget/).  
 This allows to override default [[Options]] (including callback methods) as well as methods of the File Upload widget class.
 
 ## Example on how to override callbacks and add additional options
@@ -6,7 +6,7 @@ The following is an example on how to create a custom File Upload widget that ad
 It is a simplified version of the plugin extension that is used for the demo (see [[Demo Implementation]]).
 
 ```js
-$.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
+$.widget('blueimp.fileupload', $.blueimp.fileupload, {
 
     options: {
         authenticityTokenName: 'request_authenticity_token',
@@ -14,7 +14,7 @@ $.widget('blueimpUIX.fileupload', $.blueimpUI.fileupload, {
             var fu = $(this).data('fileupload');
             data.url = data.url &&
                 fu._addUrlParams(data.url, fu._getAuthenticityToken());
-            $.blueimpUI.fileupload.prototype
+            $.blueimp.fileupload.prototype
                 .options.destroy.call(this, e, data);
         }
     },
