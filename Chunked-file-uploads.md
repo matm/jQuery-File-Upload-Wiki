@@ -19,16 +19,9 @@ To support chunked uploads, the upload handler makes use of the [Content-Range h
 ## How do chunked uploads work?
 If *maxChunkSize* is set to an integer value greater than 0, the File Upload plugin splits up files with a file size bigger than *maxChunkSize* into multiple [blobs](https://developer.mozilla.org/en/DOM/Blob) and submits each of these blobs to the upload url in sequential order.
 
-The byte range of the blob is transmitted via the [Content-Range header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16).
-
-Chunked uploads (as well as all non-multipart uploads) set the following custom headers:
-
-```js
-{
-    'X-File-Name': file.name,
-    'X-File-Type': file.type
-}
-```
+The byte range of the blob is transmitted via the [Content-Range header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16).  
+The file name of the blob is transmitted via the **Content-Disposition** header.  
+For multipart chunked uploads, the file type is transmitted via the **Content-Description** header.
 
 For non-multipart uploads, the *X-File-Type* header is omitted since it is transmitted via the *Content-Type* header.
 
@@ -49,10 +42,10 @@ $('#fileupload').fileupload({
 ```
 
 ## Cross-site chunked uploads
-By default, browsers don't allow custom headers on cross-site file uploads, if they are not explicitly defined as allowed with the following server-side headers:
+By default, browsers don't allow all headers used for cross-site file uploads, if they are not explicitly defined as allowed with the following server-side headers:
 
 ```
-Access-Control-Allow-Headers X-File-Name,X-File-Type
+Access-Control-Allow-Headers Content-Type, Content-Range, Content-Disposition, Content-Description
 ```
 
 ## Resuming file uploads
