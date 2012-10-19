@@ -1,12 +1,11 @@
 ## Multiple File selection
 The following browsers support multiple file selection:
 
-* Firefox 3.6+
-* Safari 5+
 * Google Chrome
-* Opera 11+
-
-Internet Explorer has no support for multiple file selection, but allows to add multiple files to the upload queue by selecting files multiple times.
+* Apple Safari 5.0+
+* Mozilla Firefox 3.6+
+* Opera 11.0+
+* Microsoft Internet Explorer 10.0+
 
 **Note:**
 Safari on Windows has [a bug](http://stackoverflow.com/questions/7231054/file-input-size-issue-in-safari-for-multiple-file-selection) and reports a file size of 0 bytes when selecting multiple files. Selecting single files works.
@@ -22,12 +21,11 @@ To enable this feature, the following vendor-specific **directory** attributes h
 ## Drag & Drop
 The following browsers support drag & drop:
 
-* Firefox 4+
-* Safari 5+
 * Google Chrome
-* Opera 12+
-
-IE has currently no support for drag & drop.
+* Apple Safari 5.0+
+* Mozilla Firefox 4.0+
+* Opera 12.0+
+* Microsoft Internet Explorer 10.0+
 
 **Note:**
 Safari on Windows has a bug that adds "￿" characters at the end of the file name or mangles the file name in another way and reports a file size of 0 bytes when dropping files. Trying to drop the same file(s) again seems to work.
@@ -35,24 +33,14 @@ Safari on Windows has a bug that adds "￿" characters at the end of the file n
 ### Folder Drag&Drop
 It is possible to drag&drop a complete folder structure, though this is currently only supported by Google Chrome.
 
-### Firefox 3.6
-The outdated v4 branch of the plugin supported drag & drop for Firefox 3.6, but since version 5 of the plugin, drag&drop is not supported on versions below Firefox 4 anymore (for multipart uploads).
-
-The reason for this is that Firefox 3.6 does not support the FormData interface for multipart form uploads and required extra code using the FileReader interface to built a multipart/form-data upload. This code was rather inefficient for large files and since version 4 of Firefox is stable and widespread and selecting files still works on Firefox 3.6 the extra code has been removed for the rewritten version 5 of the plugin.
-
-It is still possible to enable drag & drop support on Firefox 3.6 with version 5 of the plugin by setting the multipart option to *false* (see [[Options]]).
-
 ## Upload progress
 The following browsers have complete support for upload progress indication:
 
-* Firefox 4+
-* Safari 5+
 * Google Chrome
-* Opera 12+
-
-Firefox 3.6 and Opera 11.1 have partial upload progress support via the global progress bar, which will update after each iframe based upload with the percentage of the uplaoded files compared to all file selections in the upload queue. This is possible as those browsers support the File API and report the file size of the uploaded files, although they lack the interfaces for XMLHttpRequest uploads.
-
-All versions of Internet Explorer will also update the global progress bar after each iframe based upload. However since IE does not report the file size, the global progress bar will measure each uploaded file the same without regard to the size of the uploaded file.
+* Apple Safari 5.0+
+* Mozilla Firefox 4.0+
+* Opera 12.0+
+* Microsoft Internet Explorer 10.0+
 
 **Note:**  
 Depending on the size of the file, the operating system platform and the network throughput, the number of progress events triggered might differ.  
@@ -63,20 +51,20 @@ Please also note that some programs that analyze network traffic are known to in
 ## Image previews
 The following browsers have support for image previews prior to uploading files:
 
-* Firefox 3.6+
-* Safari 6+
 * Google Chrome
-* Opera 11+
+* Apple Safari 6.0+
+* Mozilla Firefox 3.6+
+* Opera 11.0+
+* Microsoft Internet Explorer 10.0+
 
 ## File meta data
 The following browsers report complete file meta data prior to uploading files:
 
-* Firefox 3.6+
-* Safari 4+
 * Google Chrome
-* Opera 10+
-
-Internet Explorer only reports the file name.
+* Apple Safari 4.0+
+* Mozilla Firefox 3.6+
+* Opera 10.0+
+* Microsoft Internet Explorer 10.0+
 
 The reported file meta data consists of the following properties:
 
@@ -87,12 +75,11 @@ The reported file meta data consists of the following properties:
 ## XMLHttpRequest File Uploads
 The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads, which allows advanced usage of the file upload [[API]]:
 
-* Firefox 4+
-* Safari 5+
 * Google Chrome
-* Opera 12+
-
-If the *multipart* option is set to *false* (see [[Options]]), Firefox 3.6 also supports [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads.
+* Apple Safari 5.0+
+* Mozilla Firefox 4.0+
+* Opera 12.0+
+* Microsoft Internet Explorer 10.0+
 
 The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js#files) is used for other browsers. The Iframe Transport requires a file input selection to upload files.
 
@@ -100,6 +87,7 @@ The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master
 
 The following browsers support client-side image resizing functionality:
 
-* Firefox 4+
-* Safari 6+
 * Google Chrome
+* Apple Safari 6.0+
+* Mozilla Firefox 4.0+
+* Microsoft Internet Explorer 10.0+
