@@ -32,7 +32,7 @@ $('#fileupload').fileupload({
     submit: function (e, data) {
         var $this = $(this);
         $.getJSON('/upload-url-handler.json', function (result) {
-            data.url = url;
+            data.url = result;
             $this.fileupload('send', data);
         });
         return false;
