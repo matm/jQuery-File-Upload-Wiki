@@ -86,7 +86,7 @@ This ensures that the referenced scripts are loaded via the same protocol as the
 
 However, it also requires that the current protocol is either "http:" or "https:" and will not work on a "file:" url.
 
-See also issue [#514](https://github.com/blueimp/jQuery-File-Upload/issues/514) as well as pull requests [#722](https://github.com/blueimp/jQuery-File-Upload/pull/772) and [#833](https://github.com/blueimp/jQuery-File-Upload/pull/833).
+See also issue [#514](https://github.com/blueimp/jQuery-File-Upload/issues/514) as well as pull requests [#722](https://github.com/blueimp/jQuery-File-Upload/pull/772) and [#833](https://github.com/blueimp/jQuery-File-Upload/pull/833) and [#1789](https://github.com/blueimp/jQuery-File-Upload/pull/1789).
 
 ### Why can't I print the files index in the template for loop?
 The template will be rendered for each **add** call.  
