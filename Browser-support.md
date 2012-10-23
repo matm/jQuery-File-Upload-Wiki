@@ -76,6 +76,11 @@ The following browsers have support for image previews prior to uploading files:
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Default Browser on Android 3.2+
+
+### Known bugs
+
+* The default browser on Android 4.1.2 doesn't seem to support image previews.
 
 ## File meta data
 The following browsers report complete file meta data prior to uploading files:
@@ -92,6 +97,7 @@ The following browsers report complete file meta data prior to uploading files:
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Default Browser on Android 3.2+
 
 ### File meta data properties
 The reported file meta data consists of the following properties:
@@ -99,6 +105,9 @@ The reported file meta data consists of the following properties:
 * **name**: The name of the file, e.g. *banana.jpg*.
 * **size**: The size of the file in bytes, e.g. *130073* (131 KB).
 * **type**: The type of the file, e.g. *image/jpg*.
+
+### Known bugs
+The default browser on Android 4.1.2 doesn't report the file type.
 
 ## XMLHttpRequest File Uploads
 The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads, which allows advanced usage of the file upload [[API]]:
@@ -115,6 +124,7 @@ The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpReq
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Default Browser on Android 3.2+
 
 ### Iframe Transport
 The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js#files) is used for other browsers. The Iframe Transport requires a file input selection to upload files.
