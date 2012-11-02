@@ -78,7 +78,6 @@ The following browsers have support for image previews prior to uploading files:
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
 * Default Browser on Android 3.2+
-* Opera Mobile 12.0+
 
 ### Known bugs
 
