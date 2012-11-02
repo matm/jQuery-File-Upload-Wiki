@@ -54,6 +54,7 @@ The following browsers have complete support for upload progress indication:
 ### Mobile browsers
 
 * Apple Safari Mobile on iOS 6.0+
+* Opera Mobile 12.0+
 
 ### Differences in upload progress events
 Depending on the size of the file, the operating system platform and the network throughput, the number of progress events triggered might differ.  
@@ -77,6 +78,7 @@ The following browsers have support for image previews prior to uploading files:
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
 * Default Browser on Android 3.2+
+* Opera Mobile 12.0+
 
 ### Known bugs
 
@@ -98,6 +100,7 @@ The following browsers report complete file meta data prior to uploading files:
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
 * Default Browser on Android 3.2+
+* Opera Mobile 12.0+
 
 ### File meta data properties
 The reported file meta data consists of the following properties:
@@ -125,6 +128,7 @@ The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpReq
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
 * Default Browser on Android 3.2+
+* Opera Mobile 12.0+
 
 ### Iframe Transport
 The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js#files) is used for other browsers. The Iframe Transport requires a file input selection to upload files.
