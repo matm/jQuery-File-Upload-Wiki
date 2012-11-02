@@ -17,7 +17,7 @@ To provide your own implementation, you can override the *get_user_id* method:
 require('upload.class.php');
 
 class CustomUploadHandler extends UploadHandler {
-    protected get_user_id() {
+    protected function get_user_id() {
         @session_start();
         return session_id();
     }
