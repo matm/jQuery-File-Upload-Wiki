@@ -23,7 +23,7 @@ The byte range of the blob is transmitted via the [Content-Range header](http://
 The file name of the blob is transmitted via the **Content-Disposition** header.  
 For multipart chunked uploads, the file type is transmitted via the **Content-Description** header.
 
-For non-multipart uploads, the *X-File-Type* header is omitted since it is transmitted via the *Content-Type* header.
+For non-multipart uploads, the *Content-Description* header is omitted since it is transmitted via the *Content-Type* header.
 
 ## Callbacks
 Chunked file uploads trigger the same callbacks as normal file uploads, e.g. the *done* callback (see [[API]]) will only be triggered after the last blob has been successfully uploaded.
