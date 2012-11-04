@@ -4,6 +4,7 @@ If the upload doesn't work :
 * Look if your upload directory exist and is writable : is_dir(), is_writable()
 * Look your php.ini : Safe_mod, file_uploads ...
 * The .htaccess may be false
+* Disable CSRF protection from config.php
 * You have an error in your code ahah !
 
 ##Source 
@@ -54,7 +55,7 @@ define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVE
     <h2>Upload a file</h2>
 
 <!-- Upload function on action form -->
-    <form id="fileupload" action="<?php echo base_url() . 'upload/upload_img'; ?>" method="POST" enctype="multipart/form-data">
+    <?php echo form_open_multipart('/upload/upload_img', array('id' => 'fileupload')); ?>
 
 <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <div class="row fileupload-buttonbar">
@@ -93,7 +94,7 @@ define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVE
         <br>
 <!-- The table listing the files available for upload/download -->
         <table class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>
-   </form>
+   <?php echo form_close(); ?>
 </div>
 
 <!-- The template text-tmpl upload/download -->
