@@ -34,8 +34,10 @@ $(function () {
 </html>
 ```
 
-## How to display upload progress with the basic plugin
+### Response and data type
+The example above sets the *dataType* option to **json**, expecting the server to return a JSON response for each uploaded file. However it's also possible to handle HTML content types as response or any other dataType that you can handle in your *done* handler.
 
+## How to display upload progress with the basic plugin
 The fileupload plugin triggers progress events for both individual uploads (**progress**) and all running uploads combined (**progressall**). Event handlers can be set via the event binding mechanism or as widget options (see [[API]] and [[Options]] documentation):
 
 ```js
@@ -89,7 +91,6 @@ $(function () {
 ```
 
 ## How to use image resizing functionality with the basic plugin
-
 Include the following additional scripts (include jquery.fileupload-fp.js after jquery.fileupload.js):
 
 ```html
