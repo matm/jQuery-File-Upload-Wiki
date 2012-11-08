@@ -244,3 +244,6 @@ $('button.cancel').click(function (e) {
     jqXHR.abort();
 });
 ```
+
+## How to retrieve extra parameters before submitting files
+See the guide on how to [[Submit files asynchronously]].
