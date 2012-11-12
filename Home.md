@@ -53,7 +53,7 @@
 * [web2py (Python framework) port](https://github.com/hellais/jQuery-File-Upload) (user contribution).
 * [Pyramid demo port](https://github.com/grooverdan/pyramid-jQuery-File-Upload-demo) (user contribution).
 
-### Ruby (on Rails)
+### Ruby
 * [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example) (user contribution).
   Is able to use XHR uploads directly to S3, despite S3 not supporting `Access-Control-Allow-Origin`, by hosting an (iframed) upload form on S3 itself (tricksy!) 
 * Using the plugin to [[Upload directly to S3]] (user contribution).
