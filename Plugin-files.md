@@ -1,6 +1,6 @@
 * [cors](https://github.com/blueimp/jQuery-File-Upload/tree/master/cors)
-  * [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) is a helper page which allows to access cross-domain iframe contents via redirects.
-  * [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
+    * [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) is a helper page which allows to access cross-domain iframe contents via redirects.
+    * [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
 * [css](https://github.com/blueimp/jQuery-File-Upload/tree/master/css)
   * [jquery.fileupload-ui-noscript.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui-noscript.css) adjusts styling for browsers with JavaScript disabled.
   * [jquery.fileupload-ui.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui.css) adds styling for the file input field, progress bars and upload buttons. See [[Style Guide]].
