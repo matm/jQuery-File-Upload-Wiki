@@ -41,7 +41,7 @@ You can then upload the project folder (without the unnecessary **server** subfo
 
 1. Implement a file upload handler on your platform (Ruby, Python, Java, etc.) that handles normal form based file uploads and upload it to your server. See also the Server-side specific tutorials on the [Documentation Homepage](https://github.com/blueimp/jQuery-File-Upload/wiki).
 2. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) and extract the plugin archive.
-3. Edit *index.html* and adjust the *action* attribute of the HTML form element to the URL of your custom file upload handler. Adjust the file input *name* attribute if your upload handler requires another parameter name for the file uploads.
+3. Edit *main.js* and adjust the **url** option to the URL of your custom file upload handler. Alternatively you can remove the url option and edit *index.html* and adjust the *action* attribute of the HTML form element to the URL of your custom file upload handler. If your upload handler requires another parameter name for the file uploads than **files[]**, you also have to adjust the file input *name* attribute or set the **paramName** option (see [[Options]] documentation).
 4. Upload the jQuery-File-Upload folder to your website.
 5. Extend your custom server-side upload handler to return a [JSON](http://en.wikipedia.org/wiki/JSON) response akin to the following output:
 
