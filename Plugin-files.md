@@ -1,12 +1,11 @@
 * [.gitignore](https://github.com/blueimp/jQuery-File-Upload/blob/master/.gitignore) is a [Git configuration file](http://help.github.com/ignore-files/).
 * [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
 * [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
-(https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
 * [package.json](https://github.com/blueimp/jQuery-File-Upload/blob/master/package.json) contains machine readable information about the plugin in [JSON](http://www.json.org/) format.
 
 ## [cors](https://github.com/blueimp/jQuery-File-Upload/tree/master/cors)
 * [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) is a helper page which allows to access cross-domain iframe contents via redirects.
-* [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) serves as an API endpoint for cross-domain [postMessage]
+* [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
 
 ## [css](https://github.com/blueimp/jQuery-File-Upload/tree/master/css)
 * [jquery.fileupload-ui-noscript.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui-noscript.css) adjusts styling for browsers with JavaScript disabled.
