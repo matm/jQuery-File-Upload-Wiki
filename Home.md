@@ -69,7 +69,7 @@
 * [Express.js middleware for jQuery File Upload](https://github.com/aguidrevitch/jquery-file-upload-middleware) by [Aleksandr Guidrevitch](https://github.com/aguidrevitch)
 
 ### Go
-* [`jfu` package](https://github.com/jmcvetta/jfu) for integration with Go applications, backed by MongoDB + Memcache  (user contribution).
+* [jfu package](https://github.com/jmcvetta/jfu) for integration with Go applications, backed by MongoDB + Memcache  (user contribution).
 
 ### Java
 * Code samples for [[Google App Engine Java]] (user contribution).
