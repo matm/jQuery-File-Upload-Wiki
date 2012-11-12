@@ -87,31 +87,3 @@
 
 ### ASP (Classic)
 * [ASP VBscript example](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
-
-## Documentation for v.4 (old branch)
-
-### Basic plugin information
-* How to [[Setup v4]] the plugin on your website.
-* The plugin [[API v4]].
-* List of all available [[Options v4]] for this plugin.
-
-### Customization how-tos
-* [[How to queue files and start uploads with a button click]] v4.
-* [[How to implement File Limits]] v4.
-* [[How to submit additional Form Data v4]].
-* [[Multiple File Input Fields in one Form v4]].
-* [[Multiple plugin instances on the same page]] v4.
-* [[Sequential Uploads]] v4.
-* [[How to upload multiple files with one request]] v4.
-* [[How to invoke a method after all uploads have completed]] v4.
-* [[Chunked Uploads v4]].
-
-### Server-side specific tutorials
-* How to use the plugin with the [[Flask]] Python Microframework (user contribution)
-* [[jQuery-File-Upload-v4-for-Rails-3]]: basic Rails 3 tutorial (user contribution)
-* [Sample app using Rails 3, carrierwave and jquery-file-upload to upload and store files on Amazon S3](https://github.com/yortz/carrierwave_jquery_file_upload) (user contribution)
-* [[jQuery File Upload for Java]]: basic Java application (user contribution)
-* [[How to use the plugin with CodeIgniter]] (PHP) (user contribution)
-* [[jQuery File Upload for C# (Forms)]]: basic C# Forms application (user contribution)
-* C# example on [[How to populate the file list on page load or between page refresh]] (user contribution)
-* [How to use the plugin with Yii framework](http://www.yiiframework.com/extension/xupload/) (PHP) (user contribution)
