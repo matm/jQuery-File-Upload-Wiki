@@ -36,7 +36,7 @@
 ### PHP
 * [[PHP user directories]]
 * [[PHP Session Upload Progress]]
-* Database integration ([[Working with Databases]]) 
+* [[Working with Databases]] (user contribution)
 * [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
 * [jQuery File Upload + CakePHP 2.1.x](https://github.com/hugodias/FileUpload) (user contribution)
 * [Source for Amazon S3 Upload with PHP SDK](https://s3.amazonaws.com/parsec_it_examples/s3-php.zip) by [roberto colonello](https://github.com/robertocolonello)
@@ -45,34 +45,13 @@
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
 
 ### Python (Google App Engine, Django, web2py)
-* How to use the plugin with [[Google App Engine]] (Python).
+* How to use the plugin with [[Google App Engine]].
 * Django integration [tutorial](http://garmoncheg.blogspot.com/2011/07/django-creating-multi-upload-form.html) and [demo code](https://github.com/garmoncheg/django_multiuploader_demo) (user contribution).
 * Same [Django reusable Plugin](https://github.com/garmoncheg/django_multiuploader) and [article](http://garmoncheg.blogspot.com/2011/07/django-beautiful-multiple-files-upload.html) (user contribution).
 * Another [Django integration](https://github.com/sigurdga/django-jquery-file-upload) (user contribution).
 * Django >= 1.2.5 integration with CSRF enabled [repo](https://github.com/miki725/Django-jQuery-File-Uploader-Integration-demo) [wiki](https://github.com/miki725/Django-jQuery-File-Uploader-Integration-demo/wiki) (user contribution).
 * [web2py (Python framework) port](https://github.com/hellais/jQuery-File-Upload) (user contribution).
 * [Pyramid demo port](https://github.com/grooverdan/pyramid-jQuery-File-Upload-demo) (user contribution).
-
-### Go
-* [`jfu` package](https://github.com/jmcvetta/jfu) for integration with Go applications, backed by MongoDB + Memcache  (user contribution).
-
-### Java
-* Code samples for [[Google App Engine Java]] (user contribution).
-* [File Upload with Spring and jQuery] (http://krams915.blogspot.com/2012/06/file-upload-with-spring-and-jquery-part_2793.html) (user contribution).
-* [Upload Servlet excercise](https://github.com/klaalo/jQuery-File-Upload-Java) (user contribution).
-* [Modified Upload Servlet] (https://github.com/amilarajans/jQuery-File-Upload-for-java) complete working example (user contribution).
-
-### ASP (Classic)
-* [ASP VBscript example](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
-
-### ASP.NET
-* Fork of this project adding an [ASP.NET server example](https://github.com/timabell/jQuery-File-Upload/tree/dotnet) (contribution from Tim Abell), an IHttpHandler based example. Upload only.
- * Usage information is available in [the fork's readme](/timabell/jQuery-File-Upload/tree/dotnet/server/dotnet#readme)
-* [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (contribution from Sam at webtrendset.com), a simple ashx based example, available as a zip file download. Upload support only. Focus on IE handling.
-* An [ASP.NET MVC 3 example](https://github.com/maxpavlov/jQuery-File-Upload.MVC3) with the same functionality as an original plugin demo + large files upload support for ASP.NET (contribution from Max Pavlov)
-* A fully functional github hosted [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net) (contribution by Iain Ballard), based on ashx handlers. Provides full upload / delete / thumbnail functionality.
-* [.NET File Upload Handler](https://github.com/swhitley/jQuery-File-Upload) implementation by [Shannon Whitley](https://github.com/swhitley)
-* [ASP.NET Multiple File Upload With Drag & Drop and Progress Bar Using HTML5](http://www.codeproject.com/Articles/460142/ASP-NET-Multiple-File-Upload-With-Drag-Drop-and-Pr)
 
 ### Ruby (on Rails)
 * [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example) (user contribution).
@@ -85,6 +64,29 @@
 * [Rails 3.2.8 with asset-pipeline demo app](https://github.com/jalagrange/bootstrap_uploader) (Forked and improved from banditj user contribution)
 * [Screencast 381 - jQuery File Upload](http://railscasts.com/episodes/381-jquery-file-upload) (Ryan Bates, RailsCasts)
 * [Screencast 383 - Uploading to Amazon S3](http://railscasts.com/episodes/383-uploading-to-amazon-s3) (Ryan Bates, RailsCasts)
+
+### JavaScript
+* [Express.js middleware for jQuery File Upload](https://github.com/aguidrevitch/jquery-file-upload-middleware) by [Aleksandr Guidrevitch](https://github.com/aguidrevitch)
+
+### Go
+* [`jfu` package](https://github.com/jmcvetta/jfu) for integration with Go applications, backed by MongoDB + Memcache  (user contribution).
+
+### Java
+* Code samples for [[Google App Engine Java]] (user contribution).
+* [File Upload with Spring and jQuery] (http://krams915.blogspot.com/2012/06/file-upload-with-spring-and-jquery-part_2793.html) (user contribution).
+* [Upload Servlet excercise](https://github.com/klaalo/jQuery-File-Upload-Java) (user contribution).
+* [Modified Upload Servlet] (https://github.com/amilarajans/jQuery-File-Upload-for-java) complete working example (user contribution).
+
+### ASP.NET
+* Fork of this project adding an [ASP.NET server example](https://github.com/timabell/jQuery-File-Upload/tree/dotnet) (contribution from Tim Abell), an IHttpHandler based example. Upload only.
+* [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (contribution from Sam at webtrendset.com), a simple ashx based example, available as a zip file download. Upload support only. Focus on IE handling.
+* An [ASP.NET MVC 3 example](https://github.com/maxpavlov/jQuery-File-Upload.MVC3) with the same functionality as an original plugin demo + large files upload support for ASP.NET (contribution from Max Pavlov)
+* A fully functional github hosted [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net) (contribution by Iain Ballard), based on ashx handlers. Provides full upload / delete / thumbnail functionality.
+* [.NET File Upload Handler](https://github.com/swhitley/jQuery-File-Upload) implementation by [Shannon Whitley](https://github.com/swhitley)
+* [ASP.NET Multiple File Upload With Drag & Drop and Progress Bar Using HTML5](http://www.codeproject.com/Articles/460142/ASP-NET-Multiple-File-Upload-With-Drag-Drop-and-Pr) (user contribution)
+
+### ASP (Classic)
+* [ASP VBscript example](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
 
 ## Documentation for v.4 (old branch)
 
