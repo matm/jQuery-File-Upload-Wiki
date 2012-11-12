@@ -44,7 +44,7 @@
 * [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
 
-### Python (Google App Engine, Django, web2py)
+### Python
 * How to use the plugin with [[Google App Engine]].
 * Django integration [tutorial](http://garmoncheg.blogspot.com/2011/07/django-creating-multi-upload-form.html) and [demo code](https://github.com/garmoncheg/django_multiuploader_demo) (user contribution).
 * Same [Django reusable Plugin](https://github.com/garmoncheg/django_multiuploader) and [article](http://garmoncheg.blogspot.com/2011/07/django-beautiful-multiple-files-upload.html) (user contribution).
