@@ -4,4 +4,4 @@ A version of the plugin which replaces Twitter's [Bootstrap](http://twitter.gith
 
 It can be downloaded here:
 
-**[jQuery File Upload - jQuery UI download](https://github.com/blueimp/jQuery-File-Upload/archives/jquery-ui)**
+**[jQuery File Upload - jQuery UI download](https://github.com/blueimp/jQuery-File-Upload/archive/jquery-ui.zip)**
