@@ -76,10 +76,6 @@ It is also possible to allow selecting a folder (instead of files) via the file 
 
 See also [issue #573](https://github.com/blueimp/jQuery-File-Upload/issues/573).
 
-### How to clear the list of uploaded files?
-The example in the download package comes with code that retrieves and displays a list of existing files on page load.  
-Remove the **$.getJSON** call from [main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js) if you don't need that functionality.
-
 ### Why is the protocol ("http:") missing from the script references in the HTML source code?
 This is called a [protocol relative url](//www.google.com/search?q=protocol+relative+URL) and a perfectly valid way to define a resource, relative to the current URL protocol.  
 This ensures that the referenced scripts are loaded via the same protocol as the current page, which avoids security notifications when loading resources via unencrypted HTTP on a page loaded via HTTPS.
