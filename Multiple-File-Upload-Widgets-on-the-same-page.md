@@ -9,7 +9,7 @@ In *index.html* duplicate the *form* tag with the *id* "fileupload" and change *
 </form>
 ```
 
-In *application.js* change
+In *js/main.js* change
 
 ```js
 $('#fileupload').fileupload();
