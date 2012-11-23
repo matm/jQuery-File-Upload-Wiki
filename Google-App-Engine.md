@@ -1,6 +1,6 @@
 Two complete server-side Google App Engine implementation examples can be found in the *gae-python* and *gae-go* directories of the source code tree:
-https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-python
-https://github.com/blueimp/jQuery-File-Upload/tree/master/gae-go
+https://github.com/blueimp/jQuery-File-Upload/tree/master/server/gae-python
+https://github.com/blueimp/jQuery-File-Upload/tree/master/server/gae-go
 
 Those versions are the same that have been (Python) or are (Go) running as the demo implementation.
 However, since the demo is relying on Cross-domain communication (from Github Pages to App Engine), it has to write Files to the Blobstore programmatically, instead of using the direct upload feature.
