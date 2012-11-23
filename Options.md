@@ -277,6 +277,21 @@ function (e, data) {
 }
 ```
 
+* If you want the Upload to start after you submit the form then override the add callback as such:
+
+```js
+$('#fileupload').fileupload({
+    /* Other options here */
+    add: function (e, data) {
+        $('#upload-button-id-here').one('click', function (e) {
+            e.preventDefault();
+            data.submit();
+        });
+    }
+});
+```
+
+
 * Example:
 
 ```js
