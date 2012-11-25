@@ -167,17 +167,3 @@ It even displays the correct error message, e.g. "Error: Service Unavailable" fo
     HTTP/1.0 503 Service Unavailable
 
 However, for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads - which includes Internet Explorer before IE10 - the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) is used and there is no way to retrieve the HTTP status code from an iframe load event.
-
-### How to upload a file after form is submitted?  
-If you want the Upload to start after you submit the form then override the add callback as such:
-```js
-$('#fileupload').fileupload({
-    /* Other options here */
-    add: function (e, data) {
-        $('#upload-button-id-here').one('click', function (e) {
-            e.preventDefault();
-            data.submit();
-        });
-    }
-});
-```
