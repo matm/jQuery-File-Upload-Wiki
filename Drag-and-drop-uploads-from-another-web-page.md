@@ -16,7 +16,7 @@ $(document).bind('drop', function (e) {
                     canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
                     canvas.toBlob(function (blob) {
                         $('#fileupload').fileupload('add', {files: [blob]});
-                    }, "image/jpeg"));
+                    }, "image/jpeg");
                 }
             }
         });
