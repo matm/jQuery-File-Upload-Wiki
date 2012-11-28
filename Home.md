@@ -64,6 +64,7 @@
 * [Rails 3.2.8 with asset-pipeline demo app](https://github.com/jalagrange/bootstrap_uploader) (Forked and improved from banditj user contribution)
 * [Screencast 381 - jQuery File Upload](http://railscasts.com/episodes/381-jquery-file-upload) (Ryan Bates, RailsCasts)
 * [Screencast 383 - Uploading to Amazon S3](http://railscasts.com/episodes/383-uploading-to-amazon-s3) (Ryan Bates, RailsCasts)
+* [Rails + Blitline (upload directly to S3 + process images into thumbnails)](https://github.com/hisyam/blitline_rails_demo)
 
 ### JavaScript
 * [Express.js middleware for jQuery File Upload](https://github.com/aguidrevitch/jquery-file-upload-middleware) by [Aleksandr Guidrevitch](https://github.com/aguidrevitch)
