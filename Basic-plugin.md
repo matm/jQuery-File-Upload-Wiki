@@ -75,13 +75,35 @@ Often, you will display a file to upload in an element node. This can be done in
 To be able to refer to the same element node in other callbacks related to the upload, you can make use of the **context** option (which is actually an option of [jquery.ajax](http://api.jquery.com/jQuery.ajax/)):
 
 ```js
-
 $(function () {
     $('#fileupload').fileupload({
         dataType: 'json',
         add: function (e, data) {
             data.context = $('<p/>').text('Uploading...').appendTo(document.body);
             data.submit();
+        },
+        done: function (e, data) {
+            data.context.text('Upload finished.')
+        }
+    });
+});
+```
+
+## How to start uploads with a button click
+
+Based on the previous example, it's possible to start upload on the click of a button instead of automatically:
+
+```js
+$(function () {
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        add: function (e, data) {
+            data.context = $('<button/>').text('Upload')
+                .appendTo(document.body)
+                .click(function () {
+                    $(this).replaceWith($('<p/>').text('Uploading...'));
+                    data.submit();
+                });
         },
         done: function (e, data) {
             data.context.text('Upload finished.')
