@@ -91,7 +91,7 @@ $(function () {
 
 ## How to start uploads with a button click
 
-Based on the previous example, it's possible to start upload on the click of a button instead of automatically:
+Based on the previous example, it's possible to start uploads on the click of a button instead of automatically:
 
 ```js
 $(function () {
