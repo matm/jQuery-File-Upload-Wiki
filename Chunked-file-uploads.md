@@ -53,7 +53,8 @@ $('#fileupload').fileupload({
     maxChunkSize: 10000000, // 10 MB
     add: function (e, data) {
         var that = this;
-        $.getJSON('server/php/', {file: data.files[0].name}, function (file) {
+        $.getJSON('server/php/', {file: data.files[0].name}, function (result) {
+            var file = result.file;
             data.uploadedBytes = file && file.size;
             $.blueimp.fileupload.prototype
                 .options.add.call(that, e, data);
@@ -79,7 +80,8 @@ $('#fileupload').fileupload({
             retries = data.context.data('retries') || 0,
             retry = function () {
                 $.getJSON('server/php/', {file: data.files[0].name})
-                    .done(function (file) {
+                    .done(function (result) {
+                        var file = result.file;
                         data.uploadedBytes = file && file.size;
                         // clear the previous data:
                         data.data = null;
