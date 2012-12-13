@@ -79,6 +79,8 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
 });
 ```
 
+How do to setup UploadHandler.php post function....
+
 ## How to retrieve and set form data asynchronously.
 See how to [[submit files asynchronously]].
 
