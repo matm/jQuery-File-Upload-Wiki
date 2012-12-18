@@ -1,7 +1,7 @@
 Hi guys,
 
 I struggled a lot especially to make my code work in IE (7.0, 8.0, 9.0) version when trying to post files data to the server.Once we posted to the server I want to get the file storage details and other attributes of the file posted as JSON object from the server.
-
+ddd
 For this I posted using blueimp jQuery file upload plugin to post and using a handler on the server side to respond for this request. While doing this
 I found few interesting problems with IE, like getting warning as below.
 
