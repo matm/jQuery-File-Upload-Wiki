@@ -85,6 +85,7 @@
 * A fully functional github hosted [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net) (contribution by Iain Ballard), based on ashx handlers. Provides full upload / delete / thumbnail functionality.
 * [.NET File Upload Handler](https://github.com/swhitley/jQuery-File-Upload) implementation by [Shannon Whitley](https://github.com/swhitley)
 * [ASP.NET Multiple File Upload With Drag & Drop and Progress Bar Using HTML5](http://www.codeproject.com/Articles/460142/ASP-NET-Multiple-File-Upload-With-Drag-Drop-and-Pr) (user contribution)
+* [VB.net VS2010 implementation](https://github.com/superquinho/jQuery-File-Upload-ASPnet)
 
 ### ASP (Classic)
 * [ASP VBscript example](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
