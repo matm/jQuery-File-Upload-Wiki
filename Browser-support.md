@@ -132,6 +132,22 @@ The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpReq
 ### Iframe Transport
 The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js#files) is used for other browsers. The Iframe Transport requires a file input selection to upload files.
 
+## Chunked uploads
+The following browsers support splitting up file uploads into multiple chunks:
+
+### Desktop browsers
+
+* Google Chrome
+* Apple Safari 5.0+
+* Mozilla Firefox 4.0+
+* Opera 12.0+
+* Microsoft Internet Explorer 10.0+
+
+### Mobile browsers
+
+* Apple Safari Mobile on iOS 6.0+
+* Google Chrome on iOS 6.0+
+
 ## Image Resizing Functionality
 The following browsers support client-side image resizing functionality:
 
