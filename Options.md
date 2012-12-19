@@ -651,12 +651,15 @@ The **completed** callback is the equivalent to the **done** callback and is tri
 ### failed
 The **failed** callback is the equivalent to the **fail** callback and is triggered after failed uploads after the download template has been rendered and the transition effects have completed.
 
+### finished
+The **finished** callback is the equivalent to the **always** callback and is triggered after both completed and failed uploads after the equivalent template has been rendered and the transition effects have completed.
+
 ### started
 The **started** callback is the equivalent to the **start** callback and is triggered after the start callback has run and the transition effects called in the start callback have completed.
 
 **Note:** Unlike the start callback, which is always called before all send callbacks, the started callback might be called after the sent callbacks, depending on the duration of the transition effects in those callbacks.
 
 ### stopped
-The **stopped** callback is the equivalent to the **stop** callback and is triggered after the stop callback has run and the transition effects called in the stop callback have completed.
+The **stopped** callback is the equivalent to the **stop** callback and is triggered after the stop callback has run and the transition effects called in the stop callback and all done callbacks have completed.
 
-**Note:** Unlike the stop callback, which is always called after all done callbacks, the stopped callback might be called before the completed callbacks, depending on the duration of the transition effects in those callbacks.
+The **stopped** callback is therefore always triggered after each completed, failed and finished callback is done.
