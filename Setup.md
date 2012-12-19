@@ -4,7 +4,7 @@
 
 The provided example implementation works out of the box and only needs one step for you to add it to your PHP based website:
 
-1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the extracted folder (you may rename it) to your server.
+1. [Download](https://github.com/blueimp/jQuery-File-Upload/archive/master.zip) the plugin archive, extract it and upload the extracted folder (you may rename it) to your server.
 
 Visit the uploaded directory - you should see the same file upload interface as the demo, allowing you to upload files to your website.
 
@@ -15,7 +15,7 @@ Please keep in mind some [[Security]] considerations when running a file upload 
 
 ## Using jQuery File Upload (UI version) with [Google App Engine](http://code.google.com/appengine/)
 
-1. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it and upload the **server/gae-python** or **server/gae-go** folder (depending on which runtime environment you want to use) as your App Engine instance, after editing the *app.yaml* inside if the folder and replacing "jquery-file-upload" with your own App ID.
+1. [Download](https://github.com/blueimp/jQuery-File-Upload/archive/master.zip) the plugin archive, extract it and upload the **server/gae-python** or **server/gae-go** folder (depending on which runtime environment you want to use) as your App Engine instance, after editing the *app.yaml* inside if the folder and replacing "jquery-file-upload" with your own App ID.
 2. Upload the jQuery-File-Upload folder (without the **server** subfolder) to any server, after adjusting the **url** option in [main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js#L22) to the url of your App Engine instance.
 
 Visit the uploaded directory - you should see the same file upload interface as the demo, allowing you to upload files to your App Engine instance.
@@ -34,7 +34,7 @@ You can start the service by running the following command:
 ./node_modules/blueimp-file-upload-node/server.js
 ```
 
-Next, [download](https://github.com/blueimp/jQuery-File-Upload/archives/master) the plugin archive, extract it, edit **index.html** and adjust the HTML form's **action** attribute to point to your [Node.js](http://nodejs.org/) service (e.g. "http://localhost:8080").  
+Next, [download](https://github.com/blueimp/jQuery-File-Upload/archive/master.zip) the plugin archive, extract it, edit **index.html** and adjust the HTML form's **action** attribute to point to your [Node.js](http://nodejs.org/) service (e.g. "http://localhost:8080").  
 You can then upload the project folder (without the unnecessary **server** subfolder) to any static file server and use it as interface to your [Node.js](http://nodejs.org/) upload service.
 
 ## Using jQuery File Upload (UI version) with a custom server-side upload handler
