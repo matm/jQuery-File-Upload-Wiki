@@ -83,7 +83,7 @@ $(function () {
             data.submit();
         },
         done: function (e, data) {
-            data.context.text('Upload finished.')
+            data.context.text('Upload finished.');
         }
     });
 });
@@ -106,7 +106,7 @@ $(function () {
                 });
         },
         done: function (e, data) {
-            data.context.text('Upload finished.')
+            data.context.text('Upload finished.');
         }
     });
 });
