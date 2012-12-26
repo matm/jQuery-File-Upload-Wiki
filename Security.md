@@ -12,7 +12,7 @@ Following are some security considerations specific to the jQuery File Upload pl
 File upload restrictions on client-side are only means to improve the usability of your application.
 The client-side is under the control of any potential attacker, therefore you cannot trust any client-side input and absolutely have to implement validations and restrictions on server-side.
 
-You also need to keep in mind files that can be downloaded and executed on client-side in the context of another user to exploit [Cross-site scripting (XSS)](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)) vulnerabilities or spread malware. As this can only be controlled on server-side, it's part of the next section.
+You also need to keep in mind files that can be downloaded and executed on client-side in the context of another user to exploit [Cross-site scripting (XSS)](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS\)) vulnerabilities or spread malware. As this can only be controlled on server-side, it's part of the next section.
 
 ## Server-side
 
