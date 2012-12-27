@@ -1,5 +1,5 @@
 ```js
-$.blueimpFP.fileupload.prototype.processActions.duplicate = function (data, options) {
+$.blueimp.fileupload.prototype.processActions.duplicate = function (data, options) {
     data.files.push(data.files[data.index]);
     return data;
 };
