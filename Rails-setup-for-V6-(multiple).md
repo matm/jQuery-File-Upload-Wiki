@@ -86,7 +86,7 @@ class PicturesController < ApplicationController
           :layout => false
         }
         format.json {  
-          render :json => [@picture.to_jq_upload].to_json			
+          render :json => { :files => [@picture.to_jq_upload] }			
         }
       end
     else 
