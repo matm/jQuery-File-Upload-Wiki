@@ -1,4 +1,4 @@
-If you allow users to upload files to your webserver, you have a potential security hole.  
+If you allow users to upload files to your web server, you have a potential security hole.  
 To prevent an attacker from executing arbitrary files in the context of your web application, some security considerations have to be kept in mind.
 
 For an in-depth understanding of the potential security risks and possible mitigations, the [OWASP project](https://www.owasp.org/) has a good overview:
@@ -16,7 +16,7 @@ You also need to keep in mind files that can be downloaded and executed on clien
 
 ## Server-side
 
-To prevent arbitrary files (e.g. JavaScript files) from being executed on client-side in the context of the web application, the provided server-side implementations serve non-image files with attachement headers, to force a download dialog:
+To prevent arbitrary files (e.g. JavaScript files) from being executed on client-side in the context of the web application, the provided server-side implementations serve non-image files with attachment headers, to force a download dialog:
 
 ```
 Content-Disposition:attachment; filename=script.js;
