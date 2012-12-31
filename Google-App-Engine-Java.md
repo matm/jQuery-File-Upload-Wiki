@@ -23,27 +23,24 @@ Contributed by [yamsellem](https://github.com/yamsellem).
 </script>
 ```
 
-* application.js:
+* main.js:
 
 ```javascript
 $(function() {
   /* activate the plugin */
-  $('#fileupload').fileupload();
+	$('#fileupload').fileupload({submit: function (e, data) {
+        
+    	var $this = $(this);
+    	debugger;
+        $.getJSON('/rest/file/url?' + new Date().getTime(), function (result) {
+        	data.url = result.url;
+            $this.fileupload('send', data);
+        });
+        return false;
+    }
+	});
 
-  /* generate an App Engine url on each click */
-  $('input:file', '#fileupload').button().click(function() {
-    $.getJSON('/rest/file/url', function (response) {
-      $('#fileupload form').prop('action', response.url);
-      $('#fileupload').fileupload({
-        add: function (e, data) {
-          var that = this;
-          data.url = response.url;
-          /* configure the plugin with the /_ah/upload url */
-          $.blueimp.fileupload.prototype.options.add.call(that, e, data);
-        }
-      });
-    });
-  });
+ 
 });
 ```
 
