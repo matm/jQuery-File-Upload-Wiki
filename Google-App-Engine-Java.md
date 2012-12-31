@@ -77,21 +77,21 @@ public class FileResource {
   
   /* step 3. redirected to the meta info */
   
-  @GET
-  @Path("/{key}/meta")
-  public Response redirect(@PathParam("key") String key) throws IOException {
-    BlobKey blobKey = new BlobKey(key);
-    BlobInfo info = blobInfoFactory.loadBlobInfo(blobKey);
+   @GET
+    @Path("/{key}/meta")
+    public Response redirect(@PathParam("key") String key) throws IOException {
+      BlobKey blobKey = new BlobKey(key);
+      BlobInfo info = blobInfoFactory.loadBlobInfo(blobKey);
 
-    String name = info.getFilename();
-    long size = info.getSize();
-    String url = "/rest/file/" + key; 
-    FileMeta meta = new FileMeta(name, size, url);
+      String name = info.getFilename();
+      long size = info.getSize();
+      String url = "/rest/file/" + key; 
+      FileMeta meta = new FileMeta(name, size, url);
 
-    List<FileMeta> metas = Lists.newArrayList(meta);
-    GenericEntity<List<FileMeta>> entity = new GenericEntity<List<FileMeta>>(metas) {};
-    return Response.ok(entity).build();
-  }
+      List<FileMeta> metas = Lists.newArrayList(meta);
+      Entity entity = new Entity(metas);
+      return Response.ok(entity,MediaType.APPLICATION_JSON).build();
+    }
 
   /* step 4. download the file */
   
@@ -156,6 +156,19 @@ public class FileMeta {
   }
 
   public FileMeta() {
+  }
+}
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Entity {
+	private List<FileMeta> files;
+
+  public Entity(List<FileMeta> files) {
+    this.files = files;
+  }
+
+  public Entity() {
   }
 }
 ```
