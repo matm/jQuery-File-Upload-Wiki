@@ -1,5 +1,5 @@
 ## Initialization
-The basic initialization of the File Upload widget is by calling the *fileupload* method on a jQuery collection with the target HTML element:
+The File Upload widget is initialized by calling the *fileupload* method on a jQuery collection with the target HTML element:
 
 ```js
 $('#fileupload').fileupload();
@@ -7,7 +7,7 @@ $('#fileupload').fileupload();
 
 The target element is usually a container element holding the file upload form, or the file upload form itself, but it can also be just the file input element itself, if an url is provided as options parameter.
 
-The method accepts an object as first argument that allows to initialize the widget with various [[Options]]:
+The initialization method accepts an object as first argument that allows to initialize the widget with various [[Options]]:
 
 ```js
 $('#fileupload').fileupload({
@@ -17,7 +17,7 @@ $('#fileupload').fileupload({
 ```
 
 ### Data attributes
-It is possible to initialize the file upload widget using [HTML5 data attributes](http://api.jquery.com/data/#data-html5):
+It is possible to pass options to the initialization method as [HTML5 data attributes](http://api.jquery.com/data/#data-html5):
 
 ```html
 <input id="fileupload" type="file" name="files[]" multiple
@@ -79,7 +79,7 @@ $('#fileupload').fileupload('destroy');
 This will also remove any added event listeners.
 
 ## Disable/Enable
-As other widgets based on jQuery UI Widget, the File Upload widget can be disabled/enabled:
+As other widgets based on [jQuery UI Widget](http://api.jqueryui.com/jQuery.widget/), the File Upload widget can be disabled/enabled:
 
 ```js
 $('#fileupload').fileupload('disable');
