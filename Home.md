@@ -43,6 +43,7 @@
 * [[Zend-framework]] integration (user contribution).
 * [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
+* [Symfony2 bundle](https://github.com/punkave/symfony2-file-uploader-bundle) (user contribution)
 
 ### Python
 * How to use the plugin with [[Google App Engine]].
