@@ -40,6 +40,11 @@ Safari on Windows has a bug that adds "￿" characters at the end of the file n
 ### Folder Drag&Drop
 It is possible to drag&drop a complete folder structure, though this is currently only supported by Google Chrome.
 
+## Copy&Paste of images
+The following browsers support pasting images from the clipboard:
+
+* Google Chrome
+
 ## Upload progress
 The following browsers have complete support for upload progress indication:
 
