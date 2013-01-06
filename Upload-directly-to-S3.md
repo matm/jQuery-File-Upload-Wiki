@@ -64,7 +64,7 @@ $(function() {
       $('#your_documents').load("/documents?for_item=1234");
       
       // hide the loading spinner that we turned on earlier.
-      $j('#loading').hide();
+      $('#loading').hide();
     },
   });
 });
