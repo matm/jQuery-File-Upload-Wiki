@@ -87,6 +87,7 @@
 * [.NET File Upload Handler](https://github.com/swhitley/jQuery-File-Upload) implementation by [Shannon Whitley](https://github.com/swhitley)
 * [ASP.NET Multiple File Upload With Drag & Drop and Progress Bar Using HTML5](http://www.codeproject.com/Articles/460142/ASP-NET-Multiple-File-Upload-With-Drag-Drop-and-Pr) (user contribution)
 * [VB.net VS2010 implementation](https://github.com/superquinho/jQuery-File-Upload-ASPnet)
+* A fully [IHttpHandler based] (https://github.com/YahavGB/jQuery-File-Upload/tree/master/server/asp-net) PHP server-side clone abstract class for uploading files. Class main propose is to upload files (supports high-quality images uploading) (Contributed by Yahav Gindi Bar).
 
 ### ASP (Classic)
 * [ASP VBscript example](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
