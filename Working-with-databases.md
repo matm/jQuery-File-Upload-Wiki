@@ -46,7 +46,7 @@ Add this function also too the **upload.class.php**
 
 so in this function we call the function _query_ with the string between the clamps. You could also insert other details too, for example, the file size.
 
-At least we have to call this function, with the following code at the end of the function **handle_file_upload**.
+Lastly we have to call this function, with the following code at the end of the function **handle_file_upload**.
 Paste the following code underneath or over this line : **$file->size = $file_size;**  
 >$file->upload_to_db = $this->add_img($file->name);
 
