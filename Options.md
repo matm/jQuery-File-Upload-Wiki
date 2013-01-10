@@ -19,13 +19,14 @@ If undefined or empty, it is set to the *action* property of the file upload for
 * Example: `'/path/to/upload/handler.json'`
 
 ### type
-The HTTP request method for the file uploads. Can be "POST" or "PUT" and defaults to "POST".
+The HTTP request method for the file uploads. Can be "POST", "PUT" or "PATCH" and defaults to "POST".
 
 * Type: *string*
 * Example: `'PUT'`
 
 **Note:**  
-"PUT" is only supported by browser supporting XHR file uploads, as iframe transport uploads rely on standard HTML forms which only support "POST" file uploads. See [[Browser support]].
+"PUT" and "PATCH" are only supported by browser supporting XHR file uploads, as iframe transport uploads rely on standard HTML forms which only support "POST" file uploads. See [[Browser support]].  
+If the type is defined as "PUT" or "PATCH", the iframe transport will send the files via "POST" and transfer the original method as "_method" URL parameter.
 
 ### dataType
 The type of data that is expected back from the server.  
