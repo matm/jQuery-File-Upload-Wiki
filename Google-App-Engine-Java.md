@@ -184,6 +184,10 @@ public class Entity {
       <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
       <param-value>true</param-value>
     </init-param>
+    <init-param>
+       <param-name>com.sun.jersey.config.feature.DisableWADL</param-name>
+       <param-value>true</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>jersey</servlet-name>
