@@ -273,7 +273,7 @@ echo '{"name":"'.$upload_data['file_name'].'","type":"'.$upload_data['file_type'
 <a href= "<?php echo base_url().'uploads/' .$upload_data['file_name'] ?>" ><img style="float:left; padding: 20px;" width="80" src="<?php echo base_url().'uploads/' .$upload_data['file_name']/*or set to thumbnail image*/ ?>"/></a><?php echo '<br/>name: ' .$upload_data['file_name'] .'<br/>size: ' .$upload_data['file_size'] .' k' ?> <!-- <br/><a href="upload/delete <?php echo $upload_data['file_name']?>"  >DELETE</a>-->
 ```
 ## Delete View :  delete_success.php
-probably won't be used but here is is anyway
+probably won't be used but here is is anywayss
 ```php
 <?php
 echo 'file:' .$delete_data .'-deleted' ;
