@@ -3,6 +3,9 @@ The following code snippet allows to upload images by drag&drop from another web
 ```html
 <script src="https://raw.github.com/betamax/getImageData/master/jquery.getimagedata.min.js"></script>
 <script>
+$(document).bind('drop dragover', function (e) {
+    e.preventDefault();
+});
 $(document).bind('drop', function (e) {
     var url = $(e.originalEvent.dataTransfer.getData('text/html')).filter('img').attr('src');
     if (url) {
