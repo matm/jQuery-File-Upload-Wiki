@@ -63,9 +63,13 @@ The following browsers have complete support for upload progress indication:
 
 ### Differences in upload progress events
 Depending on the size of the file, the operating system platform and the network throughput, the number of progress events triggered might differ.  
-e.g. Google Chrome might only trigger one progress event for the upload of a 100KB file on Windows XP, but trigger multiple progress events for the same file on Windows 7 and Mac OSX (tested with Google Chrome version 22.0.1229.94).
+e.g. Google Chrome might only trigger one progress event for the upload of a 100KB file on Windows XP, but trigger multiple progress events for the same file on Windows 7 and Mac OSX (tested with Google Chrome version 22).
 
 Please also note that some programs that analyze network traffic are known to interfere with the number of progress events triggered, e.g. Web Debugging Proxies or Firewall/Antivirus software.
+
+### Why does Firefox never show 100% upload progress?
+See Firefox Bug [#642463](https://bugzilla.mozilla.org/show_bug.cgi?id=642463).  
+If desired, you can workaround this bug by manually setting the progress bar to 100% when the load event (done event) fires.
 
 ## Image previews
 The following browsers have support for image previews prior to uploading files:
