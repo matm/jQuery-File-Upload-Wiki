@@ -16,4 +16,5 @@ The supporting Javascript: https://gist.github.com/4568794
 pending...
 
 ## Section 3: Tying it all together
-pending...
+
+Benchmarks for the plugin's 'maxChunkSize' and nginx's 'client_body_buffer_size settings': https://gist.github.com/3920385
