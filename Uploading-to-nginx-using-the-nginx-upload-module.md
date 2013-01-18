@@ -8,9 +8,10 @@ This document will describe the process for setting up the jQuery File Upload pl
 
 ## Section 1: Configuring the jQuery file upload plugin
 
-The supporting HTML markup: https://gist.github.com/4568859
+An example of our custom uploader interface can be found using the links below. This specific implementation opts out of using the custom UI plugins and instead favors a much simpler interface.
 
-The supporting Javascript: https://gist.github.com/4568794
+* The supporting HTML markup: https://gist.github.com/4568859
+* The supporting Javascript: https://gist.github.com/4568794
 
 ## Section 2: Configuring nginx to work with the plugin
 pending...
