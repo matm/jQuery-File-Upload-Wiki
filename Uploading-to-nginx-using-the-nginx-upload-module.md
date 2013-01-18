@@ -1,4 +1,4 @@
-## Overview
+## Section 0: Overview
 
 This document will describe the process for setting up the jQuery File Upload plugin to work with the nginx upload module (https://github.com/vkholodkov/nginx-upload-module). A lot of the sample configuration is pretty custom (including the jQuery plugin setup), but the result of this setup will allow you to benefit from the following:
 
