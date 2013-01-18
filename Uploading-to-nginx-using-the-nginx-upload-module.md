@@ -7,7 +7,11 @@ This document will describe the process for setting up the jQuery File Upload pl
 * You can use this configuration on any platform, be it PHP, Ruby, Java, or whatever. All that you need is this plugin and nginx compiled with the upload module.
 
 ## Section 1: Configuring the jQuery file upload plugin
-pending...
+
+### The supporting HTML markup
+
+### The supporting Javascript
+https://gist.github.com/4568794
 
 ## Section 2: Configuring nginx to work with the plugin
 pending...
