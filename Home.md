@@ -79,6 +79,9 @@
 * [Upload Servlet excercise](https://github.com/klaalo/jQuery-File-Upload-Java) (user contribution).
 * [Modified Upload Servlet] (https://github.com/amilarajans/jQuery-File-Upload-for-java) complete working example (user contribution).
 
+### Scala
+* The _Lift Cookbook_ contains [basic plugin integration](http://cookbook.liftweb.net/#AjaxFileUpload) code and instructions (user contribution).
+
 ### ASP.NET
 * Fork of this project adding an [ASP.NET server example](https://github.com/timabell/jQuery-File-Upload/tree/dotnet) (contribution from Tim Abell), an IHttpHandler based example. Upload only.
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (contribution from Sam at webtrendset.com), a simple ashx based example, available as a zip file download. Upload support only. Focus on IE handling.
