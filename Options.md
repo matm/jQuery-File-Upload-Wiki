@@ -255,7 +255,11 @@ $('#fileupload')
     .bind('fileuploadchange', function (e, data) {/* ... */})
     .bind('fileuploadpaste', function (e, data) {/* ... */})
     .bind('fileuploaddrop', function (e, data) {/* ... */})
-    .bind('fileuploaddragover', function (e) {/* ... */});
+    .bind('fileuploaddragover', function (e) {/* ... */})
+    .bind('fileuploadchunksend', function (e, data) {/* ... */})
+    .bind('fileuploadchunkdone', function (e, data) {/* ... */})
+    .bind('fileuploadchunkfail', function (e, data) {/* ... */})
+    .bind('fileuploadchunkalways', function (e, data) {/* ... */});
 ```
 
 **Note:**
@@ -456,6 +460,19 @@ function (e) {
     // e.dataTransfer
 }
 ```
+
+### chunksend
+Callback for the start of each chunk upload request.  
+If this callback returns false, the chunk upload request is aborted.
+
+### chunkdone
+Callback for successful chunk upload requests.
+
+### chunkfail
+Callback for failed (abort or error) chunk upload requests
+
+### chunkalways
+Callback for completed (success, abort or error) chunk upload requests.
 
 ## File Processing Options
 
