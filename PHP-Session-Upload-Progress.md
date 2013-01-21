@@ -25,7 +25,8 @@ $('#fileupload').bind('fileuploadsend', function (e, data) {
                 e = document.createEvent('Event');
                 e.initEvent('progress', false, true);
                 $.extend(e, result);
-                $('#fileupload').data('fileupload')._onProgress(e, data);
+                ($('#fileupload').data('blueimp-fileupload') ||
+                    $('#fileupload').data('fileupload'))._onProgress(e, data);
             }, 'json');
         }, 1000)); // poll every second
     }
