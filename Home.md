@@ -33,6 +33,9 @@
 
 ## Server-side
 
+### Nginx
+* [[Uploading to nginx using the nginx upload module]]
+
 ### PHP
 * [[PHP user directories]]
 * [[PHP Session Upload Progress]]
