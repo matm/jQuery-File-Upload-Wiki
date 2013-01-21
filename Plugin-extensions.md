@@ -11,7 +11,7 @@ $.widget('blueimp.fileupload', $.blueimp.fileupload, {
     options: {
         authenticityTokenName: 'request_authenticity_token',
         destroy: function (e, data) {
-            var fu = $(this).data('fileupload');
+            var fu = $(this).data('blueimp-fileupload') || $(this).data('fileupload');
             data.url = data.url &&
                 fu._addUrlParams(data.url, fu._getAuthenticityToken());
             $.blueimp.fileupload.prototype
