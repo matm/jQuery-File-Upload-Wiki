@@ -11,6 +11,7 @@ $.widget('blueimp.fileupload', $.blueimp.fileupload, {
     options: {
         authenticityTokenName: 'request_authenticity_token',
         destroy: function (e, data) {
+            // jQuery Widget Factory uses "namespace-widgetname" since version 1.10.0:
             var fu = $(this).data('blueimp-fileupload') || $(this).data('fileupload');
             data.url = data.url &&
                 fu._addUrlParams(data.url, fu._getAuthenticityToken());
