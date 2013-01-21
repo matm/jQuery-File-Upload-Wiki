@@ -93,7 +93,7 @@ $('#fileupload').fileupload({
                     });
             };
         if (data.errorThrown !== 'abort' &&
-                data.errorThrown !== 'uploadedBytes' &&
+                data.uploadedBytes < data.files[0].size &&
                 retries < fu.options.maxRetries) {
             retries += 1;
             data.context.data('retries', retries);
