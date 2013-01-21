@@ -147,7 +147,7 @@ The following browsers support splitting up file uploads into multiple chunks:
 ### Desktop browsers
 
 * Google Chrome
-* Apple Safari 5.0+
+* Apple Safari 6.0+
 * Mozilla Firefox 4.0+
 * Opera 12.0+
 * Microsoft Internet Explorer 10.0+
