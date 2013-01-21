@@ -76,7 +76,8 @@ $('#fileupload').fileupload({
     maxRetries: 100,
     retryTimeout: 500,
     fail: function (e, data) {
-        var fu = $(this).data('fileupload'),
+        // jQuery Widget Factory uses "namespace-widgetname" since version 1.10.0:
+        var fu = $(this).data('blueimp-fileupload') || $(this).data('fileupload'),
             retries = data.context.data('retries') || 0,
             retry = function () {
                 $.getJSON('server/php/', {file: data.files[0].name})
