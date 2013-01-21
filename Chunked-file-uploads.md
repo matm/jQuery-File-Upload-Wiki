@@ -24,19 +24,19 @@ The file name of the blob is transmitted via the **Content-Disposition** header.
 
 ## Callbacks
 Chunked file uploads trigger the same callbacks as normal file uploads, e.g. the *done* callback (see [[API]]) will only be triggered after the last blob has been successfully uploaded.
-However, callbacks set as part of the [$.ajax](http://api.jquery.com/jQuery.ajax/) [[Options]] (e.g. *success* or *complete*) will be called for each AJAX request:
+
+Chunked uploads trigger additional callbacks, that can be used to track the events of individual chunked uploads:
 
 ```js
-$('#fileupload').fileupload({
-    maxChunkSize: 100000,
-    error: function (jqXHR, textStatus, errorThrown) {
-        // Called for each failed chunk upload
-    },
-    success: function (data, textStatus, jqXHR) {
-        // Called for each successful chunk upload
-    }
-});
+$('#fileupload').fileupload({maxChunkSize: 100000})
+    .on('fileuploadchunksend', function (e, data) {})
+    .on('fileuploadchunkdone', function (e, data) {})
+    .on('fileuploadchunkfail', function (e, data) {})
+    .on('fileuploadchunkalways', function (e, data) {});
 ```
+
+**Note:**
+Callbacks set as part of the [$.ajax](http://api.jquery.com/jQuery.ajax/) [[Options]] (e.g. *success*, *error* or *complete*) will be called for each AJAX request, including uploads of individual chunks.
 
 ## Cross-site chunked uploads
 By default, browsers don't allow all headers used for cross-site file uploads, if they are not explicitly defined as allowed with the following server-side headers:
