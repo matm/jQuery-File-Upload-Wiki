@@ -92,7 +92,7 @@ Please see the comments for [Issue #893](https://github.com/blueimp/jQuery-File-
 
 ### Why does Firefox never show 100% upload progress?
 See Firefox Bug [#642463](https://bugzilla.mozilla.org/show_bug.cgi?id=642463).  
-If desired, you can workaround this bug by manually setting the progress bar to 100% when the load event (done event) fires.
+This bug has been addressed with commit [f60bbfb2546bc08fe9538d3af56be8d07e634675](https://github.com/blueimp/jQuery-File-Upload/commit/f60bbfb2546bc08fe9538d3af56be8d07e634675).
 
 ### Why does the plugin display 1000 Bytes as 1 KB (and 1000000 Bytes as 1 MB)?
 The plugin makes use of [metric prefixes](http://en.wikipedia.org/wiki/SI_prefix) in conformance of the [International System of Units](http://en.wikipedia.org/wiki/International_System_of_Units).
