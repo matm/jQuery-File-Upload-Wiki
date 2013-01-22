@@ -67,10 +67,6 @@ e.g. Google Chrome might only trigger one progress event for the upload of a 100
 
 Please also note that some programs that analyze network traffic are known to interfere with the number of progress events triggered, e.g. Web Debugging Proxies or Firewall/Antivirus software.
 
-### Why does Firefox never show 100% upload progress?
-See Firefox Bug [#642463](https://bugzilla.mozilla.org/show_bug.cgi?id=642463).  
-If desired, you can workaround this bug by manually setting the progress bar to 100% when the load event (done event) fires.
-
 ## Image previews
 The following browsers have support for image previews prior to uploading files:
 
