@@ -22,8 +22,7 @@ $('#fileupload').bind('fileuploadsend', function (e, data) {
             $.get('progress.php', $.param([progressObj]), function (result) {
                 // Trigger a fileupload progress event,
                 // using the result as progress data:
-                e = document.createEvent('Event');
-                e.initEvent('progress', false, true);
+                e = $.Event( 'progress', {bubbles: false, cancelable: true});
                 $.extend(e, result);
                 ($('#fileupload').data('blueimp-fileupload') ||
                     $('#fileupload').data('fileupload'))._onProgress(e, data);
