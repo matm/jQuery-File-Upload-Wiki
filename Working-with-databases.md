@@ -49,7 +49,7 @@ function add_img($whichimg)
 	     ('".$whichimg."')") or die(mysql_error());  
 	return $add_to_db;  
 }
-```  
+```
 
 So in this function we call the function `query()` with the string between the clamps. You could also insert other details too, for example, the file size.
 
