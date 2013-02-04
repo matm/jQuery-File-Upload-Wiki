@@ -12,7 +12,7 @@ $('#fileupload').fileupload({
 For chunked uploads to work in Mozilla Firefox 4-6 (XHR upload capable Firefox versions prior to Firefox 7), the *multipart* option also has to be set to *false* - see the [[Options]] documentation on *maxChunkSize* for an explanation.
 
 ## Server-side setup
-The [example PHP upload handler](https://github.com/blueimp/jQuery-File-Upload/blob/master/example/upload.php) supports chunked uploads out of the box.
+The [example PHP upload handler](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/UploadHandler.php) supports chunked uploads out of the box.
 
 To support chunked uploads, the upload handler makes use of the [Content-Range header](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.16), which is transmitted by the plugin for each chunk.
 
