@@ -15,7 +15,7 @@ By default, the plugin calls [jQuery's serializeArray method](http://api.jquery.
 The value of these form fields will be sent to the server along with the selected files.
 
 **Note:**  
-If you set the formData option, these fields won't be send to the server, since the formData object will override them.  
+If you set the formData option, these fields won't be sent to the server, since the formData object will override them.  
 You can however create a formData object of the form fields manually using [jQuery's serializeArray method](http://api.jquery.com/serializeArray) method:
 
 ```js
