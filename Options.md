@@ -5,7 +5,7 @@ For example code on how to use the options, please refer to the [[API]] document
 
 ## AJAX Options
 
-The jQuery File Upload plugin makes use of [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) for the file upload requests. This is true even for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest), thanks to the [Iframe Transport plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js).
+The jQuery File Upload plugin makes use of [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) for the file upload requests. This is true even for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest), thanks to the [Iframe Transport plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js).
 
 The options set for the File Upload plugin are passed to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) and allow to define any ajax settings or callbacks.   
 The ajax options *processData*, *contentType* and *cache* are set to *false* for the file uploads to work and should not be changed.  
