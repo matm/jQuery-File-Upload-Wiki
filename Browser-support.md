@@ -31,7 +31,7 @@ The following browsers support drag & drop:
 * Google Chrome
 * Apple Safari 5.0+
 * Mozilla Firefox 4.0+
-* Opera 12.0+ (broken, see Issue [#2080](https://github.com/blueimp/jQuery-File-Upload/issues/2080)
+* Opera 12.0+ (broken, see Issue [#2080](https://github.com/blueimp/jQuery-File-Upload/issues/2080))
 * Microsoft Internet Explorer 10.0+
 
 ### Known bugs
