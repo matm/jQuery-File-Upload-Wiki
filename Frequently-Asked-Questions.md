@@ -99,6 +99,9 @@ The plugin makes use of [metric prefixes](http://en.wikipedia.org/wiki/SI_prefix
 This is the same unit system that is used by hard drive manufacturers and e.g. the Mac OSX operating system to report hard drive capacities.
 Unfortunately, the terms "kilobytes", "megabytes", etc. have historically been used in ambiguous meanings. Please have a look at the [Binary Prefix](http://en.wikipedia.org/wiki/Binary_prefix) article on Wikipedia for background information.
 
+### Why is the files validation/error handling not part of the basic plugin?
+Please see issue [#1976](https://github.com/blueimp/jQuery-File-Upload/issues/1976)
+
 ## Server-side
 
 ### Why does Internet Explorer prompt to download a file after the upload completes?
