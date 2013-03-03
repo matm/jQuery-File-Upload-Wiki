@@ -78,7 +78,7 @@ The [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors
 **Note:**
 The response should not exceed a certain length, as the redirect URL is limited by the [maximum URL length](What is the maximum length of a URL?) that browsers will process.
 
-### Cross-site iframe transport uploads to different subdomains
+### Cross-site iframe transport uploads with HTML responses on different subdomains
 
 If both servers - the server hosting the upload form and the target server for the file uploads - are just on different subdomains (e.g. source.example.org and target.example.org), it is possible to access the iframe content on the subdomain by adding the following line of Javascript to both webpages (the upload form page and the upload server response page):
 
@@ -86,7 +86,7 @@ If both servers - the server hosting the upload form and the target server for t
 document.domain = 'example.com';
 ```
 
-Note that this requires the server response to be a HTML document (and not JSON as is the default for the UI version of the plugin).
+Note that this requires the server response to be a HTML document and not JSON as is the default for the UI version of the plugin.
 
 ## Additional cross-domain resources
 
