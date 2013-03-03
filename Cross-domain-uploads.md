@@ -75,6 +75,18 @@ Note that the redirect URL is supposed to have a placeholder (e.g. **%s**) as pa
 
 The [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) page adds the decoded result content as body content. This allows the plugin to access the response without cross-domain access issues.
 
+Example redirect URL sent back to the client:
+
+```
+http://example.org/result.html?%7B%22files%22%3A%5B%7B%22name%22%3A%22cat.jpg%22%2C%22size%22%3A464885%2C%22type%22%3A%22image%2Fjpeg%22%2C%22url%22%3A%22http%3A%2F%2Fexample.org%2Ffiles%2Fcat.jpg%22%2C%22thumbnail_url%22%3A%22http%3A%2F%2Fexample.org%2Ffiles%2Fthumbnail%2Fcat.jpg%22%2C%22delete_url%22%3A%22http%3A%2F%2Fexample.org%2F%3Ffile%3Dcat.jpg%22%7D%5D%7D
+```
+
+Example body content decoded by the [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) page:
+
+```json
+{"files":[{"name":"cat.jpg","size":464885,"type":"image/jpeg","url":"http://example.org/files/cat.jpg","thumbnail_url":"http://example.org/files/thumbnail/cat.jpg","delete_url":"http://example.org/?file=cat.jpg"}]}
+```
+
 **Note:**
 The response should not exceed a certain length, as the redirect URL is limited by the [maximum URL length](What is the maximum length of a URL?) that browsers will process.
 
