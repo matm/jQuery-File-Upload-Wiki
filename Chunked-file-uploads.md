@@ -110,3 +110,7 @@ $('#fileupload').fileupload({
 If the upload fails, the code above will automatically resume the file upload after retrieving the uploaded bytes.  
 To prevent endless loops, the number of retries can be limited with the *maxRetries* setting.  
 The *retryTimeout* setting defines a timeout in milliseconds, before the file upload is resumed. It is increased for every subsequent retry to extend the waiting time.
+
+## Extensions
+
+* [[Force re upload of last chunk]]
