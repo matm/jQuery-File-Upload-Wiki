@@ -72,6 +72,9 @@
 * [Rails + Blitline (upload directly to S3 + process images into thumbnails)](https://github.com/hisyam/blitline_rails_demo)
 * [jquery-fileupload-rails Gem](https://github.com/tors/jquery-fileupload-rails) and [example](https://github.com/tors/jquery-fileupload-rails-paperclip-example)
 
+### Perl
+* [jQuery::File::Upload perl module](https://metacpan.org/module/jQuery::File::Upload)
+
 ### JavaScript
 * [Express.js middleware for jQuery File Upload](https://github.com/aguidrevitch/jquery-file-upload-middleware) by [Aleksandr Guidrevitch](https://github.com/aguidrevitch)
 
