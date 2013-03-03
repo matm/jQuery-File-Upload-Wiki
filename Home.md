@@ -39,6 +39,7 @@
 ### PHP
 * [[PHP user directories]]
 * [[PHP Session Upload Progress]]
+* [[PHP Remote File Copy]]
 * [[Working with Databases]] (user contribution)
 * [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
 * [jQuery File Upload + CakePHP 2.1.x](https://github.com/hugodias/FileUpload) (user contribution)
