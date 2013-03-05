@@ -15,6 +15,8 @@ An example of our custom uploader interface can be found using the links below. 
 
 ## Section 2: Configuring nginx to work with the plugin
 
+Below is an example nginx config file set up to receive chunked uploads from a different origin. This nginx file assumes that you have some web application also running on the same box, and that application is configured to receive the message (200 status and uploaded file information) from nginx when the upload completes.
+
 * The supporting nginx config file: https://gist.github.com/5086894.
 
 There are some important settings in this config file that should be documented, however I'd like to call out again just a couple things.
