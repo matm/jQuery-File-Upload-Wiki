@@ -29,3 +29,11 @@ Secondly, the nginx upload module has its own function for passing along headers
 
 Lastly, make sure that you have created all necessary folders in the folder structure where you'd like your uploads to live. You need a folder for every alphanumeric character. If you plan on storing your file uploads in /var/uploads, then you need to create a single folder for every character in the set a-zA-z0-9. This has to do with how the upload module handles the file upload in combination with the sessionID header being set.
 
+## Section 3: Tying it all together
+
+Assuming you've got everything in place, your application's architecture should be something like this:
+
+* Application A (www.somesite.com): Uses the jQuery File Upload plugin to create a functional upload UI for your users. This uploader posts to a different domain (www.my-upload-endpoint.com/upload) to handle the uploads. This application will wait for a response from Application B to let it know when the upload is finished.
+
+* Application B (www.my-upload-endpoint.com/upload): Has nginx running in front of it that processes the file upload, then forwards the response to the application server running on the box. Once the application receives the information from nginx, you can simply return it so that Application A can receive the final status that everything was created. You might have to modify the response slightly, depending on how you want to format to look. The custom uploader Javascript expects the data to be returned in a specific format, so you might refer to that for some ideas.
+
