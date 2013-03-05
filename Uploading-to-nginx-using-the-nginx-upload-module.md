@@ -14,7 +14,8 @@ An example of our custom uploader interface can be found using the links below. 
 * The supporting Javascript: https://gist.github.com/4568794
 
 ## Section 2: Configuring nginx to work with the plugin
-pending...
+
+Here is an example nginx config file used specifically for the box that will be receiving the uploads via the nginx upload module: https://gist.github.com/5086894.
 
 ## Section 3: Tying it all together
 
