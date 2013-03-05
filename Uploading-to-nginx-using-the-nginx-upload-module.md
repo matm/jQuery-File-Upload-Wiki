@@ -29,6 +29,3 @@ Secondly, nginx has its own function for passing along headers: _upload_add_head
 
 Lastly, make sure that you have created all necessary folders in the folder structure where you'd like your uploads to live. You need a folder for every alphanumeric character. If you plan on storing your file uploads in /var/uploads, then you need to create a single folder for every character in the set a-zA-z0-9. This has to do with how the upload module handles the file upload in combination with the sessionID header being set.
 
-## Section 3: Tying it all together
-
-pending...
