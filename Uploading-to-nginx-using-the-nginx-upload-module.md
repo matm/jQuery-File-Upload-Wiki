@@ -15,7 +15,7 @@ An example of our custom uploader interface can be found using the links below. 
 
 ## Section 2: Configuring nginx to work with the plugin
 
-Here is an example nginx config file used specifically for the box that will be receiving the uploads via the nginx upload module: https://gist.github.com/5086894.
+The supporting nginx config file: https://gist.github.com/5086894.
 
 ## Section 3: Tying it all together
 
