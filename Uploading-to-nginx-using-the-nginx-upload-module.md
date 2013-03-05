@@ -15,7 +15,15 @@ An example of our custom uploader interface can be found using the links below. 
 
 ## Section 2: Configuring nginx to work with the plugin
 
-The supporting nginx config file: https://gist.github.com/5086894.
+* The supporting nginx config file: https://gist.github.com/5086894.
+
+There are some important settings in this config file that should be documented, however I'd like to call out again just a couple things.
+
+First, make sure that you have the client_body_buffer_size set to be **less than or equal to** the **maxChunkSize** for your uploader. It is important to not exceed the buffer, otherwise you can end up with some really bad upload performance.
+
+Secondly, nginx has its own function for passing along headers: _upload_add_header_. This example I've provided demonstrates configuration for CORS. Without these headers (in addition to the normal headers for nginx) you will most likely not be able to upload across domains.
+
+Lastly, make sure that you have created all necessary folders in the folder structure where you'd like your uploads to live. You need a folder for every alphanumeric character. If you plan on storing your file uploads in /var/uploads, then you need to create a single folder for every character in the set a-zA-z0-9. This has to do with how the upload module handles the file upload in combination with the sessionID header being set.
 
 ## Section 3: Tying it all together
 
