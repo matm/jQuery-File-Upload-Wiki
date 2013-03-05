@@ -37,3 +37,7 @@ Assuming you've got everything in place, your application's architecture should 
 
 * Application B (www.my-upload-endpoint.com/upload): Has nginx running in front of it that processes the file upload, then forwards the response to the application server running on the box. Once the application receives the information from nginx, you can simply return it so that Application A can receive the final status that everything was created. You might have to modify the response slightly, depending on how you want to format to look. The custom uploader Javascript expects the data to be returned in a specific format, so you might refer to that for some ideas.
 
+Note: When doing chunked uploads, a successful chunk should return a status of 201 Created. When the last chunk has finished uploading, the response should be 200 OK.
+
+
+
