@@ -21,7 +21,9 @@ Below is an example nginx config file set up to receive chunked uploads from a d
 
 There are some important settings in this config file that should be documented, however I'd like to call out again just a couple things.
 
-First, make sure that you have the client_body_buffer_size set to be **less than or equal to** the **maxChunkSize** for your uploader. It is important to not exceed the buffer, otherwise you can end up with some really bad upload performance.
+First, make sure that you have the client_body_buffer_size set to be **less than or equal to** the **maxChunkSize** for your uploader. It is important to not exceed the buffer, otherwise you can end up with some really bad upload performance. Below is a text file that shows the benchmarks for various maxChunkSize and client_body_buffer_size settings. These benchmarks might not be completely accurate for your environment, so feel free to change up your configuration.
+
+* Benchmarks for the plugin's 'maxChunkSize' and nginx's 'client_body_buffer_size settings': https://gist.github.com/3920385
 
 Secondly, nginx has its own function for passing along headers: _upload_add_header_. This example I've provided demonstrates configuration for CORS. Without these headers (in addition to the normal headers for nginx) you will most likely not be able to upload across domains.
 
@@ -29,4 +31,4 @@ Lastly, make sure that you have created all necessary folders in the folder stru
 
 ## Section 3: Tying it all together
 
-Benchmarks for the plugin's 'maxChunkSize' and nginx's 'client_body_buffer_size settings': https://gist.github.com/3920385
+pending...
