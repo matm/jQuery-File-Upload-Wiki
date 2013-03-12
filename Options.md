@@ -42,7 +42,7 @@ The type of data that is expected back from the server.
 * Example: `'myfileupload'`
 
 ### dropZone
-The drop target [jQuery object](http://api.jquery.com/Types/#jQuery), by the default the complete document.  
+The drop target [jQuery object](http://api.jquery.com/Types/#jQuery), by default the complete document.  
 Set to null or an empty jQuery collection to disable drag & drop support:
 
 * Type: *jQuery Object*
