@@ -14,7 +14,7 @@ To provide your own implementation, you can override the *get_user_id* method:
 
 ```php
 <?php
-require('upload.class.php');
+require('UploadHandler.php');
 
 class CustomUploadHandler extends UploadHandler {
     protected function get_user_id() {
