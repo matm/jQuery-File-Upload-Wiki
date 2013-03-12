@@ -1,4 +1,4 @@
-All changes and modifications must be made ​​in the `upload.class.php`
+All changes and modifications must be made ​​in the `UploadHandler.php`
 
 ## General settings
 
