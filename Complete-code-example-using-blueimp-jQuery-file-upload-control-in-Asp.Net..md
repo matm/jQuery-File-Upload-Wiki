@@ -11,7 +11,7 @@ to get the JSON data (from server) and binding them to the download template in 
 in the htppposted file object (in the server handler) where as other browsers giving only file name like “file.jpg”. for that I am handling the IE request differently in the server.
 All these issues I figured out and fixed and I am posting the source code at the below url.
 
-http://www.webtrendset.com/2011/06/22/complete-code-example-for-using-blueimp-jquery-file-upload-control-in-asp-net/ (THIS LINK IS NOT WORKING)
+http://www.webtrendset.com/2011/06/22/complete-code-example-for-using-blueimp-jquery-file-upload-control-in-asp-net/
 
 Download the zip file and extract, then create new website project using visual studio by pointing the website to the file directory you unzipped and run the application. Have fun coding.
 
