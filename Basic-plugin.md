@@ -101,7 +101,7 @@ $(function () {
             data.context = $('<button/>').text('Upload')
                 .appendTo(document.body)
                 .click(function () {
-                    $(this).replaceWith($('<p/>').text('Uploading...'));
+                    data.context=$('<p/>').text('Uploading...').replaceAll($(this));
                     data.submit();
                 });
         },
