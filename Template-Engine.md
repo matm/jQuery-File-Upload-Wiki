@@ -56,7 +56,7 @@ $('#fileupload').fileupload({
                     row.find('a').prop('rel', 'gallery');
                 }
                 row.find('a').prop('href', file.url);
-                row.find('.delete button')
+                row.find('.delete')
                     .attr('data-type', file.delete_type)
                     .attr('data-url', file.delete_url);
             }
