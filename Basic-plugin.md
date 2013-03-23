@@ -1,6 +1,6 @@
 ## How to use only the Basic plugin (minimal setup guide)
 
-The plugin [download package](https://github.com/blueimp/jQuery-File-Upload/archives/master) comes with a complete user interface based on [Bootstrap](http://twitter.github.com/bootstrap/). There is also a version available for [[jQuery UI]].
+The plugin [download package](https://github.com/blueimp/jQuery-File-Upload#download) comes with a complete user interface based on [Bootstrap](http://twitter.github.com/bootstrap/). There is also a version available for [[jQuery UI]].
 
 However, if you want to build your own user interface, it is possible to use only the [basic plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload.js) version and a minimal setup.  
 The following is an alternative to [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) with only the minimal requirements and a simple *done* callback handler (see [[API]] and [[Options]] on how to use the different options and callbacks):
