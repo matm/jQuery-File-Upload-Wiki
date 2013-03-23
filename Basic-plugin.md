@@ -14,7 +14,7 @@ The following is an alternative to [index.html](https://github.com/blueimp/jQuer
 </head>
 <body>
 <input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/vendor/jquery.ui.widget.js"></script>
 <script src="js/jquery.iframe-transport.js"></script>
 <script src="js/jquery.fileupload.js"></script>
@@ -101,7 +101,7 @@ $(function () {
             data.context = $('<button/>').text('Upload')
                 .appendTo(document.body)
                 .click(function () {
-                    data.context=$('<p/>').text('Uploading...').replaceAll($(this));
+                    data.context = $('<p/>').text('Uploading...').replaceAll($(this));
                     data.submit();
                 });
         },
