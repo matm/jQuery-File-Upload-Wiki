@@ -1,5 +1,9 @@
 The following code snippet allows to upload images by drag&drop from another webpage:
 
+**Note:**
+Doesn't seem to work anymore in Chrome version 25/26.
+See issue #2173. 
+
 ```html
 <script src="https://raw.github.com/betamax/getImageData/master/jquery.getimagedata.min.js"></script>
 <script>
