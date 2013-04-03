@@ -49,3 +49,13 @@ $('#fileupload').bind('fileuploadsend', function (e, data) {
   echo json_encode($progress);
 ?>
 ```
+
+## APC Alternative
+According to [PHP.net](http://www.php.net/manual/en/apc.configuration.php#ini.apc.rfc1867), PHP APC is available for PHP 5.2+. When installed and configured properly, APC file upload progress can be enabled for older browsers with the File Upload Extension located at [this fork](https://github.com/teynon/jQuery-File-Upload). 
+
+To enable apc with this extension, simply set the apc option.
+```js
+$('#fileupload').fileupload({
+    apc: true
+});
+```
