@@ -150,7 +150,7 @@ If your non-ASCII file names get uploaded with strange characters like Ã¤, Ã�
 require('upload.class.php');
 
 class CustomUploadHandler extends UploadHandler {
-    protected trim_file_name($name, $type, $index) {
+    protected function trim_file_name($name, $type, $index) {
         $name = utf8_decode($name);
         return parent::trim_file_name($name, $type, $index);
     }
