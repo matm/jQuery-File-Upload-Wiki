@@ -242,7 +242,7 @@ In whatever view file you want, copy paste this code and enjoy.
         // 
         // Load existing files:
         $.getJSON($('#fileupload').prop('action'), function (files) {
-          var fu = $('#fileupload').data('fileupload'), 
+          var fu = $('#fileupload').data('blueimp-fileupload'), 
             template;
           fu._adjustMaxNumberOfFiles(-files.length);
           template = fu._renderDownload(files)
