@@ -69,15 +69,26 @@ public class FileResource {
   
   @POST
   @Consumes(MediaType.MULTIPART_FORM_DATA)
-  public void post(@Context HttpServletRequest req, @Context HttpServletResponse res) throws IOException, URISyntaxException {
-    Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(req);
-    BlobKey blobKey = blobs.get("files[]");
-    res.sendRedirect("/rest/file/" + blobKey.getKeyString() + "/meta");
+  public Response post(@Context HttpServletRequest req,
+		@Context HttpServletResponse res) throws IOException,
+		URISyntaxException {
+     Map<String, BlobKey> blobs = blobstoreService.getUploadedBlobs(req);
+     BlobKey blobKey = blobs.get("files[]");
+	
+     BlobInfo info = blobInfoFactory.loadBlobInfo(blobKey);
+     String name = info.getFilename();
+     long size = info.getSize();
+     String url = "/rest/file/" + blobKey.getKeyString();
+     FileMeta meta = new FileMeta(name, size, url);
+
+     List<FileMeta> metas = Lists.newArrayList(meta);
+     Entity entity = new Entity(metas);
+     return Response.ok(entity, MediaType.APPLICATION_JSON).build();
   }
   
   /* step 3. redirected to the meta info */
   
-   @GET
+    @GET
     @Path("/{key}/meta")
     public Response redirect(@PathParam("key") String key) throws IOException {
       BlobKey blobKey = new BlobKey(key);
