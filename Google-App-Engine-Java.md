@@ -79,7 +79,15 @@ public class FileResource {
      String name = info.getFilename();
      long size = info.getSize();
      String url = "/rest/file/" + blobKey.getKeyString();
-     FileMeta meta = new FileMeta(name, size, url);
+
+     ImagesService imagesService = ImagesServiceFactory.getImagesService();
+     ServingUrlOptions.Builder.withBlobKey(blobKey).crop(true).imageSize(80);
+     int sizePreview = 80;
+     String urlPreview = imagesService
+                .getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)
+			.crop(true).imageSize(sizePreview));
+
+     FileMeta meta = new FileMeta(name, size, url, urlPreview);
 
      List<FileMeta> metas = Lists.newArrayList(meta);
      Entity entity = new Entity(metas);
@@ -156,14 +164,16 @@ public class FileMeta {
   long size;
   String url;
   String delete_url;  
-  String delete_type;  
+  String delete_type;
+  String thumbnail_url;  
 
-  public FileMeta(String filename, long size, String url) {
+  public FileMeta(String filename, long size, String url, String urlPreview) {
     this.name = filename;
     this.size = size;
     this.url = url;
     this.delete_url = url;
     this.delete_type = "DELETE";
+    this.thumbnail_url = urlPreview;
   }
 
   public FileMeta() {
