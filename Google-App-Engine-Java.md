@@ -104,8 +104,16 @@ public class FileResource {
 
       String name = info.getFilename();
       long size = info.getSize();
-      String url = "/rest/file/" + key; 
-      FileMeta meta = new FileMeta(name, size, url);
+      String url = "/rest/file/" + key;
+
+      ImagesService imagesService = ImagesServiceFactory.getImagesService();
+      ServingUrlOptions.Builder.withBlobKey(blobKey).crop(true).imageSize(80);
+      int sizePreview = 80;
+      String urlPreview = imagesService
+                .getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)
+			.crop(true).imageSize(sizePreview));
+
+      FileMeta meta = new FileMeta(name, size, url, urlPreview);
 
       List<FileMeta> metas = Lists.newArrayList(meta);
       Entity entity = new Entity(metas);
