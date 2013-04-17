@@ -90,3 +90,5 @@ window.tmpl = function (id) {
     }
 }
 ```
+
+Here's how the templates look like in [Mustache / Handlebars](https://gist.github.com/elmariachi111/5407282)
