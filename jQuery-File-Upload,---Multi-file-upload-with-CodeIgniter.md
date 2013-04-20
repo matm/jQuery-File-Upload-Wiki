@@ -1,4 +1,4 @@
-### This page expands on the example bundled with the plugin and the previous example of using codeigniter
+### This page expandes on the example bundled with the plugin and the previous example of using codeigniter
 
 ***
 
