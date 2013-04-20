@@ -40,7 +40,7 @@ function query($query) {
 ## Add file details to database
 
 I explain this function with a picture upload, so here we save the picture name to the database
-Add this function also too the `upload.class.php` 
+Add this function also too the `UploadHandler.php` 
 
 ```php
 function add_img($whichimg)  
