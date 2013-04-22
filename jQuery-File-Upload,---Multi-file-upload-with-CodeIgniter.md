@@ -98,13 +98,16 @@ public function deleteImage($file)//gets the job done but you might want to add 
 		$info->sucess =$success;
 		$info->path =base_url().'uploads/' .$file;
 		$info->file =is_file(FCPATH.'uploads/' .$file);
-	if (IS_AJAX) {//I don't think it matters if this is set but good for error checking in the console/firebug
-	    echo json_encode(array($info));}
-	else {     //here you will need to decide what you want to show for a successful delete
-		  	$file_data['delete_data'] = $file';
-		  	$this->load->view('admin/delete_success', $file_data); 
-	       }
-}
+		
+		if (IS_AJAX) {
+			//I don't think it matters if this is set but good for error checking in the console/firebug
+			echo json_encode(array($info));
+		} else {
+			//here you will need to decide what you want to show for a successful delete		
+			$file_data['delete_data'] = $file';
+			$this->load->view('admin/delete_success', $file_data); 
+		}
+	}
 ```
 ## View: index.php
  this is mostly unchanged from the example code. Change name="files[]" to name="userfile"
