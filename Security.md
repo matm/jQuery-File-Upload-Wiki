@@ -58,6 +58,9 @@ ForceType application/octet-stream
 <FilesMatch "(?i)\.(gif|jpe?g|png)$">
   ForceType none
 </FilesMatch>
+
+# Prevent IE from MIME-sniffing:
+Header set X-Content-Type-Options "nosniff"
 ```
 
 The [ForceType](http://httpd.apache.org/docs/2.4/mod/core.html#forcetype) directive "application/octet-stream" enforces Apache to serve all files with an attachment header to force a download dialog. More importantly, it prevents Apache to run any of the uploaded files through an interpreter like PHP, even if the file extension is ".php".
