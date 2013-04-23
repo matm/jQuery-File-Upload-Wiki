@@ -78,7 +78,7 @@ public function do_upload()
 			//this is why we put this in the constants to pass only json data
 			if (IS_AJAX) {
 				echo json_encode(array($info));
-				//this has to be the only the only data returned or you will get an error.
+				//this has to be the only data returned or you will get an error.
 				//if you don't give this a json array it will give you a Empty file upload result error
 				//it you set this without the if(IS_AJAX)...else... you get ERROR:TRUE (my experience anyway)
 
