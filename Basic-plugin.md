@@ -112,26 +112,4 @@ $(function () {
 });
 ```
 
-## How to use image resizing functionality with the basic plugin
-Include the following additional scripts (include jquery.fileupload-fp.js after jquery.fileupload.js):
-
-```html
-<script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
-<script src="http://blueimp.github.com/JavaScript-Canvas-to-Blob/canvas-to-blob.min.js"></script>
-<script src="js/jquery.fileupload-fp.js"></script>
-```
-
-If you don't override the **add** callback option, you'll have image resizing functionality automatically. Else, you can make use of the **process** API like this:
-
-```js
-$('#fileupload').fileupload({
-    /* ... */
-    add: function (e, data) {
-        $(this).fileupload('process', data).done(function () {
-            data.submit();
-        });
-    }
-});
-```
-
 Please have a look at the [[API]] and [[Options]] documentations.
