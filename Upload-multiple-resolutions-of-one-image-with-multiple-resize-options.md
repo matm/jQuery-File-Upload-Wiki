@@ -4,7 +4,7 @@ $.blueimp.fileupload.prototype.processActions.duplicate = function (data, option
     return data;
 };
 $('#fileupload').fileupload({
-    process: [
+    processQueue: [
         {
             action: 'load',
             fileTypes: /^image\/(gif|jpeg|png)$/,
