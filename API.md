@@ -136,7 +136,7 @@ inputEls.bind('change', function (e) {
         fileInput: $(this)
     });
 });
-$('#form-element').fileupload('send', {fileInput: inputEls});
+$('#fileupload').fileupload('send', {fileInput: inputEls});
 ```
 
 The fileInput property must be a jQuery collection with an input of type file with a valid files selection.
