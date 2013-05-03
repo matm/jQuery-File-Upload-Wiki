@@ -130,13 +130,11 @@ So if you need to send files with multiple requests, either call the *send* API 
 It is also possible to use the *add* and *send* API methods for browsers without support for [XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads, by making use of the *fileInput* option:
 
 ```js
-var inputEls = $('#some-file-input-field');
-inputEls.bind('change', function (e) {
+$('#some-file-input-field').bind('change', function (e) {
     $('#fileupload').fileupload('add', {
         fileInput: $(this)
     });
 });
-$('#fileupload').fileupload('send', {fileInput: inputEls});
 ```
 
 The fileInput property must be a jQuery collection with an input of type file with a valid files selection.
