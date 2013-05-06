@@ -3,7 +3,8 @@ Files that will be modified. index.html and UploadHandeler.php.
 # Step 1 - Index.html
 Submitting additional form data.  This can be done by simply adding more input fields as suggested in [how to submit additional form data](https://github.com/blueimp/jQuery-File-Upload/wiki/How-to-submit-additional-form-data). Find the template-upload section as below.
 
-```php<!-- The template to display files available for upload -->
+```php
+<!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
     <tr class="template-upload fade">
@@ -20,8 +21,8 @@ Submitting additional form data.  This can be done by simply adding more input f
         <td class="post"><label>Post ID: <input type="hidden" name="postid[]" value="101" required></label></td>
         <td class="client"><label>Client ID: <input name="clientid[]" value="88" required></label></td>
 <!-- CODE CONTINUES ON -->
-        ```
-
+```
+## Step 1.1
 Just before the </head> tag add the following. It will send the input data to the upload script.
 
 ```php
