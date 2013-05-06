@@ -141,7 +141,7 @@ function delete_img($delimg)
 
 Find the delete function at about line 891 and find this  if ($success) {
 Then add our delete call to functionso the code looks like this.
-          ```php
+```php
  if ($success) {
             //Added to call delete function to delete the image from DB 
             $this->delete_img($file_name);
