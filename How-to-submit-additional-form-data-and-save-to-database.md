@@ -35,7 +35,7 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
 </head>
 ```
 
-Step 2 - UploadHandler.php
+# Step 2 - UploadHandler.php
 
 Following some of the details in [Working with databases](https://github.com/blueimp/jQuery-File-Upload/wiki/Working-with-databases) and extending on them so that $_POST data will be received and then can be written to the database. 
 
@@ -126,7 +126,7 @@ if ($this->validate($uploaded_file, $file, $error, $index)) {
             $upload_dir = $this->get_upload_path();
 ```
 
-## Step 3
+### Step 3 - Deleting
 Add the delete function below the add_img function.
 ```php
 function delete_img($delimg)  
