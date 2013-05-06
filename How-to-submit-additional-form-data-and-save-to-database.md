@@ -23,7 +23,7 @@ Submitting additional form data.  This can be done by simply adding more input f
 <!-- CODE CONTINUES ON -->
 ```
 ## Step 1.1
-Just before the </head> tag add the following. It will send the input data to the upload script.
+Just before the < /head >tag add the following. It will send the input data to the upload script.
 
 ```php
 <script>
