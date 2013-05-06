@@ -21,7 +21,9 @@ Submitting additional form data.  This can be done by simply adding more input f
         <td class="client"><label>Client ID: <input name="clientid[]" value="88" required></label></td>
 <!-- CODE CONTINUES ON -->
         ```
+
 Just before the </head> tag add the following. It will send the input data to the upload script.
+
 ```php
 <script>
 $('#fileupload').bind('fileuploadsubmit', function (e, data) {
