@@ -40,9 +40,9 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
 
 # Step 2 - UploadHandler.php
 
-Following some of the details in [Working with databases](https://github.com/blueimp/jQuery-File-Upload/wiki/Working-with-databases) and extending on them so that $_POST data will be received and then can be written to the database. 
+Following some of the details in [Working with databases](https://github.com/blueimp/jQuery-File-Upload/wiki/Working-with-databases) and extend on them so that $_POST data will be received and then can be written to the database. 
 
-Firstly find this function around lin 506.
+Firstly find this function around line 506.
 ```php
 protected function handle_form_data($file, $index) {
         // Handle form data, e.g. $_REQUEST['description'][$index]
@@ -51,7 +51,7 @@ protected function handle_form_data($file, $index) {
 This is the function that we will use and modify to collect the $_POST data from the two extra inputs we created in index.html
 
 For ease of use we will modify or create two new fuctions based on this one. Each one will receive the form data that has been sent via $_POST.
-Continuing with our example date form index.html we will make the two function. 
+Continuing with our example data form index.html we will make the two function. 
 ## Step 2.1
 ```php
  protected function handle_form_postid($file, $index) {
@@ -65,7 +65,7 @@ Continuing with our example date form index.html we will make the two function.
     }
 ```
 You may change the fucntions name to suit but you will need to know them to call them soon. 
-NOTE: These two functions must be above handle_file_upload(..  so leave them in teh original function locationat about line 517 ish. 
+NOTE: These two functions must be above handle_file_upload(..  so leave them in the original function location at about line 517 ish. 
 
 Next follow the instructions to connect to the DB.
 find: this->options = array(
