@@ -13,6 +13,7 @@ The following browsers support multiple file selection:
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Google Chrome on Android 4.0+
 
 ### Known bugs
 Safari on Windows has [a bug](http://stackoverflow.com/questions/7231054/file-input-size-issue-in-safari-for-multiple-file-selection) and reports a file size of 0 bytes when selecting multiple files. Selecting single files works.
@@ -59,6 +60,7 @@ The following browsers have complete support for upload progress indication:
 ### Mobile browsers
 
 * Apple Safari Mobile on iOS 6.0+
+* Google Chrome on Android 4.0+
 * Opera Mobile 12.0+
 
 ### Differences in upload progress events
@@ -82,6 +84,7 @@ The following browsers have support for image previews prior to uploading files:
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Google Chrome on Android 4.0+
 * Default Browser on Android 3.2+
 
 ### Known bugs
@@ -103,6 +106,7 @@ The following browsers report complete file meta data prior to uploading files:
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Google Chrome on Android 4.0+
 * Default Browser on Android 3.2+
 * Opera Mobile 12.0+
 
@@ -131,6 +135,7 @@ The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpReq
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Google Chrome on Android 4.0+
 * Default Browser on Android 3.2+
 * Opera Mobile 12.0+
 
@@ -152,6 +157,7 @@ The following browsers support splitting up file uploads into multiple chunks:
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Google Chrome on Android 4.0+
 
 ## Image Resizing Functionality
 The following browsers support client-side image resizing functionality:
@@ -167,3 +173,4 @@ The following browsers support client-side image resizing functionality:
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
+* Google Chrome on Android 4.0+
