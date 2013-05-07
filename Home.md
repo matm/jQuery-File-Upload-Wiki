@@ -30,7 +30,6 @@
 * [[Fixing Safari hanging on very high speed connections (1Gbps)]]
 * Direct upload to [[YouTube]]
 * [[Working with Databases]]
-* [[How to submit additional form data and save to database]]
 
 ## Server-side
 
@@ -42,6 +41,7 @@
 * [[PHP Session Upload Progress]]
 * [[PHP Remote File Copy]]
 * [[Working with Databases]] (user contribution)
+* [[How to submit additional form data and save to database]]
 * [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
 * [jQuery File Upload + CakePHP 2.1.x](https://github.com/hugodias/FileUpload) (user contribution)
 * [Source for Amazon S3 Upload with PHP SDK](https://s3.amazonaws.com/parsec_it_examples/s3-php.zip) by [roberto colonello](https://github.com/robertocolonello)
