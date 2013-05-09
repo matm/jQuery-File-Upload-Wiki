@@ -99,8 +99,9 @@ The plugin makes use of [metric prefixes](http://en.wikipedia.org/wiki/SI_prefix
 This is the same unit system that is used by hard drive manufacturers and e.g. the Mac OSX operating system to report hard drive capacities.
 Unfortunately, the terms "kilobytes", "megabytes", etc. have historically been used in ambiguous meanings. Please have a look at the [Binary Prefix](http://en.wikipedia.org/wiki/Binary_prefix) article on Wikipedia for background information.
 
-### Why is the files validation/error handling not part of the basic plugin?
-Please see issue [#1976](https://github.com/blueimp/jQuery-File-Upload/issues/1976)
+### Why doesn't the file input field show the path of a selected file?
+The plugin provides CSS classes for a custom file input button, which doesn't display the selected file name. However they can be removed to display the native browser file input button - see [[Style Guide]].  
+By default, the plugin also replaces the file input button after each file(s) selection. This behaviour can be disabled by setting the option [replaceFileInput](https://github.com/blueimp/jQuery-File-Upload/wiki/Options#replacefileinput) to *false*.
 
 ## Server-side
 
