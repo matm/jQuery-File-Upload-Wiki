@@ -744,8 +744,7 @@ $('#fileupload')
     .bind('fileuploadfailed', function (e, data) {/* ... */})
     .bind('fileuploadfinished', function (e, data) {/* ... */})
     .bind('fileuploadstarted', function (e) {/* ... */})
-    .bind('fileuploadstopped', function (e) {/* ... */})
-    .bind('fileuploadpreviewdone', function (e, data) {/* ... */});
+    .bind('fileuploadstopped', function (e) {/* ... */});
 ```
 
 ### destroy
@@ -798,15 +797,3 @@ The **started** callback is the equivalent to the **start** callback and is trig
 The **stopped** callback is the equivalent to the **stop** callback and is triggered after the stop callback has run and the transition effects called in the stop callback and all done callbacks have completed.
 
 The **stopped** callback is therefore always triggered after each completed, failed and finished callback is done.
-
-### previewdone
-The **previewdone** callback is triggered when the preview has been rendered.
-
-The rendered *canvas* or *img* element can be accessed the following way:
-
-```js
-$('#fileupload').on('fileuploadpreviewdone', function (e, data) {
-    var canvasOrImg = $(e.originalEvent.target).children());
-    // ...
-});
-```
