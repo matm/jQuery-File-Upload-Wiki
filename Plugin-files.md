@@ -9,7 +9,9 @@
     * [loading.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/img/loading.gif) is an animated GIF image file used for the file processing indication.
     * [progressbar.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/img/progressbar.gif) is an animated GIF image file used for the animation of the upload progress bars for browsers without support for CSS animations.
 * [js](https://github.com/blueimp/jQuery-File-Upload/tree/master/js)
+    * [app.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/app.js) is an example application for the AngularJS module.
     * [jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload.js) is the basic plugin - it enhances the file upload process, but doesn't make any assumptions about the user interface or the content-type of the response.
+    * [jquery.fileupload-angular.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-angular.js) is an AngularJS file upload module depending on the File Upload (and processing) plugin.
     * [jquery.fileupload-process.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-process.js) extends the basic version of the fileupload plugin and adds file processing functionality.
     * [jquery.fileupload-resize.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-resize.js) extends the file processing plugin and adds image resize functionality.
     * [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-ui.js) extends the file processing plugin and adds a complete user interface.
