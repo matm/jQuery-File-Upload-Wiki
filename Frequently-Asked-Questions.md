@@ -103,6 +103,23 @@ Unfortunately, the terms "kilobytes", "megabytes", etc. have historically been u
 The plugin provides CSS classes for a custom file input button, which doesn't display the selected file name. However they can be removed to display the native browser file input button - see [[Style Guide]].  
 By default, the plugin also replaces the file input button after each file(s) selection. This behaviour can be disabled by setting the option [replaceFileInput](https://github.com/blueimp/jQuery-File-Upload/wiki/Options#replacefileinput) to *false*.
 
+### Why is the file input field cloned and replaced after each selection?
+The cloning is done for two reasons:
+
+* First to make sure a change event is fired even if the same file (or filename) is selected subsequently.
+* Second to allow upload queues for the iframe transport.
+
+If you have one file input and select e.g. the file "example.jpg" and then you abort the upload for some reason, there will be no change event fired if you select the same file to retry the upload.
+Replacing the original file input with a clone (and resetting the clone's value property) fixes this problem.
+
+Uploads using the iframe transport rely on the file input field, as iframe transport uploads are simple HTML form uploads with an iframe as POST target.
+If you select a file with a file input field, the file reference is tied to the input field. Modern browsers also allow to access the selected files via the File API, but for the iframe transport, the input field itself is the only usable reference.
+You can't select another file with this file input field until the associated form has been submitted, else you will loose the original selection.
+To allow queuing files with the iframe transport, you have to keep the original input field and add a new input field for the next user selection.
+So, replacing the original file input with a clone (and keeping the original until it has been used for a form submission) also fixes the queuing problem.
+
+The *fileInput* option is supposed to be a reference to the collection of file input fields the plugin is listening to for change events. So when the original file input fields are replaced with their clones, the clones have to take their place and the *fileInput* reference needs to be updated.
+
 ## Server-side
 
 ### Why does Internet Explorer prompt to download a file after the upload completes?
