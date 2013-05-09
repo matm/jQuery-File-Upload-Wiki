@@ -79,7 +79,7 @@ Set to null or an empty jQuery collection to disable the change listener.
 
 ### replaceFileInput
 By default, the file input field is replaced with a clone after each input field change event.  
-This is required for iframe transport queues and allows change events to be fired for the same file selection, but can be disabled by setting this option to false (more in-depth information can be found [here](https://github.com/blueimp/jQuery-File-Upload/issues/638#issuecomment-2215669)).
+This is required for iframe transport queues and allows change events to be fired for the same file selection, but can be disabled by setting this option to false (more in-depth information can be found [in the FAQ](https://github.com/blueimp/jQuery-File-Upload/wiki/Frequently-Asked-Questions#why-is-the-file-input-field-cloned-and-replaced-after-each-selection)).
 
 * Type: *boolean*
 * Default: `true`
@@ -511,6 +511,13 @@ By default, files added to the UI widget are uploaded as soon as the user clicks
 * Type: *boolean*
 * Default: `false`
 
+### getNumberOfFiles
+This option is a function that returns the current number of files selected and uploaded.  
+It is used in the maxNumberOfFiles validation.
+
+* Type: *function*
+* Example: `function () {return 5;}`
+
 ### maxNumberOfFiles
 This option limits the number of files that are allowed to be uploaded using this widget.  
 By default, unlimited file uploads are allowed.
@@ -519,9 +526,7 @@ By default, unlimited file uploads are allowed.
 * Example: `10`
 
 **Note**:  
-The **maxNumberOfFiles** setting acts like an internal counter and will adjust automatically when files are uploaded or deleted. That is, if you set it to **2** and upload one file (successfully), it will be decreased to **1**. If you delete one of the existing files, it will be increased again.
-
-See also issue [#1747](https://github.com/blueimp/jQuery-File-Upload/issues/1747).
+The **maxNumberOfFiles** option depends on the getNumberOfFiles function, which is defined by the UI and AngularJS implementations.
 
 ### maxFileSize
 The maximum allowed file size in bytes, by default unlimited.
