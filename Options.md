@@ -474,9 +474,15 @@ Callback for failed (abort or error) chunk upload requests
 ### chunkalways
 Callback for completed (success, abort or error) chunk upload requests.
 
+### autoUpload
+By default, files added to the widget are uploaded as soon as the user clicks on the start buttons. To enable automatic uploads, set this option to true.
+
+* Type: *boolean*
+* Default: `false`
+
 ## File Processing Options
 
-### process
+### processQueue
 A list of file processing actions.
 
 * Type: *array*
@@ -486,83 +492,56 @@ A list of file processing actions.
 ```js
 [
     {
-        action: 'load',
-        fileTypes: /^image\/(gif|jpeg|png)$/,
-        maxFileSize: 20000000 // 20MB
-    },
-    {
-        action: 'resize',
-        maxWidth: 1920,
-        maxHeight: 1200,
-        minWidth: 800,
-        minHeight: 600
-    },
-    {
-        action: 'save'
+        action: 'log',
+        type: '@logType'
     }
 ],
 ```
 
-## Additional Options for the UI version
+Each item in the process queue must be an object with an **action** property.  
+This action must be defined as function of *$.blueimp.fileupload.prototype.processActions*.  
+The items in the process queue will be applied in sequential order to each selected file when processing the files selection.
 
-### autoUpload
-By default, files added to the UI widget are uploaded as soon as the user clicks on the start buttons. To enable automatic uploads, set this option to true.
+#### @-Options
+Each property of a process queue item that starts with an "@"-sign will be replaced with the option of the same name without the @ character. So *@logType* would be replaced with the *logType* option.
 
-* Type: *boolean*
-* Default: `false`
+## Image Resize Options
 
-### getNumberOfFiles
-This option is a function that returns the current number of files selected and uploaded.  
-It is used in the maxNumberOfFiles validation.
-
-* Type: *function*
-* Example: `function () {return 5;}`
-
-### maxNumberOfFiles
-This option limits the number of files that are allowed to be uploaded using this widget.  
-By default, unlimited file uploads are allowed.
-
-* Type: *number*
-* Example: `10`
-
-**Note**:  
-The **maxNumberOfFiles** option depends on the getNumberOfFiles function, which is defined by the UI and AngularJS implementations.
-
-### maxFileSize
-The maximum allowed file size in bytes, by default unlimited.
-
-**Note:** This option has only an effect for browsers supporting the [File API](https://developer.mozilla.org/en/DOM/file).
-
-* Type: *number*
-* Example: `5000000`
-
-### minFileSize
-The minimum allowed file size, by default *undefined* (can be 0 bytes).
-
-**Note:** This option has only an effect for browsers supporting the [File API](https://developer.mozilla.org/en/DOM/file).
-
-* Type: *number*
-* Example: `1`
-
-### acceptFileTypes
-The regular expression for allowed file types, matches against either file type or file name as only browsers with support for the [File API](https://developer.mozilla.org/en/DOM/file) report the file type.
-
-* Type: *Regular Expression*
-* Example: `/(\.|\/)(gif|jpe?g|png)$/i`
-
-### previewSourceFileTypes
-The regular expression to define for which files a preview image is shown, matched against the file type.
-
-**Note:** Preview images (before upload) are only displayed for browsers supporting the *URL* or *webkitURL* APIs or the *readAsDataURL* method of the [FileReader](https://developer.mozilla.org/en/DOM/FileReader) interface.
+### loadImageFileTypes
+The regular expression for the types of images to load, matched against the file type.
 
 * Type: *Regular Expression*
 * Default: `/^image\/(gif|jpeg|png)$/`
 
-### previewSourceMaxFileSize
-The maximum file size for preview images in bytes.
+### loadImageMaxFileSize
+The maximum file size of images to load.
 
 * Type: *number*
 * Default: `5000000`
+
+### imageMaxWidth
+The maximum width of resized images.
+
+* Type: *number*
+* Default: `5000000`
+
+### imageMaxHeight
+The maximum height of resized images.
+
+* Type: *number*
+* Default: `5000000`
+
+### imageCrop
+Define if resized images should be cropped or only scaled.
+
+* Type: *boolean*
+* Default: `false`
+
+### disableImageResize
+Disables the resize image functionality.
+
+* Type: *boolean*
+* Default: `true`
 
 ### previewMaxWidth
 The maximum width of the preview images.
@@ -576,12 +555,63 @@ The maximum height of the preview images.
 * Type: *number*
 * Default: `80`
 
+### previewCrop
+Define if preview images should be cropped or only scaled.
+
+* Type: *boolean*
+* Default: `false`
+
 ### previewAsCanvas
-By default, preview images are displayed as [canvas](https://developer.mozilla.org/en/HTML/canvas) elements if supported by the browser.  
-Set this option to false to always display preview images as *img* elements.
+Define if preview images should be resized as canvas elements:
 
 * Type: *boolean*
 * Default: `true`
+
+## Validation options
+
+### acceptFileTypes
+The regular expression for allowed file types, matches against either file type or file name as only browsers with support for the [File API](https://developer.mozilla.org/en/DOM/file) report the file type.
+
+* Type: *Regular Expression*
+* Default: `undefined`
+* Example: `/(\.|\/)(gif|jpe?g|png)$/i`
+
+### maxFileSize
+The maximum allowed file size in bytes.
+
+* Type: *number*
+* Default: `undefined`
+* Example: `10000000` // 10 MB
+
+**Note:** This option has only an effect for browsers supporting the [File API](https://developer.mozilla.org/en/DOM/file).
+
+### minFileSize
+The minimum allowed file size in bytes.
+
+* Type: *number*
+* Default: `undefined`
+* Example: `1` // 1 Byte
+
+**Note:** This option has only an effect for browsers supporting the [File API](https://developer.mozilla.org/en/DOM/file).
+
+### maxNumberOfFiles
+This option limits the number of files that are allowed to be uploaded using this widget.  
+By default, unlimited file uploads are allowed.
+
+* Type: *number*
+* Example: `10`
+
+**Note**:  
+The **maxNumberOfFiles** option depends on the getNumberOfFiles option, which is defined by the UI and AngularJS implementations.
+
+## Additional Options for the UI version
+
+### getNumberOfFiles
+This option is a function that returns the current number of files selected and uploaded.  
+It is used in the maxNumberOfFiles validation.
+
+* Type: *function*
+* Example: `function () {return 5;}`
 
 ### filesContainer
 The container for the files listed for upload / download.  
