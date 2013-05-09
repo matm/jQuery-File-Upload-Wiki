@@ -141,40 +141,6 @@ The fileInput property must be a jQuery collection with an input of type file wi
 
 Non-[XHR](https://developer.mozilla.org/en/XmlHttpRequest) file uploads make use of the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js).
 
-## Image resizing
-If you include the [file processing plugin](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-fp.js), the following additional API is available:
-
-```js
-$('#fileupload').fileupload('process', {
-    // An array of image files that are to be resized:
-    files: files,
-    process: [
-        {
-            action: 'load',
-            fileTypes: /^image\/(gif|jpeg|png)$/,
-            maxFileSize: 20000000 // 20MB
-        },
-        {
-            action: 'resize',
-            maxWidth: 1920,
-            maxHeight: 1200,
-            minWidth: 800,
-            minHeight: 600
-        },
-        {
-            action: 'save'
-        }
-    ],
-}).done(function () {
-    // Resized image files have been converted in place
-    // and are available in the given files array
-});
-```
-
-The *process* method returns a [Promise](http://api.jquery.com/Types/#Promise) object, that allows to bind callbacks (like the "done" handler in the code snippet above) for the file processing completion.
-
-**Note**: Image resizing is currently only supported by the latest versions of Google Chrome and Mozilla Firefox.
-
 ## Callbacks
 The File Upload widget provides several callback hooks.  
 One way of using them is to provide callback methods as part of the [[Options]] object:
