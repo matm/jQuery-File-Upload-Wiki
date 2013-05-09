@@ -505,6 +505,86 @@ The items in the process queue will be applied in sequential order to each selec
 #### @-Options
 Each property of a process queue item that starts with an "@"-sign will be replaced with the option of the same name without the @ character. So *@logType* would be replaced with the *logType* option.
 
+## Processsing Callback Options
+
+All callbacks are of type *function* and can also be bound as event listeners, using the callback name plus "fileupload" as prefix:
+
+```js
+$('#fileupload')
+    .bind('processstart', function (e) {/* ... */})
+    .bind('process', function (e, data) {/* ... */})
+    .bind('processdone', function (e, data) {/* ... */})
+    .bind('processfail', function (e, data) {/* ... */})
+    .bind('processalways', function (e, data) {/* ... */})
+    .bind('processstop', function (e) {/* ... */});
+```
+
+### processstart
+Callback for the start of the fileupload processing queue.
+
+* Example:
+
+```js
+function (e) {
+    console.log('Processing started...');
+}
+```
+
+### process
+Callback for the start of an individual file processing queue.
+
+* Example:
+
+```js
+function (e, data) {
+    console.log('Processing ' + data.files[data.index].name + '...');
+}
+```
+
+### processdone
+Callback for the successful end of an individual file processing queue.
+
+* Example:
+
+```js
+function (e, data) {
+    console.log('Processing ' + data.files[data.index].name + ' done.');
+}
+```
+
+### processfail
+Callback for the failure of an individual file processing queue.
+
+* Example:
+
+```js
+function (e, data) {
+    console.log('Processing ' + data.files[data.index].name + ' failed.');
+}
+```
+
+### processalways
+Callback for the end (done or fail) of an individual file processing queue.
+
+* Example:
+
+```js
+function (e, data) {
+    console.log('Processing ' + data.files[data.index].name + ' ended.');
+}
+```
+
+### processstop
+Callback for the stop of the fileupload processing queue.
+
+* Example:
+
+```js
+function (e) {
+    console.log('Processing stopped.');
+}
+```
+
 ## Image Resize Options
 
 ### loadImageFileTypes
