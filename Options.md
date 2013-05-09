@@ -505,7 +505,7 @@ The items in the process queue will be applied in sequential order to each selec
 #### @-Options
 Each property of a process queue item that starts with an "@"-sign will be replaced with the option of the same name without the @ character. So *@logType* would be replaced with the *logType* option.
 
-## Processsing Callback Options
+## Processing Callback Options
 
 All callbacks are of type *function* and can also be bound as event listeners, using the callback name plus "fileupload" as prefix:
 
