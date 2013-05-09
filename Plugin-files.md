@@ -10,8 +10,10 @@
     * [progressbar.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/img/progressbar.gif) is an animated GIF image file used for the animation of the upload progress bars for browsers without support for CSS animations.
 * [js](https://github.com/blueimp/jQuery-File-Upload/tree/master/js)
     * [jquery.fileupload.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload.js) is the basic plugin - it enhances the file upload process, but doesn't make any assumptions about the user interface or the content-type of the response.
-    * [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-ui.js) is an extension to *jquery.fileupload.js*. The UI version expects JSON as the response content and adds a complete user interface.
-    * [jquery.fileupload-fp.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-fp.js) extends the basic or UI version of the fileupload plugin and adds image processing (image resizing) functionality.
+    * [jquery.fileupload-process.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-process.js) extends the basic version of the fileupload plugin and adds file processing functionality.
+    * [jquery.fileupload-resize.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-resize.js) extends the file processing plugin and adds image resize functionality.
+    * [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-ui.js) extends the file processing plugin and adds a complete user interface.
+    * [jquery.fileupload-validate.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-validate.js) extends the file processing plugin and adds file validation functionality.
     * [jquery.iframe-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js) adds iframe transport support to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/).
     * [main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js) is an example how to initialize and use the File Upload plugin.
     * [cors](https://github.com/blueimp/jQuery-File-Upload/tree/master/js/cors)
