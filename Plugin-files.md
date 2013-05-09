@@ -50,6 +50,11 @@
         * [index.php](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/index.php) is an example for a PHP upload handler.
         * [UploadHandler.php](https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/UploadHandler.php) is an example PHP upload handler class used by index.php.
 * [.gitignore](https://github.com/blueimp/jQuery-File-Upload/blob/master/.gitignore) is a [Git configuration file](http://help.github.com/ignore-files/).
-* [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
+* [angularjs.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/angularjs.html) is a HTML markup example for the AngularJS file upload module.
+* [basic.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/basic.html) is a HTML markup example for the basic file upload plugin.
+* [basic-plus.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/basic-plus.html) is a HTML markup example for the basic file upload plugin extended with the processing, image resizing and validation plugins.
+* [blueimp-file-upload.jquery.json](https://github.com/blueimp/jQuery-File-Upload/blob/master/blueimp-file-upload.jquery.json) is a [JSON](http://www.json.org/) file for the [jQuery Plugin Registry](http://plugins.jquery.com/).
+* [CONTRIBUTING.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/CONTRIBUTING.md) contains contribution information in [markdown](http://daringfireball.net/projects/markdown/) format.
 * [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
 * [package.json](https://github.com/blueimp/jQuery-File-Upload/blob/master/package.json) contains machine readable information about the plugin in [JSON](http://www.json.org/) format.
+* [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
