@@ -104,7 +104,7 @@ public function deleteImage($file)//gets the job done but you might want to add 
 			echo json_encode(array($info));
 		} else {
 			//here you will need to decide what you want to show for a successful delete		
-			$file_data['delete_data'] = $file';
+			$file_data['delete_data'] = $file;
 			$this->load->view('admin/delete_success', $file_data); 
 		}
 	}
