@@ -55,7 +55,16 @@ $(document).bind('dragover', function (e) {
     } else {
         clearTimeout(timeout);
     }
-    if (e.target === dropZone[0]) {
+    var found = false,
+      	node = e.target;
+    do {
+        if (node === dropZone[0]) {
+       		found = true;
+       		break;
+       	}
+       	node = node.parentNode;
+    } while (node != null);
+    if (found) {
         dropZone.addClass('hover');
     } else {
         dropZone.removeClass('hover');
