@@ -462,8 +462,14 @@ function (e) {
     // e.dataTransfer
 }
 ```
-Note: If you want to implement dragover and dragleave functionality, i.e. for highlighting dropzone, you should do it manually. This can be done by setting callbacks on your dragzone.
 
+**Note:** The file upload plugin only provides a dragover callback, as it is used to make drag&drop callbacks work. If you want callbacks for additional drag events, simply bind to these events with jQuery's native event binding mechanism on your dropZone element, e.g.:
+
+```js
+$('#fileupload').on('dragleave', function (e) {
+    // dragleave callback implementation
+});
+```
 
 ### chunksend
 Callback for the start of each chunk upload request.  
