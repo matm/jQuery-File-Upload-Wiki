@@ -462,6 +462,8 @@ function (e) {
     // e.dataTransfer
 }
 ```
+Note: If you want to implement dragover and dragleave functionality, i.e. for highlighting dropzone, you should do it manually. This can be done by setting callbacks on your dragzone.
+
 
 ### chunksend
 Callback for the start of each chunk upload request.  
