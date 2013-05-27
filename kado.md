@@ -1,1 +1,0 @@
-djskıjlsd kado ne yapıyon lan sikil
