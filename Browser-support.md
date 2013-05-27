@@ -1,5 +1,5 @@
 ## File uploads
-The following browsers support at least one form of [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) style file uploads, either via [XHR](https://developer.mozilla.org/en/XmlHttpRequest) or via the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js):
+The following browsers support at least one form of [AJAX](https://en.wikipedia.org/wiki/Ajax_%28programming%29) style file uploads, either via [XHR](https://developer.mozilla.org/en/XmlHttpRequest) or via the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js):
 
 ### Desktop browsers
 
