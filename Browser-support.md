@@ -1,3 +1,22 @@
+## File uploads
+The following browsers support [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) style file uploads, either via [XHR](https://developer.mozilla.org/en/XmlHttpRequest) or via the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js):
+
+### Desktop browsers
+
+* Google Chrome
+* Apple Safari 4.0+
+* Mozilla Firefox 3.0+
+* Opera 11.0+
+* Microsoft Internet Explorer 6.0+
+
+### Mobile browsers
+
+* Apple Safari on iOS 6.0+
+* Google Chrome on iOS 6.0+
+* Google Chrome on Android 4.0+
+* Default Browser on Android 2.3+
+* Opera Mobile 12.0+
+
 ## Multiple File selection
 The following browsers support multiple file selection:
 
@@ -140,7 +159,7 @@ The following browsers support [XHR](https://developer.mozilla.org/en/XmlHttpReq
 * Opera Mobile 12.0+
 
 ### Iframe Transport
-The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js#files) is used for other browsers. The Iframe Transport requires a file input selection to upload files.
+The [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js) is used for other browsers. The Iframe Transport requires a file input selection to upload files.
 
 ## Chunked uploads
 The following browsers support splitting up file uploads into multiple chunks:
