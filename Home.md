@@ -89,6 +89,7 @@
 * [Upload Servlet excercise](https://github.com/klaalo/jQuery-File-Upload-Java) (user contribution).
 * [Modified Upload Servlet] (https://github.com/amilarajans/jQuery-File-Upload-for-java) complete working example (user contribution).
 * [Upload to Spring MVC] (http://hmkcode.com/spring-mvc-jquery-file-upload-multiple-dragdrop-progress/) (user contribution).
+* [Basic Plus UI implementation with Spring MVC 3.2 (Java Configuration) & Hibernate 4] (https://github.com/jdmr/fileUpload) complete working example (user contribution).
 
 ### Scala
 * The _Lift Cookbook_ contains [basic plugin integration](http://cookbook.liftweb.net/#AjaxFileUpload) code and instructions (user contribution).
