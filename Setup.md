@@ -1,5 +1,5 @@
 # Setup instructions
-
+:)
 ## Using jQuery File Upload (UI version) on [PHP](http://www.php.net/) websites
 
 The provided example implementation works out of the box and only needs one step for you to add it to your PHP based website:
