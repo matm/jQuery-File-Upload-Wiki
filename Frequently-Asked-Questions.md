@@ -124,10 +124,10 @@ The *fileInput* option is supposed to be a reference to the collection of file i
 When you create a file with a slash as part of the filename on OSX, it's actually represented with a colon instead if you list the file on the Terminal.
 You can test it by renaming an existing file in Finder to e.g. "test/example" and then list the contents of the file's directory using the OSX Terminal, where it will show up as "test:example".
 The Terminal version is the one that gets reported as file name if you select or drop this file on a website.
-This is done because the slash is actually a directory separator on OSX:
+This is done because the slash is actually a directory separator on OSX:  
 http://stackoverflow.com/a/13298479
 
-The name property of File objects is actually readonly, so the plugin doesn't do anything here:
+The name property of File objects is actually readonly, so the plugin doesn't do anything here:  
 https://developer.mozilla.org/en-US/docs/Web/API/File#Properties
 
 The only thing the plugin does regarding file names is remove path information from files reported by older browsers (old IE versions) that don't support the File API.
