@@ -121,8 +121,8 @@ So, replacing the original file input with a clone (and keeping the original unt
 The *fileInput* option is supposed to be a reference to the collection of file input fields the plugin is listening to for change events. So when the original file input fields are replaced with their clones, the clones have to take their place and the *fileInput* reference needs to be updated.
 
 ### Why are files with a slash as part of the filename listed with a colon instead? (OSX)
-When you create a file with a slash as part of the filename on OSX, it's actually represented with a colon instead if you list the file on the Terminal.
-You can test it by renaming an existing file in Finder to e.g. "test/example" and then list the contents of the file's directory using the OSX Terminal, where it will show up as "test:example".
+When you create a file with a slash as part of the filename on OSX, it's actually represented with a colon instead if you list the file on the Terminal.  
+You can test it by renaming an existing file in Finder to e.g. "test/example" and then list the contents of the file's directory using the OSX Terminal, where it will show up as "test:example".  
 The Terminal version is the one that gets reported as file name if you select or drop this file on a website.
 This is done because the slash is actually a directory separator on OSX:  
 http://stackoverflow.com/a/13298479
@@ -131,6 +131,13 @@ The name property of File objects is actually readonly, so the plugin doesn't do
 https://developer.mozilla.org/en-US/docs/Web/API/File#Properties
 
 The only thing the plugin does regarding file names is remove path information from files reported by older browsers (old IE versions) that don't support the File API.
+
+### Why do multiple selected files only show on start/cancel button when the *forceIframeTransport* option is set to *true*?
+If you force the use of the Iframe Transport, it is still possible to select multiple files on modern browsers.  
+However, the Iframe Transport requires that all selections have to be uploaded in one request, simply because the file input is used for a standard HTML form submit to a hidden iframe and it's not possible to separate the selected files this way.
+
+The UI reflects this by showing only one set of start/cancel buttons for each selection to be uploaded.
+It might not be the ideal user interface for this kind of situation, but it allows to reuse the same upload templates with minimal code additions.
 
 ## Server-side
 
