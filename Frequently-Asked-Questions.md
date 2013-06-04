@@ -132,7 +132,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/File#Properties
 
 The only thing the plugin does regarding file names is remove path information from files reported by older browsers (old IE versions) that don't support the File API.
 
-### Why do multiple selected files only show on start/cancel button when the *forceIframeTransport* option is set to *true*?
+### Why do multiple selected files only show one start/cancel button when the *forceIframeTransport* option is set to *true*?
 If you force the use of the Iframe Transport, it is still possible to select multiple files on modern browsers.  
 However, the Iframe Transport requires that all selections have to be uploaded in one request, simply because the file input is used for a standard HTML form submit to a hidden iframe and it's not possible to separate the selected files this way.
 
