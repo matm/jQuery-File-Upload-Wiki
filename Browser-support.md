@@ -193,3 +193,8 @@ The following browsers support client-side image resizing functionality:
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
 * Google Chrome on Android 4.0+
+
+## Cross-domain file uploads
+All browsers support cross-domain file uploads.  
+Either via native [CORS (Cross Origin Resource Sharing)](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) features, or via the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js).  
+For more information and the requirements, please see [[Cross-domain-uploads]].
