@@ -595,7 +595,43 @@ function (e) {
 }
 ```
 
-## Image Resize Options
+## Image Preview & Resize Options
+
+### disableImageHead
+Disable parsing the image header.
+
+* Type: *boolean*
+* Default: `false`
+
+### disableExif
+Disable parsing Exif data.
+
+* Type: *boolean*
+* Default: `false`
+
+### disableExifThumbnail
+Disable parsing the Exif Thumbnail.
+
+* Type: *boolean*
+* Default: `false`
+
+### disableExifSub
+Disable parsing the Exif Sub IFD (additional Exif info).
+
+* Type: *boolean*
+* Default: `false`
+
+### disableExifGps
+Disable parsing Exif Gps data.
+
+* Type: *boolean*
+* Default: `false`
+
+### disableImageMetaDataLoad
+Disable parsing image meta data (image head and Exif data).
+
+* Type: *boolean*
+* Default: `false`
 
 ### loadImageFileTypes
 The regular expression for the types of images to load, matched against the file type.
@@ -607,7 +643,19 @@ The regular expression for the types of images to load, matched against the file
 The maximum file size of images to load.
 
 * Type: *number*
-* Default: `5000000`
+* Default: `10000000`
+
+### loadImageNoRevoke
+Don't revoke the object URL created to load the image.
+
+* Type: *boolean*
+* Default: `false`
+
+### disableImageLoad
+Disable loading and therefore processing of images.
+
+* Type: *boolean*
+* Default: `false`
 
 ### imageMaxWidth
 The maximum width of resized images.
@@ -621,6 +669,18 @@ The maximum height of resized images.
 * Type: *number*
 * Default: `5000000`
 
+### imageMinWidth
+The minimum width of resized images.
+
+* Type: *number*
+* Default: `undefined`
+
+### imageMinHeight
+The minimum height of resized images.
+
+* Type: *number*
+* Default: `undefined`
+
 ### imageCrop
 Define if resized images should be cropped or only scaled.
 
@@ -632,6 +692,12 @@ Disables the resize image functionality.
 
 * Type: *boolean*
 * Default: `true`
+
+### disableImageMetaDataSave
+Disables saving the image meta data into the resized images.
+
+* Type: *boolean*
+* Default: `false`
 
 ### previewMaxWidth
 The maximum width of the preview images.
@@ -645,14 +711,38 @@ The maximum height of the preview images.
 * Type: *number*
 * Default: `80`
 
+### previewMinWidth
+The minimum width of preview images.
+
+* Type: *number*
+* Default: `undefined`
+
+### previewMinHeight
+The minimum height of preview images.
+
+* Type: *number*
+* Default: `undefined`
+
 ### previewCrop
 Define if preview images should be cropped or only scaled.
 
 * Type: *boolean*
 * Default: `false`
 
-### previewAsCanvas
-Define if preview images should be resized as canvas elements:
+### previewOrientation
+Defines the preview orientation (1-8) or takes the orientation value from Exif data if set to *true*.
+
+* Type: *number* or *boolean*
+* Default: `true`
+
+### previewThumbnail
+Create the preview using the Exif data thumbnail.
+
+* Type: *boolean*
+* Default: `true`
+
+### previewCanvas
+Define if preview images should be resized as canvas elements.
 
 * Type: *boolean*
 * Default: `true`
