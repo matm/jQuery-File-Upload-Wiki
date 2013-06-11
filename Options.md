@@ -598,7 +598,7 @@ function (e) {
 ## Image Preview & Resize Options
 
 ### disableImageHead
-Disable parsing the image header.
+Disable parsing and storing the image header.
 
 * Type: *boolean*
 * Default: `false`
@@ -629,6 +629,12 @@ Disable parsing Exif Gps data.
 
 ### disableImageMetaDataLoad
 Disable parsing image meta data (image head and Exif data).
+
+* Type: *boolean*
+* Default: `false`
+
+### disableImageMetaDataSave
+Disables saving the image meta data into the resized images.
 
 * Type: *boolean*
 * Default: `false`
@@ -693,12 +699,6 @@ Disables the resize image functionality.
 * Type: *boolean*
 * Default: `true`
 
-### disableImageMetaDataSave
-Disables saving the image meta data into the resized images.
-
-* Type: *boolean*
-* Default: `false`
-
 ### previewMaxWidth
 The maximum width of the preview images.
 
@@ -747,6 +747,70 @@ Define if preview images should be resized as canvas elements.
 * Type: *boolean*
 * Default: `true`
 
+### imagePreviewName
+Define the name of the property that the preview element is stored as on the File object.
+
+* Type: *string*
+* Default: `'preview'`
+
+### disableImagePreview
+Disables image previews.
+
+* Type: *boolean*
+* Default: `false`
+
+## Audio preview options
+
+### loadAudioFileTypes
+The regular expression for the types of audio files to load, matched against the file type.
+
+* Type: *Regular Expression*
+* Default: `/^audio\/.*$/`
+
+### loadAudioMaxFileSize
+The maximum file size of audio files to load.
+
+* Type: *number*
+* Default: `undefined`
+
+### audioPreviewName
+Define the name of the property that the preview element is stored as on the File object.
+
+* Type: *string*
+* Default: `'preview'`
+
+### disableAudioPreview
+Disable audio previews.
+
+* Type: *boolean*
+* Default: `false`
+
+## Video preview options
+
+### loadVideoFileTypes
+The regular expression for the types of video files to load, matched against the file type.
+
+* Type: *Regular Expression*
+* Default: `/^video\/.*$/`
+
+### loadVideoMaxFileSize
+The maximum file size of video files to load.
+
+* Type: *number*
+* Default: `undefined`
+
+### videoPreviewName
+Define the name of the property that the preview element is stored as on the File object.
+
+* Type: *string*
+* Default: `'preview'`
+
+### disableVideoPreview
+Disable video previews.
+
+* Type: *boolean*
+* Default: `false`
+
 ## Validation options
 
 ### acceptFileTypes
@@ -783,6 +847,12 @@ By default, unlimited file uploads are allowed.
 
 **Note**:  
 The **maxNumberOfFiles** option depends on the getNumberOfFiles option, which is defined by the UI and AngularJS implementations.
+
+### disableValidation
+Disables file validation.
+
+* Type: *boolean*
+* Default: `false`
 
 ## Additional Options for the UI version
 
