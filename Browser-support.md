@@ -186,6 +186,7 @@ The following browsers support client-side image resizing functionality:
 * Google Chrome
 * Apple Safari 6.0+
 * Mozilla Firefox 4.0+
+* Opera 12.0+
 * Microsoft Internet Explorer 10.0+
 
 ### Mobile browsers
