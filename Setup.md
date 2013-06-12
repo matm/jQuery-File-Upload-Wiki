@@ -8,7 +8,7 @@ The provided example implementation works out of the box and only needs one step
 
 Visit the uploaded directory - you should see the same file upload interface as the demo, allowing you to upload files to your website.
 
-If uploading files doesn't work, make sure that the *php/files* and *php/thumbnails* directories permissions allow your server write access.
+If uploading files doesn't work, make sure that the *php/files* directory permissions allow your server write access.
 
 **Note:**  
 Please keep in mind some [[Security]] considerations when running a file upload handler on your server.
