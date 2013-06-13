@@ -28,7 +28,6 @@
 * [[Drag and drop uploads from another web page]]
 * [[Fixing Safari hanging on very high speed connections (1Gbps)]]
 * Direct upload to [[YouTube]]
-* [[Working with Databases]]
 
 ## Server-side
 
