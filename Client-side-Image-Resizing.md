@@ -23,7 +23,7 @@ By default, images are resized to FullHD (1920x1080), but you can define your ow
 
 ```js
 $('#fileupload').fileupload({
-    url: url,
+    url: '//jquery-file-upload.appspot.com/',
     dataType: 'json',
     // Enable image resizing, except for Android and Opera,
     // which actually support image resizing, but fail to
