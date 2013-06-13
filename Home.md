@@ -18,6 +18,7 @@
 * [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui.css).
 * [[How to submit additional Form Data]].
 * How to [[submit files asynchronously]].
+* How to do [[Client side Image Resizing]].
 * [[Upload multiple resolutions of one image with multiple resize options]].
 * [[Multiple File Upload Widgets on the same page]]
 * [[Multiple File Input Fields in one Form]].
