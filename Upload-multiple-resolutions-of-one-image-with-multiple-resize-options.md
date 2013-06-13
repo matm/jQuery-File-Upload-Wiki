@@ -1,35 +1,37 @@
 ```js
-$.blueimp.fileupload.prototype.processActions.duplicate = function (data, options) {
-    data.files.push(data.files[data.index]);
+$.blueimp.fileupload.prototype.processActions.duplicateImage = function (data, options) {
+    if (data.canvas) {
+        data.files.push(data.files[data.index]);
+    }
     return data;
 };
 $('#fileupload').fileupload({
     processQueue: [
         {
-            action: 'load',
+            action: 'loadImage',
             fileTypes: /^image\/(gif|jpeg|png)$/,
             maxFileSize: 20000000 // 20MB
         },
         {
-            action: 'resize',
+            action: 'resizeImage',
             maxWidth: 1920,
             maxHeight: 1200
         },
-        {action: 'save'},
-        {action: 'duplicate'},
+        {action: 'saveImage'},
+        {action: 'duplicateImage'},
         {
-            action: 'resize',
+            action: 'resizeImage',
             maxWidth: 1280,
             maxHeight: 1024
         },
-        {action: 'save'},
-        {action: 'duplicate'},
+        {action: 'saveImage'},
+        {action: 'duplicateImage'},
         {
-            action: 'resize',
+            action: 'resizeImage',
             maxWidth: 1024,
             maxHeight: 768
         },
-        {action: 'save'}
+        {action: 'saveImage'}
     ]
 });
 ```
