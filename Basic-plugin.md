@@ -112,4 +112,7 @@ $(function () {
 });
 ```
 
+## How to do Client-side Image Resizing
+Please see [[Client side Image Resizing]].
+
 Please have a look at the [[API]] and [[Options]] documentations.
