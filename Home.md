@@ -50,6 +50,7 @@
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
 * [Symfony2 bundle](https://github.com/punkave/symfony2-file-uploader-bundle) (user contribution)
 * [Yii extension](https://github.com/Asgaroth/xupload) (user contribution)
+* [Open Manager](https://github.com/rmorse/Open-Manager), a File/Media Manager implementation.
 
 ### Python
 * How to use the plugin with [[Google App Engine]].
