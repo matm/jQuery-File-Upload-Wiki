@@ -120,7 +120,7 @@ In whatever view file you want, copy paste this code and enjoy.
                 <span class="btn btn-success fileinput-button">
                     <i class="icon-plus icon-white"></i>
                     <span>Add files...</span>
-                    <%= f.file_field :path %>
+                    <%= f.file_field :avatar %>
                 </span>
                 <button type="submit" class="btn btn-primary start">
                     <i class="icon-upload icon-white"></i>
