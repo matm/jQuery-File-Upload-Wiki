@@ -20,10 +20,10 @@ $('#fileupload').fileupload({
 It is possible to pass options to the initialization method as [HTML5 data attributes](http://api.jquery.com/data/#data-html5):
 
 ```html
-<input id="fileupload" type="file" name="files[]" multiple="multiple"
+<input id="fileupload" type="file" name="files[]" multiple
     data-url="/path/to/upload/handler.json"
     data-sequential-uploads="true"
-    data-form-data='{"script": "true"}' />
+    data-form-data='{"script": "true"}'>
 ```
 
 ```js
