@@ -105,6 +105,3 @@
 * [VB.net VS2010 implementation](https://github.com/superquinho/jQuery-File-Upload-ASPnet)
 * A fully [IHttpHandler based] (https://github.com/YahavGB/jQuery-File-Upload/tree/master/server/asp-net) PHP server-side clone abstract class for uploading files. Class main propose is to upload files (supports high-quality images uploading) (Contributed by Yahav Gindi Bar).
 * [Backload.](https://github.com/blackcity/Backload) A professional full featured ASP.NET MVC 4 file upload server side controller/handler. It has a very rich set of configuration options (web.config) but also a zero configuration feature. It supports complex storage structures (file system and databases), image resizing, cropping and conversions, content type based subfolders/tables, etc. [Backload demos and examples](https://github.com/blackcity/Backload) 
-
-### ASP (Classic)
-* [ASP VBscript example](https://github.com/blueimp/jQuery-File-Upload/wiki/Classic-ASP) (user contribution)
