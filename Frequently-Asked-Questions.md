@@ -206,4 +206,4 @@ It even displays the correct error message, e.g. "Error: Service Unavailable" fo
 
     HTTP/1.0 503 Service Unavailable
 
-However, for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads - which includes Internet Explorer before IE10 - the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.iframe-transport.js) is used and there is no way to retrieve the HTTP status code from an iframe load event.
+However, for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads - which includes Internet Explorer before IE10 - the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js) is used and there is no way to retrieve the HTTP status code from an iframe load event.
