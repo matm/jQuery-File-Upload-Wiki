@@ -1,5 +1,9 @@
 # Setup instructions
 
+**Note:**  
+Although the demo implementations contained in this repository include source files from remote servers, it is recommended to download all dependencies and upload them to your own server.  
+This excludes script files hosted on Googles Content Delivery Network, which is a more reliable source than GitHub demo pages.
+
 ## Using jQuery File Upload (UI version) on [PHP](http://www.php.net/) websites
 
 The provided example implementation works out of the box and only needs one step for you to add it to your PHP based website:
