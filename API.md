@@ -99,7 +99,7 @@ $('#fileupload').fileupload('add', {files: filesList});
 ```
 
 The second argument must be an object with an array (or array-like list) of [File](https://developer.mozilla.org/en/DOM/File) or [Blob](https://developer.mozilla.org/en/DOM/Blob) objects as *files* property.  
-Other properties allow to override options for the file upload, e.g. the upload url:
+Other properties allow you to override options for the file upload, e.g. the upload url:
 
 ```js
 $('#fileupload').fileupload('add', {files: filesList, url: '/path/to/upload/handler.json'});
