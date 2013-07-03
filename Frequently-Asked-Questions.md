@@ -27,7 +27,7 @@ An example limiting files to PNG images:
 Note that this will not limit files added by drag&drop and is not supported across all browsers.
 
 ### How to prevent the page from becoming unresponsive, when adding a large number of image files?
-Lower the **previewMaxSourceFileSize** setting or remove the "preview" class from the upload template to avoid rendering large preview images, which have the potential to block the main JS thread.
+Lower the **loadImageMaxFileSize** setting or remove the "preview" class from the upload template to avoid rendering large preview images, which have the potential to block the main JS thread.
 
 ### Is it possible to trigger the file selection dialog programmatically?
 Invoking a click event on the file input field programmatically is not supported across browsers - see [[Style Guide]].
