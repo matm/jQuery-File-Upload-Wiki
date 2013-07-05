@@ -17,6 +17,8 @@ The following browsers support at least one form of [AJAX](https://en.wikipedia.
 * Default Browser on Android 2.3+
 * Opera Mobile 12.0+
 
+See also [File upload support on mobile](http://viljamis.com/blog/2012/file-upload-support-on-mobile/).
+
 ## Multiple File selection
 The following browsers support multiple file selection:
 
