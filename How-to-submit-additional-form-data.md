@@ -82,3 +82,21 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
 ## How to retrieve and set form data asynchronously.
 See how to [[submit files asynchronously]].
 
+## Handling additional form data on server-side
+The additional form data will be sent to the server as standard POST parameters.  
+e.g. an additional input field with the **name** attribute **example1** will arrive on server-side as POST parameter **example1**.  
+The same goes for a custom formData object, *formData: {example2: 'test'}* will arrive on server-side as POST parameter **example2**.
+
+### PHP
+The provided PHP upload handler already provides a method stub to handle additional form data, the function **handle_form_data**:
+
+```php
+<?php
+// ...
+    protected function handle_form_data($file, $index) {
+        // Handle form data, e.g. $_REQUEST['description'][$index]
+    }
+// ...
+```
+
+e.g. the formData object *{example2: 'test'}* can be accessed as *$_REQUEST['example2']*.
