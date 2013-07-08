@@ -16,13 +16,14 @@ You also need to keep in mind files that can be downloaded and executed on clien
 
 ## Server-side
 
-To prevent arbitrary files (e.g. JavaScript files) from being executed on client-side in the context of the web application, the provided server-side implementations serve non-image files with attachment headers, to force a download dialog:
+To prevent arbitrary files (e.g. JavaScript files) from being executed on client-side in the context of the web application, the provided server-side implementations serve non-image files with a forced content-type and attachment headers, to force a download dialog:
 
 ```
-Content-Disposition:attachment; filename=script.js;
+Content-Type: application/octet-stream
+Content-Disposition:attachment; filename="script.js"
 ```
 
-Image files are served with their proper mime type headers (e.g. "image/png") and an additional header to [prevent Internet Explorer 8 and higher from sniffing the mime type](http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx) and executing JavaScript masked as image files:
+Image files are served with their proper mime type headers (e.g. "image/png") and an additional header to [prevent Internet Explorer 8 and higher from sniffing the mime type](http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx) (as well as [other browsers implementing the nosniff directive](https://github.com/blog/1482-heads-up-nosniff-header-support-coming-to-chrome-and-firefox) and executing JavaScript masked as image files:
 
 ```
 X-Content-Type-Options: nosniff
@@ -49,21 +50,44 @@ $upload_handler = new UploadHandler(array(
 ));
 ```
 
-Please note that the **accept_file_types** option isn't meant to prevent attackers from uploading and executing PHP scripts. This is done with a **.htaccess** directive explained in the following paragraphs.
+Please note that the **accept_file_types** option isn't meant to prevent attackers from uploading and executing PHP scripts. This is done with a **.htaccess** directive (or via Nginx configuration) explained in the following paragraphs.
 
 The PHP implementation stores uploaded files in the pre-defined directory "files". This directory contains a file **.htaccess** that is absolutely required as it contains directives for Apache to enforce security restrictions:
 
 ```
 ForceType application/octet-stream
+Header set Content-Disposition attachment
 <FilesMatch "(?i)\.(gif|jpe?g|png)$">
-  ForceType none
+	ForceType none
+	Header unset Content-Disposition
 </FilesMatch>
-
-# Prevent IE from MIME-sniffing:
-Header set X-Content-Type-Options "nosniff"
+Header set X-Content-Type-Options nosniff
 ```
 
 The [ForceType](http://httpd.apache.org/docs/2.4/mod/core.html#forcetype) directive "application/octet-stream" enforces Apache to serve all files with an attachment header to force a download dialog. More importantly, it prevents Apache to run any of the uploaded files through an interpreter like PHP, even if the file extension is ".php".
+
+
+### Nginx
+Sample nginx configuration to securely serve uploaded files (adjust "/jQuery-File-Upload/server/php/files" to the path of your upload directory):
+
+```
+location ^~ /jQuery-File-Upload/server/php/files {
+    root html;
+    default_type application/octet-stream;
+    types {
+        image/gif     gif;
+        image/jpeg    jpg;
+        image/png    png;
+    }
+    add_header X-Content-Type-Options 'nosniff';
+    if ($request_filename ~ /(((?!\.(jpg)|(png)|(gif)$)[^/])+$)) {
+        add_header Content-Disposition 'attachment; filename="$1"';
+        # Add X-Content-Type-Options again, as using add_header in a new context
+        # dismisses all previous add_header calls:
+        add_header X-Content-Type-Options 'nosniff';
+    }
+}
+```
 
 ### HTTP Basic Authentication
 Although HTTP Basic Authentication (e.g. via **.htaccess**) is a simple means to add password protection, it's advisable to use Cookie based authentication instead, since IE does seem to have problems with HTTP Basic Authentication and invisible Iframes, which are used for the Iframe Transport.  
