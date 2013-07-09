@@ -111,6 +111,24 @@ If the upload fails, the code above will automatically resume the file upload af
 To prevent endless loops, the number of retries can be limited with the *maxRetries* setting.  
 The *retryTimeout* setting defines a timeout in milliseconds, before the file upload is resumed. It is increased for every subsequent retry to extend the waiting time.
 
+## Deleting aborted chunked uploads
+If you don't offer your users the option to resume aborted uploads, you might want to delete incomplete uploads from the server. The recommended way would be to do this on server-side, e.g. by a cron-job that deletes incomplete files.  
+However if you want a quick solution, it's possible to send a DELETE request when the chunked upload fails (e.g. when the user aborts the upload):
+
+```js
+$('#fileupload').fileupload({
+    maxChunkSize: 10000000, // 10 MB
+    fail: function (e, data) {
+        $.ajax({
+            url: 'server/php/',
+            dataType: 'json',
+            data: {file: data.files[0].name}
+            type: 'DELETE'
+        });
+    }
+});
+```
+
 ## Extensions
 
 * [[Force re upload of last chunk]]
