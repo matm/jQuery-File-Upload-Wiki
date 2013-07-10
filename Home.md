@@ -14,7 +14,6 @@
 ## Customization how-tos
 * **[[Plugin extensions]] (Developer Guide)**
 * How to implement a different [[Template Engine]].
-* [[How to add Flat-UI Design]]
 * [[Performance Optimizations]] to speed up page load times.
 * [[Style Guide]] with explanations for the provided [CSS code](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui.css).
 * [[How to submit additional Form Data]].
@@ -30,6 +29,7 @@
 * [[Drag and drop uploads from another web page]]
 * [[Fixing Safari hanging on very high speed connections (1Gbps)]]
 * Direct upload to [[YouTube]]
+* [[How to add Flat-UI Design]]
 
 ## Server-side
 
