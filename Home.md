@@ -58,6 +58,7 @@
 * Same [Django reusable Plugin](https://github.com/garmoncheg/django_multiuploader) and [article](http://garmoncheg.blogspot.com/2011/07/django-beautiful-multiple-files-upload.html) (user contribution).
 * Another [Django integration](https://github.com/sigurdga/django-jquery-file-upload) (user contribution).
 * Django >= 1.2.5 integration with CSRF enabled [repo](https://github.com/miki725/Django-jQuery-File-Uploader-Integration-demo) [wiki](https://github.com/miki725/Django-jQuery-File-Uploader-Integration-demo/wiki) (user contribution).
+* [django-jfu](https://github.com/Alem/django-jfu) - A Django re-usable app for integrating jQuery File Upload into existing projects (not a demo) (user contribution).
 * [web2py (Python framework) port](https://github.com/hellais/jQuery-File-Upload) (user contribution).
 * [Pyramid demo port](https://github.com/grooverdan/pyramid-jQuery-File-Upload-demo) (user contribution).
 
