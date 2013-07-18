@@ -485,10 +485,10 @@ Callback for failed (abort or error) chunk upload requests
 Callback for completed (success, abort or error) chunk upload requests.
 
 ### autoUpload
-By default, files added to the widget are uploaded as soon as the user clicks on the start buttons. To enable automatic uploads, set this option to true.
+By default, files added to the widget are uploaded as soon as the user clicks on the start buttons. To disable automatic uploads, set this option to false.
 
 * Type: *boolean*
-* Default: `false`
+* Default: `true`
 
 ## File Processing Options
 
