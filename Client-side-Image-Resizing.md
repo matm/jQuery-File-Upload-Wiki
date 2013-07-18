@@ -32,6 +32,6 @@ $('#fileupload').fileupload({
         .test(window.navigator && navigator.userAgent),
     imageMaxWidth: 800,
     imageMaxHeight: 800,
-    previewCrop: true // Force cropped images
+    imageCrop: true // Force cropped images
 })
 ```
