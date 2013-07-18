@@ -55,7 +55,7 @@ You can then upload the project folder (without the unnecessary **server** subfo
     "name": "picture1.jpg",
     "size": 902604,
     "url": "http:\/\/example.org\/files\/picture1.jpg",
-    "thumbnail_url": "http:\/\/example.org\/files\/thumbnail\/picture1.jpg",
+    "thumbnailUrl": "http:\/\/example.org\/files\/thumbnail\/picture1.jpg",
     "deleteUrl": "http:\/\/example.org\/files\/picture1.jpg",
     "deleteType": "DELETE"
   },
@@ -63,7 +63,7 @@ You can then upload the project folder (without the unnecessary **server** subfo
     "name": "picture2.jpg",
     "size": 841946,
     "url": "http:\/\/example.org\/files\/picture2.jpg",
-    "thumbnail_url": "http:\/\/example.org\/files\/thumbnail\/picture2.jpg",
+    "thumbnailUrl": "http:\/\/example.org\/files\/thumbnail\/picture2.jpg",
     "deleteUrl": "http:\/\/example.org\/files\/picture2.jpg",
     "deleteType": "DELETE"
   }
