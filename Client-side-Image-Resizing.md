@@ -18,6 +18,8 @@ To do client-side image resizing you need to include the following scripts:
 <script src="js/jquery.fileupload-image.js"></script>
 ```
 
+Please note that you should download and upload all resources to your own server and not reference source files from the **blueimp.github.io** domain.
+
 Then, all you need to do is to set the option **disableImageResize** to *false*.  
 By default, images are resized to FullHD (1920x1080), but you can define your own [[Options]]:
 
