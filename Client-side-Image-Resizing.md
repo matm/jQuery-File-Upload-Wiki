@@ -1,4 +1,4 @@
-To do client-side image resizing you need to include the following scripts:
+To do client-side image resizing you need to include the following scripts:  
 Please note that you should download and upload all resources to your own server and not reference source files from the **blueimp.github.io** domain
 
 ```html
