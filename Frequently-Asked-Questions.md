@@ -139,6 +139,10 @@ However, the Iframe Transport requires that all selections have to be uploaded i
 The UI reflects this by showing only one set of start/cancel buttons for each selection to be uploaded.
 It might not be the ideal user interface for this kind of situation, but it allows to reuse the same upload templates with minimal code additions.
 
+### Why aren't custom headers sent on some browsers (namely IE version below IE10)?
+Only browsers with support for XHR file upload support setting custom headers.  
+See [[Browser support]] for more information.
+
 ## Server-side
 
 ### Why does Internet Explorer prompt to download a file after the upload completes?
