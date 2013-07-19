@@ -490,6 +490,8 @@ By default, files added to the widget are uploaded as soon as the user clicks on
 * Type: *boolean*
 * Default: `false`
 
+Please note that in the basic File Upload plugin, this option is set to **true** by default.
+
 ## File Processing Options
 
 ### processQueue
