@@ -108,7 +108,6 @@ public function deleteImage($file)//gets the job done but you might want to add 
 			$this->load->view('admin/delete_success', $file_data); 
 		}
 	}
-}
 ```
 ## View: index.php
  this is mostly unchanged from the example code. Change name="files[]" to name="userfile"
