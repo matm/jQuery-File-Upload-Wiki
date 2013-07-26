@@ -89,6 +89,18 @@ $('#fileupload').fileupload('disable');
 $('#fileupload').fileupload('enable');
 ```
 
+## Retrieving overall progress data:
+
+```js
+var overallProgress = $('#fileupload').fileupload('progress');
+```
+
+## Retrieving the number of active uploads:
+
+```js
+var activeUploads = $('#fileupload').fileupload('active');
+```
+
 ## Programmatic file upload
 Usually, file uploads are invoked by selecting files via file input button or by dropping files on the drop zone.
 
