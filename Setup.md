@@ -2,7 +2,7 @@
 
 **Note:**  
 Although the demo implementations contained in this repository include source files from remote servers, it is recommended to download all dependencies and upload them to your own server.  
-This excludes script files hosted on Googles Content Delivery Network, which is a more reliable source than GitHub demo pages.
+This excludes script files hosted on Google's Content Delivery Network, which is a more reliable source than GitHub demo pages.
 
 ## Using jQuery File Upload (UI version) on [PHP](http://www.php.net/) websites
 
