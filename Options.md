@@ -858,6 +858,14 @@ Disables file validation.
 
 ## Additional Options for the UI version
 
+### getFilesFromResponse
+Callback to retrieve the list of files from the server response.  
+Is given the data argument of the **done** callback, which contains the result property.  
+Must return an array.
+
+* Type: *function*
+* Example: `function (data) {return data.result.files;}`
+
 ### getNumberOfFiles
 This option is a function that returns the current number of files selected and uploaded.  
 It is used in the maxNumberOfFiles validation.
