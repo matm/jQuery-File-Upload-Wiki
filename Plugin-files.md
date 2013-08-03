@@ -2,9 +2,10 @@
     * [result.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/result.html) is a helper page which allows to access cross-domain iframe contents via redirects.
     * [postmessage.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/cors/postmessage.html) serves as an API endpoint for cross-domain [postMessage](https://developer.mozilla.org/en/DOM/window.postMessage) based file uploads.
 * [css](https://github.com/blueimp/jQuery-File-Upload/tree/master/css)
+    * [demo.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/demo.css]) is an example generic page style for the demos which don't rely on [Bootstrap](http://getbootstrap.com/), currently only used by the jQuery UI version.
     * [jquery.fileupload-ui-noscript.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui-noscript.css) adjusts styling for browsers with JavaScript disabled.
     * [jquery.fileupload-ui.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/jquery.fileupload-ui.css) adds styling for the file input field, progress bars and upload buttons. See [[Style Guide]].
-    * [style.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/style.css) is an example generic page style.
+    * [style.css](https://github.com/blueimp/jQuery-File-Upload/blob/master/css/style.css) is an example generic page style, accommodating the [Bootstrap](http://getbootstrap.com/) style which is used by all demos except the jQuery UI version.
 * [img](https://github.com/blueimp/jQuery-File-Upload/tree/master/img)
     * [loading.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/img/loading.gif) is an animated GIF image file used for the file processing indication.
     * [progressbar.gif](https://github.com/blueimp/jQuery-File-Upload/blob/master/img/progressbar.gif) is an animated GIF image file used for the animation of the upload progress bars for browsers without support for CSS animations.
@@ -14,6 +15,7 @@
     * [jquery.fileupload-angular.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-angular.js) is an AngularJS file upload module depending on the File Upload (and processing) plugin.
     * [jquery.fileupload-audio.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-audio.js) extends the file processing plugin and adds audio preview functionality.
     * [jquery.fileupload-image.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-image.js) extends the file processing plugin and adds image preview & resize functionality.
+    * [jquery.fileupload-jquery-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-jquery-ui.js) extends the UI version of the fileupload plugin to use it with jQuery UI.
     * [jquery.fileupload-process.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-process.js) extends the basic version of the fileupload plugin and adds file processing functionality.
     * [jquery.fileupload-ui.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-ui.js) extends the file processing plugin and adds a complete user interface.
     * [jquery.fileupload-validate.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.fileupload-validate.js) extends the file processing plugin and adds file validation functionality.
@@ -58,5 +60,6 @@
 * [blueimp-file-upload.jquery.json](https://github.com/blueimp/jQuery-File-Upload/blob/master/blueimp-file-upload.jquery.json) is a [JSON](http://www.json.org/) file for the [jQuery Plugin Registry](http://plugins.jquery.com/).
 * [CONTRIBUTING.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/CONTRIBUTING.md) contains contribution information in [markdown](http://daringfireball.net/projects/markdown/) format.
 * [index.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/index.html) is a HTML markup example for the file upload form and the upload/download templates and serves as demo page.
+* [jquery-ui.html](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery-ui.html) is a HTML markup example for the jQuery UI version of the file upload plugin.
 * [package.json](https://github.com/blueimp/jQuery-File-Upload/blob/master/package.json) contains machine readable information about the plugin in [JSON](http://www.json.org/) format.
 * [README.md](https://github.com/blueimp/jQuery-File-Upload/blob/master/README.md) contains basic plugin information in [markdown](http://daringfireball.net/projects/markdown/) format.
