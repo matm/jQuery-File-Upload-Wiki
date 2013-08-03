@@ -530,12 +530,12 @@ All callbacks are of type *function* and can also be bound as event listeners, u
 
 ```js
 $('#fileupload')
-    .bind('processstart', function (e) {/* ... */})
-    .bind('process', function (e, data) {/* ... */})
-    .bind('processdone', function (e, data) {/* ... */})
-    .bind('processfail', function (e, data) {/* ... */})
-    .bind('processalways', function (e, data) {/* ... */})
-    .bind('processstop', function (e) {/* ... */});
+    .bind('fileuploadprocessstart', function (e) {/* ... */})
+    .bind('fileuploadprocess', function (e, data) {/* ... */})
+    .bind('fileuploadprocessdone', function (e, data) {/* ... */})
+    .bind('fileuploadprocessfail', function (e, data) {/* ... */})
+    .bind('fileuploadprocessalways', function (e, data) {/* ... */})
+    .bind('fileuploadprocessstop', function (e) {/* ... */});
 ```
 
 ### processstart
