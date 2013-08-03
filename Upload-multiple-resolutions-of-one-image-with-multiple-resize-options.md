@@ -1,3 +1,5 @@
+Put the following code in a JavaScript file and include it after all other file upload plugins:
+
 ```js
 $.blueimp.fileupload.prototype.processActions.duplicateImage = function (data, options) {
     if (data.canvas) {
