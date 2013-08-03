@@ -511,25 +511,72 @@ A list of file processing actions.
 ```js
 [
     {
-        action: 'validate',
-        // Always trigger this action,
-        // even if the previous action was rejected: 
-        always: true,
-        acceptFileTypes: '@'
-    },
-    {
         action: 'loadVideo',
         // Use the action as prefix for the "@" options:
         prefix: true,
         fileTypes: '@',
         disabled: '@disableVideoPreview'
+    },
+    {
+        action: 'validate',
+        // Always trigger this action,
+        // even if the previous action was rejected: 
+        always: true,
+        acceptFileTypes: '@'
     }
-],
+]
 ```
 
-Each item in the process queue must be an object with an **action** property.  
+Each item in the process queue must be an object with an **action** property of type *string*.  
 This action must be defined as a property of type function of **$.blueimp.fileupload.prototype.processActions**.  
-The items in the process queue will be applied in sequential order to each selected file when processing the files selection.
+e.g. ``action: 'validate'`` must exist as function *$.blueimp.fileupload.prototype.processActions.validate*.  
+
+The items in the process queue will be applied in sequential order to each selected file when processing the files selection. 
+
+The process functions get passed two arguments when called in the processing queue:
+* *data*: A copy of the data object that is passed to the *add* callback, with *data.files* referencing the files array.  
+Additionally, the data object has an *index* property set to the index of the current file to be processed.
+* *options*: The options object of the current process action.
+
+The *this* object of the process action is set to the widget root, not to *processActions*. This allows to access the global widget options via ``this.options``.
+
+The process function is supposed to return either the **data** object, or a [Promise](http://api.jquery.com/Types/#Promise) object which resolves or rejects with the **data** object as argument.
+
+A simplified *validate* process action as example:
+
+```js
+$.widget('blueimp.fileupload', $.blueimp.fileupload, {
+
+    options: {
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+        processQueue: [
+            action: 'validate',
+            acceptFileTypes: '@',
+            disabled: '@disableValidation'
+        ]
+    },
+
+    processActions: {
+
+        validate: function (data, options) {
+            if (options.disabled) {
+                return data;
+            }
+            var dfd = $.Deferred(),
+                file = data.files[data.index],
+            if (!options.acceptFileTypes.test(file.type)) {
+                file.error = 'Invalid file type.';
+                dfd.rejectWith(this, [data]);
+            } else {
+                dfd.resolveWith(this, [data]);
+            }
+            return dfd.promise();
+        }
+
+    }
+
+});
+```
 
 #### @-Options
 Each property of a process queue item that starts with an "@"-sign will be assigned its value following this set of rules:
