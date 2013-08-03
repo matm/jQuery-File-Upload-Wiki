@@ -276,11 +276,18 @@ The data parameter allows to override plugin options as well as define ajax sett
 The upload starts when the *submit* method is invoked on the data parameter.  
 *data.submit()* returns a [Promise](http://api.jquery.com/Types/#Promise) object and allows to attach additional handlers using jQuery's [Deferred](http://api.jquery.com/category/deferred-object/) callbacks.
 
+The default *add* callback submits the files if the *autoUpload* option is set to *true* (the default for the basic plugin). It also handles processing of files before upload, if any process handlers have been registered.
+
 * Default:
 
 ```js
 function (e, data) {
-    data.submit();
+    if (data.autoUpload || (data.autoUpload !== false &&
+            $(this).fileupload('option', 'autoUpload'))) {
+        data.process().done(function () {
+            data.submit();
+        });
+    }
 }
 ```
 
@@ -289,7 +296,7 @@ function (e, data) {
 ```js
 function (e, data) {
     $.each(data.files, function (index, file) {
-        alert('Added file: ' + file.name);
+        console.log('Added file: ' + file.name);
     });
     data.url = '/path/to/upload/handler.json';
     var jqXHR = data.submit()
@@ -398,7 +405,7 @@ Callback for uploads start, equivalent to the global [ajaxStart](http://api.jque
 
 ```js
 function (e) {
-    alert('Uploads started');
+    console.log('Uploads started');
 }
 ```
 
@@ -409,7 +416,7 @@ Callback for uploads stop, equivalent to the global [ajaxStop](http://api.jquery
 
 ```js
 function (e) {
-    alert('Uploads finished');
+    console.log('Uploads finished');
 }
 ```
 
@@ -421,7 +428,7 @@ Callback for change events of the fileInput collection.
 ```js
 function (e, data) {
     $.each(data.files, function (index, file) {
-        alert('Selected file: ' + file.name);
+        console.log('Selected file: ' + file.name);
     });
 }
 ```
@@ -434,7 +441,7 @@ Callback for paste events to the dropZone collection.
 ```js
 function (e, data) {
     $.each(data.files, function (index, file) {
-        alert('Pasted file type: ' + file.type);
+        console.log('Pasted file type: ' + file.type);
     });
 }
 ```
@@ -447,7 +454,7 @@ Callback for drop events of the dropZone collection.
 ```js
 function (e, data) {
     $.each(data.files, function (index, file) {
-        alert('Dropped file: ' + file.name);
+        console.log('Dropped file: ' + file.name);
     });
 }
 ```
