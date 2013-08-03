@@ -265,7 +265,7 @@ $('#fileupload')
 ```
 
 **Note:**
-Adding additional event listeners via *bind* method is the preferred option to preserve callback settings by the [jQuery File Upload UI version](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js).
+Adding additional event listeners via *bind* (or *on* method with jQuery 1.7+) method is the preferred option to preserve callback settings by the [jQuery File Upload UI version](https://github.com/blueimp/jQuery-File-Upload/blob/master/jquery.fileupload-ui.js).
 
 ### add
 The add callback can be understood as the callback for the file upload request queue. It is invoked as soon as files are added to the fileupload widget - via file input selection, drag & drop or *add* [[API]] call.
