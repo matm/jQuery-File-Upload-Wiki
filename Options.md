@@ -511,18 +511,37 @@ A list of file processing actions.
 ```js
 [
     {
-        action: 'log',
-        type: '@logType'
+        action: 'validate',
+        // Always trigger this action,
+        // even if the previous action was rejected: 
+        always: true,
+        acceptFileTypes: '@'
+    },
+    {
+        action: 'loadVideo',
+        // Use the action as prefix for the "@" options:
+        prefix: true,
+        fileTypes: '@',
+        disabled: '@disableVideoPreview'
     }
 ],
 ```
 
 Each item in the process queue must be an object with an **action** property.  
-This action must be defined as function of *$.blueimp.fileupload.prototype.processActions*.  
+This action must be defined as a property of type function of **$.blueimp.fileupload.prototype.processActions**.  
 The items in the process queue will be applied in sequential order to each selected file when processing the files selection.
 
 #### @-Options
-Each property of a process queue item that starts with an "@"-sign will be replaced with the option of the same name without the @ character. So *@logType* would be replaced with the *logType* option.
+Each property of a process queue item that starts with an "@"-sign will be assigned its value following this set of rules:
+
+* Remove the "@"-sign.
+* If the resulting string is not empty, set the property value to the global option of the same name.
+e.g. ``disabled: '@disableVideoPreview'`` will be set to the global *disableVideoPreview* option.
+* If the property string is empty, check if the process object has the prefix property set to *true*:
+    * If no, set its value to the global option with the same name as the property.
+    e.g. ``acceptFileTypes: '@'`` will be set to the global *acceptFileTypes* option.
+    * If yes, set its value to the global option with name of the property plus its action value as prefix in camel case.
+    e.g. ``fileTypes: '@'`` from the *loadVideo* process above will be set to the global *loadVideoFileTypes* option, as the *prefix* property is set to *true*.
 
 ## Processing Callback Options
 
