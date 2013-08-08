@@ -14,7 +14,7 @@ Replace them with the following single script source:
 <script data-main="js/main" src="js/require.js"></script>
 ```
 
-Next, edit [js/main.js] and replace its content with the following:
+Next, edit [js/main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js) and replace its content with the following:
 
 ```js
 require(
