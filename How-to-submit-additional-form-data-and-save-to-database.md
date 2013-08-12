@@ -1,7 +1,7 @@
-Files that will be modified. index.html and UploadHandeler.php.
+Files that will be modified. index.html and UploadHandler.php.
 
 # Step 1 - Index.html
-Submitting additional form data.  This can be done by simply adding more input fields as suggested in [how to submit additional form data](https://github.com/blueimp/jQuery-File-Upload/wiki/How-to-submit-additional-form-data). Find the template-upload section as below.
+Submitting additional form data. This can be done by simply adding more input fields as suggested in [how to submit additional form data](https://github.com/blueimp/jQuery-File-Upload/wiki/How-to-submit-additional-form-data). Find the template-upload section as below.
 
 ```php
 <!-- The template to display files available for upload -->
@@ -17,13 +17,13 @@ Submitting additional form data.  This can be done by simply adding more input f
                 <div><span class="label label-important">Error</span> {%=file.error%}</div>
             {% } %}
         </td>
-<!-- ADD YOUR FIELD HERE.  THEY CAN BE WHATEVER YOU CHOOSE. REMEMBER THE NAME ATTRIBUTE FOR LATER -->
+<!-- ADD YOUR FIELD HERE. THEY CAN BE WHATEVER YOU CHOOSE. REMEMBER THE NAME ATTRIBUTE FOR LATER -->
         <td class="post"><label>Post ID: <input type="hidden" name="postid[]" value="101" required></label></td>
         <td class="client"><label>Client ID: <input name="clientid[]" value="88" required></label></td>
 <!-- CODE CONTINUES ON -->
 ```
 ## Step 1.1
-Just before the < /head >tag add the following. It will send the input data to the upload script.
+Just before the < /head > tag add the following. It will send the input data to the upload script.
 
 ```php
 <script>
@@ -50,8 +50,8 @@ protected function handle_form_data($file, $index) {
 ```
 This is the function that we will use and modify to collect the $_POST data from the two extra inputs we created in index.html
 
-For ease of use we will modify or create two new fuctions based on this one. Each one will receive the form data that has been sent via $_POST.
-Continuing with our example data form index.html we will make the two function. 
+For ease of use we will modify or create two new functions based on this one. Each one will receive the form data that has been sent via $_POST.
+Continuing with our example data form index.html we will make the two functions. 
 ## Step 2.1
 ```php
  protected function handle_form_postid($file, $index) {
@@ -64,7 +64,7 @@ Continuing with our example data form index.html we will make the two function.
         return $clientid;
     }
 ```
-You may change the fucntions name to suit but you will need to know them to call them soon. 
+You may change the functions name to suit but you will need to know them to call them soon. 
 NOTE: These two functions must be above handle_file_upload(..  so leave them in the original function location at about line 517 ish. 
 
 Next follow the instructions to connect to the DB.
@@ -139,8 +139,8 @@ function delete_img($delimg)
 }
 ```
 
-Find the delete function at about line 891 and find this  if ($success) {
-Then add our delete call to functionso the code looks like this.
+Find the delete function at about line 891 and find this if ($success) {
+Then add our delete call to function so the code looks like this.
 ```php
  if ($success) {
             //Added to call delete function to delete the image from DB 
