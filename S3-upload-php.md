@@ -1,5 +1,6 @@
 this would be the index.php
 
+```php
 <?php
 /*
  * jQuery File Upload Plugin PHP Example for S3
@@ -160,3 +161,4 @@ $success = "";
     return $success;
 }
 ?>
+```
