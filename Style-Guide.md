@@ -7,6 +7,3 @@ Firefox 4 (and later) is so far the only browser with full support for invoking 
 
 ## Bootstrap UI
 The current version of the plugin builds on Twitter's [Bootstrap](http://twitter.github.com/bootstrap/) toolkit for its look&feel.
-
-#### #  jQuery UI
-A [[jQuery UI]] version of the plugin, which builds on [jQuery UI's theme framework](http://jqueryui.com/themeroller/) for it's look&feel is also available - see [[jQuery UI]].
