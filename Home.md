@@ -29,7 +29,7 @@
 * [[Drag and drop uploads from another web page]]
 * [[Fixing Safari hanging on very high speed connections (1Gbps)]]
 * Direct upload to [[YouTube]]
-* [[How to add Flat-UI Design]]
+* [[How to add Flat-UI Design]] (user contribution)
 
 ## Server-side
 
