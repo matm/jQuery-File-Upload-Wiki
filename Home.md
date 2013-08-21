@@ -61,6 +61,7 @@
 * [django-jfu](https://github.com/Alem/django-jfu) - A Django re-usable app for integrating jQuery File Upload into existing projects (not a demo) (user contribution).
 * [web2py (Python framework) port](https://github.com/hellais/jQuery-File-Upload) (user contribution).
 * [Pyramid demo port](https://github.com/grooverdan/pyramid-jQuery-File-Upload-demo) (user contribution).
+* [collective.upload - Plone integration](https://github.com/collective/collective.upload) (user contribution).
 
 ### Ruby
 * [S3 Uploader Rails Example](https://github.com/ncri/s3_uploader_example) (user contribution).
