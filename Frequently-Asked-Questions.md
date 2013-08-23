@@ -143,6 +143,18 @@ It might not be the ideal user interface for this kind of situation, but it allo
 Only browsers with support for XHR file upload support setting custom headers.  
 See [[Browser support]] for more information.
 
+### Why does the plugin only provide a dragover event, not other drag related events?
+The plugin only has its own dragover event handler to be able to apply the *copy* drop effect and to call the *preventDefault* method on the event object, which are both required to make cross-browser file drag&drop possible.  
+The plugin's dragover callback trigger allows to prevent that behavior by returning *false* in the callback, which can be useful in some situations.
+
+You can easily bind event handlers for any drag event independently of the plugin with jQuery alone, e.g.:
+
+```js
+$('#dropzone').bind('dragleave', function (e) {
+    // dragleave event handler code
+});
+```
+
 ## Server-side
 
 ### Why does Internet Explorer prompt to download a file after the upload completes?
