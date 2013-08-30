@@ -465,10 +465,13 @@ Callback for dragover events of the dropZone collection.
 * Example:
 
 ```js
-function (e) {
-    // e.dataTransfer
+function (e, data) {
+    data.dropEffect = 'move';
+    data.preventDefault = false;
 }
 ```
+
+The **fileuploaddragover** callback can be used to set the dropEffect (which is set to 'copy' by default) or to prevent the plugin from calling the *preventDefault()* method on the dragover event object.
 
 **Note:** The file upload plugin only provides a dragover callback, as it is used to make drag&drop callbacks work. If you want callbacks for additional drag events, simply bind to these events with jQuery's native event binding mechanism on your dropZone element, e.g.:
 
