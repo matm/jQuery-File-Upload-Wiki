@@ -8,7 +8,7 @@ This excludes script files hosted on Google's Content Delivery Network, which is
 
 The provided example implementation works out of the box and only needs one step for you to add it to your PHP based website:
 
-1. [Download](https://github.com/blueimp/jQuery-File-Upload/archive/master.zip) the plugin archive, extract it and upload the extracted folder (you may rename it) to your server.
+1. [Download](https://github.com/blueimp/jQuery-File-Upload/releases) the plugin archive, extract it and upload the extracted folder (you may rename it) to your server.
 
 Visit the uploaded directory - you should see the same file upload interface as the demo, allowing you to upload files to your website.
 
@@ -19,7 +19,7 @@ Please keep in mind some [[Security]] considerations when running a file upload 
 
 ## Using jQuery File Upload (UI version) with [Google App Engine](http://code.google.com/appengine/)
 
-1. [Download](https://github.com/blueimp/jQuery-File-Upload/archive/master.zip) the plugin archive, extract it and upload the **server/gae-python** or **server/gae-go** folder (depending on which runtime environment you want to use) as your App Engine instance, after editing the *app.yaml* inside if the folder and replacing "jquery-file-upload" with your own App ID.
+1. [Download](https://github.com/blueimp/jQuery-File-Upload/releases) the plugin archive, extract it and upload the **server/gae-python** or **server/gae-go** folder (depending on which runtime environment you want to use) as your App Engine instance, after editing the *app.yaml* inside if the folder and replacing "jquery-file-upload" with your own App ID.
 2. Upload the jQuery-File-Upload folder (without the **server** subfolder) to any server, after adjusting the **url** option in [main.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/main.js#L22) to the url of your App Engine instance.
 
 Visit the uploaded directory - you should see the same file upload interface as the demo, allowing you to upload files to your App Engine instance.
@@ -38,14 +38,14 @@ You can start the service by running the following command:
 ./node_modules/blueimp-file-upload-node/server.js
 ```
 
-Next, [download](https://github.com/blueimp/jQuery-File-Upload/archive/master.zip) the plugin archive, extract it, edit **index.html** and adjust the HTML form's **action** attribute to point to your [Node.js](http://nodejs.org/) service (e.g. "http://localhost:8080").  
+Next, [download](https://github.com/blueimp/jQuery-File-Upload/releases) the plugin archive, extract it, edit **index.html** and adjust the HTML form's **action** attribute to point to your [Node.js](http://nodejs.org/) service (e.g. "http://localhost:8080").  
 You can then upload the project folder (without the unnecessary **server** subfolder) to any static file server and use it as interface to your [Node.js](http://nodejs.org/) upload service.
 Make sure to have imagemagick CLI tools installed.
 
 ## Using jQuery File Upload (UI version) with a custom server-side upload handler
 
 1. Implement a file upload handler on your platform (Ruby, Python, Java, etc.) that handles normal form based file uploads and upload it to your server. See also the Server-side specific tutorials on the [Documentation Homepage](https://github.com/blueimp/jQuery-File-Upload/wiki).
-2. [Download](https://github.com/blueimp/jQuery-File-Upload/archives/master) and extract the plugin archive.
+2. [Download](https://github.com/blueimp/jQuery-File-Upload/releases) and extract the plugin archive.
 3. Edit *main.js* and adjust the **url** option to the URL of your custom file upload handler. Alternatively you can remove the url option and edit *index.html* and adjust the *action* attribute of the HTML form element to the URL of your custom file upload handler. If your upload handler requires another parameter name for the file uploads than **files[]**, you also have to adjust the file input *name* attribute or set the **paramName** option (see [[Options]] documentation).
 4. Upload the jQuery-File-Upload folder to your website.
 5. Extend your custom server-side upload handler to return a [JSON](http://en.wikipedia.org/wiki/JSON) response akin to the following output:
