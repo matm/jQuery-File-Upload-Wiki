@@ -198,6 +198,8 @@ $('#form').fileupload().bind("fileuploadadd", function(e, data) {
 });
 ```
 
+See also [answer on stack overflow](http://stackoverflow.com/a/16365846/873282).
+
 ## Server-side
 
 ### Why does Internet Explorer prompt to download a file after the upload completes?
