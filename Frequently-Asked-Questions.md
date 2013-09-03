@@ -155,6 +155,49 @@ $('#dropzone').bind('dragleave', function (e) {
 });
 ```
 
+### How is it possible to avoid collecting files, but uploading single file per dialog only?
+There are situations, where the standard `input type=file` field is not enough, but multiple file upload is not desired. This can also be done with the plugin. The basic trick is to do `data.submit()` on the last data object retrieved via the event `fileuploadadd`. Then, only the last file is submitted and the other ones not.
+
+Following a basic example using Bootstrap 3:
+
+HTML input fragment looking similar to the default button and field displayed by the browser:
+```html
+<div class="form-group">
+	<label class="control-label" for="fileDiv">File</label>
+	<div style="display: block; width: 100%" id="fileDiv">
+		<input id="fileInput" name="file" type="file" style="display:none">
+		<input name="fileText" id="fileText" type="text" class="form-control" style="width:300px; display:inline;" onclick="letUserChooseAFile();" required="required">
+		<button type="button" id="chooseBtn" class="btn btn-default btn-xs" onclick="letUserChooseAFile();">Choose</button>
+	</div>
+</div>
+```
+
+Additionally, there is the submit button:
+```html
+<button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+```
+
+Clicking on the file field should trigger browser's file choice:
+```js
+function letUserChooseAFile() {
+	$('#fileInput').trigger('click');
+	$('#chooseBtn').focus();
+}
+```
+
+When a file is added, the text should be displayed in the field and when submitting the form and when pressing "Submit", the file should be uploaded:
+```js
+$('#form').fileupload().bind("fileuploadadd", function(e, data) {
+	$.each(data.files, function (index, file) {
+		$("#fileText").val(file.name);
+		$("#submitButton").off("click");
+	});
+	$("#submitButton").on("click", function() {
+		data.submit();
+	});
+});
+```
+
 ## Server-side
 
 ### Why does Internet Explorer prompt to download a file after the upload completes?
