@@ -55,12 +55,12 @@ Continuing with our example data form index.html we will make the two functions.
 ## Step 2.1
 ```php
  protected function handle_form_postid($file, $index) {
-        $postid = $_REQUEST['postid'];
+        $postid = $_REQUEST['postid'][$index];
         return $postid;
     }
     
     protected function handle_form_clientid($file, $index) {
-        $clientid = $_REQUEST['clientid'];
+        $clientid = $_REQUEST['clientid'][$index];
         return $clientid;
     }
 ```
