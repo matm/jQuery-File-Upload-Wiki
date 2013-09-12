@@ -40,6 +40,7 @@
 * [[PHP user directories]]
 * [[PHP Session Upload Progress]]
 * [[PHP Remote File Copy]]
+* [[PHP MySQL database integration]]
 * [[Working with Databases]] (user contribution)
 * [[How to submit additional form data and save to database]]
 * [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
