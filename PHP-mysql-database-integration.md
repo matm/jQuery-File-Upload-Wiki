@@ -1,5 +1,3 @@
-# PHP mysql database integration
-
 ## SQL code to create the sample files table in the MySQL database:
 
 ```sql
