@@ -1,1 +1,1 @@
-[[PHP mysql database integration]]
+[[PHP MySQL database integration]]
