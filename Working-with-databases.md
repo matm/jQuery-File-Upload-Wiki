@@ -23,16 +23,12 @@ function query($query) {
 	$host = $this->options['host'];  
 	$username = $this->options['username'];  
 	$password = $this->options['password'];  
-	$link = mysql_connect($host,$username,$password);  
+	$link = mysqli_connect($host,$username,$password,$database );  
 	if (!$link) {  
-		die(mysql_error());  
-	}
-	$db_selected = mysql_select_db($database);  
-	if (!$db_selected) {  
-		die(mysql_error());  
+		die(mysqli_error($link));  
 	}  
-	$result = mysql_query($query);  
-	mysql_close($link);  
+	$result = mysqli_query($query);  
+	mysqli_close($link);  
 	return $result;  
 }  
 ```
@@ -46,7 +42,7 @@ Add this function also too the `UploadHandler.php`
 function add_img($whichimg)  
 {  
 	$add_to_db = $this->query("INSERT INTO [yourtable] ([yourcolumnone]) VALUES
-	     ('".$whichimg."')") or die(mysql_error());  
+	     ('".$whichimg."')") or die(mysqli_error($link));  
 	return $add_to_db;  
 }
 ```
@@ -68,7 +64,7 @@ Deleting the entry we made before is very easy, we create a new function which m
 ```php
 function delete_img($delimg)  
 {  
-	$delete_from_db = $this->query("DELETE FROM **yourtable** WHERE **yourcolumnone** = '$delimg'") or die(mysql_error());  
+	$delete_from_db = $this->query("DELETE FROM **yourtable** WHERE **yourcolumnone** = '$delimg'") or die(mysqli_error($link));  
 	return $delete_from_db;  
 }
 ```
