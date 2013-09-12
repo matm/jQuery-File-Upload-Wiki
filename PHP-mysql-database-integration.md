@@ -117,7 +117,7 @@ $upload_handler = new CustomUploadHandler($options);
 
 ```js
 $('#fileupload').fileupload({
-    url: 'server/php/
+    url: 'server/php/'
 }).on('fileuploadsubmit', function (e, data) {
     data.formData = data.context.find(':input').serializeArray();
 });
