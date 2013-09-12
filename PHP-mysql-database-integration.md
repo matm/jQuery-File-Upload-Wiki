@@ -1,4 +1,4 @@
-## SQL code to create the sample files table in the MySQL database:
+## SQL code to for the MySQL files table:
 
 ```sql
 CREATE TABLE `files` (
