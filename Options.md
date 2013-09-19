@@ -771,6 +771,12 @@ Define if resized images should be cropped or only scaled.
 * Type: *boolean*
 * Default: `false`
 
+### imageOrientation
+Defines the image orientation (1-8) or takes the orientation value from Exif data if set to *true*.
+
+* Type: *number* or *boolean*
+* Default: `false`
+
 ### disableImageResize
 Disables the resize image functionality.
 
