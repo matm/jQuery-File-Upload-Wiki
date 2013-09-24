@@ -1,4 +1,4 @@
-## Порядок использования базового функционала плагина (Basic plugin) (минимальная настройка)
+## How to use only the Basic plugin (minimal setup guide)
 
 The plugin [download package](https://github.com/blueimp/jQuery-File-Upload/releases) comes with a complete user interface based on [Bootstrap](http://twitter.github.com/bootstrap/).
 
