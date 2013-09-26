@@ -7,7 +7,7 @@ You can find the complete source code for the client ([GitHub Pages](http://page
 The App Engine source code is located in the [server/gae-python](https://github.com/blueimp/jQuery-File-Upload/tree/master/server/gae-python) and [server/gae-go](https://github.com/blueimp/jQuery-File-Upload/tree/master/server/gae-go) folders.  
 Originally, the demo had been built for the [Python runtime of Google App Engine](http://code.google.com/appengine/docs/python/), but it's since been rebuilt for the [Go Runtime Environment](http://code.google.com/appengine/docs/go/).
 
-You can also find an example PHP based server-side implementation under the [server/php](https://githuat can be run on any typical PHP webhosting platform.
+You can also find an example PHP based server-side implementation under the [server/php](https://github.com/blueimp/jQuery-File-Upload/tree/master/server/php) folder that can be run on any typical PHP webhosting platform.
 
 A [Node.js](http://nodejs.org/) implementation can be found under the [server/node](https://github.com/blueimp/jQuery-File-Upload/tree/master/server/node) folder.
 
