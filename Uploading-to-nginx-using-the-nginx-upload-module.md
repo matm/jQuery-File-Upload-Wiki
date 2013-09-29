@@ -27,7 +27,7 @@ First, make sure that you have the client_body_buffer_size set to be **less than
 
 Secondly, the nginx upload module has its own function for passing along headers: _upload_add_header_. This example I've provided demonstrates configuration for CORS. Without these headers (in addition to the normal headers for nginx) you will most likely not be able to upload across domains.
 
-Lastly, make sure that you have created all necessary folders in the folder structure where you'd like your uploads to live. You need a folder for every alphanumeric character. If you plan on storing your file uploads in /var/uploads, then you need to create a single folder for every character in the set a-zA-z0-9. This has to do with how the upload module handles the file upload in combination with the sessionID header being set.
+Lastly, make sure that you have created all necessary folders in the folder structure where you'd like your uploads to live. You need a folder for every alphanumeric character. If you plan on storing your file uploads in /var/uploads, then you need to create a single folder for every character in the set a-zA-Z0-9. This has to do with how the upload module handles the file upload in combination with the sessionID header being set.
 
 ## Section 3: Tying it all together
 
