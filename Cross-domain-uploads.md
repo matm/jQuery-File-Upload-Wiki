@@ -47,6 +47,8 @@ With the appropriate headers set on server-side, cross-domain XHR file uploads w
 
 ## Cross-site iframe transport uploads
 
+Iframe uploads **within the same domain** can be enabled by including the [iframe-transport.js](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js) file. For cross-site iframe file uploads, you must follow the additional steps below:
+
 To force all browser to make use of the iframe transport module for file uploads, the *forceIframeTransport* option can be set to *true*:
 
 ```js
