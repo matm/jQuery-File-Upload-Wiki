@@ -51,6 +51,7 @@
 * [Open Manager](https://github.com/rmorse/Open-Manager), a File/Media Manager implementation.
 * [Fileupload](https://github.com/Gargron/fileupload) library (Composer-installable, framework-independent)
 * [[jQuery-File-Upload 8.8.5,with-CodeIgniter 2.1.X]] (user contribution)
+
 ### Python
 * How to use the plugin with [[Google App Engine]].
 * Django integration [tutorial](http://garmoncheg.blogspot.com/2011/07/django-creating-multi-upload-form.html) and [demo code](https://github.com/garmoncheg/django_multiuploader_demo) (user contribution).
