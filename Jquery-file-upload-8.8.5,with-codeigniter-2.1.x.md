@@ -1,18 +1,19 @@
-Using this latest version with CI 2.1.x is quite simple. Many thanks to [Sinisa](http://stackoverflow.com/users/2167492/sinisa) who wrote a post pointing me to the right direction.
+Using this latest version with CI 2.1.x is quite simple. Many thanks to [Sinisa](http://stackoverflow.com/users/2167492/sinisa) who wrote a post pointing me to the right direction. And apologies in advance for the less than pleasing formatting - markdown is still something that I haven't fully 
+mastered. 
 
-Here is how to do it in five (well actually four) steps. 
+So - here is how to do use jQuery-File-Upload 8.8.5 with CI 2.1.x in five (well actually four) steps. 
 
 **Step1**: Copy UploadHandler.php into <yoursite>/application/libraries. You can rename it if you like - but change the class name as well. (I renamed it to Uploadhandler.php, and changed the classname to as given below) 
 
 <?php
-class Uploadhandler
-{
-...rest of the code as is - with one modification explained in step 2
+    class Uploadhandler {
+    // Rest of the code as supplied
+    }
 
 **Step2**: In Uploadhandler.php (use the name as you have given above), change the option value for "script_url" to as below:
 
         $this->options = array(
-            'script_url' => $this->get_full_url().'<your controller and method',
+            'script_url' => $this->get_full_url().'<your controller and method>',
          ...
 
 in my code, for instance, I had a controller called uploads. I created a method called do_upload in this controller - so my options value was:
@@ -26,9 +27,9 @@ Note: I use a blank ('') base_url in config.php, and use .htaccess to create a "
 $config['base_url']	= '';
 
 **Step3**: Create your controller and method as per the name above and instantiate the library like this (I am directly copying excerpts from my own controller class - you may of course want a different controller:
-`
+
 <?php
-class uploads extends CI_Controller {
+class Uploads extends CI_Controller {
 
     public function __construct()
     {
@@ -40,7 +41,8 @@ class uploads extends CI_Controller {
         $this->load->library("uploadhandler");
     }
 }
-`
+
+
 **Step4**: Update the controller and method information in the variable "url" in your js - either main.js - or in the inline javascript (I used inline because my app needed it - the values and the place remain the same however). Do note that my example continues with the controller and method I wrote for myself - don't forget to update it in case you are using your own. 
 
     <script type="text/javascript">
