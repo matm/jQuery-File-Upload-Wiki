@@ -4,21 +4,31 @@ Here is how to do it in three steps.
 
 **Step1**: Copy UploadHandler.php into <yoursite>/application/libraries. You can rename it if you like - but change the class name as well. (I renamed it to Uploadhandler.php, and changed the classname to as given below) 
 
-`class Uploadhandler
-{...rest of the code as is - with one modification explained in step 2
 `
+class Uploadhandler
+{...rest of the code as is - with one modification explained in step 2
+
+`
+
 **Step2**: In Uploadhandler.php (use the name as you have given above), change the option value for "script_url" to as below:
-`        $this->options = array(
+`
+        $this->options = array(
             'script_url' => $this->get_full_url().'<your controller and method',
          ...
+
 `
-in my code, for instances, I had a controller called uploads. I created a method called do_upload in this controller - so my options value was:
-`        $this->options = array(
+in my code, for instance, I had a controller called uploads. I created a method called do_upload in this controller - so my options value was:
+`
+        $this->options = array(
             'script_url' => $this->get_full_url().'/uploads/do_upload',
          ...
+
 `
+
 Note: I use a blank ('') base_url in config.php, and use .htaccess to create a "REST"-like interface. 
-`$config['base_url']	= '';
+`
+$config['base_url']	= '';
+
 `
 
 **Step3**: Create your controller and method as per the name above and instantiate the library like this (I am directly copying excerpts from my own controller class - you may of course want a different controller:
