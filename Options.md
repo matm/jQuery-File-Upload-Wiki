@@ -86,10 +86,10 @@ This is required for iframe transport queues and allows change events to be fire
 
 ### paramName
 The parameter name for the file form data (the request argument name).  
-If undefined or empty, the name property of the file input field is used, or "files" if the file input name property is also empty. Can be a string or an array of strings.
+If undefined or empty, the name property of the file input field is used, or "files[]" if the file input name property is also empty. Can be a string or an array of strings.
 
 * Type: *string* or *array*
-* Example: `'attachments'`
+* Example: `'attachments[]'`
 
 ### formAcceptCharset
 Allows to set the accept-charset attribute for the iframe upload forms.  
