@@ -71,6 +71,23 @@ Make sure to have imagemagick CLI tools installed.
 ]}
 ```
 
+To return errors to the UI, just add an error property to the individual file objects:
+
+```js
+{"files": [
+  {
+    "name": "picture1.jpg",
+    "size": 902604,
+    "error": "Filetype not allowed"
+  },
+  {
+    "name": "picture2.jpg",
+    "size": 841946,
+    "error": "Filetype not allowed"
+  }
+]}
+```
+
 Note that the response should always be a JSON object containing a files array even if only one file is uploaded.
 
 Visit the uploaded directory - you should see the same file upload interface as in the demo, allowing you to upload files to your website.
