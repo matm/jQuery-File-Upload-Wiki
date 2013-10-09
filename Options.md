@@ -138,6 +138,12 @@ This can be useful for cross-site file uploads, if the [Access-Control-Allow-Ori
 * Type: *boolean*
 * Default: `false`
 
+### initialIframeSrc
+This option is only used by the iframe transport and allows to override the URL of the initial iframe src.
+
+* Type: *string*
+* Default: `'javascript:false;'`
+
 ### redirect
 Set this option to the location of a redirect url on the origin server (the server that hosts the file upload form), for cross-domain iframe transport uploads. If set, this value is sent as part of the form data to the upload server.  
 The upload server is supposed to redirect the browser to this url after the upload completes and append the upload information as URL-encoded JSON string to the redirect URL, e.g. by replacing the "%s" character sequence.
@@ -462,16 +468,13 @@ function (e, data) {
 ### dragover
 Callback for dragover events of the dropZone collection.
 
-* Example:
+To prevent the plugin from calling the *preventDefault()* method on the original dragover event object and setting the *dataTransfer.dropEffect* to *copy*, call the preventDefault() method on the event object of the **fileuploaddragover** callback:
 
 ```js
 function (e, data) {
-    data.dropEffect = 'move';
-    data.preventDefault = false;
+    e.preventDefault(); // Prevents the default dragover action of the File Upload widget
 }
 ```
-
-The **fileuploaddragover** callback can be used to set the dropEffect (which is set to 'copy' by default) or to prevent the plugin from calling the *preventDefault()* method on the dragover event object.
 
 **Note:** The file upload plugin only provides a dragover callback, as it is used to make drag&drop callbacks work. If you want callbacks for additional drag events, simply bind to these events with jQuery's native event binding mechanism on your dropZone element, e.g.:
 
