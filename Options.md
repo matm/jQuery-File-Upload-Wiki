@@ -180,7 +180,7 @@ Non-multipart uploads (*multipart: false*) are broken in Safari 5.1 - see [issue
 ### maxChunkSize
 To upload large files in smaller chunks, set this option to a preferred maximum chunk size. If set to 0, null or undefined, or the browser does not support the required [Blob API](https://developer.mozilla.org/en/DOM/Blob), files will be uploaded as a whole.
 
-For chunked uploads to work in Mozilla Firefox, the *multipart* option has to be set to *false*. This is due to Gecko 2.0 (Firefox 4 etc.) adding blobs with an empty filename when building a multipart upload request using the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) interface - see [Bugzilla entry #649150](https://bugzilla.mozilla.org/show_bug.cgi?id=649150). Several server-side frameworks (including PHP and Django) cannot handle multipart file uploads with empty filenames.
+For chunked uploads to work in Mozilla Firefox <7, the *multipart* option has to be set to *false*. This is due to Gecko 2.0 (Firefox 4 etc.) adding blobs with an empty filename when building a multipart upload request using the [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) interface - see [Bugzilla entry #649150 (Fixed in FF 7.0)](https://bugzilla.mozilla.org/show_bug.cgi?id=649150). Several server-side frameworks (including PHP and Django) cannot handle multipart file uploads with empty filenames.
 
 **Note:** If this option is enabled and *singleFileUploads* is set to *false*, only the first file of a selection will be uploaded.
 
