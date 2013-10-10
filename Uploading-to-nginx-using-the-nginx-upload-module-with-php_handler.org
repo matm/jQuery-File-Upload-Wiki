@@ -1,0 +1,151 @@
+***Hello, 
+I have been searching a long time how to get the upload_handler from the verybasic example to work with the nginx uploadmodule. So here is my solution:
+First my nginx.conf file :
+#+BEGIN_EXAMPLE
+`# You may add here your
+# server {
+#	...
+# }
+# statements for each of your virtual hosts to this file
+
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+server {
+	client_max_body_size 4G;
+	client_body_buffer_size 1024k;
+	listen 80;
+	listen [::]:80 default_server ipv6only=on;
+
+	root /usr/share/nginx/html;
+	index index.html index.htm index.php;
+
+	# Make site accessible from http://localhost/
+	server_name localhost;
+
+	location @frontcontroller {
+	rewrite ^ /index.php last;
+	}
+
+	
+	location = /progress {
+	report_uploads uploads;
+	}
+
+	location /upload {
+                # the location of the php handler
+		upload_pass	/jQueryFileUpload/server/php/index.php;
+                # the location where the files are uploaded
+		upload_store	/var/tmp/fuploads;
+		upload_store_access user:rw;
+		upload_state_store /var/tmp/fuploads/state ;
+
+		    # Set specified fields in request body 
+                    # the field dat will be available throug the supergloble $_POST[]
+        	    upload_set_form_field "${upload_field_name}_name" $upload_file_name;
+	            upload_set_form_field "${upload_field_name}_content_type" $upload_content_type;
+        	    upload_set_form_field "${upload_field_name}_path" $upload_tmp_path;
+
+        	    upload_aggregate_form_field "${upload_field_name}_md5" $upload_file_md5;
+	            upload_aggregate_form_field "${upload_field_name}_size" $upload_file_size;
+
+        	    upload_pass_form_field "^submit$|^description$";
+
+	track_uploads uploads 5s;
+         }
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ /index.html;
+		# Uncomment to enable naxsi on this location
+		# include /etc/nginx/naxsi.rules
+	}
+
+	location /doc/ {
+		alias /usr/share/doc/;
+		autoindex on;
+		allow 127.0.0.1;
+		allow ::1;
+		deny all;
+	}
+	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+	#
+	location ~ \.php$ {
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+	#	# NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+	#
+	#	# With php5-cgi alone:
+	#	fastcgi_pass 127.0.0.1:9000;
+	#	# With php5-fpm:
+		fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_index index.php;
+		include fastcgi_params;
+	}
+}
+#+END_EXAMPLE
+Once this is done you have to open up the verybasic.php file 
+and look for the input field , the **name of the input field will be our prefix name in our $_POST[] variable*
+i call mine simple "files":
+#+BEGIN_EXAMPLE
+<input id="fileupload" type="file" name="files" data-url="/upload" >
+#+END_EXAMPLE
+
+Then the last step is to adapt the Uploadhandler.php.
+There are 3 function to adapt : first the post function
+
+you can delete everything in it and replace it with this:
+#+BEGIN_EXAMPLE
+public function post($print_response = true) {
+    	$prefix = files; //our name of the input field 
+    	
+        if (isset($_REQUEST['_method']) && $_REQUEST['_method'] === 'DELETE') {
+            
+        	return $this->delete($print_response);
+        }
+        $files = array();
+        $files = $this->new_handle_file_upload($prefix);
+        return $this->new_generate_response(array('files' => $files));
+    }
+        
+#+END_EXAMPLE
+As you see in the above we have to new function , add these 2 functions:
+#+BEGIN_EXAMPLE
+protected function new_handle_file_upload($prefix)
+	{
+		
+		$file = new stdClass();
+		$file->name = $_POST[$prefix."_name"];
+		$file->type = $_POST[$prefix."_content_type"];		
+		$file->url = $_POST[$prefix."_path"];
+		$file->size = $_POST[$prefix."_size"];
+		$file->error = 'success';
+		$this->set_additional_file_properties($file);
+		$s[]=$file;		
+		return $s;
+		
+		
+	}
+#+END_EXAMPLE
+#+BEGIN_EXAMPLE
+protected function new_generate_response($content)
+	{
+		$this->head();
+		$json = json_encode($content);
+		$this->body($json);
+		return content;
+		
+	}
+#+END_EXAMPLE
+This is it , hopefully a lot of people will enjoy it.
+Thank you
+
