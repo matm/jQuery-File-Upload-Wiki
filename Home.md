@@ -34,6 +34,7 @@
 
 ### Nginx
 * [[Uploading to nginx using the nginx upload module]]
+* [[Uploading-to-nginx-using-the-nginx-upload-module-with-php_handler]]
 
 ### PHP
 * [[PHP user directories]]
