@@ -5,27 +5,30 @@ However, you are not required to use this specific template engine and can repla
 
 ```js
 $('#fileupload').fileupload({
-    filesContainer: $('#upload_files_container'),
+    filesContainer: $('table.files'),
     uploadTemplateId: null,
     downloadTemplateId: null,
     uploadTemplate: function (o) {
         var rows = $();
         $.each(o.files, function (index, file) {
             var row = $('<tr class="template-upload fade">' +
-                '<td class="preview"><span class="fade"></span></td>' +
-                '<td class="name"></td>' +
-                '<td class="size"></td>' +
-                (file.error ? '<td class="error" colspan="2"></td>' :
-                        '<td><div class="progress">' +
-                            '<div class="bar" style="width:0%;"></div></div></td>' +
-                            '<td class="start"><button>Start</button></td>'
-                ) + '<td class="cancel"><button>Cancel</button></td></tr>');
+                '<td><span class="preview"></span></td>' +
+                '<td><p class="name"></p>' +
+                (file.error ? '<div class="error"></div>' : '') +
+                '</td>' +
+                '<td><p class="size"></p>' +
+                (o.files.error ? '' : '<div class="progress"></div>') +
+                '</td>' +
+                '<td>' +
+                (!o.files.error && !index && !o.options.autoUpload ?
+                    '<button class="start">Start</button>' : '') +
+                (!index ? '<button class="cancel">Cancel</button>' : '') +
+                '</td>' +
+                '</tr>');
             row.find('.name').text(file.name);
             row.find('.size').text(o.formatFileSize(file.size));
             if (file.error) {
-                row.find('.error').text(
-                    locale.fileupload.errors[file.error] || file.error
-                );
+                row.find('.error').text(file.error);
             }
             rows = rows.add(row);
         });
@@ -35,27 +38,29 @@ $('#fileupload').fileupload({
         var rows = $();
         $.each(o.files, function (index, file) {
             var row = $('<tr class="template-download fade">' +
-                (file.error ? '<td></td><td class="name"></td>' +
-                    '<td class="size"></td><td class="error" colspan="2"></td>' :
-                        '<td class="preview"></td>' +
-                            '<td class="name"><a></a></td>' +
-                            '<td class="size"></td><td colspan="2"></td>'
-                ) + '<td class="delete"><button>Delete</button> ' +
-                    '<input type="checkbox" name="delete" value="1" class="toggle"></td></tr>');
+                '<td><span class="preview"></span></td>' +
+                '<td><p class="name"></p>' +
+                (file.error ? '<div class="error"></div>' : '') +
+                '</td>' +
+                '<td><span class="size"></span></td>' +
+                '<td><button class="delete">Delete</button></td>' +
+                '</tr>');
             row.find('.size').text(o.formatFileSize(file.size));
             if (file.error) {
                 row.find('.name').text(file.name);
-                row.find('.error').text(
-                    locale.fileupload.errors[file.error] || file.error
-                );
+                row.find('.error').text(file.error);
             } else {
-                row.find('.name a').text(file.name);
-                if (file.thumbnail_url) {
-                    row.find('.preview').append('<a><img></a>')
-                        .find('img').prop('src', file.thumbnail_url);
-                    row.find('a').prop('rel', 'gallery');
+                row.find('.name').append($('<a></a>').text(file.name));
+                if (file.thumbnailUrl) {
+                    row.find('.preview').append(
+                        $('<a></a>').append(
+                            $('<img>').prop('src', file.thumbnailUrl)
+                        )
+                    );
                 }
-                row.find('a').prop('href', file.url);
+                row.find('a')
+                    .attr('data-gallery', '')
+                    .prop('href', file.url);
                 row.find('.delete')
                     .attr('data-type', file.delete_type)
                     .attr('data-url', file.delete_url);
