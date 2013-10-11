@@ -74,10 +74,10 @@ $('#fileupload').fileupload({
 
 **Notes:**
 
-* This code snippet assumes a global variable **locale** with a map of translation strings.
 * The **uploadTemplate** and **downloadTemplate** methods are supposed to return either a jQuery collection object or a string representation of the rendered upload / download template.
 * The **data** parameter passed via **add** callback is stored via [jQuery.data](http://api.jquery.com/data/) on the rendered templates and later reused when submitting or canceling the file upload.
 * The rendered templates are expected to have a class of **template-upload** / **template-download** for the start and cancel handlers to retrieve the **data** parameter and for the delete handler to set the context to the template.
+* If you don't want any transition effects for the template rendering, remove the **fade** class from the templates.
 
 Alternatively, you could also provide your own **window.tmpl** template method which accepts template IDs and returns template functions accepting a data parameter and rendering the template content as HTML string or jQuery collection:
 
