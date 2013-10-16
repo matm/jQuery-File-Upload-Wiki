@@ -1,4 +1,4 @@
-`$options = array(
+$options = array(
 	'db_table' => 'files',
 	'db_name' => 'DB',
 	'db_user' => 'UserName',
@@ -96,4 +96,3 @@ class CustomUploadHandler extends UploadHandler {
 }
 
 $upload_handler = new CustomUploadHandler($options);
-`
