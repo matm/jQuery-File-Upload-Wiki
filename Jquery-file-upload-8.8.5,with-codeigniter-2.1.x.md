@@ -71,4 +71,8 @@ class Uploads extends CI_Controller {
 
 **Step5**: Thats it. I created the relevant directories ('files') made sure it had write permissions for apache and it worked. 
 
-I havent had the time to extract the code files and upload - in case anyone is interested, please let me know and I will be happy to put it up. 
+I havent had the time to extract the code files and upload - in case anyone is interested, please let me know and I will be happy to put it up.
+
+Please I want to know the code of the view and the controller or the complete example code to use jQuery file upload with codeigniter and the library UploadHandler.
+I did not know how to contact you (dipan66) and so I write here.
+Thank you! 
