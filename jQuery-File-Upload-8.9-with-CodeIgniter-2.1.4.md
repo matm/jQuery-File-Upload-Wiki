@@ -131,7 +131,7 @@ public function deleteImage($file)//gets the job done but you might want to add 
 ## View: /views/upload/upload.php
 Mostly unchanged from the example code. Change name="files[]" to name="userfile" is very important!
 
-I included the same css and js as the current version 8.9 example
+I included the same css and js as the current version 8.9 example. The files are moved to assets/frontend/js/fileupload/ and assets/frontend/css/fileupload/. If you go for another path you have to change the code accordingly.
 
 ```
 <!-- Bootstrap styles -->
