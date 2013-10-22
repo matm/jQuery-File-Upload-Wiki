@@ -47,12 +47,12 @@
 * [[Zend-framework]] integration (user contribution).
 * [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
+* [[jQuery-File-Upload 8.8.5,with-CodeIgniter 2.1.X]] (user contribution)
 * [[jQuery File Upload 8.9 with CodeIgniter 2.1.4]] (user contribution)
 * [Symfony2 bundle](https://github.com/punkave/symfony2-file-uploader-bundle) (user contribution)
 * [Yii extension](https://github.com/Asgaroth/xupload) (user contribution)
 * [Open Manager](https://github.com/rmorse/Open-Manager), a File/Media Manager implementation.
 * [Fileupload](https://github.com/Gargron/fileupload) library (Composer-installable, framework-independent)
-* [[jQuery-File-Upload 8.8.5,with-CodeIgniter 2.1.X]] (user contribution)
 
 ### Python
 * How to use the plugin with [[Google App Engine]].
