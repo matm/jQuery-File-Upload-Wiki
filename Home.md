@@ -103,7 +103,6 @@
 * The _Lift Cookbook_ contains [basic plugin integration](http://cookbook.liftweb.net/#AjaxFileUpload) code and instructions (user contribution).
 
 ### ASP.NET
-* Fork of this project adding an [ASP.NET server example](https://github.com/timabell/jQuery-File-Upload/tree/dotnet) (contribution from Tim Abell), an IHttpHandler based example. Upload only.
 * [ASP.NET example code](https://github.com/blueimp/jQuery-File-Upload/wiki/Complete-code-example-using-blueimp-jQuery-file-upload-control-in-Asp.Net.) (contribution from Sam at webtrendset.com), a simple ashx based example, available as a zip file download. Upload support only. Focus on IE handling.
 * An [ASP.NET MVC 3 example](https://github.com/maxpavlov/jQuery-File-Upload.MVC3) with the same functionality as an original plugin demo + large files upload support for ASP.NET (contribution from Max Pavlov)
 * A fully functional github hosted [ASP.NET example](https://github.com/i-e-b/jQueryFileUpload.Net) (contribution by Iain Ballard), based on ashx handlers. Provides full upload / delete / thumbnail functionality.
