@@ -38,7 +38,7 @@ You can start the service by running the following command:
 ./node_modules/blueimp-file-upload-node/server.js
 ```
 
-Next, [download](https://github.com/blueimp/jQuery-File-Upload/releases) the plugin archive, extract it, edit **index.html** and adjust the HTML form's **action** attribute to point to your [Node.js](http://nodejs.org/) service (e.g. "http://localhost:8888/upload").  
+Next, [download](https://github.com/blueimp/jQuery-File-Upload/releases) the plugin archive, extract it, edit **index.html** and adjust the HTML form's **action** attribute to point to your [Node.js](http://nodejs.org/) service (e.g. "http://localhost:8080").  
 You can then upload the project folder (without the unnecessary **server** subfolder) to any static file server and use it as interface to your [Node.js](http://nodejs.org/) upload service.
 Make sure to have imagemagick CLI tools installed.
 
