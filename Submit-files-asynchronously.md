@@ -21,10 +21,11 @@ If you want to override the **add** callback, but still want to keep the feature
 ```js
 $('#fileupload').fileupload({
     add: function (e, data) {
+        var that = this;
         $.getJSON('/example/url', function (result) {
             data.formData = result; // e.g. {id: 123}
             $.blueimp.fileupload.prototype
-                .options.add.call(this, e, data);
+                .options.add.call(that, e, data);
         });
     } 
 });
