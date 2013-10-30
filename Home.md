@@ -78,7 +78,7 @@
 * [Screencast 383 - Uploading to Amazon S3](http://railscasts.com/episodes/383-uploading-to-amazon-s3) (Ryan Bates, RailsCasts)
 * [Rails + Blitline (upload directly to S3 + process images into thumbnails)](https://github.com/hisyam/blitline_rails_demo)
 * [jquery-fileupload-rails Gem](https://github.com/tors/jquery-fileupload-rails) and [example](https://github.com/tors/jquery-fileupload-rails-paperclip-example)
-* [s3_cors_fileupload Gem](https://github.com/fullbridge-batkins/s3_cors_fileupload) - Provides easy solution for using the plugin with CORS to upload files to Amazon S3.
+* [s3_cors_fileupload Gem](https://github.com/batter/s3_cors_fileupload) - Provides easy solution for using the plugin with CORS to upload files to Amazon S3.
 
 ### Perl
 * [jQuery::File::Upload perl module](https://metacpan.org/module/jQuery::File::Upload)
