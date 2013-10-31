@@ -110,5 +110,40 @@ if (isset($_SERVER['HTTP_ACCEPT']) &&
 ?>
 ```
 
+Here is a Ruby on Rails example to serve the proper Content-Type:
+
+``` ruby
+def update_attachment
+  name  = params[:attachment_name]
+  style = params[:attachment_style]
+  image = params[:user][name]
+
+  raise "No attachment #{name} for User!" unless User.attachment_definitions[name.to_sym]
+
+  current_user.update("#{name}" => image)
+  render(json: current_user.to_fileupload(name, style), content_type: request.format)
+end
+```
+
+Thanks to the `content_type` option of render, the correct header is set for both IE and true browsers.
+
+For the record, here is the 
+
+``` ruby
+def to_fileupload(attachment_name, attachment_style)
+  {
+    files: [
+      {
+        id:   read_attribute(:id),
+        name: read_attribute("#{attachment_name}_file_name"),
+        type: read_attribute("#{attachment_name}_content_type"),
+        size: read_attribute("#{attachment_name}_file_size"),
+        url:  send(attachment_name).url(attachment_style)
+      }
+    ]
+  }
+end
+```
+
 ## Using only the basic version of the jQuery File Upload plugin
 If you want to build your own interface, please refer to the [[Basic plugin]] guide (minimal setup guide).
