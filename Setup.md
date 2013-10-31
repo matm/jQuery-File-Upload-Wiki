@@ -127,7 +127,7 @@ end
 
 Thanks to the `content_type` option of render, the correct header is set for both IE and true browsers.
 
-For the record, here is the 
+For the record, here is the `to_fileupload` method:
 
 ``` ruby
 def to_fileupload(attachment_name, attachment_style)
