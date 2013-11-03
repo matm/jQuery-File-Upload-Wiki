@@ -108,7 +108,7 @@ class Upload extends CI_Controller {
             // I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data['file_name']
             $info->thumbnailUrl = $upload_path_url . 'thumbs/' . $data['file_name'];
             $info->deleteUrl = base_url() . 'upload/deleteImage/' . $data['file_name'];
-            $info->delete_type = 'DELETE';
+            $info->deleteType = 'DELETE';
             $info->error = null;
 
             $files[] = $info;
@@ -128,6 +128,7 @@ class Upload extends CI_Controller {
 
     public function deleteImage($file) {//gets the job done but you might want to add error checking and security
         $success = unlink(FCPATH . 'uploads/' . $file);
+        $success = unlink(FCPATH . 'uploads/thumbs/' . $file);
         //info to see if it is doing what it is supposed to	
         $info->sucess = $success;
         $info->path = base_url() . 'uploads/' . $file;
