@@ -62,9 +62,17 @@ public function do_upload()
 		
 	  	$this->load->library('upload', $config);
 
+                $info = new stdClass();
+
 	  	if ( ! $this->upload->do_upload()) {
-	  		$error = array('error' => $this->upload->display_errors());
-	  		$this->load->view('upload', $error);
+                        $data = $this->upload->data();
+                        $info->name = $data['file_name'];
+                        $info->size = $data['file_size'];
+                        $info->type = $data['file_type'];
+                        $info->error = $this->upload->display_errors('','');
+
+                        $files[] = $info;
+                        echo json_encode(array("files" => $files));
 		
 		} else {
 			$data = $this->upload->data();
@@ -87,9 +95,9 @@ public function do_upload()
 			$info->type = $data['file_type'];
 		        $info->url = $upload_path_url .$data['file_name'];
 			// I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data['file_name']
-			$info->thumbnail_url = $upload_path_url .$data['file_name'];
-		        $info->delete_url = base_url().'upload/deleteImage/'.$data['file_name'];
-		        $info->delete_type = 'DELETE';
+			$info->thumbnailUrl = $upload_path_url .$data['file_name'];
+		        $info->deleteUrl = base_url().'upload/deleteImage/'.$data['file_name'];
+		        $info->deleteType = 'DELETE';
 			$info->error = null;
                         
                         $files[] = $info;
