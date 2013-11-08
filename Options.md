@@ -110,7 +110,7 @@ Set this option to false to upload file selections in one request each.
 ### limitMultiFileUploads
 To limit the number of files uploaded with one [XHR](https://developer.mozilla.org/en/xmlhttprequest) request, set the following option to an integer greater than 0:
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 * Example: `3`
 
@@ -125,7 +125,7 @@ Set this option to true to issue all file upload requests in a sequential order 
 ### limitConcurrentUploads
 To limit the number of concurrent uploads, set this option to an integer value greater than 0.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 * Example: `3`
 
@@ -184,14 +184,14 @@ For chunked uploads to work in Mozilla Firefox <7, the *multipart* option has to
 
 **Note:** If this option is enabled and *singleFileUploads* is set to *false*, only the first file of a selection will be uploaded.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 * Example: `10000000`
 
 ### uploadedBytes
 When a non-multipart upload or a chunked multipart upload has been aborted, this option can be used to resume the upload by setting it to the size of the already uploaded bytes. This option is most useful when modifying the options object inside of the "add" or "send" callbacks, as the options are cloned for each file upload.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 * Example: `10000000`
 
@@ -205,13 +205,13 @@ Set this option to false to prevent recalculating the global progress data.
 ### progressInterval
 The minimum time interval in milliseconds to calculate and trigger progress events.
 
-* Type: *number*
+* Type: *integer*
 * Default: `100`
 
 ### bitrateInterval
 The minimum time interval in milliseconds to calculate progress bitrate.
 
-* Type: *number*
+* Type: *integer*
 * Default: `500`
 
 ### formData
@@ -729,7 +729,7 @@ The regular expression for the types of images to load, matched against the file
 ### loadImageMaxFileSize
 The maximum file size of images to load.
 
-* Type: *number*
+* Type: *integer*
 * Default: `10000000`
 
 ### loadImageNoRevoke
@@ -747,25 +747,25 @@ Disable loading and therefore processing of images.
 ### imageMaxWidth
 The maximum width of resized images.
 
-* Type: *number*
+* Type: *integer*
 * Default: `5000000`
 
 ### imageMaxHeight
 The maximum height of resized images.
 
-* Type: *number*
+* Type: *integer*
 * Default: `5000000`
 
 ### imageMinWidth
 The minimum width of resized images.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 
 ### imageMinHeight
 The minimum height of resized images.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 
 ### imageCrop
@@ -777,8 +777,14 @@ Define if resized images should be cropped or only scaled.
 ### imageOrientation
 Defines the image orientation (1-8) or takes the orientation value from Exif data if set to *true*.
 
-* Type: *number* or *boolean*
+* Type: *integer* or *boolean*
 * Default: `false`
+
+### imageForceResize
+If set to `true`, forces writing to and saving images from canvas, even if the original image fits the maximum image constraints.
+
+* Type: *integer* or *boolean*
+* Default: `undefined`
 
 ### disableImageResize
 Disables the resize image functionality.
@@ -786,28 +792,40 @@ Disables the resize image functionality.
 * Type: *boolean*
 * Default: `true`
 
+### imageQuality
+Sets the quality parameter given to the [canvas.toBlob()](https://developer.mozilla.org/en/docs/Web/API/HTMLCanvasElement) call when saving resized images.
+
+* Type: *float*
+* Default: `undefined`
+
+### imageType
+Sets the type parameter given to the [canvas.toBlob()](https://developer.mozilla.org/en/docs/Web/API/HTMLCanvasElement) call when saving resized images.
+
+* Type: *string*
+* Default: *The image type of the original file, e.g. `image/jpg`*
+
 ### previewMaxWidth
 The maximum width of the preview images.
 
-* Type: *number*
+* Type: *integer*
 * Default: `80`
 
 ### previewMaxHeight
 The maximum height of the preview images.
 
-* Type: *number*
+* Type: *integer*
 * Default: `80`
 
 ### previewMinWidth
 The minimum width of preview images.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 
 ### previewMinHeight
 The minimum height of preview images.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 
 ### previewCrop
@@ -819,7 +837,7 @@ Define if preview images should be cropped or only scaled.
 ### previewOrientation
 Defines the preview orientation (1-8) or takes the orientation value from Exif data if set to *true*.
 
-* Type: *number* or *boolean*
+* Type: *integer* or *boolean*
 * Default: `true`
 
 ### previewThumbnail
@@ -857,7 +875,7 @@ The regular expression for the types of audio files to load, matched against the
 ### loadAudioMaxFileSize
 The maximum file size of audio files to load.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 
 ### audioPreviewName
@@ -883,7 +901,7 @@ The regular expression for the types of video files to load, matched against the
 ### loadVideoMaxFileSize
 The maximum file size of video files to load.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 
 ### videoPreviewName
@@ -910,7 +928,7 @@ The regular expression for allowed file types, matches against either file type 
 ### maxFileSize
 The maximum allowed file size in bytes.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 * Example: `10000000` // 10 MB
 
@@ -919,7 +937,7 @@ The maximum allowed file size in bytes.
 ### minFileSize
 The minimum allowed file size in bytes.
 
-* Type: *number*
+* Type: *integer*
 * Default: `undefined`
 * Example: `1` // 1 Byte
 
@@ -929,7 +947,7 @@ The minimum allowed file size in bytes.
 This option limits the number of files that are allowed to be uploaded using this widget.  
 By default, unlimited file uploads are allowed.
 
-* Type: *number*
+* Type: *integer*
 * Example: `10`
 
 **Note**:  
