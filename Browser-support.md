@@ -201,3 +201,33 @@ The following browsers support client-side image resizing functionality:
 All browsers support cross-domain file uploads.  
 Either via native [CORS (Cross Origin Resource Sharing)](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) features, or via the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js).  
 For more information and the requirements, please see [[Cross-domain-uploads]].
+
+## for add watermark
+Use these settings.
+1- search folder files
+2- add your copyright.png or change name and change name in code  
+3- open file UploadHandler.php
+4- serach in file UploadHandler.php
+5- $new_file_path = $file_path;
+6- add after $new_file_path = $file_path;
+
+7- ------------ code for add watermark ----------------
+
+$imagen_original = $file_path;
+// this is the original file.
+$imagen_logo = imagecreatefrompng("copyright.png");
+// This is the imagen im embedding, a png file
+$ancho_logo = imagesx($imagen_logo); //get width
+$alto_logo = imagesy($imagen_logo); // get height
+$imagen_dest = imagecreatefromjpeg($imagen_original);
+// new image created
+$ancho_dest = imagesx($imagen_dest); //get new image width
+$alto_dest = imagesy($imagen_dest); //get new image height
+$ancho_muestra = ($ancho_dest - $ancho_logo) - 10; // get the X position of the logo in the new image
+$alto_muestra = ($alto_dest - $alto_logo) - 10; // get the Y position of the logo in the new image
+imagecopyresized($imagen_dest,$imagen_logo,$ancho_muestra,$alto_muestra,0,0,$ancho_logo,$alto_logo,$ancho_logo,$alto_logo);
+//create the new image with the logo embedded
+imagejpeg($imagen_dest,$file_path,100);
+// save the image with the logo
+
+Greetings..........
