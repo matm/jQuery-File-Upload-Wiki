@@ -204,12 +204,12 @@ For more information and the requirements, please see [[Cross-domain-uploads]].
 
 ## Setting For Add Watermark
 Use these settings.
-* search folder files
-* add your copyright.png or change name and change name in code 
-* open file UploadHandler.php
-* serach in file UploadHandler.php
+* Search Folder **files**
+* Add your **copyright.png** or **change name and change name in code **
+* Open file **UploadHandler.php**
+* Search in file **UploadHandler.php**
 * $new_file_path = $file_path;
-* add after $new_file_path = $file_path;
+* **Add after** $new_file_path = $file_path; **Next Code**
 
 ## Code For Add Watermark 
 Use these Code.
