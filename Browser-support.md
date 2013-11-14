@@ -207,7 +207,7 @@ Use these settings.
 * Search Folder `files`
 * Add your image `copyright.png` or change name and change name in code 
 * Open file `UploadHandler.php`
-* Search in file `UploadHandler.php`
+* Search in file `UploadHandler.php` Next Code
 * `$new_file_path = $file_path;`
 * Add after `$new_file_path = $file_path;` Next Code
 
