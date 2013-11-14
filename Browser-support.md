@@ -213,16 +213,16 @@ Use these settings.
 
 ## Code For Add Watermark 
 Use these Code.
-`$imagen_original = $file_path;`
-`$imagen_logo = imagecreatefrompng("copyright.png");`
-`$ancho_logo = imagesx($imagen_logo); //get width`
-`$alto_logo = imagesy($imagen_logo); // get height`
-`$imagen_dest = imagecreatefromjpeg($imagen_original);`
-`$ancho_dest = imagesx($imagen_dest); //get new image width`
-`$alto_dest = imagesy($imagen_dest); //get new image height`
-`$ancho_muestra = ($ancho_dest - $ancho_logo) - 10;` 
-`$alto_muestra = ($alto_dest - $alto_logo) - 10;`
-imagecopyresized($imagen_dest,$imagen_logo,$ancho_muestra,$alto_muestra,0,0,$ancho_logo,$alto_logo,$ancho_logo,$alto_logo);
-`imagejpeg($imagen_dest,$file_path,100);`
+* `$imagen_original = $file_path;`
+* `$imagen_logo = imagecreatefrompng("copyright.png");`
+* `$ancho_logo = imagesx($imagen_logo); //get width`
+* `$alto_logo = imagesy($imagen_logo); // get height`
+* `$imagen_dest = imagecreatefromjpeg($imagen_original);`
+* `$ancho_dest = imagesx($imagen_dest); //get new image width`
+* `$alto_dest = imagesy($imagen_dest); //get new image height`
+* `$ancho_muestra = ($ancho_dest - $ancho_logo) - 10;` 
+* `$alto_muestra = ($alto_dest - $alto_logo) - 10;`
+* `imagecopyresized($imagen_dest,$imagen_logo,$ancho_muestra,$alto_muestra,0,0,$ancho_logo,$alto_logo,$anco_logo,$alto_logo);`
+* `imagejpeg($imagen_dest,$file_path,100);`
 
 Greetings...
