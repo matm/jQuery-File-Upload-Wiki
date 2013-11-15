@@ -114,7 +114,22 @@ To limit the number of files uploaded with one [XHR](https://developer.mozilla.o
 * Default: `undefined`
 * Example: `3`
 
+**Note:** This option is ignored, if *singleFileUploads* is set to true or *limitMultiFileUploadSize* is set and the browser reports file sizes.
+
+### limitMultiFileUploadSize
+The following option limits the number of files uploaded with one [XHR](https://developer.mozilla.org/en/xmlhttprequest) request to keep the request size under or equal to the defined limit in bytes:
+
+* Type: *integer*
+* Default: `undefined`
+* Example: `1000000`
+
 **Note:** This option is ignored, if *singleFileUploads* is set to true.
+
+### limitMultiFileUploadSizeOverhead
+Multipart file uploads add a number of bytes to each uploaded file, therefore the following option adds an overhead for each file used in the limitMultiFileUploadSize configuration:
+
+* Type: *integer*
+* Default: `512`
 
 ### sequentialUploads
 Set this option to true to issue all file upload requests in a sequential order instead of simultaneous requests.
