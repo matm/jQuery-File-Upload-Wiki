@@ -80,6 +80,8 @@ protected function set_file_delete_properties($file) {
     }
 }
 ```
+In versions over 6.4.3, the function `set_file_delete_properties` is `set_additional_file_properties`, and is in the file 246.
+
 Then call the main file from your browser with the variable historia=your_directory such as:
 my/demo/index.php?historia=new_dir
 
