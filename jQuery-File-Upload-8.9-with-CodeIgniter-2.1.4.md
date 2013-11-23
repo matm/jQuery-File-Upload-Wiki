@@ -63,8 +63,30 @@ class Upload extends CI_Controller {
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload()) {
-            $error = array('error' => $this->upload->display_errors());
-            $this->load->view('upload', $error);
+            //$error = array('error' => $this->upload->display_errors());
+            //$this->load->view('upload', $error);
+
+            //Load the list of existing files in the upload directory
+            $existingFiles = get_dir_file_info($config['upload_path']);
+            $foundFiles = array();
+            $f=0;
+            foreach ($existingFiles as $fileName => $info) {
+              if($fileName!='thumbs'){//Skip over thumbs directory
+                //set the data for the json array   
+                $foundFiles[$f]['name'] = $fileName;
+                $foundFiles[$f]['size'] = $info['size'];
+                $foundFiles[$f]['url'] = $upload_path_url . $fileName;
+                $foundFiles[$f]['thumbnailUrl'] = $upload_path_url . 'thumbs/' . $fileName;
+                $foundFiles[$f]['deleteUrl'] = base_url() . 'upload/deleteImage/' . $fileName;
+                $foundFiles[$f]['deleteType'] = 'DELETE';
+                $foundFiles[$f]['error'] = null;
+                
+                $f++;
+              }
+            }
+            $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode(array('files' => $foundFiles)));
         } else {
             $data = $this->upload->data();
             /*
