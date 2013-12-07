@@ -1,7 +1,7 @@
 ## Initialization
-The File Upload widget is initialized by calling the *fileupload* method on a jQuery collection with the target HTML element:sadfasdfasdfasdf
+The File Upload widget is initialized by calling the *fileupload* method on a jQuery collection with the target HTML element:
 
-```jsaSDasd
+```js
 $('#fileupload').fileupload();
 ```
 
