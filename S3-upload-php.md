@@ -52,10 +52,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
     default:
         header('HTTP/1.1 405 Method Not Allowed');
 }
-
+```
 
 This would be the awssdk.php
 
+```php
 <?php
 /*
  * jQuery File Upload Plugin Server PHP for S3 Amazon
