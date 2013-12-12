@@ -625,6 +625,12 @@ $('#fileupload')
     .bind('fileuploadprocessstop', function (e) {/* ... */});
 ```
 
+Note that the data object contains two arrays:
+* files - which contains the result of the process applied.
+* originalFiles - the original uploaded files.
+
+It also contains an index parameter that tells you which file was worked on this time.
+
 ### processstart
 Callback for the start of the fileupload processing queue.
 
