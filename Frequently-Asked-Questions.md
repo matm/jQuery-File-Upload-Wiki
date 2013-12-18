@@ -223,3 +223,24 @@ It even displays the correct error message, e.g. "Error: Service Unavailable" fo
     HTTP/1.0 503 Service Unavailable
 
 However, for browsers without support for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads - which includes Internet Explorer before IE10 - the [Iframe Transport](https://github.com/blueimp/jQuery-File-Upload/blob/master/js/jquery.iframe-transport.js) is used and there is no way to retrieve the HTTP status code from an iframe load event.
+
+Therefore, the Iframe Transport will trigger the **done** event for each upload, even if the server returns an error status code.
+However, it's possible to trigger a **fail** event instead based on the response content conversion, e.g.:
+
+```js
+// By default, the iFrame Transport handles all responses as success,
+// so we override the iFrame to JSON converter to handle error responses:
+$.ajaxSetup({
+    converters: {
+        'iframe json': function (iframe) {
+            var result = iframe && $.parseJSON($(iframe[0].body).text());
+            if (result.error) {
+                // Handling JSON responses with error property:
+                // {"error": "Upload failed"}
+                throw result.error;
+            }
+            return result;
+        }
+    }
+});
+```
