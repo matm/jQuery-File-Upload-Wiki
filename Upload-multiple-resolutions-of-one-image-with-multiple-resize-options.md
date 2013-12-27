@@ -37,3 +37,5 @@ $('#fileupload').fileupload({
     ]
 });
 ```
+
+*Note* the above code doesn't give the duplicated, resized images any unique name
