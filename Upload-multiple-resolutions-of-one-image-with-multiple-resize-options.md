@@ -38,4 +38,4 @@ $('#fileupload').fileupload({
 });
 ```
 
-*Note* the above code doesn't give the duplicated, resized images any unique name. I assume that needs to be done  in the [`processActions`](https://github.com/blueimp/jQuery-File-Upload/wiki/Options#processqueue) by [@tim-peterson](https://github.com/tim-peterson)
+*Note by [@tim-peterson](https://github.com/tim-peterson)* the above code doesn't give the duplicated, resized images any unique name. I assume that needs to be done  in the [`processActions`](https://github.com/blueimp/jQuery-File-Upload/wiki/Options#processqueue).
