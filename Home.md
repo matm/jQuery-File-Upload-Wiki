@@ -43,7 +43,8 @@
 * [[PHP MySQL database integration]]
 * [Beautiful HTML5 File Uploads using CakePHP and jQuery File Upload](http://blog.creativeideal.net/cakephp/beautiful-html5-file-uploads-using-cakephp-and-jquery) (user contribution)
 * [jQuery File Upload + CakePHP 2.1.x](https://github.com/hugodias/FileUpload) (user contribution)
-* [Source for Amazon S3 Upload with PHP SDK](https://s3.amazonaws.com/parsec_it_examples/s3-php.zip) by [roberto colonello](https://github.com/robertocolonello)
+* [Source for Amazon S3 Upload with PHP SDK version1](https://s3.amazonaws.com/parsec_it_examples/s3-php.zip) by [roberto colonello](https://github.com/robertocolonello)
+* [Source for Amazon S3 Upload with PHP SDK version2](https://gist.github.com/tim-peterson/8172999) by [Tim Peterson](https://github.com/tim-peterson)
 * [[Zend-framework]] integration (user contribution).
 * [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
