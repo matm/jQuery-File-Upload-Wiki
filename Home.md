@@ -45,7 +45,7 @@
 * [jQuery File Upload + CakePHP 2.1.x](https://github.com/hugodias/FileUpload) (user contribution)
 * [Source for Amazon S3 Upload with PHP SDK version 1 ](https://s3.amazonaws.com/parsec_it_examples/s3-php.zip) by [roberto colonello](https://github.com/robertocolonello)
 * [Source for Amazon S3 Upload with PHP SDK version 2 ](https://gist.github.com/tim-peterson/8172999) by [Tim Peterson](https://github.com/tim-peterson)
-    * AWS SDK PHP Version 2 provides option to use built-in PHP file handling functions such as `file_get_contents()` on S3 buckets
+    * [AWS SDK PHP Version 2](http://docs.aws.amazon.com/aws-sdk-php/guide/latest/service-s3.html#amazon-s3-stream-wrapper) provides option to use built-in PHP file handling functions such as `file_get_contents()` on S3 buckets
     * This version of UploadHandler.php also provides the option to accept [`formData`](https://github.com/blueimp/jQuery-File-Upload/wiki/Options#formdata) of `$_POST['files']` selected via [Dropbox Chooser](https://www.dropbox.com/developers/dropins/chooser/js)
 * [[Zend-framework]] integration (user contribution).
 * [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
