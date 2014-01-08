@@ -2,8 +2,7 @@
 The File Upload widget is initialized by calling the *fileupload* method on a jQuery collection with the target HTML element:
 
 ```js
-$('#fileupload').fileupload(  url: '/path/to/upload/handler.json',
-   sequentialUploads: true);
+$('#fileupload').fileupload();
 ```
 
 The target element is usually a container element holding the file upload form, or the file upload form itself, but it can also be just the file input element itself, if an url is provided as options parameter.
