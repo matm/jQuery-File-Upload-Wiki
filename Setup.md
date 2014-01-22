@@ -89,6 +89,18 @@ To return errors to the UI, just add an error property to the individual file ob
 ]}
 ```
 
+When removing files using the delete button, the response should be like this:
+
+```js
+{"files": [
+  {
+    "picture1.jpg": true
+  },
+  {
+    "picture2.jpg": true
+  }
+]}
+```
 Note that the response should always be a JSON object containing a files array even if only one file is uploaded.
 
 Visit the uploaded directory - you should see the same file upload interface as in the demo, allowing you to upload files to your website.
