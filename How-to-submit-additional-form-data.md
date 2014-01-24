@@ -79,6 +79,32 @@ $('#fileupload').bind('fileuploadsubmit', function (e, data) {
 });
 ```
 
+### Setting formData on upload start for each individual file upload for AngularJS version
+First, we adjust the upload template and add a new cell with an input field for a file title:  
+
+```html
+<!-- ... -->
+<table class="table table-striped files ng-cloak">
+        <tr data-ng-repeat="file in queue"
+            data-ng-class="{'processing': file.$processing()}">
+                <!-- ... -->
+                <td><input type="text" name="title" ng-model="file.title" placeholder="Title"></td>
+                <!-- ... -->
+        </tr>
+</table>
+<!-- ... -->
+```
+
+The title field has "file.title" as a ng-model so value of field title will be added to binded object "file" on edit.
+
+Next we need to bind a callback to the "submit" event to gather the form data via the upload row context (the context is set by the UI version of the plugin inside of the *add* callback to the upload row node):
+
+```js
+$('#fileupload').bind('fileuploadsubmit', function (e, data) {
+    data.formData = {title: data.files[0].title};
+});
+```
+
 ## How to retrieve and set form data asynchronously.
 See how to [[submit files asynchronously]].
 
