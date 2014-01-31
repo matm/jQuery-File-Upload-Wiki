@@ -4,11 +4,21 @@ This page lists several Performance Optimizations to speed up page load times wh
 
 jQuery-File-Upload is distributed through [cdnjs](http://cdnjs.com/libraries/blueimp-file-upload/). [cdnjs](http://cdnjs.com/libraries/blueimp-file-upload/) is provided by CloudFlare CDN infrastructure and is an [open source community-driven project](https://github.com/cdnjs/cdnjs).
 
-You have just to include the library using `//cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.2/jquery.fileupload.min.js`. You can include the other extensions too `//cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.2/jquery.fileupload-process.min.js`.
+You have just to include the library using 
+
+```html
+<script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.2/jquery.fileupload.min.js"></script>
+```
+
+You can include the other extensions too
+
+```html
+<script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.2/jquery.fileupload-process.min.js"></script>
+```
 
 If you are using a web framework you can define a helper function to deliver the library from different places based on your environment settings. Below is a helper for Ruby on Rails:
 
-```
+```ruby
 def blueimp_file_upload_include_tag
   lib = 'blueimp-file-upload/9.5.2/jquery.fileupload.min.js'
   if Rails.env.production?
