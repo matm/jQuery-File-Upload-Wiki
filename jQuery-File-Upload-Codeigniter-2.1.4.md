@@ -1,8 +1,8 @@
-## application/config/constants.php
+## application/config/constants.php##
 define("UP_L", "upload");
 
 
-## application/controllers/grad_upload.php
+## application/controllers/grad_upload.php##
 
 `if (!defined('BASEPATH'))
     exit('No direct script access allowed');
