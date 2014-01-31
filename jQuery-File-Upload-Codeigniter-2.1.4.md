@@ -1,8 +1,17 @@
+# Complete Code Page
+[jQuery File + Codeigniter 2.1.4](https://github.com/lcxfs1991/jQuery-File-Upload-Codeigniter-2.1.4)
+
 ## application/config/constants.php
 `define("UP_L", "upload");`
 
 
 ## application/controllers/grad_upload.php
+<p>
+    ****index() :
+          is to load the view
+    ****do_upload() :
+          submit the request
+</p>
 <pre>
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -28,6 +37,17 @@ class grad_upload extends CI_Controller {
 </pre>
 
 ## application/models/grad_upload_img.php
+<p>
+    Please set different urls in $this->option according to your need. 
+</p>
+<p>
+    Here, I set the following
+    <pre>
+    'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/album/'.$this->get_u_id()."/temp/",
+    'delete_url' => $this->get_full_url().'grad_upload/do_upload',
+    'upload_url' => $this->get_full_url().'/album/'.$this->get_u_id()."/temp/"
+    </pre>
+</p>
 <pre>class grad_upload_img extends CI_Model
 {
 
@@ -1369,7 +1389,11 @@ class grad_upload extends CI_Controller {
 }
 </pre>
 
-//js/upload/main.js
+## js/upload/main.js
+
+<p>
+    please set the urls according to your need. Here, please set absolute urls
+</p>
 <pre>
 /*
  * jQuery File Upload Plugin JS Example 8.9.1
