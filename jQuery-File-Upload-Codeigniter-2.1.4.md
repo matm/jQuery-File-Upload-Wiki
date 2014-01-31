@@ -1,5 +1,5 @@
 # Complete Code Page
-[jQuery File + Codeigniter 2.1.4](https://github.com/lcxfs1991/jQuery-File-Upload-Codeigniter-2.1.4)
+[jQuery File + Codeigniter 2.1.4](https://github.com/lcxfs1991/jQuery-File-Upload-Codeigniter-v2.1.4/tree/master)
 
 ## application/config/constants.php
 `define("UP_L", "upload");`
