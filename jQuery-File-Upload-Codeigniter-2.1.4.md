@@ -1,10 +1,10 @@
-## application/config/constants.php##
-define("UP_L", "upload");
+## application/config/constants.php
+`define("UP_L", "upload");`
 
 
-## application/controllers/grad_upload.php##
-
-`if (!defined('BASEPATH'))
+## application/controllers/grad_upload.php
+<pre>
+if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class grad_upload extends CI_Controller {
@@ -24,10 +24,11 @@ class grad_upload extends CI_Controller {
       $this->load->model('grad_upload_img');
    }
 
-}`
+}
+</pre>
 
 ## application/models/grad_upload_img.php
-`class grad_upload_img extends CI_Model
+<pre>class grad_upload_img extends CI_Model
 {
 
     protected $options;
@@ -1365,10 +1366,12 @@ class grad_upload extends CI_Controller {
         return $this->generate_response($response, $print_response);
     }
 
-}`
+}
+</pre>
 
 //js/upload/main.js
-`/*
+<pre>
+/*
  * jQuery File Upload Plugin JS Example 8.9.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
@@ -1446,4 +1449,4 @@ $(function () {
     }
 
 });
-`
+</pre>
