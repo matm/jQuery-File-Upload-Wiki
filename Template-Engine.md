@@ -14,14 +14,14 @@ $('#fileupload').fileupload({
             var row = $('<tr class="template-upload fade">' +
                 '<td><span class="preview"></span></td>' +
                 '<td><p class="name"></p>' +
-                (file.error ? '<div class="error"></div>' : '') +
+                '<div class="error"></div>' +
                 '</td>' +
                 '<td><p class="size"></p>' +
-                (o.files.error ? '' : '<div class="progress"></div>') +
+                '<div class="progress"></div>' +
                 '</td>' +
                 '<td>' +
-                (!o.files.error && !index && !o.options.autoUpload ?
-                    '<button class="start">Start</button>' : '') +
+                (!index && !o.options.autoUpload ?
+                    '<button class="start" disabled>Start</button>' : '') +
                 (!index ? '<button class="cancel">Cancel</button>' : '') +
                 '</td>' +
                 '</tr>');
