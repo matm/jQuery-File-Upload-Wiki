@@ -78,50 +78,51 @@ $(document).bind('dragover', function (e) {
 
 **Note:**
 Here is a small modification to allow for multiple drop zones
+
+```js
 $(document).bind('dragover', function (e)
+{
+	var dropZone = $('.dropzone'),
+		foundDropzone,
+		timeout = window.dropZoneTimeout;
+		if (!timeout)
+		{
+			dropZone.addClass('in');
+		}
+		else
+		{
+			clearTimeout(timeout);
+		}
+		var found = false,
+		node = e.target;
+			
+		do{
+
+			if ($(node).hasClass('dropzone'))
 			{
-				var dropZone = $('.dropzone'),
-					foundDropzone,
-					timeout = window.dropZoneTimeout;
+				found = true;
+				foundDropzone = $(node);
+				break;
+			}
 
-				if (!timeout)
-				{
-					dropZone.addClass('in');
-				}
-				else
-				{
-					clearTimeout(timeout);
-				}
+			node = node.parentNode;
 
-				var found = false,
-					node = e.target;
-				
-				do{
+		}while (node != null);
 
-					if ($(node).hasClass('dropzone'))
-					{
-						found = true;
-						foundDropzone = $(node);
-						break;
-					}
+		dropZone.removeClass('in hover');
 
-					node = node.parentNode;
+		if (found)
+		{
+			foundDropzone.addClass('hover');
+		}
 
-				}while (node != null);
-
-				dropZone.removeClass('in hover');
-
-				if (found)
-				{
-					foundDropzone.addClass('hover');
-				}
-
-				window.dropZoneTimeout = setTimeout(function ()
-				{
-					window.dropZoneTimeout = null;
-					dropZone.removeClass('in hover');
-				}, 100);
-			});
+		window.dropZoneTimeout = setTimeout(function ()
+		{
+			window.dropZoneTimeout = null;
+			dropZone.removeClass('in hover');
+		}, 100);
+	});
+```
 
 **Note:**  
 If you want to allow specific drop zones but disable the default browser action for file drops on the document, add the following JavaScript code:
