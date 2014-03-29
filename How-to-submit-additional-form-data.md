@@ -73,7 +73,9 @@ Next we need to bind a callback to the "submit" event to gather the form data vi
 ```js
 $('#fileupload').bind('fileuploadsubmit', function (e, data) {
     var inputs = data.context.find(':input');
-    if (inputs.filter('[required][value=""]').first().focus().length) {
+    if (inputs.filter(function () {
+            return !this.value && $(this).prop('required');
+        }).first().focus().length) {
         data.context.find('button').prop('disabled', false);
         return false;
     }
