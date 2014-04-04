@@ -122,7 +122,8 @@ class Upload extends CI_Controller {
             $this->image_lib->resize();
 
             
-            //set the data for the json array	
+            //set the data for the json array
+            $info = new StdClass;
             $info->name = $data['file_name'];
             $info->size = $data['file_size'];
             $info->type = $data['file_type'];
