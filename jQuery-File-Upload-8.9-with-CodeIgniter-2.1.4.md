@@ -152,7 +152,8 @@ class Upload extends CI_Controller {
     public function deleteImage($file) {//gets the job done but you might want to add error checking and security
         $success = unlink(FCPATH . 'uploads/' . $file);
         $success = unlink(FCPATH . 'uploads/thumbs/' . $file);
-        //info to see if it is doing what it is supposed to	
+        //info to see if it is doing what it is supposed to
+	$info = new StdClass;
         $info->sucess = $success;
         $info->path = base_url() . 'uploads/' . $file;
         $info->file = is_file(FCPATH . 'uploads/' . $file);
