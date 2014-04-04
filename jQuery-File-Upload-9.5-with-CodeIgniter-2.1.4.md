@@ -4,7 +4,7 @@ Some things have change and need to be adapted
 
 !!! Please notice this solution has to be completed !!!
 
-I took the sample from the recent version jQuery-File-Upload 8.9 and mixed it with the tutorials for Codeigniter. The upload is currently working but not all status updates are currently correctly presented.
+I took the sample from the recent version jQuery-File-Upload 9.5 and mixed it with the tutorials for Codeigniter. The upload is currently working but not all status updates are currently correctly presented.
 
 ***
 
@@ -171,68 +171,65 @@ class Upload extends CI_Controller {
 }
 ```
 ## View: /views/upload/upload.php
-Mostly unchanged from the example code. Change name="files[]" to name="userfile" is very important!
+Mostly unchanged from the example code (index.html). Change name="files[]" to name="userfile" and change action="//jquery-file-upload.appspot.com/" to action="upload/do_upload" is very important!
 
-I included the same css and js as the current version 8.9 example. The files are moved to assets/frontend/js/fileupload/ and assets/frontend/css/fileupload/. If you go for another path you have to change the code accordingly.
+I included the same css and js as the current version 9.5 example. The files are moved to assets/js/fileupload/ and assets/css/fileupload/. If you go for another path you have to change the code accordingly.
 
 ```
+<base href="<?php echo base_url(); ?>">
 <!-- Bootstrap styles -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <!-- Generic page styles -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/fileupload/style.css">
+<link rel="stylesheet" href="assets/css/fileupload/style.css">
 <!-- blueimp Gallery styles -->
 <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/fileupload/jquery.fileupload.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/frontend/css/fileupload/jquery.fileupload-ui.css">
+<link rel="stylesheet" href="assets/css/fileupload/jquery.fileupload.css">
+<link rel="stylesheet" href="assets/css/fileupload/jquery.fileupload-ui.css">
 <!-- CSS adjustments for browsers with JavaScript disabled -->
-<noscript><link rel="stylesheet" href="css/jquery.fileupload-noscript.css"></noscript>
-<noscript><link rel="stylesheet" href="css/jquery.fileupload-ui-noscript.css"></noscript>
-
-<div id="fileupload">
-       <!-- Upload function on action form -->
-	<form action="upload/do_upload" method="POST" enctype="multipart/form-data">
-        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-        <div class="row fileupload-buttonbar">
-            <div class="col-lg-7">
-                <!-- The fileinput-button span is used to style the file input field as button -->
-                <span class="btn btn-success fileinput-button">
-                    <i class="glyphicon glyphicon-plus"></i>
-                    <span>Add files...</span>
-                    <input type="file" name="userfile" multiple>
-                </span>
-                <button type="submit" class="btn btn-primary start">
-                    <i class="glyphicon glyphicon-upload"></i>
-                    <span>Start upload</span>
-                </button>
-                <button type="reset" class="btn btn-warning cancel">
-                    <i class="glyphicon glyphicon-ban-circle"></i>
-                    <span>Cancel upload</span>
-                </button>
-                <button type="button" class="btn btn-danger delete">
-                    <i class="glyphicon glyphicon-trash"></i>
-                    <span>Delete</span>
-                </button>
-                <input type="checkbox" class="toggle">
-                <!-- The loading indicator is shown during file processing -->
-                <span class="fileupload-loading"></span>
-            </div>
-            <!-- The global progress information -->
-            <div class="col-lg-5 fileupload-progress fade">
-                <!-- The global progress bar -->
-                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-                </div>
-                <!-- The extended global progress information -->
-                <div class="progress-extended">&nbsp;</div>
-            </div>
-        </div>
-        <!-- The table listing the files available for upload/download -->
-        <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-    </form>
-</div>
-
-            <!-- The blueimp Gallery widget -->
+<noscript><link rel="stylesheet" href="assets/css/fileupload/jquery.fileupload-noscript.css"></noscript>
+<noscript><link rel="stylesheet" href="assets/css/fileupload/jquery.fileupload-ui-noscript.css"></noscript>
+<!-- The file upload form used as target for the file upload widget -->
+<form id="fileupload" action="upload/do_upload" method="POST" enctype="multipart/form-data">
+	<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+	<div class="row fileupload-buttonbar">
+		<div class="col-lg-7">
+			<!-- The fileinput-button span is used to style the file input field as button -->
+			<span class="btn btn-success fileinput-button">
+				<i class="glyphicon glyphicon-plus"></i>
+				<span>Add files...</span>
+				<input type="file" name="userfile" multiple>
+			</span>
+			<button type="submit" class="btn btn-primary start">
+				<i class="glyphicon glyphicon-upload"></i>
+				<span>Start upload</span>
+			</button>
+			<button type="reset" class="btn btn-warning cancel">
+				<i class="glyphicon glyphicon-ban-circle"></i>
+				<span>Cancel upload</span>
+			</button>
+			<button type="button" class="btn btn-danger delete">
+				<i class="glyphicon glyphicon-trash"></i>
+				<span>Delete</span>
+			</button>
+			<input type="checkbox" class="toggle">
+			<!-- The global file processing state -->
+			<span class="fileupload-process"></span>
+		</div>
+		<!-- The global progress state -->
+		<div class="col-lg-5 fileupload-progress fade">
+			<!-- The global progress bar -->
+			<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+				<div class="progress-bar progress-bar-success" style="width:0%;"></div>
+			</div>
+			<!-- The extended global progress state -->
+			<div class="progress-extended">&nbsp;</div>
+		</div>
+	</div>
+	<!-- The table listing the files available for upload/download -->
+	<table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+</form>
+<!-- The blueimp Gallery widget -->
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
     <div class="slides"></div>
     <h3 class="title"></h3>
@@ -251,19 +248,15 @@ I included the same css and js as the current version 8.9 example. The files are
         </td>
         <td>
             <p class="name">{%=file.name%}</p>
-            {% if (file.error) { %}
-                <div><span class="label label-danger">Error</span> {%=file.error%}</div>
-            {% } %}
+            <strong class="error text-danger"></strong>
         </td>
         <td>
-            <p class="size">{%=o.formatFileSize(file.size)%}</p>
-            {% if (!o.files.error) { %}
-                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
-            {% } %}
+            <p class="size">Processing...</p>
+            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
         </td>
         <td>
-            {% if (!o.files.error && !i && !o.options.autoUpload) { %}
-                <button class="btn btn-primary start">
+            {% if (!i && !o.options.autoUpload) { %}
+                <button class="btn btn-primary start" disabled>
                     <i class="glyphicon glyphicon-upload"></i>
                     <span>Start</span>
                 </button>
@@ -321,9 +314,9 @@ I included the same css and js as the current version 8.9 example. The files are
     </tr>
 {% } %}
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.ui.widget.js"></script>
+<script src="assets/js/fileupload/vendor/jquery.ui.widget.js"></script>
 <!-- The Templates plugin is included to render the upload/download listings -->
 <script src="http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
 <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
@@ -331,30 +324,30 @@ I included the same css and js as the current version 8.9 example. The files are
 <!-- The Canvas to Blob plugin is included for image resizing functionality -->
 <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
 <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <!-- blueimp Gallery script -->
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.iframe-transport.js"></script>
+<script src="assets/js/fileupload/jquery.iframe-transport.js"></script>
 <!-- The basic File Upload plugin -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.fileupload.js"></script>
+<script src="assets/js/fileupload/jquery.fileupload.js"></script>
 <!-- The File Upload processing plugin -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.fileupload-process.js"></script>
+<script src="assets/js/fileupload/jquery.fileupload-process.js"></script>
 <!-- The File Upload image preview & resize plugin -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.fileupload-image.js"></script>
+<script src="assets/js/fileupload/jquery.fileupload-image.js"></script>
 <!-- The File Upload audio preview plugin -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.fileupload-audio.js"></script>
+<script src="assets/js/fileupload/jquery.fileupload-audio.js"></script>
 <!-- The File Upload video preview plugin -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.fileupload-video.js"></script>
+<script src="assets/js/fileupload/jquery.fileupload-video.js"></script>
 <!-- The File Upload validation plugin -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.fileupload-validate.js"></script>
+<script src="assets/js/fileupload/jquery.fileupload-validate.js"></script>
 <!-- The File Upload user interface plugin -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/jquery.fileupload-ui.js"></script>
+<script src="assets/js/fileupload/jquery.fileupload-ui.js"></script>
 <!-- The main application script -->
-<script src="<?php echo base_url(); ?>assets/frontend/js/fileupload/main.js"></script>
+<script src="assets/js/fileupload/main.js"></script>
 <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
 <!--[if (gte IE 8)&(lt IE 10)]>
-<script src="js/cors/jquery.xdr-transport.js"></script>
+<script src="assets/js/fileupload/cors/jquery.xdr-transport.js"></script>
 <![endif]-->
 ```
 
@@ -383,7 +376,7 @@ echo 'file:' .$delete_data .'-deleted' ;
 ### main.js
 ```
 /*
- * jQuery File Upload Plugin JS Example 8.9.0
+ * jQuery File Upload Plugin JS Example 8.9.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2010, Sebastian Tschan
@@ -393,14 +386,17 @@ echo 'file:' .$delete_data .'-deleted' ;
  * http://www.opensource.org/licenses/MIT
  */
 
-/*jslint nomen: true, regexp: true */
-/*global $, window, blueimp */
+/* global $, window */
 
 $(function () {
     'use strict';
 
     // Initialize the jQuery File Upload widget:
-    $('#fileupload').fileupload({});
+    $('#fileupload').fileupload({
+        // Uncomment the following to send cross-domain cookies:
+        //xhrFields: {withCredentials: true},
+        url: 'upload/do_upload'
+    });
 
     // Enable iframe cross-domain access via redirect option:
     $('#fileupload').fileupload(
@@ -412,22 +408,46 @@ $(function () {
         )
     );
 
-   // Load existing files:
-    $('#fileupload').addClass('fileupload-processing');
-
-    $.ajax({
-        // Uncomment the following to send cross-domain cookies:
-        //xhrFields: {withCredentials: true},
-        url: $('#fileupload').fileupload('option', 'url'),
-        dataType: 'json',
-        context: $('#fileupload')[0]
-    }).always(function () {
-        $(this).removeClass('fileupload-processing');
-    }).done(function (result) {
-        $(this).fileupload('option', 'done')
-            .call(this, $.Event('done'), {result: result});
-    });
-    
+    if (window.location.hostname === 'blueimp.github.io') {
+        // Demo settings:
+        $('#fileupload').fileupload('option', {
+            url: '//jquery-file-upload.appspot.com/',
+            // Enable image resizing, except for Android and Opera,
+            // which actually support image resizing, but fail to
+            // send Blob objects via XHR requests:
+            disableImageResize: /Android(?!.*Chrome)|Opera/
+                .test(window.navigator.userAgent),
+            maxFileSize: 5000000,
+            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+        });
+        // Upload server status check for browsers with CORS support:
+        if ($.support.cors) {
+            $.ajax({
+                url: 'upload/do_upload',
+                type: 'HEAD'
+            }).fail(function () {
+                $('<div class="alert alert-danger"/>')
+                    .text('Upload server currently unavailable - ' +
+                            new Date())
+                    .appendTo('#fileupload');
+            });
+        }
+    } else {
+        // Load existing files:
+        $('#fileupload').addClass('fileupload-processing');
+        $.ajax({
+            // Uncomment the following to send cross-domain cookies:
+            //xhrFields: {withCredentials: true},
+            url: $('#fileupload').fileupload('option', 'url'),
+            dataType: 'json',
+            context: $('#fileupload')[0]
+        }).always(function () {
+            $(this).removeClass('fileupload-processing');
+        }).done(function (result) {
+            $(this).fileupload('option', 'done')
+                .call(this, $.Event('done'), {result: result});
+        });
+    }
 
 });
 
