@@ -52,7 +52,6 @@
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
 * [[jQuery-File-Upload 8.8.5,with-CodeIgniter 2.1.X]] (user contribution)
 * [[jQuery File Upload 8.9 with CodeIgniter 2.1.4]] (user contribution)
-* [[jQuery File Upload 9.5 with CodeIgniter 2.1.4]] (user contribution)
 * [Symfony2 bundle](https://github.com/punkave/symfony2-file-uploader-bundle) (user contribution)
 * [Yii extension](https://github.com/Asgaroth/xupload) (user contribution)
 * [Open Manager](https://github.com/rmorse/Open-Manager), a File/Media Manager implementation.
