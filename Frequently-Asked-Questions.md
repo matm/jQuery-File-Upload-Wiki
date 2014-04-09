@@ -244,3 +244,5 @@ $.ajaxSetup({
     }
 });
 ```
+
+Also be weary for IE8, if you pass back an error response with http status code other than 200 (INTERNAL_SERVER_ERROR for example), IE replaces the content of the iframe with an error message loaded from the disk (res://ieframe.dll/http_500.htm). 
