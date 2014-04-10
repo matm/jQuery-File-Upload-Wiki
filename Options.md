@@ -517,7 +517,7 @@ Callback for completed (success, abort or error) chunk upload requests.
 By default, files added to the widget are uploaded as soon as the user clicks on the start buttons. To enable automatic uploads, set this option to true.
 
 * Type: *boolean*
-* Default: `false`
+* Default: `true`
 
 Please note that in the basic File Upload plugin, this option is set to **true** by default.
 
