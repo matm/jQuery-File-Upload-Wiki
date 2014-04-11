@@ -112,28 +112,6 @@ $(function () {
 });
 ```
 
-## How to start uploads with a button click and reset
-
-It is possible to start uploads on the click of a button instead of automatically and reset the file selection.
-
-` <button id="upload" class="btn btn-primary btn-lg" type="button">Upload</button>`
-
-```js
-$(function () {
-    $('#fileuploadForm').fileupload({
-        dataType: 'json',
-       add: function (e, data) {
-            $("#upload").click(function () {
-                    data.submit();
-                });
-        },
-        done: function (e, data) {
-            $('#upload').off('click');
-        }
-    });
-});
-```
-
 ## How to do Client-side Image Resizing
 Please see [[Client side Image Resizing]].
 
