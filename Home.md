@@ -30,6 +30,10 @@
 * [[Fixing Safari hanging on very high speed connections (1Gbps)]]
 * Direct upload to [[YouTube]]
 
+## Forks
+
+* [AngularJS Directive](https://github.com/DominicBoettger/jQuery-File-Upload). Added a directive and distribute the uploader as combined JS file.
+
 ## Server-side
 
 ### Nginx
