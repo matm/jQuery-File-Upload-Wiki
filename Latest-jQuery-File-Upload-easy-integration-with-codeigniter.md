@@ -1,7 +1,30 @@
-Its very easy. no need to make a constant file etc.
+** Updated for version 9.5.x (April 2014) **
 
-just place your upload.class.php into applications/libraries as uploadhandler.php and autoload in autoload.php in config dir.
+Its very easy. No need to change anything in Codeigniter or modify the jQuery-File-Upload library (meaning that upgrades will be very simple). Steps:
 
-Now you can use its instance as $this->uploadhandler in controllers. now make a function do_upload in your controller and paste the contents of server/php/index.php in that function and remove require('upload.class.php'); as well as don't make instance of upload_handler because you are already have this as $this->uploadhandler. so user it and enjoy!.
+1. Place UploadHandler.php into ~/application/libraries/. No modifications required.
+2. Create fileupload.php in ~/application/controllers/ with the content below.
+3. Create ~/files and ~/thumbnails with appropriate permissions for the webserver to write to the directories.
+4. Configure your client side file upload script to point to '/fileupload' (or whatever your path is to this Codeigniter controller).
 
-and don't forget to place 2 directories files and thumbnails in your codeigniter root dir.
+Contents of ~/application/controllers/fileupload.php :
+```
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+
+class Fileupload extends CI_Controller
+{
+    function __construct()
+    {
+        parent::__construct();
+    }
+
+    function index()
+    {
+        error_reporting(E_ALL | E_STRICT);
+        $this->load->library("UploadHandler");
+    }
+}
+```
+
+
+Note that '~' above denotes the Codeigniter root directory.
