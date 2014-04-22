@@ -52,6 +52,7 @@
     * [AWS SDK PHP Version 2](http://docs.aws.amazon.com/aws-sdk-php/guide/latest/service-s3.html#amazon-s3-stream-wrapper) allows using built-in PHP file handling functions such as `file_get_contents()` on S3 buckets
     * This version of UploadHandler.php also provides the option to accept [`formData`](https://github.com/blueimp/jQuery-File-Upload/wiki/Options#formdata) of `$_POST['files']` selected via [Dropbox Chooser](https://www.dropbox.com/developers/dropins/chooser/js)
 * [[Zend-framework]] integration (user contribution).
+* [[Latest-jQuery-File-Upload-easy-integration-with-codeigniter]] (user contribution, very easy approach)
 * [[jQuery-File-Upload-6.5-with-CodeIgniter-2.1]] (user contribution)
 * [[jQuery-File-Upload,---Multi-file-upload-with-CodeIgniter]] (user contribution)
 * [[jQuery File Upload 9.5 with CodeIgniter 2.1.4]] (user contribution)
