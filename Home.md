@@ -32,7 +32,7 @@
 
 ## Forks
 
-* [AngularJS Directive](https://github.com/DominicBoettger/jQuery-File-Upload). Added a directive and distribute the uploader as combined JS file.
+* [AngularJS Directive](https://github.com/DominicBoettger/jQuery-File-Upload). Added a directive to simplify the use with angular and distribute the uploader as combined JS file.
 
 ## Server-side
 
