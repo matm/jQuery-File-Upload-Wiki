@@ -44,7 +44,7 @@ It is possible to select a complete folder structure, though this is currently o
 To enable this feature, the following vendor-specific **directory** attributes have to be added to the file input field:
 
 ```js
-<input type="file" name="files[]" multiple directory webkitdirectory mozdirectory>
+<input type="file" name="files[]" multiple directory webkitdirectory>
 ```
 
 ## Drag & Drop
