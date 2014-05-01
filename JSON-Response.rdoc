@@ -1,4 +1,6 @@
-The following is the response from the server for the file upload plugin
+The newer response is documented here: [[http://github.com/blueimp/jQuery-File-Upload/wiki/Setup#using-jquery-file-upload-ui-version-with-a-custom-server-side-upload-handler]]
+
+The following used to be the response from the server for the file upload plugin
 ```javascript
 { 
   files:
