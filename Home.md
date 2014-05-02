@@ -93,6 +93,7 @@
 ### JavaScript
 * [Express.js middleware for jQuery File Upload](https://github.com/aguidrevitch/jquery-file-upload-middleware) by [Aleksandr Guidrevitch](https://github.com/aguidrevitch)
 * [Cup](https://github.com/aparajita/Cup), a Cappuccino wrapper for jQuery File Upload.
+* [Express.js Plug-n-Play Node Package for jQuery File Upload](https://www.npmjs.org/package/blueimp-file-upload-expressjs) by [Arvind Ravulavaru](http://thejackalofjavascript.com/)
 
 ### Go
 * [jfu package](https://github.com/jmcvetta/jfu) for integration with Go applications, backed by MongoDB + Memcache  (user contribution).
