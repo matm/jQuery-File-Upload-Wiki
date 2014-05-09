@@ -2,6 +2,11 @@ Here is a rails-specific example of uploading directly to S3 using the newest ve
 
 It makes a lot of assumptions, but it will get you where you need to be!
 
+Before starting, you'll need to make sure that you include at least these Javascripts from the File-Upload source:
+- jquery.ui.widget
+- jquery.iframe-transport
+- jquery.fileupload
+
 Ok, given you have a form like so:
 
 ```haml
