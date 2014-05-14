@@ -43,7 +43,7 @@ $('#fileupload').fileupload({
                 (file.error ? '<div class="error"></div>' : '') +
                 '</td>' +
                 '<td><span class="size"></span></td>' +
-                '<td><button class="delete">Delete</button></td>' +
+                '<td class="delete"><button>Delete</button></td>' +
                 '</tr>');
             row.find('.size').text(o.formatFileSize(file.size));
             if (file.error) {
@@ -61,7 +61,7 @@ $('#fileupload').fileupload({
                 row.find('a')
                     .attr('data-gallery', '')
                     .prop('href', file.url);
-                row.find('.delete')
+                row.find('.delete button')
                     .attr('data-type', file.delete_type)
                     .attr('data-url', file.delete_url);
             }
