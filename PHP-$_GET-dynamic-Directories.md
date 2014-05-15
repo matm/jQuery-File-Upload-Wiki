@@ -22,7 +22,7 @@ with this:
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: 'server/ph**p/index.php?historia=' + historia // <<<<<<<<<<<<<
+        url: 'server/php/index.php?historia=' + historia // <<<<<<<<<<<<<
     });
 ```
 
