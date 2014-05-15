@@ -3,7 +3,7 @@ Hi, this is what I have done to have dynamic directory creation for file uploads
 I renamed index.html to index.php, defined a js variable "historia" to pass it to main.js (Must be added before loading main.js file) like this:
 ```php
 <script type="text/javascript">
-  var historia= '<? echo $historia;?>'; // <<<<<<<<<<<<<
+  var historia= '<? echo $_GET['historia'];?>'; // <<<<<<<<<<<<<
 </script>
 <script src="js/main.js"></script>
 ```
