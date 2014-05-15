@@ -2,42 +2,31 @@ Hi, this is what I have done to have dynamic directory creation for file uploads
 
 I renamed index.html to index.php, commented out the main.js call at the bottom, and pasted its content into the new renamed index.php, edited the js code so that the "url" option initialization looks like this:
 ```js
-<!--<script src="js/main.js"></script>-->
-<script>
-$(function () {
-    'use strict';
 
-    // Initialize the jQuery File Upload widget:
+<script type="text/javascript">
+<!--// 
+  var historia= '<? echo $historia;?>'; // <<<<<<<<<<<<<
+//-->
+</script>
+<!--<script src="js/main.js"></script>-->
+
+Then in main.js itself replace this code:
+`// Initialize the jQuery File Upload widget:
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
         url: 'server/php/index.php?historia=<? echo $_GET['historia'];?>' // <<<<<<<<<<<<<
-    });
+    });`
 
-    // Enable iframe cross-domain access via redirect option:
-    $('#fileupload').fileupload(
-        'option',
-        'redirect',
-        window.location.href.replace(
-            /\/[^\/]*$/,
-            '/cors/result.html?%s'
-        )
-    );
-
-    // Load existing files:
-    $.ajax({
+with this:
+`// Initialize the jQuery File Upload widget:
+    $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: $('#fileupload').fileupload('option', 'url'),
-        dataType: 'json',
-        context: $('#fileupload')[0]
-    }).done(function (result) {
-        $(this).fileupload('option', 'done')
-            .call(this, null, {result: result});
-    });
+        url: 'server/php/index.php?historia=' + historia // <<<<<<<<<<<<<
+    });`
 
-});
-</script>
+
 ```
 
 Edited the file server/php/index.php to look like this:
