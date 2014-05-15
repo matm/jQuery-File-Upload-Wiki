@@ -1,32 +1,29 @@
 Hi, this is what I have done to have dynamic directory creation for file uploads, using the demo files (html, php, js):
 
-I renamed index.html to index.php, commented out the main.js call at the bottom, and pasted its content into the new renamed index.php, edited the js code so that the "url" option initialization looks like this:
-```js
-
+I renamed index.html to index.php, defined a js variable "historia" to pass it to main.js (Must be added before loading main.js file) like this:
+```php
 <script type="text/javascript">
-<!--// 
   var historia= '<? echo $historia;?>'; // <<<<<<<<<<<<<
-//-->
 </script>
-<!--<script src="js/main.js"></script>-->
-
+<script src="js/main.js"></script>
+```
 Then in main.js itself replace this code:
-`// Initialize the jQuery File Upload widget:
+```js
+   // Initialize the jQuery File Upload widget:
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: 'server/php/index.php?historia=<? echo $_GET['historia'];?>' // <<<<<<<<<<<<<
-    });`
-
+        url: 'server/php/' // <<<<<<<<<<<<<
+    });
+```
 with this:
-`// Initialize the jQuery File Upload widget:
+```js
+   // Initialize the jQuery File Upload widget:
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: 'server/php/index.php?historia=' + historia // <<<<<<<<<<<<<
-    });`
-
-
+        url: 'server/ph**p/index.php?historia=' + historia // <<<<<<<<<<<<<
+    });
 ```
 
 Edited the file server/php/index.php to look like this:
