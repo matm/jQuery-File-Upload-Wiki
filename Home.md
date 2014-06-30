@@ -121,4 +121,4 @@
 * [ASP.NET simple upload handler] (https://github.com/sergiyd/jQuery-File-Upload_ASP.NET-Upload-Handler) supports upload, download, delete (just server-side)
 
 ### ColdFusion
-* [jQuery-File-Upload-CFC](https://github.com/henrylearn2rock/jQuery-File-Upload-CFC) a port of blueimp/jQuery-File-Upload PHP into ColdFusion CFScript (CF10+).  cfimage is used in place of GD for image manipulation.
+* [jQuery-File-Upload-CFC](https://github.com/henrylearn2rock/jQuery-File-Upload-CFC) (contribution from Henry Ho) a port of blueimp/jQuery-File-Upload PHP into ColdFusion CFScript (CF10+).  cfimage is used in place of GD for image manipulation.
