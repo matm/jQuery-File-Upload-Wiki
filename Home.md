@@ -119,3 +119,6 @@
 * A fully [IHttpHandler based] (https://github.com/YahavGB/jQuery-File-Upload/tree/master/server/asp-net) PHP server-side clone abstract class for uploading files. Class main propose is to upload files (supports high-quality images uploading) (Contributed by Yahav Gindi Bar).
 * [Backload.](https://github.com/blackcity/Backload) A professional full featured server side file upload controller/handler for ASP.NET MVC4 (ASP.NET Web API and Standard ASP.NET WebForms supported). It has a very rich set of configuration options but also a zero configuration feature. It supports complex storage structures (set client and server side), image resizing, cropping and conversions, content type based subfolders, tracing, events, etc. [Backload demos and examples](https://github.com/blackcity/Backload)
 * [ASP.NET simple upload handler] (https://github.com/sergiyd/jQuery-File-Upload_ASP.NET-Upload-Handler) supports upload, download, delete (just server-side)
+
+### ColdFusion
+* [jQuery-File-Upload-CFC](https://github.com/henrylearn2rock/jQuery-File-Upload-CFC) a port of blueimp/jQuery-File-Upload PHP into ColdFusion CFScript (CF10+).  cfimage is used in place of GD for image manipulation.
