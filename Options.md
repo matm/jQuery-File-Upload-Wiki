@@ -229,6 +229,14 @@ The minimum time interval in milliseconds to calculate progress bitrate.
 * Type: *integer*
 * Default: `500`
 
+### autoUpload
+By default, files added to the widget are uploaded as soon as the user clicks on the start buttons. To enable automatic uploads, set this option to true.
+
+* Type: *boolean*
+* Default: `true`
+
+Please note that in the basic File Upload plugin, this option is set to **true** by default.
+
 ### formData
 Additional form data to be sent along with the file uploads can be set using this option, which accepts an array of objects with name and value properties, a function returning such an array, a [FormData](https://developer.mozilla.org/en/XMLHttpRequest/FormData) object (for [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads), or a simple object.  
 The form of the first fileInput is given as parameter to the function.
@@ -512,14 +520,6 @@ Callback for failed (abort or error) chunk upload requests
 
 ### chunkalways
 Callback for completed (success, abort or error) chunk upload requests.
-
-### autoUpload
-By default, files added to the widget are uploaded as soon as the user clicks on the start buttons. To enable automatic uploads, set this option to true.
-
-* Type: *boolean*
-* Default: `true`
-
-Please note that in the basic File Upload plugin, this option is set to **true** by default.
 
 ## File Processing Options
 
