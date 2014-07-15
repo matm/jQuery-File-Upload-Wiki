@@ -199,7 +199,6 @@ If this also doesn't work, contact your hosting provider.
 By default, the PHP upload handler only correctly handles unicode file names on Linux and Windows hosts.  
 Please see this in-depth article for an explanation and recommendation on how to handle unicode file names on Windows server platforms:
 http://evertpot.com/filesystem-encoding-and-php/
-```
 
 ### Why does string comparison fail with non-ASCII file names returned from the server?
 Depending on your server-environment, you might have to do [Unicode normalization](http://unicode.org/faq/normalization.html), to achieve the same binary representation of strings with Unicode characters.  
