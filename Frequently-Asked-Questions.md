@@ -196,20 +196,9 @@ memory_limit 256M
 If this also doesn't work, contact your hosting provider.
 
 ### Is there a problem uploading files with non-ASCII characters (PHP, Windows server)?
-If your non-ASCII file names get uploaded with strange characters like Ã¤, Ã¶ or Ã¼ you probably need to apply the [utf8-decode()](http://de.php.net/manual/en/function.utf8-decode.php) method on the file names of uploaded files, e.g. by overriding the *trim_file_name* method:
-
-```php
-<?php
-require('upload.class.php');
-
-class CustomUploadHandler extends UploadHandler {
-    protected function trim_file_name($file_path, $name, $size, $type, $error, $index, $content_range) {
-        $name = utf8_decode($name);
-        return parent::trim_file_name($file_path, $name, $size, $type, $error, $index, $content_range);
-    }
-}
-
-$upload_handler = new CustomUploadHandler();
+By default, the PHP upload handler only correctly handles unicode file names on Linux and Windows hosts.  
+Please see this in-depth article for an explanation and recommendation on how to handle unicode file names on Windows server platforms:
+http://evertpot.com/filesystem-encoding-and-php/
 ```
 
 ### Why does string comparison fail with non-ASCII file names returned from the server?
