@@ -571,11 +571,11 @@ $.widget('blueimp.fileupload', $.blueimp.fileupload, {
 
     options: {
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
-        processQueue: [
+        processQueue: {
             action: 'validate',
             acceptFileTypes: '@',
             disabled: '@disableValidation'
-        ]
+        }
     },
 
     processActions: {
