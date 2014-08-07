@@ -585,7 +585,7 @@ $.widget('blueimp.fileupload', $.blueimp.fileupload, {
                 return data;
             }
             var dfd = $.Deferred(),
-                file = data.files[data.index],
+                file = data.files[data.index];
             if (!options.acceptFileTypes.test(file.type)) {
                 file.error = 'Invalid file type.';
                 dfd.rejectWith(this, [data]);
