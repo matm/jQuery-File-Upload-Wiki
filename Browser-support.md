@@ -34,7 +34,6 @@ The following browsers support multiple file selection:
 
 * Apple Safari Mobile on iOS 6.0+
 * Google Chrome on iOS 6.0+
-* Google Chrome on Android 4.0+
 
 ### Known bugs
 Safari on Windows has [a bug](http://stackoverflow.com/questions/7231054/file-input-size-issue-in-safari-for-multiple-file-selection) and reports a file size of 0 bytes when selecting multiple files. Selecting single files works.
