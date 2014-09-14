@@ -227,8 +227,8 @@ In whatever view file you want, copy paste this code and enjoy.
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <%= javascript_include_tag 'jquery.ui.widget.js' %>
 <!-- The Templates and Load Image plugins are included for the FileUpload user interface -->
-<script src="http://blueimp.github.com/JavaScript-Templates/tmpl.min.js"></script>
-<script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
+<script src="https://blueimp.github.com/JavaScript-Templates/tmpl.min.js"></script>
+<script src="https://blueimp.github.com/JavaScript-Load-Image/load-image.all.min.js"></script>
 <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
 <%= javascript_include_tag 'jquery.iframe-transport.js' %>
 <%= javascript_include_tag 'jquery.fileupload.js' %>

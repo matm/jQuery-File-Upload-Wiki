@@ -20,9 +20,9 @@ Next, edit [js/main.js](https://github.com/blueimp/jQuery-File-Upload/blob/maste
 require(
     [
         'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
-        'http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js',
-        'http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js',
-        'http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js',
+        'https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js',
+        'https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js',
+        'https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js',
         'js/jquery.iframe-transport',
         'js/jquery.fileupload-ui'
     ],
