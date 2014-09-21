@@ -11,7 +11,7 @@ The following browsers support at least one form of [AJAX](https://en.wikipedia.
 
 ### Mobile browsers
 
-* Apple Safari on iOS 6.0+
+* Apple Safari on iOS 6.0+ (**Completely broken on iOS 8.0 without workaround - needs fix by Apple**)
 * Google Chrome on iOS 6.0+
 * Google Chrome on Android 4.0+
 * Default Browser on Android 2.3+
