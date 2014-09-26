@@ -11,7 +11,7 @@ The following browsers support at least one form of [AJAX](https://en.wikipedia.
 
 ### Mobile browsers
 
-* Apple Safari on iOS 6.0+ (**Completely broken on iOS 8.0 without workaround - needs fix by Apple**)
+* Apple Safari on iOS 6.0+ (**iOS 8.0.2 fixes file upload bug introduced in iOS 8**)
 * Google Chrome on iOS 6.0+
 * Google Chrome on Android 4.0+
 * Default Browser on Android 2.3+
