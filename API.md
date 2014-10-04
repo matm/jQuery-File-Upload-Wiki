@@ -5,7 +5,7 @@ The File Upload widget is initialized by calling the *fileupload* method on a jQ
 $('#fileupload').fileupload();
 ```
 
-The target element is usually a container element holding the file upload form, or the file upload form itself, but it can also be just the file input element itself, if an url is provided as options parameter.
+The target element is usually a container element holding the file upload form, or the file upload form itself, but it can also be just the file input element itself for a customized UI and if an url is provided as options parameter.
 
 The initialization method's first argument is an object that allows you to initialize the widget with various [[Options]]:
 
