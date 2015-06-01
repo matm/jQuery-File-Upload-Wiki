@@ -9,7 +9,7 @@ The jQuery File Upload plugin makes use of [jQuery.ajax()](http://api.jquery.com
 
 The options set for the File Upload plugin are passed to [jQuery.ajax()](http://api.jquery.com/jQuery.ajax/) and allow to define any ajax settings or callbacks.   
 The ajax options `processData`, `contentType` and `cache` are set to `false` for the file uploads to work and should not be changed.  
-The `timeout` setting is set to 0. See [pull request #3399 for the reasoning behind this](https://github.com/blueimp/jQuery-File-Upload/pull/3399).
+The `timeout` setting is set to 0. See [pull request #3399](https://github.com/blueimp/jQuery-File-Upload/pull/3399) for the reasoning behind this.
 The following options are also set by the plugin, but can be useful to customize:
 
 ### url
