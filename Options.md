@@ -65,7 +65,7 @@ The paste target [jQuery object](http://api.jquery.com/Types/#jQuery), by the de
 Set to null or an empty jQuery collection to disable paste support:
 
 * Type: *jQuery Object*
-* Default: `$(document)`
+* Default: `null`
 
 **Note:**  
 Uploading files via copy&paste is currently only supported by Google Chrome.
