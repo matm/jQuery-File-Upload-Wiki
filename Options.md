@@ -62,10 +62,10 @@ Note that preventing the default action for both the "drop" and "dragover" event
 
 ### pasteZone
 The paste target [jQuery object](http://api.jquery.com/Types/#jQuery), by the default the complete document.  
-Set to null or an empty jQuery collection to disable paste support:
+Set to a jQuery collection to enable paste support:
 
 * Type: *jQuery Object*
-* Default: `null`
+* Default: `undefined `
 
 **Note:**  
 Uploading files via copy&paste is currently only supported by Google Chrome.
