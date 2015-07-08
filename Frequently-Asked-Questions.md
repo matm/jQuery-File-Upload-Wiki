@@ -74,21 +74,15 @@ It is also possible to allow selecting a folder (instead of files) via the file 
 <input type="file" name="files[]" multiple directory webkitdirectory mozdirectory>
 ```
 
-See also [issue #573](https://github.com/blueimp/jQuery-File-Upload/issues/573).
-
 ### Why is the protocol ("http:") missing from the script references in the HTML source code?
 This is called a [protocol relative url](//www.google.com/search?q=protocol+relative+URL) and a perfectly valid way to define a resource, relative to the current URL protocol.  
 This ensures that the referenced scripts are loaded via the same protocol as the current page, which avoids security notifications when loading resources via unencrypted HTTP on a page loaded via HTTPS.
 
 However, it also requires that the current protocol is either "http:" or "https:" and will not work on a "file:" url.
 
-See also issue [#514](https://github.com/blueimp/jQuery-File-Upload/issues/514) as well as pull requests [#722](https://github.com/blueimp/jQuery-File-Upload/pull/772), [#833](https://github.com/blueimp/jQuery-File-Upload/pull/833) and [#1789](https://github.com/blueimp/jQuery-File-Upload/pull/1789).
-
 ### Why can't I print the files index in the template for loop?
 The template will be rendered for each **add** call.  
 As long as the option **singleFileUploads** is set to *true* (which is the default), multiple selects/drops get split up into single **add** calls, so the index will always be **0**.
-
-Please see the comments for [Issue #893](https://github.com/blueimp/jQuery-File-Upload/issues/893).
 
 ### Why does Firefox never show 100% upload progress?
 See Firefox Bug [#642463](https://bugzilla.mozilla.org/show_bug.cgi?id=642463).  
@@ -163,8 +157,7 @@ Iframe based uploads require a [Content-type](http://en.wikipedia.org/wiki/MIME#
 Please have a look at the Content-Type Negotiation section of the [[Setup]] instructions.
 
 ### Why doesn't Internet Explorer show HTML snippets as part of the JSON response?
-This is due to how the response content is parsed when using the iframe transport, which is required by Internet Explorer.  
-Have a look at [an explanation and solution from user espeoneefi](https://github.com/blueimp/jQuery-File-Upload/issues/659#issuecomment-2999298).
+This is due to how the response content is parsed when using the iframe transport, which is required by Internet Explorer.
 
 ### Why do I get a JSON parsing error?
 Your JSON response is probably not valid JSON.  
@@ -201,8 +194,7 @@ Please see this in-depth article for an explanation and recommendation on how to
 http://evertpot.com/filesystem-encoding-and-php/
 
 ### Why does string comparison fail with non-ASCII file names returned from the server?
-Depending on your server-environment, you might have to do [Unicode normalization](http://unicode.org/faq/normalization.html), to achieve the same binary representation of strings with Unicode characters.  
-See also issue [#1339](https://github.com/blueimp/jQuery-File-Upload/issues/1339).
+Depending on your server-environment, you might have to do [Unicode normalization](http://unicode.org/faq/normalization.html), to achieve the same binary representation of strings with Unicode characters.
 
 ### Does the plugin support HTTP status codes?
 The File Upload plugin will properly handle HTTP response codes when the browser supports [XHR](https://developer.mozilla.org/en/xmlhttprequest) file uploads.
