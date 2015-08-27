@@ -1,10 +1,16 @@
 # Documentation Overview
-wtf
+
 ## Basic plugin information
 * [Demo page](https://blueimp.github.com/jQuery-File-Upload/) (and [[Demo implementation]] information).
 * How to [[Setup]] the plugin on your website.
 * How to use only the [[Basic plugin]] (minimal setup guide).
-*uyjfgghbkljgjhgbk
+* **[[Security]] considerations.**
+* **The plugin [[API]].**
+* **List of all available [[Options]] - including events and callback methods.**
+* Explanation of all [[Plugin files]].
+* Extended [[Browser support]] information.
+* [[Frequently Asked Questions]] (FAQ)
+
 ## Customization how-tos
 * **[[Plugin extensions]] (Developer Guide)**
 * How to implement a different [[Template Engine]].
