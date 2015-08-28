@@ -29,6 +29,9 @@ The HTTP request method for the file uploads. Can be "POST", "PUT" or "PATCH" an
 "PUT" and "PATCH" are only supported by browser supporting XHR file uploads, as iframe transport uploads rely on standard HTML forms which only support "POST" file uploads. See [[Browser support]].  
 If the type is defined as "PUT" or "PATCH", the iframe transport will send the files via "POST" and transfer the original method as "_method" URL parameter.
 
+**Note:**
+As was noted above, it's a common practice to use "_method" to transfer the type of your request. For example, "Ruby on Rails" framework uses a hidden input with the name "_method" within each form, so it will likely override the value that you will set here.
+
 ### dataType
 The type of data that is expected back from the server.  
 
