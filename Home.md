@@ -99,6 +99,7 @@
 
 ### Go
 * [jfu package](https://github.com/jmcvetta/jfu) for integration with Go applications, backed by MongoDB + Memcache  (user contribution).
+* [Coquelicot](http://gotsunami.github.io/coquelicot) provides a simple API and standalone binaries for chunked resumable file uploads.
 
 ### Java
 * Code samples for [[Google App Engine Java]] (user contribution).
